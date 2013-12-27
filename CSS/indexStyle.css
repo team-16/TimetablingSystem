@@ -1,0 +1,77 @@
+#MainDiv {
+	
+	min-width:960px;
+	
+	border:1px solid #bbb;
+}
+
+/* Header Styling */
+#HeaderDiv {
+	position:relative;
+	top:0px;
+	height:200px;
+	
+	border:1px solid #bbb;
+}
+
+/* Menu Styling */
+
+#MenuDiv {
+	position:relative;
+	height:40px;
+	width:960px;
+	margin:auto;
+	border:1px solid #bbb;
+}
+
+#MenuBar {
+	position:absolute;
+	height:40px;
+	width:960px;
+	
+	
+	background: linear-gradient(#FFFFFF, #EDEDED);
+	
+	border:1px solid #bbb;
+}
+
+.MenuBtn {
+	position:relative;
+	float:left;
+	width:240px;
+	
+	text-align:center;
+	
+	 cursor: pointer; 
+	 cursor: hand;
+	
+	line-height:40px;
+	display: inline-block;
+    vertical-align: middle;
+	
+	//border:1px solid #bbb;
+}
+
+.MenuBtn:hover {
+	background: #E0E0E0;
+}
+
+
+/* Content Styling */
+
+#ContentDiv {
+	
+	position: relative;
+	
+	height: 1000px;
+	min-width:960px;
+	
+	border:1px solid #bbb;
+}
+
+
+/* Footer Styling */
+
+#FooterDiv {
+	
+}
