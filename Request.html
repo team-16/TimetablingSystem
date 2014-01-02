@@ -7,26 +7,27 @@
             function addcheckboxes() {
      
      
-                    var parentElement = document.getElementById("day");
+                    var parentElement = document.getElementById("session");
                     var fullHTML = "";
-                    alert(parksArray.length);
-                    alert("1");
+                    //alert(parksArray.length);
+                    //alert("1");
                     for(var i=0; i < periodsArray.length; i++)
                     {
                         var newCheckBox = "<input ";
                         newCheckBox += "type='checkbox' ";
-                        alert("2");
+                        //alert("2");
                         newCheckBox += "id='" + i + "' "; // need unique Ids!
                         newCheckBox += "id='" + periodsArray[i] + "' ";
-                        alert("3");
+                        //alert("3");
                         newCheckBox += "/><br>";
      
                         fullHTML += newCheckBox;
-                        alert("4");
+                        //alert("4");
                     }
                    
-                    parentElement.innerHTML(fullHTML);
-                    alert("5");
+                   	alert(fullHTML);
+                    document.getElementById("session").innerHTML = fullHTML;
+                    //alert("5");
             }
     </script>
 
@@ -41,6 +42,6 @@
 		<input type = "radio" name="shortfat" value="false">no<br>
 </div>
 <div id="session">
-	<input type="button" onclick="addcheckboxes()">
 </div>
+<input type="button" onclick="addcheckboxes();">
 </html>
