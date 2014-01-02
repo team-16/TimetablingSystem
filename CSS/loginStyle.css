@@ -1,0 +1,75 @@
+#loginDiv {
+	
+	position:fixed;
+	top: calc(50% - 75px);
+	left: calc(50% - 200px);
+	
+	height:150px;
+	width:400px;
+	
+	box-shadow: 0px 0px 7px 7px #606060;
+	
+	//border:1px solid #bbb;
+}
+
+#loginTitle {
+	
+	position:absolute;
+	height:30px;
+	width:370px;
+	margin:10px;
+	padding-left:10px;
+	
+	background:#F7F7F7;
+	
+	text-align:left;
+	font-size:16px;
+	font-family: helvetica, arial, sans-serif;
+	color: black;
+	font-weight:bold;
+	
+	line-height:30px;
+	display: inline-block;
+    vertical-align: middle;
+    
+    border-radius:5px;
+}
+
+#inputDiv {
+	
+	position:absolute;
+	top:30px;
+	height:100px;
+	width:380px;
+	margin:10px;
+	
+	//border:1px solid #bbb;
+		
+}
+
+.inputTitle {
+	
+	position:absolute;
+	height:30px;
+	width:90px;
+	
+	text-align:left;
+	font-size:16px;
+	font-family: helvetica, arial, sans-serif;
+	color: black;
+	font-weight:bold;
+	
+	line-height:30px;
+	display: inline-block;
+    vertical-align: middle;
+    	
+}
+
+.inputField {
+	position:absolute;
+}
+
+.textField {
+	height:25px;
+	width:200px;
+}
