@@ -1,1 +1,36 @@
-test
+<html>
+
+<script type='text/javascript' src='JS/weeksManipulator.js'></script>
+<script type='text/javascript'>
+
+function weeksTest(){
+	
+	alert("Decoding 010101011101110");
+	
+	var ar = weeksDecoder("010101011101110");
+	
+	if (ar != undefined) {
+		
+		for(var counter = 0; counter < ar.length; counter++){
+			alert("c" + counter + ": " + ar[counter]);
+		} 
+		
+	} else alert("undefined");
+	
+	
+	alert("Encoding [true, false, false, false, true, true, true, false, true, false, false, false, true, false, false]");
+	var x = [true, false, false, false, true, true, true, false, true, false, false, false, true, false, false];
+	
+	var st = weeksEncoder(x);
+	
+	alert(st);
+	
+	
+}
+
+</script>
+
+<button type='button' onclick='weeksTest()'>Weeks Test</button>
+
+
+</html>
