@@ -1,6 +1,7 @@
 <html>
 
 <script type='text/javascript' src='JS/weeksManipulator.js'></script>
+<script type='text/javascript' src='JS/requestObject.js'></script>
 <script type='text/javascript'>
 
 function weeksTest(){
@@ -24,13 +25,25 @@ function weeksTest(){
 	var st = weeksEncoder(x);
 	
 	alert(st);
+}
+
+
+function testReqClass(){
+
 	
+	requestArray.push(new Request());
+	
+	requestArray[0].id = "0237243";
+	requestArray[0].moduleCode = "Test Module";
 	
 }
 
+
+
+
 </script>
 
-<button type='button' onclick='weeksTest()'>Weeks Test</button>
-
+<button type='button' onclick='weeksTest();'>Weeks Test</button>
+<button type='button' onclick='testReqClass();'>Weeks Test</button>
 
 </html>

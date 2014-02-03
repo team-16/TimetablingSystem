@@ -1,25 +1,25 @@
 function Request () {
 	//Main fields (data required for all instances)
 	this.id = 0;
-	this.moduleCode = "mCode";
-	this.moduleTitle = "mTitle";
+	this.moduleCode = "";
+	this.moduleTitle = "";
 	
 	this.priority = true;
 	
 	this.day = 0;
 	this.startPeriod = 0;
 	this.endLength = 1;
-	this.weeks = "111111111111000";
+	this.weeks = "";
 	
-	this.students = 200;
+	this.students = 1;
 	this.park = 0;
 	this.traditional = true;
 	this.sessionType = 0;
 	this.noOfRooms = 1;
-	this.room = "rCode";
+	this.room = "";
 	
 	this.status = null;
 	
-	this.facilities = [1, 2, 3];
+	this.facilities = [];
 
 }
