@@ -1,6 +1,12 @@
+//Request Object
 function Request () {
+	
 	//Main fields (data required for all instances)
-	this.id = 0;
+	this.department = null;
+	
+	this.round = null;
+	
+	this.id = "";
 	this.moduleCode = "";
 	this.moduleTitle = "";
 	
@@ -8,7 +14,7 @@ function Request () {
 	
 	this.day = 0;
 	this.startPeriod = 0;
-	this.endLength = 1;
+	this.endPeriod = 1;
 	this.weeks = "";
 	
 	this.students = 1;
@@ -16,10 +22,23 @@ function Request () {
 	this.traditional = true;
 	this.sessionType = 0;
 	this.noOfRooms = 1;
-	this.room = "";
+	this.rooms = [];
 	
 	this.status = null;
 	
 	this.facilities = [];
+	this.otherReqs = "";
+	
+	this.allocatedRooms = [];
+	
 
+
+}
+
+
+function Facility () {
+	
+	this.id = "";
+	this.name = "";
+	
 }

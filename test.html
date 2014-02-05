@@ -1,7 +1,24 @@
 <html>
 
+
+<style type='text/css'>
+
+.listTest
+{
+	position:absolute;
+	top:50px;
+	left:10px;
+	height:400px;
+	width:940px;
+	
+	border:1px solid #bbb;
+
+}
+
+</style>
+
+
 <script type='text/javascript' src='JS/weeksManipulator.js'></script>
-<script type='text/javascript' src='JS/requestObject.js'></script>
 <script type='text/javascript'>
 
 function weeksTest(){
@@ -27,23 +44,175 @@ function weeksTest(){
 	alert(st);
 }
 
-
 function testReqClass(){
-
 	
 	requestArray.push(new Request());
 	
 	requestArray[0].id = "0237243";
 	requestArray[0].moduleCode = "Test Module";
-	
+		
 }
-
-
 
 
 </script>
 
 <button type='button' onclick='weeksTest();'>Weeks Test</button>
-<button type='button' onclick='testReqClass();'>Weeks Test</button>
+<button type='button' onclick='testReqClass();'>Test</button>
+
+<div class='listTest'>
+	
+	<table class='listHeadings'>
+	
+		<tr>
+			<td>
+				Dep
+			</td>
+		
+			<td>
+				Code
+			</td>
+		
+			<td>
+				P
+			</td>
+			
+			<td>
+				Day
+			</td>
+			
+			<td>
+				Period
+			</td>
+		
+			<td>
+				Length
+			</td>
+			
+			<td>
+				Weeks
+			</td>
+		
+			<td>
+				# of Students
+			</td>
+		
+			<td>
+				Park
+			</td>
+		
+			<td>
+				T/S
+			</td>
+		
+			
+		</tr>
+	
+	</table>
+	
+	</br>
+	
+	<div class='accordian'>
+
+		<label class='accordianSection requestCard'>
+			<input type='checkbox'>
+				<div class='requestHeaderDiv'>
+				
+					<table class='requestHeaderTable'>
+					
+						<tr>
+							<td>
+								CO
+							</td>
+						
+							<td>
+								COB123
+							</td>
+						
+							<td>
+								Yes
+							</td>
+						
+							<td>
+								Monday
+							</td>
+						
+							<td>
+								1
+							</td>
+						
+							<td>
+								1
+							</td>
+						
+							<td>
+								1-8, 10-12
+							</td>
+						
+							<td>
+								120
+							</td>
+						
+							<td>
+								East
+							</td>
+						
+							<td>
+								T
+							</td>
+						
+						</tr>
+						
+						<tr>
+						
+							<td colspan='2'>
+								Room Preference
+							</td>
+							
+							<td colspan='8'>
+								J.0.02
+							</td>
+							
+						</tr>
+						
+					</table>
+				
+					<table class='btnsTable'>
+					
+						<tr>
+						
+							<td>
+								Button A
+							</td>
+						
+							<td>
+								Button B
+							</td>
+						
+							<td>
+								Button C
+							</td>
+						
+						</tr>
+					
+					</table>
+					
+				</div>	
+				
+			<div class='accordianContent requestCardContent'>
+				Content
+			</div>
+		</label>
+	
+		<label class='accordianSection'>
+			<input type='checkbox'>
+				Question
+			<div class='accordianContent'>
+				Content
+			</div>
+		</label>
+	
+	</div>
+	
+</div>
 
 </html>

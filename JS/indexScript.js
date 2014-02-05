@@ -28,4 +28,7 @@ $(document).ready(function() {
 		
 	});
 	
+	//Need to move with files after User Authentication
+	setupSessionData();
+	
 });

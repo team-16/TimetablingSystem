@@ -1,0 +1,51 @@
+.listHeadings,  .listHeadings td{
+	border-collapse:collapse;
+	width:720px;
+	border: 1px solid black;
+}
+
+
+
+.requestCard {
+	background-color:#dddddd;
+}
+
+.requestHeaderDiv {
+	position:relative;
+	height:40px;
+	width: calc(100% - 10px);
+	margin-top:20px;
+	padding:5px;
+}
+
+.requestHeaderTable {
+	float:left;
+	border-collapse:collapse;
+	height:30px;
+	width:720px;
+	text-align:center;
+	vertical-align:middle;
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+.requestHeaderTable td {
+	border: 1px solid black;
+}
+
+.btnsTable {
+	float:right;
+	border-collapse:collapse;
+	width:200px;
+	border: 1px solid black;
+}
+
+.requestCardContent {
+	background-color:#aafafa;
+}
