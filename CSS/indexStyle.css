@@ -38,12 +38,12 @@
 .MenuBtn {
 	position:relative;
 	float:left;
-	width:240px;
+	width:137.14px;
 	
 	text-align:center;
 	
-	 cursor: pointer; 
-	 cursor: hand;
+	cursor: pointer; 
+	cursor: hand;
 	
 	line-height:40px;
 	display: inline-block;

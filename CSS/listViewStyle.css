@@ -1,0 +1,121 @@
+.listHeadings {
+	width:780px;
+	margin:5px;
+	
+	text-align:center;
+	vertical-align:middle;
+	border-collapse:collapse;
+}
+
+.listHeadings td{
+	border: 1px solid black;
+}
+
+
+#depField, #pField, #tradField {
+	width:40px;
+}
+
+#periodField, #lengthField, #stuField {
+	width:60px;
+}
+
+#dayField {
+	width:100px;
+}
+
+#weeksField {
+	width:240px;
+}
+
+
+.requestCard {
+	background: -moz-linear-gradient(top, #EDEDED 0%, #FAFAFA 20%, #FAFAFA 90%, #D0D0D0 100%);
+}
+
+.requestHeaderDiv {
+	position:relative;
+	height:50px;
+	width: calc(100% - 10px);
+	margin-top:20px;
+	padding:5px;
+}
+
+.requestHeaderTable {
+	float:left;
+	border-collapse:collapse;
+	height:50px;
+	width:780px;
+	text-align:center;
+	vertical-align:middle;
+	
+	/*
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	*/
+}
+
+.requestHeaderTable td {
+	border: 1px solid black;
+}
+
+.btnsTable {
+	float:right;
+	border-collapse:collapse;
+	width:140px;
+	border: 1px solid black;
+	
+	text-align:center;
+	vertical-align:middle;
+}
+
+
+
+
+.requestCardContent {
+	background: -moz-linear-gradient(top, #FAFAFA 0%, #FFFFFF 10%, #FFFFFF 100%);
+	padding-left:20px;
+}
+
+.requestContentsTable {
+	border-collapse:collapse;
+	width:900px;
+	text-align:center;
+	vertical-align:middle;
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.requestContentsTable td {
+	border: 1px solid black;
+}
+
+
+#titleField {
+	width:50px;
+} 
+
+#sessField, #parkField {
+	width:100px;
+}
+
+#sessContentField, #parkContentField {
+	width:80px;
+}
+
+#roomPrefField	{
+	width:150px;
+} 
+
+#faciField {
+	width:200px;
+}

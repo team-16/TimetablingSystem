@@ -1,0 +1,42 @@
+.accordian{
+	//margin:5px auto;
+	//width:100%;
+	overflow:hidden;
+}
+
+.accordianSection{
+	display:block;
+	width:100%;
+	margin-bottom:5px;
+	padding-bottom:5px;
+	
+	cursor: pointer;
+	cursor: hand;
+}
+
+.accordianContent{
+	display:block;
+	width: calc(100% - 10px);
+	padding-left:5px;
+	padding-right:5px;
+			
+	overflow:hidden;
+	
+	max-height:0px;
+	transition-property: max-height, margin-top;
+    transition-duration: 1s;
+	transition-timing-function: ease;
+}
+
+.accordian input[type=checkbox],.accordian input[type=radio]{
+	position:absolute;
+	display:none; /*Check in Opera and IE*/
+}
+
+.accordian input[type=checkbox]:checked~.accordianContent,.accordian input[type=radio]:checked~.accordianContent{
+	max-height:400px;
+	margin-top:5px;
+	transition-property: max-height, margin-top;
+    transition-duration: 1s;
+	transition-timing-function: ease;
+}

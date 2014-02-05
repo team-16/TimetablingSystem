@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type='text/javascript' src='JS/constants.js'></script>
+    <script type="text/javascript">
+            function addcheckboxes() {
+     
+     
+                    var parentElement = document.getElementById("session");
+                    var fullHTML = "";
+                    //alert(parksArray.length);
+                    //alert("1");
+                    for(var i=0; i < periodsArray.length; i++)
+                    {
+                        var newCheckBox = "<input ";
+                        newCheckBox += "type='checkbox' ";
+                        //alert("2");
+                        newCheckBox += "id='" + i + "' "; // need unique Ids!
+                        newCheckBox += "id='" + periodsArray[i] + "' ";
+                        //alert("3");
+                        newCheckBox += "/><br>";
+     
+                        fullHTML += newCheckBox;
+                        //alert("4");
+                    }
+                   
+                   	alert(fullHTML);
+                    document.getElementById("session").innerHTML = fullHTML;
+                    //alert("5");
+            }
+    </script>
+
+
+
+</head>
+<div id= "module">
+		<select name ="modulecode">
+			<option>COA123</option>
+		</select><br>
+		<input type = "radio" name="shortfat" value="true">yes<br>
+		<input type = "radio" name="shortfat" value="false">no<br>
+</div>
+<div id="session">
+</div>
+<input type="button" onclick="addcheckboxes();">
+</html>
