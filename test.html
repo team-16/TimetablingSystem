@@ -5,11 +5,13 @@
 
 .listTest
 {
-	position:absolute;
-	top:50px;
+	position:relative;
+	top:40px;
 	left:10px;
 	height:400px;
 	width:940px;
+	
+	margin-top:10px;
 	
 	border:1px solid #bbb;
 
@@ -19,6 +21,7 @@
 
 
 <script type='text/javascript' src='JS/weeksManipulator.js'></script>
+
 <script type='text/javascript'>
 
 function weeksTest(){
@@ -45,19 +48,34 @@ function weeksTest(){
 }
 
 function testReqClass(){
-	
+	/*
 	requestArray.push(new Request());
 	
 	requestArray[0].id = "0237243";
 	requestArray[0].moduleCode = "Test Module";
+	*/
+	
+	setupSessionData();
+	testFacilites();
+	testRequestList();
 		
 }
 
+function gen(){
+	
+	var listHTML = listViewGenerator(true, true, true, true, true, true, true, true, true);
+	
+	document.getElementById('listContent').innerHTML = listHTML;	
+	
+	alert(listHTML);
+}
 
 </script>
 
 <button type='button' onclick='weeksTest();'>Weeks Test</button>
 <button type='button' onclick='testReqClass();'>Test</button>
+<button type='button' onclick='weekReadableString([true, false, true, true, true, true, false, true, true, true, false, true, false, false, false, false]);'>Test string</button>
+<button type='button' onclick='gen();'>Generate</button>
 
 <div class='listTest'>
 	
@@ -174,18 +192,18 @@ function testReqClass(){
 						<tr>
 						
 							<td>
-								<button type='button' onclick=''>Edit</button>
+								<button type='button' onclick='return false;'>Edit</button>
 							</td>
 						
 							<td>
-								<button type='button' onclick=''>Delete</button>
+								<button type='button' onclick='return false;'>Delete</button>
 							</td>
 						
 						</tr>
 						
 						<tr>
 							<td colspan='2'>
-								<button type='button' onclick=''>Duplicate</button>
+								<button type='button' onclick='return false;'>Duplicate</button>
 							</td>
 						</tr>
 					
@@ -203,27 +221,40 @@ function testReqClass(){
 							Title
 						</td>
 						
-						<td id='titleContentField'>
-							Test Module for System
-						</td>
-						
 						<td id='sessField'>
 							Session Type
-						</td>
-						
-						<td id='sessContentField'>
-							Lecture
 						</td>
 						
 						<td id='parkField'>
 							Park
 						</td>
 						
-						<td id='parkContentField'>
-							Central
+						<td id='roomNumberField'>
+							# of Rooms
 						</td>
 						
 					</tr>
+					
+					<tr>
+						
+						<td id='titleContentField'>
+							Test Module for System
+						</td>
+						
+						<td>
+							Lecture
+						</td>
+						
+						<td>
+							Central
+						</td>
+						
+						<td>
+							1
+						</td>
+						
+					</tr>
+					
 					
 				</table>
 				
@@ -362,6 +393,14 @@ function testReqClass(){
 		</label>
 	
 	</div>
+	
+</div>
+
+
+
+<div id='listContent' class='listTest'>
+
+	
 	
 </div>
 

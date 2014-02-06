@@ -36,7 +36,4 @@
 .accordian input[type=checkbox]:checked~.accordianContent,.accordian input[type=radio]:checked~.accordianContent{
 	max-height:400px;
 	margin-top:5px;
-	transition-property: max-height, margin-top;
-    transition-duration: 1s;
-	transition-timing-function: ease;
 }
