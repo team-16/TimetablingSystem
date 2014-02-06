@@ -15,7 +15,7 @@ function Request () {
 	this.day = 0;
 	this.startPeriod = 0;
 	this.endPeriod = 1;
-	this.weeks = "";
+	this.weeks = [];
 	
 	this.students = 1;
 	this.park = 0;
@@ -41,4 +41,20 @@ function Facility () {
 	this.id = "";
 	this.name = "";
 	
+}
+
+function getFacilityTitles(facilityCodesArray){
+	
+	var titleArray = [];
+	
+	for (var count in facilityCodesArray) {
+				
+		for(var counter = 0; counter < facilitesArray.length; counter++){
+		
+			if (facilityCodesArray[count] == facilitesArray[counter].id) titleArray.push(facilitesArray[counter].name);
+		
+		}
+	}
+	
+	return titleArray;
 }

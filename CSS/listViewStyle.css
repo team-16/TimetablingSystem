@@ -4,6 +4,8 @@
 	
 	text-align:center;
 	vertical-align:middle;
+	text-decoration:underline;
+	
 	border-collapse:collapse;
 }
 
@@ -30,6 +32,7 @@
 
 
 .requestCard {
+	margin-top:20px;
 	background: -moz-linear-gradient(top, #EDEDED 0%, #FAFAFA 20%, #FAFAFA 90%, #D0D0D0 100%);
 }
 
@@ -37,7 +40,7 @@
 	position:relative;
 	height:50px;
 	width: calc(100% - 10px);
-	margin-top:20px;
+	//margin-top:20px;
 	padding:5px;
 }
 
@@ -49,14 +52,14 @@
 	text-align:center;
 	vertical-align:middle;
 	
-	/*
+	
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	*/
+	
 }
 
 .requestHeaderTable td {
@@ -72,9 +75,6 @@
 	text-align:center;
 	vertical-align:middle;
 }
-
-
-
 
 .requestCardContent {
 	background: -moz-linear-gradient(top, #FAFAFA 0%, #FFFFFF 10%, #FFFFFF 100%);
@@ -100,22 +100,21 @@
 }
 
 
-#titleField {
-	width:50px;
+#titleField, #otherReqsField {
+	text-decoration:underline;
 } 
 
-#sessField, #parkField {
-	width:100px;
-}
-
-#sessContentField, #parkContentField {
-	width:80px;
+#sessField, #parkField, #roomNumberField{
+	width:150px;
+	text-decoration:underline;
 }
 
 #roomPrefField	{
 	width:150px;
+	text-decoration:underline;
 } 
 
 #faciField {
-	width:200px;
+	width:300px;
+	text-decoration:underline;
 }

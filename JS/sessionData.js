@@ -100,6 +100,7 @@ function testFacilites() {
 function testRequestList() {
 	
 	var testReq = new Request();
+	var testReq2 = new Request();
 	
 	testReq.department = department;
 	
@@ -114,7 +115,7 @@ function testRequestList() {
 	testReq.day = 2;
 	testReq.startPeriod = 2;
 	testReq.endPeriod = 2;
-	testReq.weeks = "1111111111110000";
+	testReq.weeks = [true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false];
 	
 	testReq.students = 100;
 	testReq.park = 0;
@@ -133,15 +134,39 @@ function testRequestList() {
 	
 	requestArray[0] = testReq;
 	
-	requestArray[1] = testReq;
-		requestArray[1].id = "1235";
-		requestArray[1].day = 3;
-		requestArray[1].startPeriod = 7;
-		requestArray[1].endPeriod = 8;
-		requestArray[1].traditional = true;
-		requestArray[1].sessionType = 2;
-		requestArray[1].rooms = ["N.0.01", "N.0.03"];
-		requestArray[1].facilities = [];
-		requestArray[1].allocatedRooms = ["N.0.01"];
+	
+	testReq2.department = department;
+	
+	testReq2.round = roundID;
+	
+	testReq2.id = "1235";
+	testReq2.moduleCode = "COB123";
+	testReq2.moduleTitle = "Test Module Title";
+	
+	testReq2.priority = false;
+	
+	testReq2.day = 3;
+	testReq2.startPeriod = 7;
+	testReq2.endPeriod = 8;
+	testReq2.weeks = [true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false];
+	
+	testReq2.students = 100;
+	testReq2.park = 0;
+	testReq2.traditional = true;
+	testReq2.sessionType = 2;
+	testReq2.noOfRooms = 1;
+	testReq2.rooms = ["N.0.01", "N.0.03"];
+	
+	testReq2.status = null;
+	
+	testReq2.facilities = [];
+	testReq2.otherReqs = "";
+	
+	testReq2.allocatedRooms = ["N.0.01"];
+	
+	requestArray[1] = testReq2;
+	requestArray[2] = testReq;
+	requestArray[3] = testReq2;
+	
 }
  
