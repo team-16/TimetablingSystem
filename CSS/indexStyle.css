@@ -13,6 +13,21 @@
 	
 	border:1px solid #bbb;
 }
+.mainheader {
+background-color: #330066;
+text-align: center;
+vertical-align: 100px;
+color: white;
+vertical-align: middle;
+font-weight: 700;
+font-size: 250%;
+font-family: Sabon Roman, Sabon, serif;
+}
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;      
+}
 
 /* Menu Styling */
 
