@@ -9,7 +9,7 @@
 #HeaderDiv {
 	position:relative;
 	top:0px;
-	height:200px;
+	height:150px;
 	
 	border:1px solid #bbb;
 }
@@ -22,6 +22,7 @@ vertical-align: middle;
 font-weight: 700;
 font-size: 250%;
 font-family: Sabon Roman, Sabon, serif;
+padding: 5px;
 }
 span {
   display: inline-block;
