@@ -30,7 +30,22 @@
                     //alert("5");
             }
     </script> -->
+<script type="text/javascript">
+	function facilityGenerator () {
+	testFacilities();
+	var parentElement = document.getElementById("session");
+	var fullHTML ="";
+	for (var i = 0; i < facilitiesArray.length; i++) {
+		var newfacility = "<input ";
+			newfacility += "type='checkbox'";
+			newfacility += "id = '" + facilitiesArray[i].id + " ' ";
+			newfacility += "/> " + facilitiesArray[i].name;
+			fullHTML += newfacility;
+	}
+	 document.getElementById("session").innerHTML = fullHTML;
+}
 
+</script>
 <style type="text/css">
 
 .mainDivX {
@@ -84,5 +99,5 @@
 	
 	</div>
 	
-<input type="button" onclick="addcheckboxes();">
+<input type="button" onclick="facilitygenerator();">
 </html>
