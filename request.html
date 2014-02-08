@@ -40,7 +40,6 @@
 }
 
 .divstyle {
-	float:left;
 	width: 200px;
 	height: 200px;
 	margin: 10px ;
@@ -51,6 +50,19 @@
 	
 }
 
+.style1 {
+	position:absolute;
+	top:10px;
+	left:10px;
+	
+}
+
+.style2 {
+	position:absolute;
+	top:10px;
+	left:400px;
+}
+
 </style>
 
 
@@ -58,7 +70,7 @@
 	
 	<div class='mainDivX'>
 		
-		<div id= "module" class="divstyle" align="right">
+		<div id= "module" class="divstyle style1" align="right">
 				<select name ="modulecode">
 					<option>COA123</option>
 				</select><br>
@@ -66,7 +78,7 @@
 				<input type = "radio" name="shortfat" value="false">no<br>
 		</div>
 		
-		<div id="session" class="divstyle">
+		<div id="session" class="divstyle style2">
 		</div>
 	
 	</div>
