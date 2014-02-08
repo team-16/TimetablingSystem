@@ -32,7 +32,7 @@ function listViewGenerator(depShow, weekShow, sessTypeShow, facShow, statusShow,
 		
 		listHTML += "<td id='dayField'>" + daysArray[currentRequest.day] + "</td>\
 					<td id='periodField'>" + startPeriodsArray[currentRequest.startPeriod] + "</td>\
-					<td id='lengthField'>" + endPeriodsArray[currentRequest.endPeriod] + "</td>\
+					<td id='lengthField'>" + ( endPeriodsArray[currentRequest.endPeriod] - startPeriodsArray[currentRequest.startPeriod] )+ "</td>\
 					<td id='weeksField'>" + weekReadableString(currentRequest.weeks) + "</td>\
 					<td id='stuField'>" + currentRequest.students + "</td>\
 					<td id='tradField'>";
@@ -78,13 +78,18 @@ function listViewGenerator(depShow, weekShow, sessTypeShow, facShow, statusShow,
 					<td id='titleField'>Title</td>\
 					<td id='sessField'>Session Type</td>\
 					<td id='parkField'>Park</td>\
-					<td id='roomNumberField'># of Rooms</td>\
-					</tr><tr>";
+					<td id='roomNumberField'># of Rooms</td>";
+					
+		if(statusShow) listHTML += "<td id='statusField'>Status</td>";
+		
+		listHTML += "</tr><tr>";
 		
 		listHTML += "<td id='titleContentField'>" + currentRequest.moduleTitle + "</td>\
 					<td>" + sessionTypesArray[currentRequest.sessionType] + "</td>\
 					<td>" + parksArray[currentRequest.park] + "</td>\
 					<td>" + currentRequest.noOfRooms + "</td>";
+		
+		if(statusShow) listHTML += "<td>" + statusArray[currentRequest.status] + "</td>";
 		
 		listHTML += "</tr></table></br>";
 		

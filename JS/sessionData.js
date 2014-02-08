@@ -124,7 +124,7 @@ function testRequestList() {
 	testReq.noOfRooms = 1;
 	testReq.rooms = ["J.0.01", "J.0.02"];
 	
-	testReq.status = null;
+	testReq.status = 0;
 	
 	testReq.facilities = ["10100", "10101"];
 	testReq.otherReqs = "";
@@ -157,7 +157,7 @@ function testRequestList() {
 	testReq2.noOfRooms = 1;
 	testReq2.rooms = ["N.0.01", "N.0.03"];
 	
-	testReq2.status = null;
+	testReq2.status = 1;
 	
 	testReq2.facilities = [];
 	testReq2.otherReqs = "";

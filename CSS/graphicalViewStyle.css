@@ -1,0 +1,47 @@
+.sectionContainer {
+	border: 1px solid black;
+}
+
+.dayTable {
+	width:810px;
+	//border-collapse:collapse;
+	border-spacing:10px 0px;
+}
+
+.dayTable  input[type=radio] {
+	//display: none;
+}
+
+
+.dayTable td {
+	height:60px;
+	width:80px;
+	margin:5px;
+	border-collapse:collapse;
+	border: 1px solid black;
+}
+
+.radioLabel {
+	display: inline-block;
+	height:100%;
+	width:100%;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.contentTest {
+	display:block;
+	height:0px;
+	width:788px;
+	
+	margin-left:10px;
+	
+	background: lightblue;
+		
+	overflow:hidden;
+	
+	transition-property: height, border-bottom;
+    transition-duration: 1s;
+	transition-timing-function: ease;
+}
+

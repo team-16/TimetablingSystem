@@ -8,7 +8,7 @@
 	position:relative;
 	top:40px;
 	left:10px;
-	height:400px;
+	height:auto;
 	width:940px;
 	
 	margin-top:10px;
@@ -48,12 +48,6 @@ function weeksTest(){
 }
 
 function testReqClass(){
-	/*
-	requestArray.push(new Request());
-	
-	requestArray[0].id = "0237243";
-	requestArray[0].moduleCode = "Test Module";
-	*/
 	
 	setupSessionData();
 	testFacilites();
@@ -127,7 +121,7 @@ function gen(){
 	
 	<div class='accordian'>
 
-		<label class='accordianSection requestCard'>
+		<label class='accordianSection'>
 		
 			<input type='checkbox'>
 				<div class='requestHeaderDiv'>
@@ -233,6 +227,10 @@ function gen(){
 							# of Rooms
 						</td>
 						
+						 <td id='statusField'>
+							Status
+						</td>
+						
 					</tr>
 					
 					<tr>
@@ -251,6 +249,10 @@ function gen(){
 						
 						<td>
 							1
+						</td>
+						
+						<td>
+							Allocated
 						</td>
 						
 					</tr>

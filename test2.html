@@ -1,5 +1,23 @@
 <html>
 
+<style type='text/css'>
+
+.graphicaTest
+{
+	position:relative;
+	top:40px;
+	left:10px;
+	height:auto;
+	width:940px;
+	
+	margin-top:10px;
+	
+	border:1px solid #bbb;
+
+}
+
+</style>
+
 <script type='text/javascript' src='JS/weeksManipulator.js'></script>
 <script type='text/javascript'>
 
@@ -13,9 +31,125 @@ function readReq(){
 }
 
 
+
+
+
 </script>
 
 <button type='button' onclick='readReq();'> Test</button>
+
+<div id='graphicalContent' class='graphicaTest'>
+	
+	<div class='sectionContainer'>
+		
+		<table class='dayTable'>
+			
+			<tr>
+				
+				
+				<td>
+					<label class='radioLabel'>
+						<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "dfsg", 0);'>
+					</label>
+				</td>
+				
+				<td>
+					<label  class='radioLabel'>
+						<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "dfsg2", 0);'>
+					</label>
+				</td>
+				
+				<td>
+					<label  class='radioLabel'>
+						<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);'>
+					</label>
+				</td>
+				
+				<td>
+				4
+				</td>
+				
+				<td colspan='2'>
+				5
+				</td>
+				
+				<td>
+				6
+				</td>
+				
+				<td>
+				7
+				</td>
+				
+				<td>
+				8
+				</td>
+				<!--
+				<td>
+				9
+				</td>
+				-->
+			</tr>
+			<!--
+			<tr>
+				
+				
+				<td>
+				1
+				</td>
+				
+				<td>
+				2
+				</td>
+				
+				<td>
+				3
+				</td>
+				
+				<td>
+				4
+				</td>
+				
+				<td>
+				5
+				</td>
+				
+				<td>
+				6
+				</td>
+				
+				<td>
+				7
+				</td>
+				
+				<td>
+				8
+				</td>
+				
+				<td>
+				9
+				</td>
+				
+			</tr>
+			-->
+		</table>
+		
+		
+		<div class='contentTest' id='dfsg'>
+			Test
+		</div>
+		<div class='contentTest' id='dfsg2'>
+			Test
+		</div>
+		
+	</div>
+	
+	
+	
+	
+</div>
+
+
 
 
 </html>
