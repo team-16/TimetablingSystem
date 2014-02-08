@@ -30,28 +30,46 @@
                     //alert("5");
             }
     </script> -->
-    <style type="text/css">
-        .divstyle {
-            text-align: center;
-            width: 200px;
-            height: 200px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 10px solid #009;
-        }
 
-    </style>
+<style type="text/css">
+
+.mainDivX {
+	position:relative;
+	width:800px;
+	border: 1px solid black;
+}
+
+.divstyle {
+	float:left;
+	width: 200px;
+	height: 200px;
+	margin: 10px ;
+	padding: 20px;
+	
+	text-align: center;
+	border: 10px solid #009;
+	
+}
+
+</style>
 
 
 </head>
-<div id= "module" class="divstyle" align="right">
-		<select name ="modulecode">
-			<option>COA123</option>
-		</select><br>
-		<input type = "radio" name="shortfat" value="true">yes
-		<input type = "radio" name="shortfat" value="false">no<br>
-</div>
-<div id="session" class="divstyle">
-</div>
+	
+	<div class='mainDivX'>
+		
+		<div id= "module" class="divstyle" align="right">
+				<select name ="modulecode">
+					<option>COA123</option>
+				</select><br>
+				<input type = "radio" name="shortfat" value="true">yes
+				<input type = "radio" name="shortfat" value="false">no<br>
+		</div>
+		
+		<div id="session" class="divstyle">
+		</div>
+	
+	</div>
+	
 <input type="button" onclick="addcheckboxes();">
 </html>
