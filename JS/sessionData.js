@@ -15,7 +15,7 @@ var roundSemester = 1;
 
 var roundYear = 1111;
 
-var numberOfWeeks = 1;
+var numberOfWeeks = 15;
 
 
 var adHocRoundID = "";

@@ -40,6 +40,55 @@ function readReq(){
 
 <div id='graphicalContent' class='graphicaTest'>
 	
+	<div class='timetableHeadings'>
+		
+		<table class='timeHeaderTable'>
+			
+			<tr>
+				
+				<td>
+					1
+				</td>
+				
+				<td>
+					2
+				</td>
+				
+				<td>
+					3
+				</td>
+				
+				<td>
+					4
+				</td>
+				
+				<td>
+					5
+				</td>
+				
+				<td>
+					6
+				</td>
+				
+				<td>
+					7
+				</td>
+				
+				<td>
+					8
+				</td>
+				
+				<td>
+					9
+				</td>
+				
+			</tr>
+			
+		</table>
+	
+	</div>
+	
+	
 	<div class='sectionContainer'>
 		
 		<div class='sectionAccordion'>
@@ -51,61 +100,15 @@ function readReq(){
 				
 					<td>
 						<label class='radioLabel'>
-							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "dfsg", 0);'>
+							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent1", 0);'>
+							COB123
 						</label>
-					</td>
-				
-					<td>
-						<label  class='radioLabel'>
-							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "dfsg2", 0);'>
-						</label>
-					</td>
-				
-					<td>
-						<label  class='radioLabel'>
-							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);'>
-						</label>
-					</td>
-				
-					<td>
-					4
 					</td>
 				
 					<td colspan='2'>
-					5
-					</td>
-				
-					<td>
-					6
-					</td>
-				
-					<td>
-					7
-					</td>
-				
-					<td>
-					8
-					</td>
-					<!--
-					<td>
-					9
-					</td>
-					-->
-				</tr>
-				<!--
-				<tr>
-				
-				
-					<td>
-					1
-					</td>
-				
-					<td>
-					2
-					</td>
-				
-					<td>
-					3
+						<label  class='radioLabel'>
+							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent2", 0);'>
+						</label>
 					</td>
 				
 					<td>
@@ -131,16 +134,150 @@ function readReq(){
 					<td>
 					9
 					</td>
-				
+					
 				</tr>
-				-->
+				
 			</table>
 			
 			
-			<div class='contentTest' id='dfsg'>
-				Test
+			<div class='contentTest' id='mondayContent1'>
+				
+				<table class='requestHeaderTable'>
+					
+						<tr>
+						
+							<td id='pField'>
+								Yes
+							</td>
+						
+							<td id='weeksField'>
+								1-2, 4-5, 7-8, 10-11, 13-14, 16
+							</td>
+						
+							<td id='stuField'>
+								120
+							</td>
+						
+							<td id='tradField'>
+								T
+							</td>
+						
+						</tr>
+						
+						<tr>
+						
+							<td colspan='3'>
+								<u>Allocated Room</u>
+							</td>
+							
+							<td colspan='7'>
+								J.0.02
+							</td>
+							
+						</tr>
+						
+					</table>
+					
+					</br>
+					
+					<table class='requestContentsTable'>
+					
+					<tr>
+						
+						<td id='titleField'>
+							Title
+						</td>
+						
+						<td id='sessField'>
+							Session Type
+						</td>
+						
+						<td id='parkField'>
+							Park
+						</td>
+						
+						<td id='roomNumberField'>
+							# of Rooms
+						</td>
+						
+						 <td id='statusField'>
+							Status
+						</td>
+						
+					</tr>
+					
+					<tr>
+						
+						<td id='titleContentField'>
+							Test Module for System
+						</td>
+						
+						<td>
+							Lecture
+						</td>
+						
+						<td>
+							Central
+						</td>
+						
+						<td>
+							1
+						</td>
+						
+						<td>
+							Allocated
+						</td>
+						
+					</tr>
+					
+					
+				</table>
+				
+				</br>
+				
+				<table class='requestContentsTable' style='margin-bottom:5px;'>
+				
+					<tr>
+						
+						<td id='roomPrefField'>
+							Room Preference(s)
+						</td>
+						
+						<td id='faciField'>
+							Facilites
+						</td>
+						
+						<td id='otherReqsField'>
+							Other Requirements
+						</td>
+						
+					</tr>
+					
+					<tr>
+					
+						<td>
+							J.0.01
+							</br>
+							J.0.02
+						</td>
+						
+						<td>
+							list
+						</td>
+						
+						<td>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+							Cras facilisis tellus vitae lacinia porta. 
+							In in nunc turpis. Suspendisse luctus ipsum a nisi consequat porttitor.
+						</td>
+						
+					</tr>
+					
+				</table>
+				
+				
 			</div>
-			<div class='contentTest' id='dfsg2'>
+			<div class='contentTest' id='mondayContent2'>
 				Test
 			</div>
 			

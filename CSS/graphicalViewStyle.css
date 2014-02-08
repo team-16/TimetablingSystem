@@ -1,7 +1,27 @@
+.timetableHeadings {
+	position:relative;
+	left: 100px;
+	height:30px;
+	width:900px;
+}
+
+.timeHeaderTable {
+	height:20px;
+	width:10px;
+	border-spacing:76px 0px;
+	border: 1px solid black;
+}
+
+.timeHeaderTable td {
+	height:20px;
+	width:10px;
+	border: 1px solid black;
+}
+
 .sectionContainer {
 	position:relative;
-	height:70px;;
-	width:900px;
+	height:70px;
+	width:940px;
 	
 	
 	border: 1px solid black;
@@ -10,18 +30,19 @@
 .sectionAccordion {
 	position:absolute;
 	right:0px;
+	height:auto;
 	width:810px;
 }
 
 .dayTable {
 	width:810px;
 	//border-collapse:collapse;
-	border-spacing:10px 0px;
+	border-spacing:5px 0px;
 	border: 1px solid grey;
 }
 
 .dayTable  input[type=radio] {
-	//display: none;
+	display: none;
 }
 
 
@@ -29,7 +50,6 @@
 	height:60px;
 	width:80px;
 	margin:5px;
-	border-collapse:collapse;
 	border: 1px solid black;
 }
 
