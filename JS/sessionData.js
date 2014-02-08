@@ -33,7 +33,10 @@ var adHocYear = 1111;
 var adHocNumberOfWeeks = 1;
 
 
-var facilitesArray = [];
+var facilitiesArray = [];
+
+
+
 
 
 var requestArray = [];
@@ -82,17 +85,17 @@ function setupSessionData(){
 
 function testFacilites() {
 	
-	facilitesArray[0] = new Facility();
-	facilitesArray[0].id = "10100";
-	facilitesArray[0].name = "Whiteboard";
+	facilitiesArray[0] = new Facility();
+	facilitiesArray[0].id = "10100";
+	facilitiesArray[0].name = "Whiteboard";
 	
-	facilitesArray[1] = new Facility();
-	facilitesArray[1].id = "10101";
-	facilitesArray[1].name = "Data Projector";
+	facilitiesArray[1] = new Facility();
+	facilitiesArray[1].id = "10101";
+	facilitiesArray[1].name = "Data Projector";
 	
-	facilitesArray[2] = new Facility();
-	facilitesArray[2].id = "10102";
-	facilitesArray[2].name = "OHP";
+	facilitiesArray[2] = new Facility();
+	facilitiesArray[2].id = "10102";
+	facilitiesArray[2].name = "OHP";
 	
 	
 }
