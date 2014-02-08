@@ -78,12 +78,12 @@ function setupSessionData(){
 
 	adHocNumberOfWeeks = 15;
 	
-	testFacilites();
+	testFacilities();
 	testRequestList();
 	
 }
 
-function testFacilites() {
+function testFacilities() {
 	
 	facilitiesArray[0] = new Facility();
 	facilitiesArray[0].id = "10100";
