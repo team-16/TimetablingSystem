@@ -1,39 +1,33 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-<!--    <script type='text/javascript' src='JS/constants.js'></script>
     <script type="text/javascript">
             function addcheckboxes() {
-     
-     
-                    var parentElement = document.getElementById("session");
-                    var fullHTML = "";
-                    //alert(parksArray.length);
+                    var parentElement = document.getElementById("time");
+                    var fullHTML1 = "";
                     alert("1");
-                    for(var i=0; i < periodsArray.length; i++)
+                    for(var i=0; i < numberOfWeeks; i++)
                     {
                         var newCheckBox = "<input ";
                         newCheckBox += "type='checkbox' ";
-                        alert("2");
-                        newCheckBox += "id='" + i + "' "; // need unique Ids!
-                        newCheckBox += "id='" + periodsArray[i] + "' ";
-                        alert("3");
-                        newCheckBox += "/><br>";
+                        //alert("2");
+                        newCheckBox += "id='" + i + "' ";
+                        //alert("3");
+                        newCheckBox += "/>";
      
-                        fullHTML += newCheckBox;
-                        alert("4");
+                        fullHTML1 += newCheckBox;
+                        //alert("4");
                     }
                    
-                   	alert(fullHTML);
-                    document.getElementById("session").innerHTML = fullHTML;
+                   	alert(fullHTML1);
+                    document.getElementById("time").innerHTML = fullHTML1;
                     //alert("5");
             }
-    </script> -->
+    </script>
 <script type="text/javascript">
 	function facilityGenerator () {
 	testFacilities();
-	var parentElement = document.getElementById("session");
+	var parentElement = document.getElementById("facilities");
 	var fullHTML ="";
 	for (var i = 0; i < facilitiesArray.length; i++) {
 		var newfacility = "<input ";
@@ -42,7 +36,7 @@
 			newfacility += "/> " + facilitiesArray[i].name;
 			fullHTML += newfacility;
 	}
-	 document.getElementById("session").innerHTML = fullHTML;
+	 document.getElementById("facilities").innerHTML = fullHTML;
 }
 
 </script>
@@ -61,7 +55,7 @@
 	padding: 20px;
 	
 	text-align: center;
-	border: 10px solid #009;
+	border: 5px solid #009;
 	
 }
 
@@ -77,6 +71,11 @@
 	top:10px;
 	left:400px;
 }
+.style3 {
+	position: absolute;
+	top: 10px;
+	left: 800px;
+}
 
 </style>
 
@@ -85,7 +84,7 @@
 	
 	<div class='mainDivX'>
 		
-		<div id= "module" class="divstyle style1" align="right">
+		<div id= "module" class="divstyle style1" align="right"> module info <br>
 				<select name ="modulecode">
 					<option>COA123</option>
 				</select><br>
@@ -94,10 +93,10 @@
 								 <input type = "radio" name="shortfat" value="false">no<br>
 		</div>
 		
-		<div id="session" class="divstyle style2">
+		<div id="facilities" class="divstyle style2"> facilities
 		</div>
-	
+		<div id="time" class= "divstyle style3"> time
+		</div>
 	</div>
-	
-<input type="button" onclick="facilityGenerator();">
+<input type="button" onclick="facilityGenerator(); addcheckboxes();">
 </html>
