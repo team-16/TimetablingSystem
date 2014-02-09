@@ -43,7 +43,7 @@ function selectDeselectAll() {
     alert("1");
     var checked = false;
     for (var i = 1; i < numberOfWeeks; i++) {
-     var checkbox = document.getElementById("week " + i);
+    var checkbox = document.getElementById("week " + i);
         if (checked) {
             alert("2");
             checkbox.checked = true;
