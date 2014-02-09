@@ -4,6 +4,19 @@ body {
 	
 }
 
+#HeaderText {
+
+	font-family: 'Alef', sans-serif;
+	float: left;
+	padding-left:30px;
+}
+
+#HeaderLogo {
+
+	float:right;
+	padding-right:30px;
+}
+
 #MainDiv {
 	
 	min-width:960px;
@@ -19,6 +32,7 @@ body {
 	
 	border:1px solid #bbb;
 }
+
 .mainheader {
 
 /* IE10 Consumer Preview */ 
@@ -50,6 +64,7 @@ font-size: 250%;
 font-family: Sabon Roman, Sabon, serif;
 padding: 5px;
 }
+
 span {
   display: inline-block;
   vertical-align: middle;
@@ -103,10 +118,16 @@ span {
 	margin: 0 auto;
 }
 
-.MenuBtn {
+.MenuBtn, .MenuBtn:link, .MenuBtn:visited, .MenuBtn:active {
+	border-bottom: 0px;
 	position:relative;
 	float:left;
 	width:137.14px;
+	
+	font-family: 'Alef', sans-serif;
+	text-decoration: none;
+	
+	color: #FFFFFF;
 	
 	text-align:center;
 	
@@ -118,7 +139,15 @@ span {
     vertical-align: middle;
 	
 	//border:1px solid #bbb;
+	border: none;
 }
+
+.MenuBtn:hover {
+	background: #E0E0E0;
+	text-decoration: none;
+	border: none;
+}
+
 .MenuSpacer {
 	position:relative;
 	float:left;
@@ -134,10 +163,6 @@ span {
     vertical-align: middle;
 	
 	//border:1px solid #bbb;
-}
-
-.MenuBtn:hover {
-	background: #E0E0E0;
 }
 
 
