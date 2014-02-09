@@ -49,6 +49,20 @@ function selectDeselectAll(checkAll) {
         if (checkAll) checkbox.checked = true;
         else checkbox.checked = false;
         
+    }   
+}
+function periodsGenerator() {
+    var parentElement = document.getElementById("time");
+    var fullHTML = "";
+    var oldhtml = parentElement.innerHTML;
+    var newPeriodsList = "<select> ";
+    for (var i = 0; i < startPeriodsArray.length; i++) {
+        newPeriodsList += "<option ";
+        newPeriodsList += "id ='period '" + i +  ">";
+        newPeriodsList += startPeriodsArray[i];
+        newPeriodsList += "</option>";
     }
-    
+     fullHTML +=newPeriodsList
+    fullHTML += "</select>";
+    document.getElementById("time").innerHTML = oldhtml + fullHTML;
 }
