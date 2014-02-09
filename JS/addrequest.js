@@ -9,6 +9,9 @@
                         newCheckBox += "type='checkbox' ";
                         //alert("2");
                         newCheckBox += "id='" + i + "' ";
+                        if (i<=12) {
+                          newCheckBox += "checked";  
+                        };
                         //alert("3");
                         newCheckBox += "/>" + (i);
 
