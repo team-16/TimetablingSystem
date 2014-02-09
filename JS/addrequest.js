@@ -39,7 +39,13 @@ function facilityGenerator() {
     }
      document.getElementById("facilities").innerHTML = oldhtml + fullHTML;
 }
-
+function select12(){
+    alert("1");
+    for (var i = 1; i <= 12; i++) {
+        var checkbox = document.getElementById("week " + i);
+       if(true) checkbox.checked = true;
+    }
+}
 function selectDeselectAll(checkAll) {
 
     for (var i = 1; i <= numberOfWeeks; i++) {
