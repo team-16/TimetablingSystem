@@ -1,3 +1,9 @@
+body {
+	
+	background-color: #363638;
+	
+}
+
 #MainDiv {
 	
 	min-width:960px;
@@ -14,7 +20,27 @@
 	border:1px solid #bbb;
 }
 .mainheader {
-background-color: #330066;
+
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #FFFFFF -100%, #330066 60%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #FFFFFF -100%, #330066 60%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #FFFFFF -100%, #330066 60%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(-1, #FFFFFF), color-stop(0.6, #330066));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #FFFFFF -100%, #330066 60%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #FFFFFF -100%, #330066 60%);
+
+/*background-color: #330066; */
+
 text-align: center;
 vertical-align: 100px;
 color: white;
