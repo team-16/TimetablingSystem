@@ -3,14 +3,14 @@
                     var fullHTML1 = "";
                     var originalhtml = parentElement.innerHTML;
                     alert("1");
-                    for(var i=0; i < numberOfWeeks; i++)
+                    for(var i=1; i < numberOfWeeks; i++)
                     {
                         var newCheckBox = "<input ";
                         newCheckBox += "type='checkbox' ";
                         //alert("2");
                         newCheckBox += "id='" + i + "' ";
                         //alert("3");
-                        newCheckBox += "/>" + (i+1);
+                        newCheckBox += "/>" + (i);
 
                         fullHTML1 += newCheckBox;
 
