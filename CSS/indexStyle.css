@@ -1,6 +1,6 @@
 body {
 	
-	background-color: #363638;
+	/*background-color: #363638;*/
 	
 }
 
@@ -100,6 +100,23 @@ span {
 	position:relative;
 	float:left;
 	width:137.14px;
+	
+	text-align:center;
+	
+	cursor: pointer; 
+	cursor: hand;
+	
+	line-height:40px;
+	display: inline-block;
+    vertical-align: middle;
+	
+	//border:1px solid #bbb;
+}
+
+.MenuSpacer {
+	position:relative;
+	float:left;
+	/*width:137.14px;*/
 	
 	text-align:center;
 	
