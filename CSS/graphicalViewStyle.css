@@ -61,11 +61,12 @@
 	vertical-align:middle;
 }
 
-.contentTest {
+.contentSection {
 	display:block;
 	height:0px;
 	width:788px;
 	
+	padding-left:5px;
 	margin-left:10px;
 	
 	background: lightblue;
@@ -78,6 +79,7 @@
 }
 
 .sectionContentTable {
+	width:780px;
 	border-collapse:collapse;
 }
 

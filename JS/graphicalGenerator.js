@@ -39,7 +39,7 @@ function showContent(btn, contentID, position) {
 			
 			}
 			
-			document.getElementById(contentID).style.height = "100px";
+			document.getElementById(contentID).style.height = "300px";
 			document.getElementById(contentID).style.borderLeft = "1px solid black";
 			document.getElementById(contentID).style.borderRight = "1px solid black";
 			document.getElementById(contentID).style.borderBottom = "1px solid black";
