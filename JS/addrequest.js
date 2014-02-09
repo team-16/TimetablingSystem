@@ -18,6 +18,7 @@
 
                         //alert("4");
                     }
+                    fullHTML1 += "<br>";
                     document.getElementById("time").innerHTML = originalhtml + fullHTML1;
                     //alert("5");
             }
@@ -36,6 +37,7 @@ function facilityGenerator() {
     }
      document.getElementById("facilities").innerHTML = oldhtml + fullHTML;
 }
+
 function select12(){
     for (var i = 1; i <= 12; i++) {
         var checkbox = document.getElementById("week " + i);
@@ -46,6 +48,7 @@ function select12(){
         if (true) checkbox.checked = false;
     }
 }
+
 function selectDeselectAll(checkAll) {
 
     for (var i = 1; i <= numberOfWeeks; i++) {
@@ -57,6 +60,7 @@ function selectDeselectAll(checkAll) {
         
     }   
 }
+
 function periodsGenerator() {
     var parentElement = document.getElementById("time");
     var fullHTML = "";
@@ -68,7 +72,25 @@ function periodsGenerator() {
         newPeriodsList += startPeriodsArray[i] + ", " + startPeriodTimesArray[i];
         newPeriodsList += "</option>";
     }
-     fullHTML +=newPeriodsList;
+    fullHTML += newPeriodsList;
     fullHTML += "</select>";
+    fullHTML += "<br>";
+    document.getElementById("time").innerHTML = oldhtml + fullHTML;
+}
+
+function lengthGenerator() {
+    var parentElement = document.getElementById("time");
+    var fullHTML = "";
+    var oldhtml = parentElement.innerHTML;
+    var newLengthList = "<select>";
+    for (var i = 0; i < endPeriodsArray.length; i++) {
+        newLengthList += "<option ";
+        newLengthList += "id='length '" + i + ">";
+        newLengthList += endPeriodsArray[i] + ", " + endPeriodTimesArray[i];
+        newLengthList += "</option>";
+    }
+    fullHTML += newLengthList;
+    fullHTML += "</select>";
+    fullHTML += "<br>";
     document.getElementById("time").innerHTML = oldhtml + fullHTML;
 }
