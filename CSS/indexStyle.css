@@ -1,6 +1,7 @@
 body {
 	
 	/*background-color: #363638;*/
+	overflow-y: scroll;
 	
 }
 
@@ -29,7 +30,8 @@ body {
 #HeaderDiv {
 	position:relative;
 	top:0px;
-	height:150px;
+	height:120px;
+	min-widht: 960px;
 	
 	border:1px solid #404040;
 }
@@ -61,7 +63,7 @@ vertical-align: 100px;
 color: white;
 vertical-align: middle;
 font-weight: 700;
-font-size: 250%;
+font-size: 200%;
 font-family: Sabon Roman, Sabon, serif;
 padding: 5px;
 text-decoration: none;
