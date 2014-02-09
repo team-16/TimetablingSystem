@@ -71,6 +71,7 @@ span {
 	/*width:960px;*/
 	width: 100%;
     margin: 0 auto;
+	min-width:960px;
 	
 	/* IE10 Consumer Preview */ 
 	background-image: -ms-linear-gradient(top, #FFFFFF -60%, #B4C6CF 100%);
@@ -95,6 +96,11 @@ span {
 	/*background: linear-gradient(#FFFFFF, #EDEDED);
 	
 	border:1px solid #bbb;*/
+}
+
+#MenuBar2 {
+	width:960px;
+	margin: 0 auto;
 }
 
 .MenuBtn {
