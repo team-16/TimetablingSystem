@@ -8,7 +8,7 @@
                         var newCheckBox = "<input ";
                         newCheckBox += "type='checkbox' ";
                         //alert("2");
-                        newCheckBox += "id=' week " + i + "' ";
+                        newCheckBox += "id='week " + i + "' ";
                         if (i<=12) {
                           newCheckBox += "checked";  
                         };
@@ -39,14 +39,20 @@ function facilityGenerator() {
     }
      document.getElementById("facilities").innerHTML = oldhtml + fullHTML;
 }
-function selectDeselectAll() {
+function deselectAll() {
     alert("1");
-    var checked = false;
     for (var i = 1; i < numberOfWeeks; i++) {
     var checkbox = document.getElementById("week " + i);
-        if (checked) {
-            alert("2");
+        if (checkbox.checked = false) {
             checkbox.checked = true;
         }
+    }
+}
+function selectAll(){
+    for (var i = 0; i < numberOfWeeks; i++) {
+        var checkbox1 = document.getElementById("week " + i);
+        if(checkbox1.checked = true){
+           checkbox1.checked = false;
+       }
     }
 }
