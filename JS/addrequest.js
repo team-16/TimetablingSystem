@@ -62,7 +62,7 @@ function periodsGenerator() {
         newPeriodsList += startPeriodsArray[i];
         newPeriodsList += "</option>";
     }
-     fullHTML +=newPeriodsList
+     fullHTML +=newPeriodsList;
     fullHTML += "</select>";
     document.getElementById("time").innerHTML = oldhtml + fullHTML;
 }
