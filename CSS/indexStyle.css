@@ -69,12 +69,31 @@ span {
 #MenuBar {
 	position:absolute;
 	height:40px;
-	width:960px;
+	/*width:960px;*/
+	
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #FFFFFF -60%, #B4C6CF 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #FFFFFF -60%, #B4C6CF 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #FFFFFF -60%, #B4C6CF 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(-0.6, #FFFFFF), color-stop(1, #B4C6CF));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #FFFFFF -60%, #B4C6CF 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #FFFFFF -60%, #B4C6CF 100%);
 	
 	
-	background: linear-gradient(#FFFFFF, #EDEDED);
 	
-	border:1px solid #bbb;
+	/*background: linear-gradient(#FFFFFF, #EDEDED);
+	
+	border:1px solid #bbb;*/
 }
 
 .MenuBtn {
