@@ -9,6 +9,7 @@ body {
 	font-family: 'Alef', sans-serif;
 	float: left;
 	padding-left:30px;
+	text-shadow: 0px 4px 2px rgba(28, 0, 33, 1);
 }
 
 #HeaderLogo {
@@ -21,7 +22,7 @@ body {
 	
 	min-width:960px;
 	
-	border:1px solid #bbb;
+	border:1px solid #404040;
 }
 
 /* Header Styling */
@@ -30,7 +31,7 @@ body {
 	top:0px;
 	height:150px;
 	
-	border:1px solid #bbb;
+	border:1px solid #404040;
 }
 
 .mainheader {
@@ -78,7 +79,7 @@ span {
 	position:relative;
 	height:40px;
 	min-width:960px;
-	border:1px solid #bbb;
+	border:1px solid #404040;
 	text-decoration: none;
 }
 
@@ -109,11 +110,6 @@ span {
 	background-image: linear-gradient(to bottom, #FFFFFF -60%, #B4C6CF 100%);
 	text-decoration: none;
 	
-	
-	
-	/*background: linear-gradient(#FFFFFF, #EDEDED);
-	
-	border:1px solid #bbb;*/
 }
 
 #MenuBar2 {
@@ -131,7 +127,8 @@ span {
 	font-family: 'Alef', sans-serif;
 	text-decoration: none !important;
 	
-	color: #FFFFFF;
+	color: #404040;
+	text-shadow: 0px 2px 2px rgba(150, 150, 150, 1);
 	
 	text-align:center;
 	
@@ -142,13 +139,7 @@ span {
 	display: inline-block;
     vertical-align: middle;
 	
-	//border:1px solid #bbb;
 	border: none;
-}
-
-a.href {
-
-text-decoration: none;
 }
 
 .menuBtnLinks {
@@ -189,7 +180,7 @@ text-decoration: none;
 	height: 1000px;
 	min-width:960px;
 	
-	border:1px solid #bbb;
+	border:1px solid #404040;
 }
 
 
