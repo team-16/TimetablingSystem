@@ -43,6 +43,31 @@ function Facility () {
 	
 }
 
+function Module () {
+	
+	this.code = "";
+	this.title = "";
+	this.shortFat = false;
+	
+}
+
+function Building () {
+	
+	this.code = "";
+	this.name = "";
+	this.park = null;
+	this.rooms = []; //contains array of Room Object/Data type
+	
+}
+
+function Room () {
+	
+	this.code = "";
+	this.type = null;
+	this.capacity = null;
+	
+}
+
 function getFacilityTitles(facilityCodesArray){
 	
 	var titleArray = [];
