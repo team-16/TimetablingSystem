@@ -77,7 +77,16 @@
 	transition-timing-function: ease;
 }
 
-.pSection, .weeksSection, .stuSection, .tradSection {
+.sectionContentTable {
+	border-collapse:collapse;
+}
+
+.sectionContentTable td{
+	border: 1px solid black;
+}
+
+.pSection, .stuSection, .tradSection {
 	
+	width:200px;
 	
 }
