@@ -1,45 +1,7 @@
 <html>
 
 <head>
-    <script type="text/javascript">
-            function addcheckboxes() {
-                    var parentElement = document.getElementById("time");
-                    var fullHTML1 = "";
-                    alert("1");
-                    for(var i=0; i < numberOfWeeks; i++)
-                    {
-                        var newCheckBox = "<input ";
-                        newCheckBox += "type='checkbox' ";
-                        //alert("2");
-                        newCheckBox += "id='" + i + "' ";
-                        //alert("3");
-                        newCheckBox += "/>";
-     
-                        fullHTML1 += newCheckBox;
-                        //alert("4");
-                    }
-                   
-                   	alert(fullHTML1);
-                    document.getElementById("time").innerHTML = fullHTML1;
-                    //alert("5");
-            }
-    </script>
-<script type="text/javascript">
-	function facilityGenerator () {
-	testFacilities();
-	var parentElement = document.getElementById("facilities");
-	var fullHTML ="";
-	for (var i = 0; i < facilitiesArray.length; i++) {
-		var newfacility = "<input ";
-			newfacility += "type='checkbox'";
-			newfacility += "id = '" + facilitiesArray[i].id + " ' ";
-			newfacility += "/> " + facilitiesArray[i].name;
-			fullHTML += newfacility;
-	}
-	 document.getElementById("facilities").innerHTML = fullHTML;
-}
 
-</script>
 <style type="text/css">
 
 .mainDivX {
@@ -90,12 +52,19 @@
 				</select><br>
 
 				Priority Booking:<input type = "radio" name="shortfat" value="true">yes
-								 <input type = "radio" name="shortfat" value="false">no<br>
+								 <input type = "radio" name="shortfat" value="false">no</br>
 		</div>
 		
 		<div id="facilities" class="divstyle style2"> facilities
 		</div>
-		<div id="time" class= "divstyle style3"> time
+		<div id="time" class= "divstyle style3"> time <br>
+			<select>
+				<option>Monday</option>
+				<option>Tuesday</option>
+				<option>Wednesday</option>
+				<option>Thursday</option>
+				<option>Friday</option>
+			</select><br>
 		</div>
 	</div>
 <input type="button" onclick="facilityGenerator(); addcheckboxes();">
