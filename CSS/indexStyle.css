@@ -63,6 +63,7 @@ font-weight: 700;
 font-size: 250%;
 font-family: Sabon Roman, Sabon, serif;
 padding: 5px;
+text-decoration: none;
 }
 
 span {
@@ -78,6 +79,7 @@ span {
 	height:40px;
 	min-width:960px;
 	border:1px solid #bbb;
+	text-decoration: none;
 }
 
 #MenuBar {
@@ -105,6 +107,7 @@ span {
 
 	/* W3C Markup, IE10 Release Preview */ 
 	background-image: linear-gradient(to bottom, #FFFFFF -60%, #B4C6CF 100%);
+	text-decoration: none;
 	
 	
 	
@@ -116,16 +119,17 @@ span {
 #MenuBar2 {
 	width:960px;
 	margin: 0 auto;
+	text-decoration: none;
 }
 
 .MenuBtn, .MenuBtn:link, .MenuBtn:visited, .MenuBtn:active {
-	border-bottom: 0px;
 	position:relative;
 	float:left;
 	width:137.14px;
+	font-weight: bold;
 	
 	font-family: 'Alef', sans-serif;
-	text-decoration: none;
+	text-decoration: none !important;
 	
 	color: #FFFFFF;
 	
@@ -142,10 +146,16 @@ span {
 	border: none;
 }
 
+a.href {
+
+text-decoration: none;
+}
+
 .MenuBtn:hover {
 	background: #E0E0E0;
 	text-decoration: none;
 	border: none;
+	font-weight: bold;
 }
 
 .MenuSpacer {
