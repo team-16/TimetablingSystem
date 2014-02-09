@@ -59,7 +59,7 @@ function periodsGenerator() {
     for (var i = 0; i < startPeriodsArray.length; i++) {
         newPeriodsList += "<option ";
         newPeriodsList += "id ='period '" + i +  ">";
-        newPeriodsList += startPeriodsArray[i];
+        newPeriodsList += startPeriodsArray[i] + ", " + startPeriodTimesArray[i];
         newPeriodsList += "</option>";
     }
      fullHTML +=newPeriodsList;
