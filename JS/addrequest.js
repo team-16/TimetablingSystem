@@ -83,7 +83,7 @@ function lengthGenerator() {
     var fullHTML = "";
     var oldhtml = parentElement.innerHTML;
     var newLengthList = "<select>";
-    for (var i = 1; i <= endPeriodsArray.length; i++) {
+    for (var i = 0; i < endPeriodsArray.length; i++) {
         newLengthList += "<option ";
         newLengthList += "id='length '" + i + ">";
         newLengthList += endPeriodsArray[i];
