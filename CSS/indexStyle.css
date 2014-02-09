@@ -61,8 +61,7 @@ span {
 #MenuDiv {
 	position:relative;
 	height:40px;
-	width:960px;
-	margin:auto;
+	min-width:960px;
 	border:1px solid #bbb;
 }
 
@@ -70,6 +69,8 @@ span {
 	position:absolute;
 	height:40px;
 	/*width:960px;*/
+	width: 100%;
+    margin: 0 auto;
 	
 	/* IE10 Consumer Preview */ 
 	background-image: -ms-linear-gradient(top, #FFFFFF -60%, #B4C6CF 100%);
@@ -112,11 +113,10 @@ span {
 	
 	//border:1px solid #bbb;
 }
-
 .MenuSpacer {
 	position:relative;
 	float:left;
-	/*width:137.14px;*/
+	width:100%;
 	
 	text-align:center;
 	
