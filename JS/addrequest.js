@@ -45,6 +45,10 @@ function select12(){
         var checkbox = document.getElementById("week " + i);
        if(true) checkbox.checked = true;
     }
+    for(var i = 13; i <=15; i++){
+        var checkbox = document.getElementById("week " + i);
+        if (true) checkbox.checked = false;
+    }
 }
 function selectDeselectAll(checkAll) {
 
