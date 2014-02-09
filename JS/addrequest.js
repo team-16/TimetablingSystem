@@ -40,21 +40,21 @@ function facilityGenerator() {
      document.getElementById("facilities").innerHTML = oldhtml + fullHTML;
 }
 
-function selectDeselectAll() {
+function deselectAll() {
     alert("1");
-    var checked = true;
-    
-    //alert(numberOfWeeks);
-    
-    for(var i = 1; i <= numberOfWeeks; i++) {
-		//alert(i);
-		var idW = "week " + i;
-		var checkbox = document.getElementById(idW);
-		alert(i);
-		if (checked) {
-			alert("t2");
-			checkbox.checked = false;
-		}
-		
+    for (var i = 1; i < numberOfWeeks; i++) {
+    var checkbox = document.getElementById("week " + i);
+        if (checkbox.checked = false) {
+            checkbox.checked = true;
+        }
+>>>>>>> 57c678190acb96ff31c8e427231c442977ca04c6
+    }
+}
+function selectAll(){
+    for (var i = 0; i < numberOfWeeks; i++) {
+        var checkbox1 = document.getElementById("week " + i);
+        if(checkbox1.checked = true){
+           checkbox1.checked = false;
+       }
     }
 }
