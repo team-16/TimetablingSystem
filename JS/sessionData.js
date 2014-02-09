@@ -15,7 +15,7 @@ var roundSemester = 1;
 
 var roundYear = 1111;
 
-var numberOfWeeks = 15;
+var numberOfWeeks = null;
 
 
 var adHocRoundID = "";
@@ -61,7 +61,7 @@ function setupSessionData(){
 
 	roundYear = 2014;
 
-	numberOfWeeks = 16;
+	numberOfWeeks = 15;
 
 
 	adHocRoundID = "12344";

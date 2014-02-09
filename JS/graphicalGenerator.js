@@ -1,7 +1,7 @@
 var liveRadio = [];
 
 function radioToggle(btn, position){
-	
+
 	if(liveRadio[position] == btn){
 		
 		btn.parentNode.parentNode.style.borderBottom = "1px solid black";
