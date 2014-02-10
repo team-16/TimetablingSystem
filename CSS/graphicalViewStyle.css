@@ -78,14 +78,25 @@
 	transition-timing-function: ease;
 }
 
+.sectionContentTopTable {
+	width:600px;
+	margin-top:10px;
+	border-collapse:collapse;
+}
+
 .sectionContentTable {
 	width:780px;
 	border-collapse:collapse;
 }
 
-.sectionContentTable td{
+.sectionContentTable td, .sectionContentTopTable td{
 	border: 1px solid black;
 }
+
+.titleCellTop {
+	width:150px;
+	text-decoration:underline;
+} 
 
 .pSection, .stuSection, .tradSection {
 	
