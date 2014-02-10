@@ -85,7 +85,7 @@ function lengthGenerator() {
     var newLengthList = "<select>";
     for (var i = 0; i < endPeriodsArray.length; i++) {
         newLengthList += "<option ";
-        newLengthList += "id='length '" + i + ">";
+        newLengthList += "id='length " + i + "'>";
         newLengthList += endPeriodsArray[i];
         newLengthList += "</option>";
     }
@@ -102,3 +102,21 @@ function lengthGenerator() {
 
          return true;
       }
+function parkPreferenceGenerator(){
+var parentElement = document.getElementById("module");
+var fullHTML ="";
+var oldhtml = parentElement.innerHTML;
+var newParkPreference = "<select>";
+
+    for (var i = 0; i < parksArray.length; i++) {
+        newParkPreference += "<option ";
+        newParkPreference += "id='" + parksArray[i] + "'>";
+        newParkPreference += parksArray[i];
+        newParkPreference += "</option>"; 
+    }
+
+    fullHTML += newParkPreference;
+    fullHTML += "</select>";
+    fullHTML += "<br>";
+    document.getElementById("module").innerHTML = oldhtml + fullHTML;
+}
