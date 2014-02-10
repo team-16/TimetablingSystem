@@ -120,3 +120,7 @@ var newParkPreference = "<select>";
     fullHTML += "<br>";
     document.getElementById("module").innerHTML = oldhtml + fullHTML;
 }
+function plsNoZero() {
+	var input = document.getElementById("students").value.charAt(0);
+	if (input == "0") document.getElementById("students").value = "";
+}
