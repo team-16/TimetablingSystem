@@ -32,14 +32,14 @@ function showContent(btn, contentID, position) {
 			
 			if(liveContent[position] != null) {
 				
-				document.getElementById(liveContent[position]).style.height = "0px";
+				document.getElementById(liveContent[position]).style.maxHeight = "0px";
 				document.getElementById(liveContent[position]).style.borderLeft = "none";
 				document.getElementById(liveContent[position]).style.borderRight = "none";
 				document.getElementById(liveContent[position]).style.borderBottom = "none";
 			
 			}
 			
-			document.getElementById(contentID).style.height = "300px";
+			document.getElementById(contentID).style.maxHeight = "300px";
 			document.getElementById(contentID).style.borderLeft = "1px solid black";
 			document.getElementById(contentID).style.borderRight = "1px solid black";
 			document.getElementById(contentID).style.borderBottom = "1px solid black";
@@ -51,7 +51,7 @@ function showContent(btn, contentID, position) {
 	}
 	else {
 		
-		document.getElementById(contentID).style.height = "0px";
+		document.getElementById(contentID).style.maxHeight = "0px";
 		document.getElementById(contentID).style.borderLeft = "none";
 		document.getElementById(contentID).style.borderRight = "none";
 		document.getElementById(contentID).style.borderBottom = "none";

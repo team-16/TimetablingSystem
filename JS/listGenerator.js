@@ -52,14 +52,14 @@ function listViewGenerator(depShow, weekShow, sessTypeShow, facShow, statusShow,
 			else listHTML += "5";
 		listHTML += "'>";
 		
-		if(allocatedShow) listHTML += htmlStringFormater(currentRequest.allocatedRooms, allocatedShow, false);
-		else listHTML += htmlStringFormater(currentRequest.rooms, allocatedShow, false);
+		if(allocatedShow) listHTML += htmlStringFormater(currentRequest.allocatedRooms, false);
+		else listHTML += htmlStringFormater(currentRequest.rooms, false);
 		
 		listHTML += "</td></tr>";
 						
 		listHTML += "</table>";
 		
-		listHTML += "<table class='btnsTable'><tr>";
+		listHTML += "<table class='listBtnsTable'><tr>";
 		
 		if (editBtnShow) listHTML += "<td><button type='button' onclick='return false;'>Edit</button></td>";
 						
@@ -101,11 +101,11 @@ function listViewGenerator(depShow, weekShow, sessTypeShow, facShow, statusShow,
 					<td id='otherReqsField'>Other Requirements</td>\
 					</tr><tr>";
 		
-		if(allocatedShow) listHTML += "<td>" + htmlStringFormater(currentRequest.rooms, allocatedShow, true) + "</td>";
+		if(allocatedShow) listHTML += "<td>" + htmlStringFormater(currentRequest.rooms, true) + "</td>";
 		
 		var facilityTitles = getFacilityTitles(currentRequest.facilities);
 						
-		listHTML += "<td>" + htmlStringFormater(facilityTitles, allocatedShow, true) + "</td>\
+		listHTML += "<td>" + htmlStringFormater(facilityTitles, true) + "</td>\
 					<td>" + currentRequest.otherReqs + "</td>";
 		
 		listHTML += "</tr></table>";

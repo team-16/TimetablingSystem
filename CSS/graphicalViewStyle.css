@@ -20,7 +20,7 @@
 
 .sectionContainer {
 	position:relative;
-	height:70px;
+	min-height:70px;
 	width:940px;
 	
 	
@@ -63,31 +63,55 @@
 
 .contentSection {
 	display:block;
-	height:0px;
+	max-height:0px;
 	width:788px;
 	
 	padding-left:5px;
+	padding-right:5px;
 	margin-left:10px;
 	
 	background: lightblue;
 		
 	overflow:hidden;
 	
-	transition-property: height, border-bottom;
+	transition-property: max-height, border-bottom;
     transition-duration: 1s;
 	transition-timing-function: ease;
 }
 
+.topContentSection{
+	overflow:hidden;
+}
+
 .sectionContentTopTable {
-	width:600px;
+	float:left;
+	width:630px;
 	margin-top:10px;
+	
+	text-align:center;
+	
 	border-collapse:collapse;
+}
+
+.graphicalBtnsTable {
+	float:right;
+	margin-top:20px;
+	width:140px;
+	border-collapse:collapse;
+	border: 1px solid black;
+	
+	text-align:center;
+	vertical-align:middle;
 }
 
 .sectionContentTable {
 	width:780px;
+	margin-top:10px;
+	text-align:center;
 	border-collapse:collapse;
 }
+
+
 
 .sectionContentTable td, .sectionContentTopTable td{
 	border: 1px solid black;
@@ -98,8 +122,17 @@
 	text-decoration:underline;
 } 
 
-.pSection, .stuSection, .tradSection {
+#pSection, #stuSection, #roomNumberSection, #tradSection, #sessSection, #parkSection {
 	
-	width:200px;
-	
+	//width:100px;
+	text-decoration:underline;
+}
+
+#statusSection {
+	width:120px;
+	text-decoration:underline;
+} 
+
+#faciSection {
+	width:300px;
 }
