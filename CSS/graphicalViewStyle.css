@@ -1,3 +1,10 @@
+/*			Graphical Container				*/
+.graphicalContainer {
+	width:950px;
+}
+
+
+/*			Period/Time Header				*/
 .timetableHeadings {
 	position:relative;
 	left: 100px;
@@ -18,25 +25,36 @@
 	border: 1px solid black;
 }
 
+/*			Main Section for each Day		*/
 .sectionContainer {
 	position:relative;
 	min-height:70px;
-	width:940px;
-	
+	width:950px;
 	
 	border: 1px solid black;
 }
 
+/*			Table and Content Part			*/
 .sectionAccordion {
 	position:absolute;
 	right:0px;
 	height:auto;
-	width:810px;
+	width:auto;
+}
+
+.dayTitle {
+	position: absolute;
+	top: 10px;
+	margin-left:5px;
+	
+	width: 130px;
+	height: 50px;
+	
+	text-align: center;
 }
 
 .dayTable {
-	width:810px;
-	//border-collapse:collapse;
+	width:auto;
 	border-spacing:5px 0px;
 	border: 1px solid grey;
 }
@@ -45,12 +63,16 @@
 	display: none;
 }
 
-
 .dayTable td {
 	height:60px;
 	width:80px;
-	margin:5px;
 	border: 1px solid black;
+}
+
+#hiddenTD {
+	height:0px;
+	width:80px;
+	border: 1px;
 }
 
 .radioLabel {
@@ -64,11 +86,11 @@
 .contentSection {
 	display:block;
 	max-height:0px;
-	width:788px;
+	width: calc(100% - 24px);
 	
 	padding-left:5px;
 	padding-right:5px;
-	margin-left:10px;
+	margin-left:6px;
 	
 	background: lightblue;
 		

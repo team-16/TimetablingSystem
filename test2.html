@@ -38,7 +38,7 @@ function readReq(){
 
 <button type='button' onclick='readReq();'> Test</button>
 
-<div id='graphicalContent' class='graphicaTest'>
+<div class='graphicalContainer'>
 	
 	<div class='timetableHeadings'>
 		
@@ -91,23 +91,68 @@ function readReq(){
 	
 	<div class='sectionContainer'>
 		
+		<div class='dayTitle'>
+			<span style='line-height: 50px;'>Wednesday</span>
+		</div>
+		
 		<div class='sectionAccordion'>
 		
 			<table class='dayTable'>
-			
+				
+				<tr>
+				
+				
+					<td id='hiddenTD'>
+						
+					</td>
+				
+					<td id='hiddenTD'>
+						
+					</td>
+				
+					<td id='hiddenTD'>
+					
+					</td>
+				
+					<td id='hiddenTD'>
+					
+					</td>
+				
+					<td id='hiddenTD'>
+					
+					</td>
+				
+					<td id='hiddenTD'>
+					
+					</td>
+				
+					<td id='hiddenTD'>
+					
+					</td>
+				
+					<td id='hiddenTD'>
+					
+					</td>
+					
+					<td id='hiddenTD'>
+						
+					</td>
+					
+				</tr>
+				
 				<tr>
 				
 				
 					<td>
 						<label class='radioLabel'>
-							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent1", 0);'>
+							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent1", 0);'></input>
 							COB123
 						</label>
 					</td>
 				
 					<td colspan='2'>
 						<label  class='radioLabel'>
-							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent2", 0);'>
+							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent2", 0);'></input>
 						</label>
 					</td>
 				
@@ -138,7 +183,6 @@ function readReq(){
 				</tr>
 				
 			</table>
-			
 			
 			<div class='contentSection' id='mondayContent1'>
 			
