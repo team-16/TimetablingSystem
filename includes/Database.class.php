@@ -7,7 +7,14 @@ class Database {
 	
 	public function __construct(){
 		try {
-			$this->DBH = new PDO('mysql:host=' . $GLOBALS['config']['database']['host'] . ';dbname=' . $GLOBALS['config']['database']['dbname'], $GLOBALS['config']['database']['username'], $GLOBALS['config']['database']['password']);
+			$dbSettings = array(
+				'host'		=> 'localhost',
+				'username'	=> 'team16',
+				'password'	=> 'mpy34awd',
+				'dbname'	=> 'team16'
+			);
+			
+			$this->DBH = new PDO('mysql:host=' . $dbSettings["host"] . ';dbname=' . $dbSettings["dbname"], $dbSettings["username"], $dbSettings["password"]);
 			$this->DBH->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 		}
 		
@@ -38,6 +45,14 @@ class Database {
 	public function resultsZero(){
 		return $this->results[0];
 	}
+	
+	//public function resultsOne(){
+	//	return $this->results[1];
+	//}
+	
+	//public function resultsTwo(){
+	//	return $this->results[2];
+	//}
 }
 
 ?>

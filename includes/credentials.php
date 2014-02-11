@@ -1,13 +1,18 @@
 <?php
 
 function login($deptCode, $password){
+	echo("Logging In...");
 
-	if(checkInfo($deptCode, $password)){
-		$_SESSION['DepartmentCode'] = $deptCode;
-		return true;	
+	if(authenticate($password, $deptCode)){
+
+		$_SESSION['code'] = $deptCode;
+		echo("Logged in correctly");
+		return true;
 	}
-
-	return false;
+	else{
+		echo("NOT logged in correctly 2");
+		return false;
+	}
 }
 
 function logout(){
@@ -15,11 +20,11 @@ function logout(){
 }
 
 function isLoggedIn(){
-	return isset($_SESSION['DepartmentCode']);
+	return isset($_SESSION['code']);
 }
 
 function loggedDept(){
-	return $_SESSION['DepartmentCode'];
+	return $_SESSION['code'];
 }
 
 function changePassword($deptCode, $newPassword){
@@ -28,7 +33,7 @@ function changePassword($deptCode, $newPassword){
 	$salt = generatePwdSalt();
 	$hash = generatePwdHash($newPassword, $salt);
 	
-	if($DB->query("UPDATE Department SET PasswordHash = :hash, PasswordSalt = :salt WHERE DepartmentCode = :department", array(':hash' => $hash,':salt' => $salt,':department' => $deptCode))){
+	if($DB->query("UPDATE department SET hash = :hash, salt = :salt WHERE code = :department", array(':salt' => $salt,':hash' => $hash,':department' => $deptCode))){
 		return true;
 	}
 	
@@ -38,21 +43,21 @@ function changePassword($deptCode, $newPassword){
 }
 
 function generatePwdSalt(){
-	return uniqid();
+	return uniqid(mt_rand(), true);
 }
 
 function generatePwdHash($password, $salt){
-	return hash('sha256', $password . $salt);
+	$passSalt = $password . $salt;
+	return hash('sha256', $passSalt);
 }
 
-function checkInfo($deptCode, $password){
+function authenticate($password, $deptCode){
 	global $DB;
 	
-	if($DB->query("SELECT PasswordHash, PasswordSalt FROM Department WHERE DepartmentCode = :code", array(':code' => $deptCode))){
-		$pwdHash = generatePwdHash($password, $department['PasswordSalt']);
+	if($DB->query("SELECT hash, salt FROM department WHERE code = :code", array(':code' => $deptCode))){
 		$department = $DB->resultsZero();
-			
-		if($pwdHash === $department['PasswordHash']){
+
+		if($department['hash'] === generatePwdHash($password, $department['salt'])){
 			return true;
 		}
 		
