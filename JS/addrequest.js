@@ -124,3 +124,11 @@ function plsNoZero() {
 	var input = document.getElementById("students").value.charAt(0);
 	if (input == "0") document.getElementById("students").value = "";
 }
+function maxValue(){
+    var value = document.getElementById("students").value;
+    if(value > 500) {document.getElementById("students").value =""};
+}
+function okKeyUpCheck(){
+    plsNoZero();    
+    maxValue();
+}
