@@ -37,7 +37,7 @@ function listViewGenerator(depShow, weekShow, sessTypeShow, facShow, statusShow,
 					<td id='stuField'>" + currentRequest.students + "</td>\
 					<td id='tradField'>";
 					
-		if(currentRequest) listHTML+= "T</td>"; 
+		if(currentRequest.traditional) listHTML+= "T</td>"; 
 		else listHTML+= "S</td>";
 						
 		listHTML += "</tr><tr>";

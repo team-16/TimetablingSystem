@@ -65,12 +65,9 @@ function showContent(btn, contentID, position) {
 function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, statusShow, allocatedShow, dupBtnShow, editBtnShow, delBtnShow) {
 	
 	var graphicalHTML = "";
-	
-	alert("Test");
+	var contentIDCounter = 0;
 	
 	for (var dayCounter = 0; dayCounter < daysArray.length; dayCounter++) {
-		
-		alert("Test1");
 		
 		var dayRequests = getDayRequests(dayCounter, requestsArray);
 		
@@ -89,8 +86,6 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 		
 		for (var rowCounter = 0; rowCounter < rowsRequired; rowCounter++) {
 			
-			alert("Test2");
-			
 			graphicalHTML += "<div class='sectionAccordion'><table class='dayTable'><tr>";
 			
 			//Hidden td
@@ -98,7 +93,7 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 			
 			graphicalHTML += "</tr><tr>";
 			
-			alert("Test2.1");
+			var contentRequestsArray = [];
 			
 			for (var periodCounter = 0; periodCounter < startPeriodsArray.length; periodCounter++) {
 								
@@ -113,9 +108,11 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 									<input type='radio' name='";
 					graphicalHTML += daysArray[dayCounter].toLowerCase() + "Radio";
 					graphicalHTML += "' onclick='radioToggle(this, " + dayCounter + ");showContent(this, \"";
-					graphicalHTML +=  daysArray[dayCounter].toLowerCase() + "Content" + "2"; 
+					graphicalHTML +=  daysArray[dayCounter].toLowerCase() + "Content" + (contentIDCounter++); 
 					graphicalHTML +=  "\", " + dayCounter + ");'></input>";
 					graphicalHTML += currentRequest.moduleCode + "</label></td>";
+					
+					contentRequestsArray.push(currentRequest);
 					
 					dayRequests[periodCounter] = dayRequests[periodCounter].splice(0, 1);
 					
@@ -123,293 +120,118 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 					
 				}
 				
-				
 			}
-						
 			
 			graphicalHTML += "</tr></table>";
+			
+			alert("Content: " + contentRequestsArray.length);
+			
+			for (var contentCounter = 0; contentCounter < contentRequestsArray.length; contentCounter++) {
+				
+				var currentContentRequest = contentRequestsArray[contentCounter];
+				
+				var contentIDNumber = contentIDCounter - contentRequestsArray.length + contentCounter;
+				
+				graphicalHTML += "<div class='contentSection' id='" + daysArray[dayCounter].toLowerCase() + "Content" + contentIDNumber + "'>";
+				graphicalHTML += "<div class='topContentSection'>";
+				
+				graphicalHTML += "<table class='sectionContentTopTable'><tr>\
+								<td class='titleCellTop'>Title</td>\
+								<td>" + currentContentRequest.moduleTitle + "</td>";
+							
+				if (allocatedShow) graphicalHTML += "</tr><tr>\
+								<td  class='titleCellTop'>Allocated Room(s)</td>\
+								<td>" + htmlStringFormater(currentContentRequest.allocatedRooms, false) + "</td>";
+				
+				graphicalHTML += "</tr><tr>\
+								<td  class='titleCellTop'>Room Preference(s)</td>\
+								<td>" + htmlStringFormater(currentContentRequest.rooms, false) + "</td>";
+				
+				graphicalHTML += "</tr><tr>\
+								<td  class='titleCellTop'>Weeks</td>\
+								<td>" + weekReadableString(currentContentRequest.weeks) + "</td>";
+				
+				graphicalHTML += "</tr></table>";
+				
+				if (dupBtnShow || editBtnShow || delBtnShow) {
+					
+					graphicalHTML += "<table class='graphicalBtnsTable'>";
+					
+					graphicalHTML += "<tr>";
+					
+					if (editBtnShow) graphicalHTML += "<td><button type='button' onclick='return false;'>Edit</button></td>";
+					
+					if (delBtnShow)	 graphicalHTML += "<td><button type='button' onclick='return false;'>Delete</button></td>";
+					
+					graphicalHTML += "</tr>";
+					
+					if (dupBtnShow) graphicalHTML += "<tr><td colspan='2'>\
+													<button type='button' onclick='return false;'>Duplicate</button>\
+													</td></tr>";
+					
+					graphicalHTML += "</table>";
+				}
+				
+				graphicalHTML += "</div>";
+				
+				graphicalHTML += "<table class='sectionContentTable'><tr>"
+								
+				if (statusShow) graphicalHTML += "<td id='statusSection'>Status</td>";
+				
+				graphicalHTML += "<td id='pSection'>Priority</td>\
+								<td id='stuSection'># of Students</td>\
+								<td id='roomNumberSection'># of Rooms</td>\
+								<td id='tradSection'>Traditional</td>\
+								<td id='sessSection'>Session Type</td>\
+								<td id='parkSection'>Park</td>";
+					
+				graphicalHTML += "</tr><tr>";
+						
+				if (statusShow) graphicalHTML += "<td>" + statusArray[currentContentRequest.status] + "</td>"
+						
+				graphicalHTML += "<td>";
+				
+				if(currentContentRequest.priority) graphicalHTML += "Yes";
+				else graphicalHTML += "No";
+				
+				graphicalHTML += "</td>\
+								<td>" + currentContentRequest.students + "</td>\
+								<td>" + currentContentRequest.noOfRooms + "</td>\
+								<td>";
+				
+				if(currentContentRequest.traditional) graphicalHTML+= "T</td>"; 
+				else graphicalHTML+= "S</td>";
+				
+				graphicalHTML += "</td>\
+								<td>" + sessionTypesArray[currentContentRequest.sessionType] + "</td>\
+								<td>" + parksArray[currentContentRequest.park] + "</td>";
+				
+				graphicalHTML += "</tr></table>";
+				
+				graphicalHTML += "<table class='sectionContentTable' style='margin-bottom:5px;'>\
+								<tr><td id='faciSection'>Facilites</td>\
+								<td>Other Requirements</td>";
+				
+				graphicalHTML += "</tr><tr>\
+								<td>" + htmlStringFormater(currentContentRequest.facilities, true) + "</td>\
+								<td>" + currentContentRequest.otherReqs + "</td>";
+				
+				graphicalHTML += "</tr></table>";
+				
+				graphicalHTML += "</div>";
+				
+			}
 			
 			graphicalHTML += "</div>";
 			
 		}
 		
-		/*
-		
-		
-		
-		
-		
-		
-		
-		
-		for (var periodCounter = 0; periodCounter < startPeriodsArray; periodCounter++) {
-		
-		
-			
-			for (var requestCounter = 0; requestCounter < dayRequests.length; requestCounter++) {
-			
-				if (dayRequests[requestCounter].startPeriod == periodCounter){
-				
-				
-				
-				}
-			
-			
-			}
-		
-		
-			if (dayRequests){
-		
-			}
-			
-			graphicalHTML += "<td></td>";
-			
-			
-		}
-		
-		graphicalHTML += "</tr></table>";
-		//for (var requestCounter = 0; requestCounter < dayRequests.length; requestCounter++) {
-	
-		//}
-		
-		*/
-		
 		graphicalHTML += "</div>";
+		
 	}
 	
-	/*		
-					<td>
-						<label class='radioLabel'>
-							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent1", 0);'></input>
-							COB123
-						</label>
-					</td>
-				
-					<td colspan='2'>
-						<label  class='radioLabel'>
-							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent2", 0);'></input>
-						</label>
-					</td>
-				
-					<td>
-					4
-					</td>
-				
-					<td>
-					5
-					</td>
-				
-					<td>
-					6
-					</td>
-				
-					<td>
-					7
-					</td>
-				
-					<td>
-					8
-					</td>
-				
-					<td>
-					9
-					</td>
-					
-				</tr>
-				
-			</table>
-			
-			<div class='contentSection' id='mondayContent1'>
-			
-				<div class='topContentSection'>
-				
-					<table class='sectionContentTopTable'>
-						
-							<tr>
-						
-								<td class='titleCellTop'>
-									Title
-								</td>
-						
-								<td>
-									Test Module Title
-								</td>
-							
-							</tr>
-						
-							<tr>
-						
-								<td  class='titleCellTop'>
-									Allocated Room(s)
-								</td>
-						
-								<td>
-									J.0.01
-								</td>
-							
-							</tr>
-						
-							<tr>
-						
-								<td  class='titleCellTop'>
-									Room Preference(s)
-								</td>
-						
-								<td>
-									J.0.01, J.0.02
-								</td>
-							
-							</tr>
-						
-							<tr>
-						
-								<td  class='titleCellTop'>
-									Weeks
-								</td>
-						
-								<td>
-									1-2, 4-5, 7-8, 10-11, 13-14, 16
-								</td>
-							
-							</tr>
-						
-					</table>
-				
-					<table class='graphicalBtnsTable'>
-					
-						<tr>
-					
-							<td>
-								<button type='button' onclick='return false;'>Edit</button>
-							</td>
-					
-							<td>
-								<button type='button' onclick='return false;'>Delete</button>
-							</td>
-					
-						</tr>
-					
-						<tr>
-							<td colspan='2'>
-								<button type='button' onclick='return false;'>Duplicate</button>
-							</td>
-						</tr>
-					
-					</table>
-					
-				</div>
-				
-				<table class='sectionContentTable'>
-					
-					<tr>
-						
-						<td id='statusSection'>
-							Status
-						</td>
-						
-						<td id='pSection'>
-							Priority
-						</td>
-					
-						<td id='stuSection'>
-							# of Students
-						</td>
-						
-						<td id='roomNumberSection'>
-							# of Rooms
-						</td>
-						
-						<td id='tradSection'>
-							Traditional
-						</td>
-						
-						<td id='sessSection'>
-							Session Type
-						</td>
-					
-						<td id='parkSection'>
-							Park
-						</td>
-					
-					</tr>
-					
-					
-					<tr>
-						
-						<td>
-							Allocated
-						</td>
-						
-						<td>
-							Yes
-						</td>
-					
-						<td>
-							120
-						</td>
-						
-						<td>
-							1
-						</td>
-					
-						<td>
-							T
-						</td>
-						
-						<td>
-							Lecture
-						</td>
-					
-						<td>
-							Central
-						</td>
-						
-					</tr>
-						
-				</table>
-												
-				<table class='sectionContentTable' style='margin-bottom:5px;'>
-				
-					<tr>
-						
-						<td id='faciSection'>
-							Facilites
-						</td>
-						
-						<td>
-							Other Requirements
-						</td>
-						
-					</tr>
-					
-					<tr>
-						
-						<td>
-							list
-						</td>
-						
-						<td>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-							Cras facilisis tellus vitae lacinia porta. 
-							In in nunc turpis. Suspendisse luctus ipsum a nisi consequat porttitor.
-						</td>
-						
-					</tr>
-					
-				</table>
-				
-				
-			</div>
-			
-			<div class='contentSection' id='mondayContent2'>
-				Test
-			</div>
-			
-		</div>
-		
-	*/
-	
 	return graphicalHTML;
+	
 }
 
 function getDayRequests (currentDay, reqArray) {
