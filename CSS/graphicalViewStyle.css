@@ -1,6 +1,7 @@
 /*			Graphical Container				*/
 .graphicalContainer {
 	width:950px;
+	margin-left:5px;
 }
 
 
@@ -28,7 +29,9 @@
 /*			Main Section for each Day		*/
 .sectionContainer {
 	position:relative;
-	min-height:70px;
+	overflow:hidden;
+	
+	height:auto;
 	width:950px;
 	
 	border: 1px solid black;
@@ -36,10 +39,15 @@
 
 /*			Table and Content Part			*/
 .sectionAccordion {
-	position:absolute;
+	float:right;
 	right:0px;
+	
 	height:auto;
 	width:auto;
+	margin-top:5px;
+	margin-bottom:5px;
+	
+	border: 1px solid grey;
 }
 
 .dayTitle {
@@ -55,8 +63,10 @@
 
 .dayTable {
 	width:auto;
+	
+	empty-cells: show;
+	
 	border-spacing:5px 0px;
-	border: 1px solid grey;
 }
 
 .dayTable  input[type=radio] {

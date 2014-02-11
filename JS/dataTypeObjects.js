@@ -31,8 +31,6 @@ function Request () {
 	
 	this.allocatedRooms = [];
 	
-
-
 }
 
 

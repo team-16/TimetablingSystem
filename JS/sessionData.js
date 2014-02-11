@@ -149,8 +149,8 @@ function testRequestList() {
 	testReq2.priority = false;
 	
 	testReq2.day = 3;
-	testReq2.startPeriod = 7;
-	testReq2.endPeriod = 8;
+	testReq2.startPeriod = 4;
+	testReq2.endPeriod = 6;
 	testReq2.weeks = [true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false];
 	
 	testReq2.students = 100;
