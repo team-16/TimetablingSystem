@@ -50,10 +50,14 @@
 				<select name ="modulecode">
 					<option>COA123</option>
 				</select><br>
+				Traditional/Seminar<select>
+					<option id="T">T</option>
+					<option id="S">S</option>
+				</select><br>
 
 				Priority Booking:<input type = "radio" name="shortfat" value="true">yes
 								 <input type = "radio" name="shortfat" value="false">no</br>
-				No. of Students: <input type = "text" onkeypress="return isNumberKey(event);" onkeyup= "plsNoZero();" id="students"> <br>
+				No. of Students: <input type = "text" onkeypress="return isNumberKey(event);" onkeyup= "okKeyUpCheck();" id="students" /> <br>
 		</div>
 		
 		<div id="facilities" class="divstyle style2"> facilities <br>
