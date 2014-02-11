@@ -122,11 +122,11 @@ var newParkPreference = "<select>";
 }
 function plsNoZero() {
 	var input = document.getElementById("students").value.charAt(0);
-	if (input == "0") document.getElementById("students").value = "";
+	if (input == "0") document.getElementById("students").value = "1";
 }
 function maxValue(){
     var value = document.getElementById("students").value;
-    if(value > 500) {document.getElementById("students").value =""};
+    if(value > 500) {document.getElementById("students").value ="1"};
 }
 function okKeyUpCheck(){
     plsNoZero();    
