@@ -202,7 +202,7 @@ background-image: linear-gradient(to bottom, #FFFFFF -200%, #431D4F 100%);
 	
 	position: relative;
 	
-	height: 1000px;
+	min-height: 1000px;
 	min-width:960px;
 	
 	border:1px solid #404040;

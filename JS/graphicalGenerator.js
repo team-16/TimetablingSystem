@@ -68,14 +68,9 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 	var contentIDCounter = 0;
 	
 	for (var dayCounter = 0; dayCounter < daysArray.length; dayCounter++) {
-		
+				
 		var dayRequests = getDayRequests(dayCounter, requestsArray);
 		
-		var rowsRequired = 1;
-		
-		for (var arraySet in dayRequests) if (arraySet.length > rowsRequired) rowsRequired = arraySet.length;
-		
-		alert(rowsRequired);
 		
 		graphicalHTML += "<div class='sectionContainer'>";
 		
@@ -83,8 +78,11 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 		graphicalHTML += daysArray[dayCounter];
 		graphicalHTML += "</span></div>";
 		
+		var rowFlag = false;
 		
-		for (var rowCounter = 0; rowCounter < rowsRequired; rowCounter++) {
+		do {
+			
+			rowFlag = false;
 			
 			graphicalHTML += "<div class='sectionAccordion'><table class='dayTable'><tr>";
 			
@@ -96,7 +94,7 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 			var contentRequestsArray = [];
 			
 			for (var periodCounter = 0; periodCounter < startPeriodsArray.length; periodCounter++) {
-								
+									
 				if(dayRequests[periodCounter].length == 0) graphicalHTML += "<td></td>";
 				else {
 					
@@ -114,7 +112,7 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 					
 					contentRequestsArray.push(currentRequest);
 					
-					dayRequests[periodCounter] = dayRequests[periodCounter].splice(0, 1);
+					dayRequests[periodCounter] = (dayRequests[periodCounter]).splice(1);
 					
 					periodCounter += requestLength - 1;
 					
@@ -124,7 +122,6 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 			
 			graphicalHTML += "</tr></table>";
 			
-			alert("Content: " + contentRequestsArray.length);
 			
 			for (var contentCounter = 0; contentCounter < contentRequestsArray.length; contentCounter++) {
 				
@@ -224,7 +221,9 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 			
 			graphicalHTML += "</div>";
 			
-		}
+			for (var counter = 0; counter < dayRequests.length; counter++) if (dayRequests[counter].length != 0) rowFlag = true;
+			
+		} while (rowFlag);
 		
 		graphicalHTML += "</div>";
 		
