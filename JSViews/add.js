@@ -132,7 +132,7 @@ function maxValue(){
     var value = document.getElementById("studentsInput").value;
     if(value > 500) {document.getElementById("studentsInput").value ="1"};
 }
-function okKeyUpCheck(){
+function onKeyUpCheck(){
     plsNoZero();    
     maxValue();
 }
