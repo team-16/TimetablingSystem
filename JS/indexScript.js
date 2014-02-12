@@ -5,7 +5,7 @@ $(document).ready(function() {
 	$('#ContentDiv').load('home.html');	
 	
 	/* Handels on-click of menu buttons - block coding */
-	$('#MenuBar a').click(function(){
+	$('nav a').click(function(){
 		
 		/* Getting the linked page */
 		var toLoad = $(this).attr('href');		
