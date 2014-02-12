@@ -9,9 +9,9 @@ include('PHP/init.php');
 <script type='text/javascript' src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'></script>
 <script type="text/javascript">
 function testfunc(){
-	var test1 = JSON.stringify(<?php (getModules(NULL)); ?>);
-	document.getElementById('myResults').innerHTML = test1;
-	//alert("<?php echo(getModules(NULL)); ?>");
+	var test1 = JSON.stringify(<?php include('PHP/init.php'); echo(getModules("CO")); ?>);
+	alert(test1);
+	//document.getElementById('myResults').innerHTML = test1;
 }
 </script>
 
@@ -25,7 +25,7 @@ function testfunc(){
 //$results = getModules(NULL);
 //$results = "topkek";
 
-echo('<button type="button" onclick="testfunc();">Click Me!</button>');
+echo('<button type="button" onclick="testfunc();">Get PHP function return value and alert</button>');
  
 echo("<br /><br />");
 
