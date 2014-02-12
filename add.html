@@ -8,92 +8,142 @@
 
 	<body>
 		
-		<div id="wrapper">
+		<div id="wrapperAdd">
 
-		<p>content</p>
+		<button id="HELLOJAVASCRIPT" onclick="checkboxGenerator(); facilityGenerator(); parkGenerator();" style="width:100%;height:50px;">LOL INTERNET</button><!-- the location of this button is irrelevant -->
 			<form id="add">
-				<fieldset>
-					<legend>Module</legend>
-						<div id="moduleDetails" class="formDiv">
-							<select id="moduleCodeSelect"> <!-- module code -->
+
+				<div class="containerDiv">
+					<div id="moduleDetails" class="moduleDetailsDiv">
+						<fieldset>
+							<legend>Module</legend>
+							<select id="moduleCodeSelect" class="left1"> <!-- module code -->
 								<option><!-- options here --></option>
 							</select>
-							<output id="moduleTitleOutput">
+							<output id="moduleTitleOutput" class="right1">
+								<p>Legal and Professional Issues in Computing</p>
 								<!-- module title -->
 							</output>
-						</div>
-					</fieldset>
-				</fieldset>
-				
-				<fieldset> <!-- Time slot box -->
-					<legend>Time slot</legend>
-					<div id="timeDetails" class="formDiv">
-						<select id="daySelect">
-							<option>Monday</option>
-							<option>Tuesday</option>
-							<option>Wednesday</option>
-							<option>Thursday</option>
-							<option>Friday</option>
-						</select>
+						</fieldset>
+					</div>
 
-						<div id="weeksCheckbox">
-							<!-- Weeks checkboxes to go here -->
-						</div>
-
-						<button id="HELLOJAVASCRIPT" onclick="addcheckboxes(); generateSlider();"></button><!-- the location of this button is irrelevant -->
-
-						<div id="periodAndLengthWrapper">
-							<select id="periodSelect">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-								<option>6</option>
-								<option>7</option>
-								<option>8</option>
-								<option>9</option>
-								<option>404</option>
-							</select>
-							<select id="lengthSelect">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-								<option>6</option>
-								<option>7</option>
-								<option>8</option>
-								<option>9</option>
-							</select>
-							<div id="slider-range">
-								<!-- Slider generated here -->
+					<div id="timeDetails" class="timeDetailsDiv">	<!-- Time slot box -->
+						<fieldset> 
+							<legend>Time slot</legend>
+							<div class="leftTime">
+								<h4>Day:</h4>
 							</div>
-						</div>
-					</div>
-					</fieldset> <!-- End of time slot box -->
+							<div class="right1">
+								<select id="daySelect">
+									<option>Monday</option>
+									<option>Tuesday</option>
+									<option>Wednesday</option>
+									<option>Thursday</option>
+									<option>Friday</option>
+								</select>
+							</div>
+							<div class="formDiv">
+								<div class="leftTime">
+									<h4>Weeks:</h4>
+								</div>
+								<div id="weeksDiv" class="right1">
+								</div>
+							</div>
 
-				<fieldset> <!-- Room details box -->
-					<legend>Room</legend>
-					<div id="roomDetails" class="formDiv">
-						<input id="studentsInput">
-						<select id="traditionalSeminarSelect">
-							<option>Traditional</option>
-							<option>Seminar</option>
-						</select>
-						<select id="parkSelect">
+							<div id="weeksCheckbox">
+								<!-- Weeks checkboxes to go here -->
+							</div>
+
+							<div id="periodAndLengthWrapper">
+								<div class="formDiv">
+									<div class="leftTime">
+										<h4>Period:</h4>
+									</div>
+									<div class="right1">
+										<select id="periodSelect">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+											<option>6</option>
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+											<option>404</option>
+										</select>
+									</div>
+								</div>
+								<div class="formDiv">
+									<div class="leftTime">
+										<h4>Length:</h4>
+									</div>
+									<div class="right1">
+										<select id="lengthSelect">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+											<option>6</option>
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+										</select>
+									</div>
+								</div>
+								<div id="slider-range">
+									<!-- Slider generated here -->
+								</div>
 							
-						</select>
-						<!-- content -->
-					</div>			
-				</fieldset>	<!-- End of room details box -->
-
-				<fieldset>	<!-- Features box -->
-					<legend>Features</legend>
-					<div id="roomFeatures" class="formDiv">
-						<!-- content -->
+							</div>
+						</fieldset> <!-- End of time slot box -->
 					</div>
-				</fieldset>	<!-- End of features box -->
+				</div>	<!-- End of container -->
+
+				<div class="containerDiv">
+					<div id="roomDetails" class="roomDiv">
+						<fieldset> <!-- Room details box -->
+							<legend>Room</legend>
+							<div class="formItem">
+								<div class="leftRoom">
+									<h4>No. of students:</h4>
+								</div>
+								<div class="right1">
+									 <input id="studentsInput">
+								</div>
+							</div>
+							
+							<div class="formItem">
+								<div class="leftRoom">
+									<h4>Session type:</h4>
+								</div>
+								<div class="right1">
+									<select id="traditionalSeminarSelect">
+										<option>Traditional</option>
+										<option>Seminar</option>
+								  	</select>
+								</div>
+							</div>
+
+							<div class="formItem">
+								<div class="leftRoom">
+									<h4>Park preference:</h4>
+								</div>
+								<div class="right1">
+									<select id="parkSelect"></select>
+								</div>
+							</div>			
+						</fieldset>	
+					</div>	<!-- End of room details box -->
+					<div id="roomFacilities" class="facilitiesDiv">
+						<fieldset>	<!-- Features box -->
+							<legend>Features</legend>
+							<!-- content -->
+						</fieldset>	<!-- End of features box -->
+					</div>
+				</div> <!-- End of container -->
+
 			</form>
 
 
@@ -129,11 +179,11 @@
 							<input type="button" onclick="select12();" value = "select 12"> <br>
 						</div>
 
-					<input type="button" onclick="facilityGenerator(); addcheckboxes(); periodsGenerator();
+					<input type="button" onclick="facilityGenerator(); checkboxGenerator(); periodsGenerator();
 						lengthGenerator(); parkPreferenceGenerator();">
 
 					-->
-
+<p>placeholder</p>
 		</div> <!-- end of wrapper -->
 
 			<script src='JSViews/add.js'></script>

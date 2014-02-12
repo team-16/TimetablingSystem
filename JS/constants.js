@@ -1,4 +1,4 @@
-const parksArray = ["East", "Central", "West"];
+const parksArray = ["Central", "East", "West"];
 
 const sessionTypesArray = ["Lecture", "Tutorial", "Lab"];
 
