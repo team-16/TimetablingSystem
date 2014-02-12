@@ -25,7 +25,8 @@
 <script type='text/javascript'>
 
 function testX(){
-	getModules();
+	var results = "<?php echo getModules(NULL); ?>";
+	getModules(results);
 }
 
 

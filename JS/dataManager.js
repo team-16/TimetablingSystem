@@ -1,8 +1,8 @@
-function getModules() {
+function getModules(results) {
 	
 	alert("something");
 	 
-	var results = $.parseJSON(<php echo getModules(NULL); ?>);
+	//var results = $.parseJSON("<php echo getModules(NULL); ?>");
 	
 	alert("something2");
 	
