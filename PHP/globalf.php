@@ -3,7 +3,7 @@
 function redirect($page){
 
 	global $config;
-	header('Location: ' . 'http://co-project.lboro.ac.uk/team16/TimetablingSystem/' . $page);
+	header('Location: ' . 'http://co-project.lboro.ac.uk/team16/TimetablingSystem/' . $page . '?' . SID);
 	
 	exit();
 }

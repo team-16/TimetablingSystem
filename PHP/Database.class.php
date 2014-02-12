@@ -46,6 +46,10 @@ class Database {
 		return json_encode($this->results[0]);
 	}
 	
+	public function resultsZeroN(){
+		return $this->results[0];
+	}
+	
 	//public function resultsOne(){
 	//	return $this->results[1];
 	//}

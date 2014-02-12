@@ -2,6 +2,8 @@
 
 include('PHP/init.php');
 
+	var_dump($_SESSION);
+
 	if(!isLoggedIn()){
 		echo("NOT logged in!");
 	}
