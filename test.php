@@ -6,6 +6,10 @@ $results = getBuilding();
 
 print_r($results);
 
+echo("<br /><br />");
+
+print_r(json_encode($results));
+
 //echo("// Testing Login Script...  ");
 
 //change this to test login. this should fail if you change the password.
