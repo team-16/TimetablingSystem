@@ -29,9 +29,7 @@ function testX() {
 	
 	alert("2");
 	
-	alert( typeof res);
-	//alert( JSON.parse(res));
-	//alert( res[0][0].code);
+	alert( JSON.stringify(res));
 	
 }
 
