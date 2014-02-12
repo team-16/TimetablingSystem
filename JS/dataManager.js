@@ -1,11 +1,14 @@
 function getModules() {
 	
 	alert("something");
+	 
+	var results = $.parseJSON(<php echo getModules(NULL); ?>);
 	
-	var results = json.parse("<php echo getModules(NULL); ?>");
+	alert("something2");
 	
 	alert(JSON.stringify(results));
 	
+	alert("something3");
 	
 	/*
 	$.get("init.php", {}, function(resultsX){
