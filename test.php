@@ -1,6 +1,6 @@
 <?php
 
-include('init.php');
+include('PHP/init.php');
 
 //$results = getBuilding();
 
