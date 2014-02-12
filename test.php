@@ -1,15 +1,17 @@
 <html>
+
 <?php
 
 include('PHP/init.php');
 
 ?>
+
 <head>
 <script type='text/javascript' src='jQuery&UI/jQuery.js'></script>
 <script type='text/javascript' src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'></script>
 <script type="text/javascript">
 function testfunc(){
-	var test1 = JSON.stringify(<?php include('PHP/init.php'); echo(getModules("CO")); ?>);
+	var test1 = JSON.stringify(<?php echo(getModules("CO")); ?>);
 	alert(test1);
 	//document.getElementById('myResults').innerHTML = test1;
 }
@@ -17,17 +19,16 @@ function testfunc(){
 
 </head>
 <body>
-	<div id="myResults"></div>
-</body>
+	<button type="button" onclick="testfunc();">Get PHP function return value and alert</button>
+	<br /><br />
+	<!--<div id="myResults"></div>
+	<br /><br />-->
+
 
 <?php
 
 //$results = getModules(NULL);
 //$results = "topkek";
-
-echo('<button type="button" onclick="testfunc();">Get PHP function return value and alert</button>');
- 
-echo("<br /><br />");
 
 //print_r($results);
 
@@ -70,3 +71,6 @@ echo("<br /><br />");
 phpinfo();
 
 ?>
+
+</body>
+</html>
