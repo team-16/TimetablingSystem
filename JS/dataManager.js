@@ -2,15 +2,21 @@ function getModules() {
 	
 	alert("something");
 	
-	$.get("init.php echo getModules('CO')", {}, function(results){
+	var results = json.parse("<php echo getModules(NULL); ?>");
+	
+	alert(JSON.stringify(results));
+	
+	
+	/*
+	$.get("init.php", {}, function(resultsX){
 			
 		alert("something2");
 		//Makes results global so that other functions can access them
 		//rankedArray = results;
 		
-		alert(JSON.stringify(results));
+		alert(JSON.stringify(resultsX));
 			
 	}, 'json');
-	
+	*/
 	
 }
