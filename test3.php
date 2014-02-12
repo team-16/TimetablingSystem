@@ -24,9 +24,15 @@
 
 function testX() {
 	alert("1");
-	//var results = "<?php echo getModules(NULL); ?>";
+	
+	var res = <?php include("PHP/init.php"); echo getModules("CO"); ?> ;
+	
 	alert("2");
-	//getModules(results);
+	
+	alert( typeof res);
+	//alert( JSON.parse(res));
+	//alert( res[0][0].code);
+	
 }
 
 
