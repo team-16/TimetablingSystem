@@ -1,6 +1,4 @@
 .accordian{
-	//margin:5px auto;
-	//width:100%;
 	overflow:hidden;
 }
 
@@ -33,7 +31,7 @@
 	display:none; /*Check in Opera and IE*/
 }
 
-.accordian input[type=checkbox]:checked~.accordianContent,.accordian input[type=radio]:checked~.accordianContent{
+.accordian input[type=checkbox]:checked~.accordianContent{
 	max-height:400px;
 	margin-top:5px;
 }

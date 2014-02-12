@@ -1,91 +1,72 @@
+<!DOCTYPE HTML>
 <html>
 
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="CSS/indexStyle.css">
+		<link rel="stylesheet" type="text/css" href="CSS/accordion.css">
+		<link rel="stylesheet" type="text/css" href="CSS/listViewStyle.css">
+		<link rel="stylesheet" type="text/css" href="CSS/graphicalViewStyle.css">
+	</head>
 
-<link rel="stylesheet" type="text/css" href="CSS/indexStyle.css">
-<link rel="stylesheet" type="text/css" href="CSS/accordion.css">
-<link rel="stylesheet" type="text/css" href="CSS/listViewStyle.css">
-<link rel="stylesheet" type="text/css" href="CSS/graphicalViewStyle.css">
+	<body>
 
-<script type='text/javascript' src='JS/constants.js'></script>
-<script type='text/javascript' src='JS/globalFunctions.js'></script>
-<script type='text/javascript' src='JS/sessionData.js'></script>
-<script type='text/javascript' src='JS/dataTypeObjects.js'></script>
+		<div id='wrapper'> <!-- Replaces the body tag -->
 
-<script type='text/javascript' src='JS/weeksManipulator.js'></script>
-
-<script type='text/javascript' src='JS/listGenerator.js'></script>
-
-
-
-<body>
-	
-	<div id='MainDiv'> <!-- A div containing everything (rather than using body tag to manage everything) -->
-		
-		<div id='HeaderDiv'>
-			Some Header Stuff
-		</div>
-		
-		<div id='MenuDiv'>
-			<div id='MenuBar'>
-				
-				<a href='home.html'>
-					<div class='MenuBtn'>
-						Page1
-					</div>
-				</a>
-				
-				<a href='request.html'>
-					<div class='MenuBtn'>
-						Request
-					</div>
-				</a>
-				
-				<a href='page3.html'>
-					<div class='MenuBtn'>
-						Page3
-					</div>
-				</a>
-				
-				<a href='page4.html'>
-					<div class='MenuBtn'>
-						Page4
-					</div>
-				</a>
-				
-				<a href='test.html'>
-					<div class='MenuBtn'>
-						Test Page
-					</div>
-				</a>
-				
-				<a href='test2.html'>
-					<div class='MenuBtn'>
-						Test Page 2
-					</div>
-				</a>
-				
-				<a href='test3.html'>
-					<div class='MenuBtn'>
-						Test Page 3
-					</div>
-				</a>
+			<header>
+				<h1 class="left">Loughborough University Timetabling</h1>
+				<a href="http://www.lboro.ac.uk/"><img class="logo" src="Images/lulogo.png"></a>
+			</header>
+			
+			<nav id="menuLinks">
+				<ul>
+					<li>
+						<a href="home.html">Page1</a>
+					</li>
+					<li>
+						<a href="request.html">Request</a>
+					</li>
+					<li>
+						<a href="page3.html">Page3</a>
+					</li>
+					<li>
+						<a href="page4.html">Page4</a>
+					</li>
+					<li>
+						<a href="test.html">Test Page</a>
+					</li>
+					<li>
+						<a href="test2.html">Test Page 2</a>
+					</li>
+					<li>
+						<a href="test3.html">Test Page 3</a>
+					</li>
+				</ul>
+			</nav>
+			
+			<div id='ContentDiv'>
+				<!-- Javascript injects content here -->
 			</div>
-		</div>
+
+		</div> <!-- wrapper close -->  
+
+		<footer>
+			<h6>footer content</h6>
+		</footer>
 		
-		<div id='ContentDiv'>
-			
-		</div>
-		
-		<div id='FooterDiv'>
-			
-		</div>
-		
-	</div>
+	<!-- These probably can't stay here, but for now they work -->
+	<script type='text/javascript' src='JS/constants.js'></script>
+	<script type='text/javascript' src='JS/globalFunctions.js'></script>
+	<script type='text/javascript' src='JS/sessionData.js'></script>
+	<script type='text/javascript' src='JS/dataTypeObjects.js'></script>
+	<script type="text/javascript" src="JS/addrequest.js"></script>
+	<script type='text/javascript' src='JS/weeksManipulator.js'></script>
+	<script type='text/javascript' src='JS/listGenerator.js'></script>
+	<script type='text/javascript' src='JS/graphicalGenerator.js'></script>
 	
-</body>
-
-<script type='text/javascript' src='jQuery&UI/jQuery.js'></script>
-<script type='text/javascript' src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'></script>
-<script type='text/javascript' src='JS/indexScript.js'></script>
-
+	<script type='text/javascript' src='jQuery&UI/jQuery.js'></script>
+	<script type='text/javascript' src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'></script>
+	<script type='text/javascript' src='JS/indexScript.js'></script>
+		
+	</body>
 </html>

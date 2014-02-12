@@ -32,12 +32,12 @@ function listViewGenerator(depShow, weekShow, sessTypeShow, facShow, statusShow,
 		
 		listHTML += "<td id='dayField'>" + daysArray[currentRequest.day] + "</td>\
 					<td id='periodField'>" + startPeriodsArray[currentRequest.startPeriod] + "</td>\
-					<td id='lengthField'>" + endPeriodsArray[currentRequest.endPeriod] + "</td>\
+					<td id='lengthField'>" + ( endPeriodsArray[currentRequest.endPeriod] - startPeriodsArray[currentRequest.startPeriod] )+ "</td>\
 					<td id='weeksField'>" + weekReadableString(currentRequest.weeks) + "</td>\
 					<td id='stuField'>" + currentRequest.students + "</td>\
 					<td id='tradField'>";
 					
-		if(currentRequest) listHTML+= "T</td>"; 
+		if(currentRequest.traditional) listHTML+= "T</td>"; 
 		else listHTML+= "S</td>";
 						
 		listHTML += "</tr><tr>";
@@ -52,14 +52,14 @@ function listViewGenerator(depShow, weekShow, sessTypeShow, facShow, statusShow,
 			else listHTML += "5";
 		listHTML += "'>";
 		
-		if(allocatedShow) listHTML += htmlStringFormater(currentRequest.allocatedRooms, allocatedShow, false);
-		else listHTML += htmlStringFormater(currentRequest.rooms, allocatedShow, false);
+		if(allocatedShow) listHTML += htmlStringFormater(currentRequest.allocatedRooms, false);
+		else listHTML += htmlStringFormater(currentRequest.rooms, false);
 		
 		listHTML += "</td></tr>";
 						
 		listHTML += "</table>";
 		
-		listHTML += "<table class='btnsTable'><tr>";
+		listHTML += "<table class='listBtnsTable'><tr>";
 		
 		if (editBtnShow) listHTML += "<td><button type='button' onclick='return false;'>Edit</button></td>";
 						
@@ -78,13 +78,18 @@ function listViewGenerator(depShow, weekShow, sessTypeShow, facShow, statusShow,
 					<td id='titleField'>Title</td>\
 					<td id='sessField'>Session Type</td>\
 					<td id='parkField'>Park</td>\
-					<td id='roomNumberField'># of Rooms</td>\
-					</tr><tr>";
+					<td id='roomNumberField'># of Rooms</td>";
+					
+		if(statusShow) listHTML += "<td id='statusField'>Status</td>";
+		
+		listHTML += "</tr><tr>";
 		
 		listHTML += "<td id='titleContentField'>" + currentRequest.moduleTitle + "</td>\
 					<td>" + sessionTypesArray[currentRequest.sessionType] + "</td>\
 					<td>" + parksArray[currentRequest.park] + "</td>\
 					<td>" + currentRequest.noOfRooms + "</td>";
+		
+		if(statusShow) listHTML += "<td>" + statusArray[currentRequest.status] + "</td>";
 		
 		listHTML += "</tr></table></br>";
 		
@@ -96,11 +101,11 @@ function listViewGenerator(depShow, weekShow, sessTypeShow, facShow, statusShow,
 					<td id='otherReqsField'>Other Requirements</td>\
 					</tr><tr>";
 		
-		if(allocatedShow) listHTML += "<td>" + htmlStringFormater(currentRequest.rooms, allocatedShow, true) + "</td>";
+		if(allocatedShow) listHTML += "<td>" + htmlStringFormater(currentRequest.rooms, true) + "</td>";
 		
 		var facilityTitles = getFacilityTitles(currentRequest.facilities);
 						
-		listHTML += "<td>" + htmlStringFormater(facilityTitles, allocatedShow, true) + "</td>\
+		listHTML += "<td>" + htmlStringFormater(facilityTitles, true) + "</td>\
 					<td>" + currentRequest.otherReqs + "</td>";
 		
 		listHTML += "</tr></table>";

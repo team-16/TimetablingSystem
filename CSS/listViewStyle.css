@@ -69,10 +69,10 @@
 	border: 1px solid black;
 }
 
-.btnsTable {
+.listBtnsTable {
 	float:right;
-	border-collapse:collapse;
 	width:140px;
+	border-collapse:collapse;
 	border: 1px solid black;
 	
 	text-align:center;
@@ -89,8 +89,8 @@
 }
 
 .requestContentsTable {
-	border-collapse:collapse;
 	width:900px;
+	border-collapse:collapse;
 	text-align:center;
 	vertical-align:middle;
 	
@@ -111,8 +111,8 @@
 	text-decoration:underline;
 } 
 
-#sessField, #parkField, #roomNumberField{
-	width:150px;
+#sessField, #parkField, #roomNumberField, #statusField{
+	width:120px;
 	text-decoration:underline;
 }
 

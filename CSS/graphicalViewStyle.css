@@ -1,0 +1,174 @@
+/*			Graphical Container				*/
+.graphicalContainer {
+	width:950px;
+	margin-left:5px;
+}
+
+
+/*			Period/Time Header				*/
+.timetableHeadings {
+	position:relative;
+	left: 100px;
+	height:30px;
+	width:900px;
+}
+
+.timeHeaderTable {
+	height:20px;
+	width:10px;
+	border-spacing:76px 0px;
+	border: 1px solid black;
+}
+
+.timeHeaderTable td {
+	height:20px;
+	width:10px;
+	border: 1px solid black;
+}
+
+/*			Main Section for each Day		*/
+.sectionContainer {
+	position:relative;
+	overflow:hidden;
+	
+	height:auto;
+	width:950px;
+	
+	margin-bottom: 10px;
+	
+	border: 1px solid black;
+}
+
+/*			Table and Content Part			*/
+.sectionAccordion {
+	float:right;
+	height:auto;
+	width:auto;
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-right:5px;
+	padding-bottom:2px;
+	
+	border: 1px solid grey;
+}
+
+.dayTitle {
+	position: absolute;
+	top: calc(50% - 25px);
+	margin-left:5px;
+	
+	width: 130px;
+	height: 50px;
+	
+	text-align: center;
+}
+
+.dayTable {
+	width:auto;
+	
+	empty-cells: show;
+	
+	border-spacing:5px 0px;
+}
+
+.dayTable  input[type=radio] {
+	display: none;
+}
+
+.dayTable td {
+	height:60px;
+	width:80px;
+	border: 1px solid black;
+}
+
+#hiddenTD {
+	height:0px;
+	border-top: none;
+	border-bottom: none;
+	border-right: 1px solid transparent;
+	border-left: 1px solid transparent;
+}
+
+.radioLabel {
+	display: inline-block;
+	height:100%;
+	width:100%;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.contentSection {
+	display:block;
+	max-height:0px;
+	width: calc(100% - 24px);
+	
+	padding-left:5px;
+	padding-right:5px;
+	margin-left:6px;
+	
+	background: lightblue;
+		
+	overflow:hidden;
+	
+	transition-property: max-height, border-bottom;
+    transition-duration: 1s;
+	transition-timing-function: ease;
+}
+
+.topContentSection{
+	overflow:hidden;
+}
+
+.sectionContentTopTable {
+	float:left;
+	width:630px;
+	margin-top:10px;
+	
+	text-align:center;
+	
+	border-collapse:collapse;
+}
+
+.graphicalBtnsTable {
+	float:right;
+	margin-top:20px;
+	width:140px;
+	border-collapse:collapse;
+	border: 1px solid black;
+	
+	text-align:center;
+	vertical-align:middle;
+}
+
+.sectionContentTable {
+	width:780px;
+	margin-top:10px;
+	text-align:center;
+	border-collapse:collapse;
+}
+
+
+
+.sectionContentTable td, .sectionContentTopTable td{
+	border: 1px solid black;
+}
+
+.titleCellTop {
+	width:150px;
+	text-decoration:underline;
+} 
+
+#pSection, #stuSection, #roomNumberSection, #tradSection, #sessSection, #parkSection {
+	
+	//width:100px;
+	text-decoration:underline;
+}
+
+#statusSection {
+	width:120px;
+	text-decoration:underline;
+} 
+
+#faciSection {
+	width:300px;
+}
