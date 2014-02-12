@@ -2,7 +2,7 @@
 
 include('PHP/init.php');
 
-$results = getBuilding();
+$results = getModules(NULL);
 
 print_r($results);
 
