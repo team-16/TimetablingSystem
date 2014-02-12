@@ -2,7 +2,7 @@
 
 
 <style type='text/css'>
-
+@charset "UTF-8";
 .listTest
 {
 	position:relative;
@@ -20,13 +20,13 @@
 </style>
 
 
-<script type='text/javascript' src='JS/weeksManipulator.js'></script>
-
 <script type='text/javascript'>
 
-function testX(){
-	var results = "<?php echo getModules(NULL); ?>";
-	getModules(results);
+function testX() {
+	alert("1");
+	//var results = "<?php echo getModules(NULL); ?>";
+	alert("2");
+	//getModules(results);
 }
 
 

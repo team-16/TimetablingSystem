@@ -1,5 +1,5 @@
 function getModules(results) {
-	
+	/*
 	alert("something");
 	 
 	//var results = $.parseJSON("<php echo getModules(NULL); ?>");
@@ -9,7 +9,7 @@ function getModules(results) {
 	alert(JSON.stringify(results));
 	
 	alert("something3");
-	
+	*/
 	/*
 	$.get("init.php", {}, function(resultsX){
 			
