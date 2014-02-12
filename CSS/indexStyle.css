@@ -146,7 +146,7 @@ nav li:hover {
 	background-image: linear-gradient(to bottom, #FFFFFF -200%, #431D4F 100%);
 }
 
-nav li:hover a {
+nav li:hover {
 	color:#dedede;
 }
 
