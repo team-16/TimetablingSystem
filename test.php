@@ -2,11 +2,11 @@
 
 include('PHP/init.php');
 
-//$results = getBuilding();
+$results = getBuilding();
 
-//print_r($results);
+print_r($results);
 
-echo("// Testing Login Script...  ");
+//echo("// Testing Login Script...  ");
 
 //change this to test login. this should fail if you change the password.
 login("BS", "password");

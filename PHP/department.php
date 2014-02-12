@@ -3,7 +3,7 @@
 function getDepartments(){
 	global $DB;
 	
-	if($DB->query('SELECT DepartmentCode, Name FROM Department ORDER BY DepartmentCode')){
+	if($DB->query('SELECT code, name FROM department ORDER BY code')){
 		
 		$departments = array();
 		
