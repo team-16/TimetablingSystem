@@ -24,5 +24,6 @@ function insertDepartment($code, $name){
 	else{
 		return false;
 	}
+}
 
 ?>
