@@ -39,11 +39,11 @@ class Database {
 	}
 	
 	public function results(){
-		return $this->results;
+		return json_encode($this->results);
 	}
 	
 	public function resultsZero(){
-		return $this->results[0];
+		return json_encode($this->results[0]);
 	}
 	
 	//public function resultsOne(){

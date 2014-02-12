@@ -2,7 +2,8 @@
 
 include('PHP/init.php');
 
-$results = getModules(NULL);
+//$results = getModules(NULL);
+$results = getRooms();
 
 print_r($results);
 
