@@ -1,13 +1,16 @@
 function getModules() {
 	
-	$.getJSON("init.php echo getModules('CO')", {"rT":"full", "sqlStatement":sql}, function(results){
+	alert("something");
+	
+	$.get("init.php echo getModules('CO')", {}, function(results){
 			
-			//Makes results global so that other functions can access them
-			//rankedArray = results;
+		alert("something2");
+		//Makes results global so that other functions can access them
+		//rankedArray = results;
+		
+		alert(JSON.stringify(results));
 			
-			alert(JSON.stringify(results));
-			
-		}, 'json');
+	}, 'json');
 	
 	
 }
