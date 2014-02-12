@@ -1,87 +1,81 @@
 <html>
 
-<head>
+	<head>
 
-<style type="text/css">
+		<link href='css/add.css' rel='stylesheet' type='text/css'>
 
-.mainDivX {
-	position:relative;
-	width:800px;
-	border: 1px solid black;
-}
+	</head>
 
-.divstyle {
-	width: 200px;
-	height: 200px;
-	margin: 10px ;
-	padding: 20px;
-	
-	text-align: center;
-	border: 5px solid #009;
-	
-}
-
-.style1 {
-	position:absolute;
-	top:10px;
-	left:10px;
-	
-}
-
-.style2 {
-	position:absolute;
-	top:10px;
-	left:400px;
-}
-.style3 {
-	position: absolute;
-	top: 10px;
-	left: 800px;
-}
-
-</style>
-
-
-</head>
-	
-	<div class='mainDivX'>
+	<body>
 		
-		<div id= "module" class="divstyle style1" align="right"> module info <br>
-				<select name ="modulecode">
-					<option>COA123</option>
-				</select><br>
-				Traditional/Seminar<select>
-					<option id="T">T</option>
-					<option id="S">S</option>
-				</select><br>
+		<div id="wrapper">
 
-				Priority Booking:<input type = "radio" name="shortfat" value="true">yes
-								 <input type = "radio" name="shortfat" value="false">no</br>
-				No. of Students: <input type = "text" onkeypress="return isNumberKey(event);" onkeyup= "okKeyUpCheck();" id="students" value ="1"/> <br>
-		</div>
-		
-		<div id="facilities" class="divstyle style2"> facilities <br>
-		</div>
-		<div id="time" class= "divstyle style3"> time <br>
+		<p>content</p>
+			<form id="add">
+				<div id="moduleDetails">
+					<!-- content -->
+				</div>
+				
+				<div id="timeDetails">
+					<!-- content -->
+				</div>
 
-			<select>
-				<option>Monday</option>
-				<option>Tuesday</option>
-				<option>Wednesday</option>
-				<option>Thursday</option>
-				<option>Friday</option>
-			</select><br>
-			<input type="button" onclick="selectDeselectAll(false);" value = "deselect all">  <br>
-			<input type="button" onclick="selectDeselectAll(true);" value = "select all"> <br>
-			<input type="button" onclick="select12();" value = "select 12"> <br>
-		</div>
-	</div>
-<input type="button" onclick="facilityGenerator(); addcheckboxes(); periodsGenerator();
-lengthGenerator(); parkPreferenceGenerator();">
+				<div id="roomDetails">
+					<!-- content -->
+				</div>
 
+				<div id="roomFeatures">
+					<!-- content -->
+				</div>
+			</form>
+
+
+						<!--
+
+						<div id= "module" class="divstyle style1" align="right"> module info <br>
+								<select name ="modulecode">
+									<option>COA123</option>
+								</select><br>
+								Traditional/Seminar<select>
+									<option id="T">T</option>
+									<option id="S">S</option>
+								</select><br>
+
+								Priority Booking:<input type = "radio" name="shortfat" value="true">yes
+												 <input type = "radio" name="shortfat" value="false">no</br>
+								No. of Students: <input type = "text" onkeypress="return isNumberKey(event);" onkeyup= "okKeyUpCheck();" id="students" value ="1"/> <br>
+						</div>
+						
+						<div id="facilities" class="divstyle style2"> facilities <br>
+						</div>
+						<div id="time" class= "divstyle style3"> time <br>
+
+							<select>
+								<option>Monday</option>
+								<option>Tuesday</option>
+								<option>Wednesday</option>
+								<option>Thursday</option>
+								<option>Friday</option>
+							</select><br>
+							<input type="button" onclick="selectDeselectAll(false);" value = "deselect all">  <br>
+							<input type="button" onclick="selectDeselectAll(true);" value = "select all"> <br>
+							<input type="button" onclick="select12();" value = "select 12"> <br>
+						</div>
+
+					<input type="button" onclick="facilityGenerator(); addcheckboxes(); periodsGenerator();
+						lengthGenerator(); parkPreferenceGenerator();">
+
+					-->
+
+		</div> <!-- end of wrapper -->
+
+<<<<<<< HEAD
 
 
 
 	<script type="text/javascript" src="JSViews/add.js"></script>
 
+=======
+	</body>
+>>>>>>> 5a987a0bb7e1bb619d8380b820937747a844dfee
 </html>
