@@ -1,25 +1,23 @@
 <?php
 
-function getModules($deptCode){
+function getModules(){
 	global $DB;
 	
-	$sql = 'SELECT code, title, deptcode FROM module ';
-	
-	if($deptCode != '**'){
-		$sql .= 'WHERE deptcode = :department ';
+	if($DB->query("SELECT code, title, deptcode FROM module ORDER BY code")){
+		return $DB->results();
 	}
 	
-	$sql .= 'ORDER BY code';
+	else{
+		return false;
+	}
+}
+
+function getDeptModules($deptCode){
+	global $DB;
 	
-	if($DB->query($sql, array(':department' => $deptCode))){
-		
-		$modules = array();
-		
-		foreach($DB->results() as $module){
-			$modules[$module['ModuleCode']] = $module;
-		}
-		
-		return $modules;
+	if($DB->query("SELECT code, title, deptcode FROM module WHERE deptcode = :deptcode ORDER BY code",
+	array(':deptcode' => $deptCode))){
+		return $DB->results();
 	}
 	
 	else{
@@ -30,8 +28,8 @@ function getModules($deptCode){
 function insertModule($moduleCode, $deptCode, $moduleTitle){
 	global $DB;
 	
-	if($DB->query("INSERT INTO module (code, title, deptcode) VALUES (:moduleCode, :title, :departmentCode)",
-		array(':moduleCode' => $moduleCode, ':departmentCode' => $deptCode, ':title' => $moduleTitle))) {
+	if($DB->query("INSERT INTO module (code, title, deptcode) VALUES (:modulecode, :title, :deptcode)",
+		array(':modulecode' => $moduleCode, ':deptcode' => $deptCode, ':title' => $moduleTitle))) {
 		return true;
 	} 
 	
@@ -54,7 +52,7 @@ function insertModule($moduleCode, $deptCode, $moduleTitle){
 function updateModule($moduleCode, $moduleTitle){
 	global $DB;
 	
-	if($DB->query("UPDATE module SET title = :Title WHERE code = :ModuleCode", array(':Title' => $moduleTitle, ':ModuleCode' => $moduleCode))){
+	if($DB->query("UPDATE module SET title = :title WHERE code = :modulecode", array(':title' => $moduleTitle, ':modulecode' => $moduleCode))){
 		return true;
 	} 
 	
