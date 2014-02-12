@@ -1,27 +1,29 @@
 <?php
 
-function getModules(){
+function getModules($deptCode){
 	global $DB;
 	
-	if($DB->query("SELECT code, title, deptcode FROM module ORDER BY code")){
-		return $DB->results();
+	if(is_null($deptCode)){
+	
+		if($DB->query("SELECT code, title, deptcode FROM module ORDER BY code")){
+			return $DB->results();
+		}
+	
+		else{
+			return false;
+		}
 	}
 	
-	else{
-		return false;
-	}
-}
-
-function getDeptModules($deptCode){
-	global $DB;
+	if(!is_null($deptCode)){
 	
-	if($DB->query("SELECT code, title, deptcode FROM module WHERE deptcode = :deptcode ORDER BY code",
-	array(':deptcode' => $deptCode))){
-		return $DB->results();
-	}
+		if($DB->query("SELECT code, title, deptcode FROM module WHERE deptcode = :deptcode ORDER BY code",
+		array(':deptcode' => $deptCode))){
+			return $DB->results();
+		}
 	
-	else{
-		return false;
+		else{
+			return false;
+		}
 	}
 }
 

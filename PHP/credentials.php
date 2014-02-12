@@ -1,16 +1,16 @@
 <?php
 
 function login($deptCode, $password){
-	echo("Logging In...");
+	//echo("Logging In...");
 
 	if(authenticate($password, $deptCode)){
 
 		$_SESSION['code'] = $deptCode;
-		echo("Logged in correctly");
+		//echo("Logged in correctly");
 		return true;
 	}
 	else{
-		echo("NOT logged in correctly 2");
+		//echo("NOT logged in correctly 2");
 		return false;
 	}
 }
