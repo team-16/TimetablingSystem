@@ -1,4 +1,4 @@
-function listViewGenerator(depShow, weekShow, sessTypeShow, facShow, statusShow, allocatedShow, dupBtnShow, editBtnShow, delBtnShow){
+function listViewGenerator(requestArray, depShow, weekShow, sessTypeShow, facShow, statusShow, allocatedShow, dupBtnShow, editBtnShow, delBtnShow){
 		
 	var requestResults = requestArray;
 	
