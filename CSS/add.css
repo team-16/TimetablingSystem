@@ -6,6 +6,12 @@
 	border: 1px solid black;
 }
 
+.formDiv {
+	/*border:1px solid #000;*/
+	padding:1em;
+	margin:1em;
+}
+
 /*
 .divstyle {
 	width: 200px;

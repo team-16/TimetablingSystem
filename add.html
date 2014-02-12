@@ -12,21 +12,80 @@
 
 		<p>content</p>
 			<form id="add">
-				<div id="moduleDetails">
-					<!-- content -->
-				</div>
+				<fieldset>
+					<legend>Module</legend>
+						<div id="moduleDetails" class="formDiv">
+							<select id="moduleCodeSelect"> <!-- module code -->
+								<option><!-- options here --></option>
+							</select>
+							<output id="moduleTitleOutput">
+								<!-- module title -->
+							</output>
+						</div>
+					</fieldset>
+				</fieldset>
 				
-				<div id="timeDetails">
-					<!-- content -->
-				</div>
+				<fieldset> <!-- Time slot box -->
+					<legend>Time slot</legend>
+					<div id="timeDetails" class="formDiv">
+						<select id="daySelect">
+							<option>Monday</option>
+							<option>Tuesday</option>
+							<option>Wednesday</option>
+							<option>Thursday</option>
+							<option>Friday</option>
+						</select>
 
-				<div id="roomDetails">
-					<!-- content -->
-				</div>
+						<div id="weeksCheckbox">
+							<!-- Weeks checkboxes to go here -->
+						</div>
 
-				<div id="roomFeatures">
-					<!-- content -->
-				</div>
+						<button id="HELLOJAVASCRIPT" onclick="addcheckboxes(); generateSlider();"></button><!-- the location of this button is irrelevant -->
+
+						<div id="periodAndLengthWrapper">
+							<select id="periodSelect">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>404</option>
+							</select>
+							<select id="lengthSelect">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+							</select>
+							<div id="slider-range">
+								<!-- Slider generated here -->
+							</div>
+						</div>
+					</div>
+					</fieldset> <!-- End of time slot box -->
+
+				<fieldset> <!-- Room details box -->
+					<legend>Room</legend>
+					<div id="roomDetails" class="formDiv">
+						<!-- content -->
+					</div>			
+				</fieldset>	<!-- End of room details box -->
+
+				<fieldset>	<!-- Features box -->
+					<legend>Features</legend>
+					<div id="roomFeatures" class="formDiv">
+						<!-- content -->
+					</div>
+				</fieldset>	<!-- End of features box -->
 			</form>
 
 
@@ -69,13 +128,12 @@
 
 		</div> <!-- end of wrapper -->
 
-<<<<<<< HEAD
+			<script src='JSViews/add.js'></script>
+			<link href='JQueryAndUI/jquery-ui-1.10.3/themes/jquery-ui.css' rel='stylesheet' type='text/css'>
+  			<script src='JQueryAndUI/jquery-ui-1.10.3/jquery-1.9.1.js'></script>
+  			<script src='JQueryAndUI/jquery-ui-1.10.3/ui/jquery-ui.js'</script>
+  			<!--<script src='//code.jquery.com/ui/1.10.4/jquery-ui.js'></script>-->
 
-
-
-	<script type="text/javascript" src="JSViews/add.js"></script>
-
-=======
 	</body>
->>>>>>> 5a987a0bb7e1bb619d8380b820937747a844dfee
+
 </html>
