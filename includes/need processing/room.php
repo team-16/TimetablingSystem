@@ -1,10 +1,10 @@
 <?php
 
-function insertRoom($BuildingCode, $Name, $RoomType, $SeatingType, $Capacity){
+function insertRoom($Code, $BuildingCode, $Type, $Capacity){
 	global $DB;
 	
-	if($DB->query("INSERT INTO Room (BuildingCode, Name, RoomType, Capacity) VALUES (:buildingcode, :name, :roomtype, :capacity)",
-	array(':buildingcode' => $BuildingCode, ':name' => $Name, ':roomtype' => $RoomType, ':capacity' => $Capacity))) {
+	if($DB->query("INSERT INTO room (code, buildingcode, type, capacity) VALUES (:buildingcode, :name, :type, :capacity)",
+	array(':code' => $Code, ':buildingcode' => $BuildingCode, ':type' => $Type, ':capacity' => $Capacity))) {
 		return true;
 	} 
 	
@@ -13,11 +13,11 @@ function insertRoom($BuildingCode, $Name, $RoomType, $SeatingType, $Capacity){
 	}
 }
 
-function updateRoom($RoomID, $BuildingCode, $Name, $RoomType, $SeatingType, $Capacity){
+function updateRoom($Code, $BuildingCode, $Type, $Capacity){
 	global $DB;
 	
-	if($DB->query("UPDATE Room SET BuildingCode = :buildingcode, Name = :name, RoomType = :roomtype, Capacity = :capacity WHERE RoomID = :RoomID",
-	array(':RoomID' => $RoomID, ':buildingcode' => $BuildingCode, ':name' => $Name, ':roomtype' => $RoomType, ':capacity' => $Capacity))) {
+	if($DB->query("UPDATE room SET buildingcode = :buildingcode, type = :type, capacity = :capacity WHERE code = :code",
+	array(':code' => $Code, ':buildingcode' => $BuildingCode, ':type' => $Type, ':capacity' => $Capacity))) {
 		return true;
 	}
 	
@@ -28,9 +28,9 @@ function updateRoom($RoomID, $BuildingCode, $Name, $RoomType, $SeatingType, $Cap
 
 function deleteRoom($RoomID){
 	global $DB;
-	if($DB->query("DELETE FROM Room WHERE RoomID = :roomid", array(':roomid' => $RoomID))){
+	if($DB->query("DELETE FROM room WHERE code = :code", array(':code' => $Code))){
 
-		if($DB->query("DELETE FROM RoomFacility WHERE RoomID = :roomID", array(':roomID => $roomID'))){
+		if($DB->query("DELETE FROM room_facility WHERE roomCode = :code", array(':code' => $Code))){
 			return true;
 		}
 		
@@ -47,7 +47,7 @@ function deleteRoom($RoomID){
 function getRooms(){
 	global $DB;
 	
-	if($DB->query("SELECT RoomID, Room.BuildingCode, Building.Name as BuildingName, Park, Room.Name, RoomType, Capacity FROM Room INNER JOIN Building ON Room.BuildingCode = Building.BuildingCode ORDER BY Room.Name")){
+	if($DB->query("SELECT * FROM room ORDER BY code")){
 		return $DB->results();
 	}
 	
@@ -56,11 +56,11 @@ function getRooms(){
 	}
 }
 
-function getRoom($RoomID){
+function getRoom($Code){
 	global $DB;
 	
-	if($DB->query("SELECT RoomID, Room.BuildingCode, Building.Name as BuildingName, Park, Room.Name, RoomType, Capacity FROM Room INNER JOIN Building ON Room.BuildingCode = Building.BuildingCode WHERE RoomID = :RoomID ORDER BY Room.Name",
-	array(':RoomID' => $RoomID))){
+	if($DB->query("SELECT * FROM room WHERE code = :code ORDER BY code",
+	array(':code' => $Code))){
 		return $DB->resultsZero();
 	} 
 

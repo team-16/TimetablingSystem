@@ -12,11 +12,10 @@ function getAllRequests(){
 	}
 }
 
-//INCOMPLETE
 function getPendingRequests(){
 	global $DB;
 	
-	if($DB->query("")){
+	if($DB->query("SELECT * FROM request WHERE status = 0 ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -25,11 +24,10 @@ function getPendingRequests(){
 	}
 }
 
-//INCOMPLETE
 function getAllocatedRequests(){
 	global $DB;
 	
-	if($DB->query("")){
+	if($DB->query("SELECT * FROM request WHERE status = 1 ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -38,11 +36,10 @@ function getAllocatedRequests(){
 	}
 }
 
-//INCOMPLETE
 function getRejectedRequests(){
 	global $DB;
 	
-	if($DB->query("")){
+	if($DB->query("SELECT * FROM request WHERE status = 2 ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
