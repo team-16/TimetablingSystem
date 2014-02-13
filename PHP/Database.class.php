@@ -46,6 +46,10 @@ class Database {
 		return $this->results[0];
 	}
 	
+	public function lastInsertId(){
+		return $this->DBH->lastInsertId();
+	}
+	
 	//public function resultsZeroN(){
 	//	return $this->results[0];
 	//}
