@@ -1,9 +1,6 @@
 /*When index.html is loaded and ready */
 $(document).ready(function() {
-	
-	/* Initial Load - load homepage */ /* Need to validate for redirection to login page*/
-	$('#ContentDiv').load('launch.php');
-	
+		
 	/* Handels on-click of menu buttons - block coding */
 	$('#menuLinks a').click(function(){
 		
@@ -27,6 +24,9 @@ $(document).ready(function() {
 		return false;
 		
 	});
+	
+	/* Initial Load - load homepage by simulation of clicking on home*/ /* Need to validate for redirection to login page*/
+	$('#home').click();
 	
 	//Need to move with files after User Authentication
 	setupSessionData();

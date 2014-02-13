@@ -31,7 +31,7 @@ if(!isLoggedIn()){
 			<nav id="menuLinks">
 				<ul>
 				
-					<a href="home.php">
+					<a href="home.php" id='home'>
 						<li>
 							Home
 						</li>
