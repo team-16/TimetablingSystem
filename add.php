@@ -21,7 +21,6 @@ if(!isLoggedIn()){
 	
 	<script type="text/javascript">
 		var moduleArray = <?php echo(json_encode(getModules(loggedDept()))); ?>;
-		//alert(JSON.stringify(moduleArray));
 	</script>
 		
 		<div id="wrapperAdd">

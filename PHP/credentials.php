@@ -27,6 +27,19 @@ function loggedDept(){
 	return $_SESSION['code'];
 }
 
+function loggedDeptName(){
+	global $DB;
+	
+	if($DB->query("SELECT name FROM department WHERE code ='" . $_SESSION['code'] . "'")){
+		$ret =  $DB->resultsZero();
+		return $ret[0]['name'];
+	}
+	
+	else{
+		return false;
+	}
+}
+
 function changePassword($deptCode, $newPassword){
 	global $DB;
 	
