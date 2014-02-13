@@ -32,7 +32,7 @@ function loggedDeptName(){
 	
 	if($DB->query("SELECT name FROM department WHERE code ='" . $_SESSION['code'] . "'")){
 		$ret =  $DB->resultsZero();
-		return $ret[0]['name'];
+		return $ret['name'];
 	}
 	
 	else{
