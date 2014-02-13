@@ -15,3 +15,5 @@ const startPeriodTimesArray = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:
 const endPeriodTimesArray = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"];
 
 const statusArray = ["Pending", "Allocated", "Rejected"];
+
+const regularWeeks = 12;
