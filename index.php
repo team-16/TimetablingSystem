@@ -1,4 +1,12 @@
-<?php include('PHP/init.php'); ?>
+<?php
+
+include('PHP/init.php');
+
+if(!isLoggedIn()){
+	redirect('login.php');
+}
+
+?>
 
 <html>
 

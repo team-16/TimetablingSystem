@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	
 	/* Initial Load - load homepage */ /* Need to validate for redirection to login page*/
-	$('#ContentDiv').load('home.php');	
+	$('#ContentDiv').load('home2.php');	
 	
 	/* Handels on-click of menu buttons - block coding */
 	$('#menuLinks a').click(function(){

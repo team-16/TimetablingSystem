@@ -3,8 +3,8 @@
 	include('PHP/init.php');
 	
 	if(!isLoggedIn()){
-		echo("uh oh!");
-		//redirectParent('login.php');
+		echo("uh oh! you aren't logged in! time to be redirected...");
+		redirectParent('login.php');
 	}
 
 ?>
