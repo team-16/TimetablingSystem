@@ -218,3 +218,6 @@ a:active {text-decoration:none;}
 #ContentDiv {
 	margin-bottom:4em;
 }
+.ui-progressbar.beginning .ui-progressbar-value { background: green; }
+.ui-progressbar.middle .ui-progressbar-value { background: orange; }
+.ui-progressbar.end .ui-progressbar-value { background: red; }
