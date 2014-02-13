@@ -57,7 +57,7 @@ function authenticate($password, $deptCode){
 	global $DB;
 	
 	if($DB->query("SELECT hash, salt FROM department WHERE code = :code", array(':code' => $deptCode))){
-		$department = $DB->resultsZeroN();
+		$department = $DB->resultsZero();
 
 		if(generatePwdHash($password, $department['salt']) === $department['hash']){
 			return true;
