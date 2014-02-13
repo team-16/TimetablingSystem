@@ -32,7 +32,7 @@ if(!isLoggedIn()){
 					<div id="moduleDetails" class="moduleDetailsDiv">
 						<fieldset>
 							<legend>Module</legend>
-							<select id="moduleCodeSelect" class="left1" onchange='document.getElementById("moduleTitleOutput").innerHTML = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"]'> <!-- module code -->
+							<select id="moduleCodeSelect" class="left1" onclick='document.getElementById("moduleTitleOutput").innerHTML = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"]'> <!-- module code -->
 								<script type="text/javascript">
 									for(var i = 0; i < moduleArray.length; i++){
 										var opt = document.createElement('option');
