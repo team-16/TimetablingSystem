@@ -29,9 +29,37 @@ $(document).ready(function() {
 	$('#home').click();
 	
 	//Need to move with files after User Authentication
-	setupSessionData();
+	//setupSessionData();
+	loadSess();
 	
 });
+
+function loadSess() {
+	alert("sommin");
+	/*
+	$.get("../PHP/loadSessionData.php", {}, function(results){
+		
+		alert("started");
+		
+		alert(JSON.stringify(results));
+		
+		
+	}, 'json');
+	*/
+	
+	$.ajax({
+		url: "PHP/loadSessionData.php",
+		type: "GET",
+		datatype: "JSON",
+		data: {},
+		success: function(data) {
+			alert(JSON.stringify(data));
+		}
+	});
+		
+	alert("sommin2");
+	
+};
 
 $(function() {
 			var d = new Date();

@@ -60,7 +60,7 @@ function getFacilities(){
 function getFacilityId(){
 	global $DB;
 	
-	if($DB->query("SELECT id FROM facility WHERE name = :name", array(':name' => $name)){
+	if($DB->query("SELECT id FROM facility WHERE name = :name", array(':name' => $name))){
 		return $DB->results();
 	}
 	
