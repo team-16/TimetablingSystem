@@ -32,3 +32,16 @@ $(document).ready(function() {
 	setupSessionData();
 	
 });
+$(function() {
+			var d = new Date();
+			$( "#progressbar" ).progressbar({
+				value: 70
+				
+				//value: d.getTime() - roundStart.getTime() / roundEnd.getTime() - roundStart.getTime()
+
+			});
+			if($( "#progressbar" ).progressbar("value") < 60) $("#progressbar").addClass('beginning');
+			else if ($( "#progressbar" ).progressbar("value") < 90) $("#progressbar").addClass('middle');
+            else $("#progressbar").addClass('end');
+
+});
