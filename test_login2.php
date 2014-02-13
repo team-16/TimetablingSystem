@@ -11,5 +11,9 @@ include('PHP/init.php');
 	else{
 		echo("WOOP WOOP! You're logged in!");
 	}
-
 ?>
+	
+<html>
+	<a href="test_login3.php?<?=SID?>">NEXT PAGE</a>
+</html>
+
