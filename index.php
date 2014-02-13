@@ -101,7 +101,7 @@ if(!isLoggedIn()){
 		</div> <!-- wrapper close -->  
 
 		<footer>
-			<h6>footer content</h6>
+			<h6>Copyright lboro.ac.uk</h6>
 		</footer>
 		
 	<!-- These probably can't stay here, but for now they work -->

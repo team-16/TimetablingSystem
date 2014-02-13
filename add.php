@@ -13,7 +13,7 @@ if(!isLoggedIn()){
 
 	<head>
 
-		<link href='css/add.css' rel='stylesheet' type='text/css'>
+		<link href='CSS/add.css' rel='stylesheet' type='text/css'>
 
 	</head>
 
@@ -198,9 +198,9 @@ if(!isLoggedIn()){
 		</div> <!-- end of wrapper -->
 
 			<script src='JSViews/add.js'></script>
-			<link href='JQueryAndUI/jquery-ui-1.10.3/themes/jquery-ui.css' rel='stylesheet' type='text/css'>
-  			<script src='JQueryAndUI/jquery-ui-1.10.3/jquery-1.9.1.js'></script>
-  			<script src='JQueryAndUI/jquery-ui-1.10.3/ui/jquery-ui.js'</script>
+			<link href='jQuery&UI/jquery-ui-1.10.3/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
+  			<script src='jQuery&UI/jquery-ui-1.10.3/jquery-1.9.1.js'></script>
+  			<script src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'</script>
   			<!--<script src='//code.jquery.com/ui/1.10.4/jquery-ui.js'></script>-->
 
 	</body>
