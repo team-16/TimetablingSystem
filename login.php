@@ -20,6 +20,8 @@
 					<input class='textField' type="password" name="password">
 				</div>
 			</div>
+			
+			<input type="submit">Login</input>
 		
 		
 		<div id='errorDiv'>
@@ -33,7 +35,7 @@
 			Login
 		</div>
 		-->
-		<input type="submit">Login</input>
+		
 		
 		</form>
 		
