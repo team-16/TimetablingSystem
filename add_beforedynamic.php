@@ -18,11 +18,6 @@ if(!isLoggedIn()){
 	</head>
 
 	<body>
-	
-	<script type="text/javascript">
-		var moduleArray = <?php echo(json_encode(getModules(loggedDept()))); ?>;
-		//alert(JSON.stringify(moduleArray));
-	</script>
 		
 		<div id="wrapperAdd">
 
@@ -33,16 +28,11 @@ if(!isLoggedIn()){
 					<div id="moduleDetails" class="moduleDetailsDiv">
 						<fieldset>
 							<legend>Module</legend>
-							<select id="moduleCodeSelect" class="left1" onchange='document.getElementById("moduleTitleOutput").innerHTML = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"]'> <!-- module code -->
-								<script type="text/javascript">
-									for(var i = 0; i < moduleArray.length; i++){
-										var opt = document.createElement('option');
-										opt.innerHTML = moduleArray[i]['code'];
-										moduleCodeSelect.appendChild(opt);
-									}
-								</script>
+							<select id="moduleCodeSelect" class="left1"> <!-- module code -->
+								<option><!-- options here --></option>
 							</select>
 							<output id="moduleTitleOutput" class="right1">
+								<p>Legal and Professional Issues in Computing</p>
 								<!-- module title -->
 							</output>
 						</fieldset>
