@@ -39,10 +39,14 @@ class Database {
 	}
 	
 	public function results(){
-		return $this->results;
+		return json_encode($this->results);
 	}
 	
 	public function resultsZero(){
+		return json_encode($this->results[0]);
+	}
+	
+	public function resultsZeroN(){
 		return $this->results[0];
 	}
 	

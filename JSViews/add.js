@@ -1,5 +1,11 @@
- function addcheckboxes() {
-                    var parentElement = document.getElementById("time");
+function init() {
+    checkboxGenerator();
+    sliderGenerator();
+    facilityGenerator();
+}
+
+function checkboxGenerator() {
+                    var parentElement = document.getElementById("weeksDiv");
                     var fullHTML1 = "";
                     var originalhtml = parentElement.innerHTML;
                     for(var i=1; i <= numberOfWeeks; i++)
@@ -19,13 +25,13 @@
                         //alert("4");
                     }
                     fullHTML1 += "<br>";
-                    document.getElementById("time").innerHTML = originalhtml + fullHTML1;
+                    document.getElementById("weeksDiv").innerHTML = originalhtml + fullHTML1;
                     //alert("5");
             }
 
 function facilityGenerator() {
     testFacilities();
-    var parentElement = document.getElementById("facilities");
+    var parentElement = document.getElementById("roomFacilities");
     var fullHTML ="";
     var oldhtml= parentElement.innerHTML;
     for (var i = 0; i < facilitiesArray.length; i++) {
@@ -35,7 +41,7 @@ function facilityGenerator() {
             newfacility += "/> " + facilitiesArray[i].name;
             fullHTML += newfacility;
     }
-     document.getElementById("facilities").innerHTML = oldhtml + fullHTML;
+     document.getElementById("roomFacilities").innerHTML = oldhtml + fullHTML;
 }
 
 function select12(){
@@ -74,7 +80,6 @@ function periodsGenerator() {
     }
     fullHTML += newPeriodsList;
     fullHTML += "</select>";
-    fullHTML += "<br>";
     document.getElementById("time").innerHTML = oldhtml + fullHTML;
 }
 
@@ -102,11 +107,11 @@ function lengthGenerator() {
 
          return true;
       }
-function parkPreferenceGenerator(){
-var parentElement = document.getElementById("module");
+function parkGenerator(){
+var parentElement = document.getElementById("parkSelect");
 var fullHTML ="";
 var oldhtml = parentElement.innerHTML;
-var newParkPreference = "<select>";
+var newParkPreference = "";
 
     for (var i = 0; i < parksArray.length; i++) {
         newParkPreference += "<option ";
@@ -116,19 +121,18 @@ var newParkPreference = "<select>";
     }
 
     fullHTML += newParkPreference;
-    fullHTML += "</select>";
-    fullHTML += "<br>";
-    document.getElementById("module").innerHTML = oldhtml + fullHTML;
+    fullHTML += "";
+    document.getElementById("parkSelect").innerHTML = oldhtml + fullHTML;
 }
 function plsNoZero() {
-	var input = document.getElementById("students").value.charAt(0);
-	if (input == "0") document.getElementById("students").value = "1";
+	var input = document.getElementById("studentsInput").value.charAt(0);
+	if (input == "0") document.getElementById("studentsInput").value = "1";
 }
 function maxValue(){
-    var value = document.getElementById("students").value;
-    if(value > 500) {document.getElementById("students").value ="1"};
+    var value = document.getElementById("studentsInput").value;
+    if(value > 500) {document.getElementById("studentsInput").value ="1"};
 }
-function okKeyUpCheck(){
+function onKeyUpCheck(){
     plsNoZero();    
     maxValue();
 }

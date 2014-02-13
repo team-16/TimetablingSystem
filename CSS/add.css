@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+#wrapperAdd {
+	font-size:150%;
+	position:relative;
+	width:100%;
+	border: 1px solid black;
+	margin-bottom:10px;
+}
+
+fieldset {
+	padding:0.5em;
+	margin:1em;
+}
+
+form {
+	width:100%;
+}
+
+.formDiv {
+	/*border:1px solid #000;*/
+	/*padding:1em;*/
+	/*margin:1em;*/
+	display:block;
+	width:100%;
+}
+
+.containerDiv {
+	width:auto;
+	clear:left;
+	clear:right;
+	display:block;
+}
+
+.roomDiv {
+	display:inline;
+	width:50%;
+	float:left;
+}
+
+.facilitiesDiv {
+	display:inline;
+	width:50%;
+	float:right;
+}
+
+.moduleDetailsDiv {
+	display:inline;
+	width:50%;
+	float:left;
+}
+
+.timeDetailsDiv {
+	display:inline;
+	width:50%;
+	float:right;
+}
+
+.input {
+	display:inline;
+	float:right;
+}
+
+.formItem {
+	display:block;
+}
+
+.leftRoom {
+	/*margin:0 1em 0 1em;*/
+	width:10em;
+	display:inline-block;
+	/*float:left;*/
+}
+.leftTime {
+	width:5em;
+	display:inline-block;
+}
+
+.right1 {
+	/*margin:0 1em 0 1em;*/
+	display:inline-block;
+	/*float:right;*/
+}
+
+.formWrapper {
+	width:100%;
+}
+
+.formLeft {
+
+}
+
+.formRight {
+
+}
+
+/*
+.divstyle {
+	width: 200px;
+	height: 200px;
+	margin: 10px ;
+	padding: 20px;
+	
+	text-align: center;
+	border: 5px solid #009;
+	
+}
+
+.style1 {
+	position:absolute;
+	top:10px;
+	left:10px;
+	
+}
+
+.style2 {
+	position:absolute;
+	top:10px;
+	left:400px;
+}
+.style3 {
+	position: absolute;
+	top: 10px;
+	left: 800px;
+}*/

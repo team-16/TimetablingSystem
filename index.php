@@ -1,4 +1,14 @@
-<!DOCTYPE HTML>
+<?php
+
+include('PHP/init.php');
+
+if(!isLoggedIn()){
+	session_destroy();
+	redirect('login.php');
+}
+
+?>
+
 <html>
 
 	<head>
@@ -20,27 +30,67 @@
 			
 			<nav id="menuLinks">
 				<ul>
-					<li>
-						<a href="home.html">Page1</a>
-					</li>
-					<li>
-						<a href="request.html">Request</a>
-					</li>
-					<li>
-						<a href="page3.html">Page3</a>
-					</li>
-					<li>
-						<a href="page4.html">Page4</a>
-					</li>
-					<li>
-						<a href="test.html">Test Page</a>
-					</li>
-					<li>
-						<a href="test2.html">Test Page 2</a>
-					</li>
-					<li>
-						<a href="test3.html">Test Page 3</a>
-					</li>
+				
+					<a href="home.php" id='home'>
+						<li>
+							Home
+						</li>
+					</a>
+					
+					<a href="add.php">
+						<li>
+							Add ...
+						</li>
+					</a>
+					
+					<a href="requests.php">
+						<li>
+							Requests
+						</li>
+					</a>
+					
+					<a href="results.php">
+						<li>
+							Results
+						</li>
+					</a>
+					
+					<a href="mybookings.php">
+						<li>
+							My Bookings
+						</li>
+					</a>
+					
+					<a href="allbookings.php">
+						<li>
+							All Bookings
+						</li>
+					</a>
+					
+					<a href="settings.php">
+						<li>
+							Settings
+						</li>
+					</a>
+					
+					<a href="test.php">
+						<li>
+							Test Page
+						</li>
+					</a>
+					
+					<a href="test2.php">
+						<li>
+							Test Page 2
+						</li>
+					</a>
+					
+					<a href="test3.php">
+						<li>
+							Test Page 3
+						</li>
+					</a>
+					
 				</ul>
 			</nav>
 			
@@ -56,17 +106,20 @@
 		
 	<!-- These probably can't stay here, but for now they work -->
 	<script type='text/javascript' src='JS/constants.js'></script>
-	<script type='text/javascript' src='JS/globalFunctions.js'></script>
 	<script type='text/javascript' src='JS/sessionData.js'></script>
 	<script type='text/javascript' src='JS/dataTypeObjects.js'></script>
-	<script type="text/javascript" src="JS/addrequest.js"></script>
+	<script type='text/javascript' src='JS/globalFunctions.js'></script>
+	<script type='text/javascript' src='JS/dataManager.js'></script>
 	<script type='text/javascript' src='JS/weeksManipulator.js'></script>
+	
+	<!-- 		View Generators			-->
 	<script type='text/javascript' src='JS/listGenerator.js'></script>
 	<script type='text/javascript' src='JS/graphicalGenerator.js'></script>
 	
 	<script type='text/javascript' src='jQuery&UI/jQuery.js'></script>
 	<script type='text/javascript' src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'></script>
-	<script type='text/javascript' src='JS/indexScript.js'></script>
-		
+	
+	<script type='text/javascript' src='JSViews/indexScript.js'></script>
+
 	</body>
 </html>
