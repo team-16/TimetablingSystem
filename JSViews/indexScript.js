@@ -32,6 +32,7 @@ $(document).ready(function() {
 	setupSessionData();
 	
 });
+
 $(function() {
 			var d = new Date();
 			$( "#progressbar" ).progressbar({

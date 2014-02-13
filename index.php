@@ -9,6 +9,18 @@ if(!isLoggedIn()){
 
 ?>
 
+
+<?php
+	/*
+	echo('<script type="text/javascript">
+			window.top.location.href = "http://co-project.lboro.ac.uk/team16/TimetablingSystem/login.php";
+			</script>');
+	
+	
+	echo(loggedDept() . " | " . loggedDeptName());
+	*/
+?>
+
 <html>
 
 	<head>

@@ -1,0 +1,7 @@
+<?php
+	
+	$currentDept =  (loggedDept() . " | " . loggedDeptName());
+	
+	
+	
+?>
