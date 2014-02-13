@@ -5,7 +5,7 @@ function init() {
 }
 
 function checkboxGenerator() {
-                    var parentElement = document.getElementById("weeksDiv");
+                    var parentElement = document.getElementById("weeksCheckbox");
                     var fullHTML1 = "";
                     var originalhtml = parentElement.innerHTML;
                     for(var i=1; i <= numberOfWeeks; i++)
@@ -25,7 +25,7 @@ function checkboxGenerator() {
                         //alert("4");
                     }
                     fullHTML1 += "<br>";
-                    document.getElementById("weeksDiv").innerHTML = originalhtml + fullHTML1;
+                    document.getElementById("weeksCheckbox").innerHTML = originalhtml + fullHTML1;
                     //alert("5");
             }
 
@@ -52,6 +52,18 @@ function select12(){
     for(var i = 13; i <=15; i++){
         var checkbox = document.getElementById("week " + i);
         if (true) checkbox.checked = false;
+    }
+}
+function selectOdd(){
+    for (var i = 1; i <= numberOfWeeks; i+=2) {
+        var checkbox = document.getElementById("week " + i);
+        if (true) checkbox.checked = true;
+    }
+}
+function selectEven(){
+    for (var i = 0; i < numberOfWeeks; i+=2) {
+        var checkbox = document.getElementById("week " + i);
+        if (true) checkbox.checked = true;
     }
 }
 
