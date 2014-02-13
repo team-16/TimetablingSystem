@@ -22,10 +22,18 @@
 
 <script type='text/javascript'>
 
-function testX() {
+function testX(dept) {
 	alert("1");
+	dept = "CO";
 	
-	var res = <?php include("PHP/init.php"); echo getModules("CO"); ?> ;
+	window.location = "?dept=" + "CO";
+	
+	var res = <?php 
+		$dept = $_GET['dept'];
+		include("PHP/init.php"); echo getModules($dept); 
+	?> ;
+	
+	
 	
 	alert("2");
 	
@@ -36,7 +44,8 @@ function testX() {
 
 </script>
 
-<button type='button' onclick='testX();'>Some Test</button>
+<button type='button' onclick='testX("CO");'>Some Test</button>
+<button type='button' onclick='testX("TT");'>Some Test2</button>
 
 
 
