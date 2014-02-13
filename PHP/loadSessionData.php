@@ -2,7 +2,7 @@
 	
 	include('init.php');
 	
-	$currentDept =  (loggedDept() . " | " . loggedDeptName());
+	$currentDept =  loggedDept();
 	/*
 	$liveSemester = getLiveSemesterData();
 	$adHocSemester = getAdHocSemesterData();
