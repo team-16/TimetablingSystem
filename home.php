@@ -12,7 +12,7 @@ if(!isLoggedIn()){
 <html>
 
 <div>
-	Home Page
+	Home Page - currently logged in as: <?php echo(loggedDept()); ?>
 </div>
 
 

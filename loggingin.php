@@ -1,13 +1,17 @@
 <?php
 
 include('PHP/init.php');
-login($_POST["username"], $_POST["password"]);
+if(authenticate($_POST["password"], $_POST["username"])){
+	login($_POST["username"], $_POST["password"]);
+	
+	redirect("index.php");
+}
 
-	if(!isLoggedIn()){
-		session_destroy();
-		redirect('login.php');
-	}
-	else{
-		redirect("index.php");
-	}
+else{
+
+	session_destroy();
+	redirect('login.php');	
+	
+}
+
 ?>
