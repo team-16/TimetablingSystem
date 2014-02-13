@@ -10,7 +10,17 @@ if(authenticate($_POST["password"], $_POST["username"])){
 else{
 
 	session_destroy();
-	redirect('login.php');	
+	
+	echo('<form id="autoForm" method="post" action="login.php">
+    <input type="hidden" name="errorCode" value="invalid">
+    <input type="submit">
+	</form>
+	<script type="text/javascript">
+    document.getElementById("autoForm").submit();
+	</script>
+	');
+	
+	//redirect('login.php');
 	
 }
 
