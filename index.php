@@ -58,25 +58,25 @@
 						</li>
 					</a>
 					
-					<a href="settings.html" class="foo">
+					<a href="settings.html">
 						<li>
 							Settings
 						</li>
 					</a>
 					
-					<a href="test.html" class="foo">
+					<a href="test.html">
 						<li>
 							Test Page
 						</li>
 					</a>
 					
-					<a href="test2.html" class="foo">
+					<a href="test2.html">
 						<li>
 							Test Page 2
 						</li>
 					</a>
 					
-					<a href="test3.php" class="foo">
+					<a href="test3.php">
 						<li>
 							Test Page 3
 						</li>

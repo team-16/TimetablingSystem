@@ -3,6 +3,7 @@
 	include('PHP/init.php');
 	
 	if(!isLoggedIn()){
+		echo("uh oh!");
 		//redirectParent('login.php');
 	}
 
