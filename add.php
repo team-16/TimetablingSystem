@@ -67,6 +67,11 @@ if(!isLoggedIn()){
 									<h4>Weeks:</h4>
 								</div>
 								<div id="weeksDiv" class="right1">
+									<input type="button" onclick="selectOdd();" value = "Odd weeks">
+									<input type="button" onclick="selectEven();" value="Even weeks">
+									<input type="button" onclick="select12();" value="select 12 weeks">
+									<input type="button" onclick="selectDeselectAll(false);" value="deselect all">
+									<input type="button" onclick="selectDeselectAll(true);" value="select all">
 								</div>
 							</div>
 
