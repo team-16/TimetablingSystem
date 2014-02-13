@@ -203,7 +203,9 @@ if(!isLoggedIn()){
 						lengthGenerator(); parkPreferenceGenerator();">
 
 					-->
-<p>placeholder</p>
+<p></p>
+					<input type="submit" value="Submit Request" onclick="<!--Send all the variables to addingrequest.php-->">  <!--Required for "enter to submit" to work-->
+		</div>	
 		</div> <!-- end of wrapper -->
 
 			<script src='JSViews/add.js'></script>
