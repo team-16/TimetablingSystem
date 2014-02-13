@@ -3,6 +3,7 @@
 include('PHP/init.php');
 
 if(!isLoggedIn()){
+	session_destroy();
 	redirect('login.php');
 }
 
@@ -54,31 +55,31 @@ if(!isLoggedIn()){
 						</li>
 					</a>
 					
-					<a href="mybookings.html">
+					<a href="mybookings.php">
 						<li>
 							My Bookings
 						</li>
 					</a>
 					
-					<a href="allbookings.html">
+					<a href="allbookings.php">
 						<li>
 							All Bookings
 						</li>
 					</a>
 					
-					<a href="settings.html">
+					<a href="settings.php">
 						<li>
 							Settings
 						</li>
 					</a>
 					
-					<a href="test.html">
+					<a href="test.php">
 						<li>
 							Test Page
 						</li>
 					</a>
 					
-					<a href="test2.html">
+					<a href="test2.php">
 						<li>
 							Test Page 2
 						</li>
