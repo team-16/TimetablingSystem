@@ -94,7 +94,7 @@ if(!isLoggedIn()){
 					
 				</ul>
 			</nav>
-			
+			<div id= "progressbar"> </div>
 			<div id='ContentDiv'>
 				<!-- Javascript injects content here -->
 			</div>
