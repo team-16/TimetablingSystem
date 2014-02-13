@@ -1,3 +1,5 @@
+<?php include('PHP/init.php'); ?>
+
 <html>
 
 <link rel="stylesheet" type="text/css" href="CSS/loginStyle.css">
