@@ -40,7 +40,7 @@ if(!isLoggedIn()){
 					
 					<a href="add.php">
 						<li>
-							Add ...
+							Add...
 						</li>
 					</a>
 					
@@ -76,19 +76,19 @@ if(!isLoggedIn()){
 					
 					<a href="test.php">
 						<li>
-							Test Page
+							Test
 						</li>
 					</a>
 					
 					<a href="test2.php">
 						<li>
-							Test Page 2
+							Test 2
 						</li>
 					</a>
 					
 					<a href="test3.php">
 						<li>
-							Test Page 3
+							Test 3
 						</li>
 					</a>
 					
