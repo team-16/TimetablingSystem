@@ -9,11 +9,11 @@ var roundStart = new Date();
 
 var roundEnd = new Date();
 
-var roundSemesterID = "";
+var liveSemesterID = "";
 
-var roundSemester = 1;
+var liveSemester = 1;
 
-var roundYear = 1111;
+var liveYear = 0;
 
 var numberOfWeeks = 15;
 
@@ -28,7 +28,7 @@ var adHocSemesterID = "";
 
 var adHocSemester = 1;
 
-var adHocYear = 1111;
+var adHocYear = 0;
 
 var adHocNumberOfWeeks = 1;
 

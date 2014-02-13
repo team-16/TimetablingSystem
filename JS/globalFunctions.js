@@ -18,3 +18,13 @@ function htmlStringFormater(stringArray, newLine){
 	return roomsString;
 	
 }
+
+function datetimeStringConverter(dateString) {
+	
+	var date = new Date();
+	
+	
+	
+	return date;
+	
+}

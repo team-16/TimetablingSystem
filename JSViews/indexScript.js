@@ -36,24 +36,17 @@ $(document).ready(function() {
 
 function loadSess() {
 	alert("sommin");
-	/*
-	$.get("../PHP/loadSessionData.php", {}, function(results){
-		
-		alert("started");
-		
-		alert(JSON.stringify(results));
-		
-		
-	}, 'json');
-	*/
+	
+	var currentSessionID = document.location.href.match(/PHPSESSID=[^;]+/);
 	
 	$.ajax({
-		url: "PHP/loadSessionData.php",
+		url: "PHP/loadSessionData.php?" +currentSessionID,
 		type: "GET",
-		datatype: "JSON",
+		datatype: "json",
 		data: {},
-		success: function(data) {
-			alert(JSON.stringify(data));
+		success: function(results) {
+			alert(JSON.stringify(results));
+			sessionDataSetup(results);
 		}
 	});
 		

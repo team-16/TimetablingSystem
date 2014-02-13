@@ -9,18 +9,6 @@ if(!isLoggedIn()){
 
 ?>
 
-
-<?php
-	/*
-	echo('<script type="text/javascript">
-			window.top.location.href = "http://co-project.lboro.ac.uk/team16/TimetablingSystem/login.php";
-			</script>');
-	
-	
-	echo(loggedDept() . " | " . loggedDeptName());
-	*/
-?>
-
 <html>
 
 	<head>
@@ -119,7 +107,7 @@ if(!isLoggedIn()){
 		
 	<!-- These probably can't stay here, but for now they work -->
 	<script type='text/javascript' src='JS/constants.js'></script>
-	<script type='text/javascript' src='JS/sessionData.js'></script>
+	<script type='text/javascript' src='JS/sessionDataStore.js'></script>
 	<script type='text/javascript' src='JS/dataTypeObjects.js'></script>
 	<script type='text/javascript' src='JS/globalFunctions.js'></script>
 	<script type='text/javascript' src='JS/dataManager.js'></script>
