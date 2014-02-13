@@ -1,4 +1,5 @@
-<!DOCTYPE HTML>
+<?php include('PHP/init.php'); ?>
+
 <html>
 
 	<head>
@@ -21,25 +22,25 @@
 			<nav id="menuLinks">
 				<ul>
 				
-					<a href="home.html">
+					<a href="home.php">
 						<li>
 							Home
 						</li>
 					</a>
 					
-					<a href="add.html">
+					<a href="add.php">
 						<li>
 							Add ...
 						</li>
 					</a>
 					
-					<a href="requests.html">
+					<a href="requests.php">
 						<li>
 							Requests
 						</li>
 					</a>
 					
-					<a href="results.html">
+					<a href="results.php">
 						<li>
 							Results
 						</li>
@@ -57,25 +58,25 @@
 						</li>
 					</a>
 					
-					<a href="settings.html">
+					<a href="settings.html" class="foo">
 						<li>
 							Settings
 						</li>
 					</a>
 					
-					<a href="test.html">
+					<a href="test.html" class="foo">
 						<li>
 							Test Page
 						</li>
 					</a>
 					
-					<a href="test2.html">
+					<a href="test2.html" class="foo">
 						<li>
 							Test Page 2
 						</li>
 					</a>
 					
-					<a href="test3.php">
+					<a href="test3.php" class="foo">
 						<li>
 							Test Page 3
 						</li>
