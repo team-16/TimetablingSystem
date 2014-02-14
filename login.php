@@ -27,7 +27,14 @@
 		
 			echo("Invalid Login. Please try again.<br><br>If you have forgotten your username and/or password, please contact the system administrator.<br>");
 		
-		} ?>
+		}
+		
+		if$_POST['errorCode'] == "invalid"){
+		
+			echo("Successfully logged out.<br>");
+		
+		}
+		?>
 		</div>
 		<br/>
 		

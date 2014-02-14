@@ -18,6 +18,10 @@ if(!isLoggedIn()){
 	</head>
 
 	<body>
+	
+	<script type="text/javascript">
+		var moduleArray = <?php echo(json_encode(getModules(loggedDept()))); ?>;
+	</script>
 		
 		<div id="wrapperAdd">
 
@@ -28,11 +32,16 @@ if(!isLoggedIn()){
 					<div id="moduleDetails" class="moduleDetailsDiv">
 						<fieldset>
 							<legend>Module</legend>
-							<select id="moduleCodeSelect" class="left1"> <!-- module code -->
-								<option><!-- options here --></option>
+							<select id="moduleCodeSelect" class="left1" onclick='document.getElementById("moduleTitleOutput").innerHTML = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"]'> <!-- module code -->
+								<script type="text/javascript">
+									for(var i = 0; i < moduleArray.length; i++){
+										var opt = document.createElement('option');
+										opt.innerHTML = moduleArray[i]['code'];
+										moduleCodeSelect.appendChild(opt);
+									}
+								</script>
 							</select>
 							<output id="moduleTitleOutput" class="right1">
-								<p>Legal and Professional Issues in Computing</p>
 								<!-- module title -->
 							</output>
 						</fieldset>
@@ -58,6 +67,11 @@ if(!isLoggedIn()){
 									<h4>Weeks:</h4>
 								</div>
 								<div id="weeksDiv" class="right1">
+									<input type="button" onclick="selectOdd();" value = "Odd weeks">
+									<input type="button" onclick="selectEven();" value="Even weeks">
+									<input type="button" onclick="select12();" value="select 12 weeks">
+									<input type="button" onclick="selectDeselectAll(false);" value="deselect all">
+									<input type="button" onclick="selectDeselectAll(true);" value="select all">
 								</div>
 							</div>
 
@@ -194,7 +208,9 @@ if(!isLoggedIn()){
 						lengthGenerator(); parkPreferenceGenerator();">
 
 					-->
-<p>placeholder</p>
+<p></p>
+					<input type="submit" value="Submit Request" onclick="<!--Send all the variables to addingrequest.php-->">  <!--Required for "enter to submit" to work-->
+		</div>	
 		</div> <!-- end of wrapper -->
 
 			<script src='JSViews/add.js'></script>
