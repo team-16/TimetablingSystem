@@ -25,7 +25,7 @@ if(!isLoggedIn()){
 		
 		<div id="wrapperAdd">
 
-		<button id="HELLOJAVASCRIPT" onclick="checkboxGenerator(); facilityGenerator(); parkGenerator();" style="width:100%;height:50px;">LOL INTERNET</button><!-- the location of this button is irrelevant -->
+		<button id="HELLOJAVASCRIPT" onclick="checkboxGenerator(); rangedSlider(); facilityGenerator(); parkGenerator();" style="width:100%;height:50px;">LOL INTERNET</button><!-- the location of this button is irrelevant -->
 			<form id="add">
 
 				<div class="containerDiv">
@@ -85,7 +85,7 @@ if(!isLoggedIn()){
 										<h4>Period:</h4>
 									</div>
 									<div class="right1">
-										<select name="periodSelect">
+										<select id="periodSelect" name="periodSelect">
 											<option>1</option>
 											<option>2</option>
 											<option>3</option>
@@ -104,7 +104,7 @@ if(!isLoggedIn()){
 										<h4>Length:</h4>
 									</div>
 									<div class="right1">
-										<select name="lengthSelect">
+										<select id = "lengthSelect" name="lengthSelect">
 											<option>1</option>
 											<option>2</option>
 											<option>3</option>
@@ -160,7 +160,7 @@ if(!isLoggedIn()){
 									<h4>Park preference:</h4>
 								</div>
 								<div class="right1">
-									<select name="parkSelect"></select>
+									<select name="parkSelect" id="parkSelect"></select>
 								</div>
 							</div>			
 						</fieldset>	

@@ -150,16 +150,18 @@ function onKeyUpCheck(){
     plsNoZero();    
     maxValue();
 }
-$(function rangedSlider() {
+function rangedSlider() {
+    var periodSelect = document.getElementById('periodSelect');
+    var lengthSelect = document.getElementById('lengthSelect');
     $( "#slider-range" ).slider({
         range: true,
         min: 1,
         max: 10,
-        values: [ 1, 10 ],
+        values: [ periodSelect.value, lengthSelect.value ],
         slide: function( event, ui ) {
             $( "#amount" ).val(  + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
         }
         });
         $( "#amount" ).val( + $( "#slider-range" ).slider( "values", 0 ) +
         " - " + $( "#slider-range" ).slider( "values", 1 ) );
-});
+};
