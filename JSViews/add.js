@@ -3,20 +3,21 @@ $(document).ready(function() {
     /*
     sliderGenerator();
     facilityGenerator();
-    checkboxGenerator();
-    rangedSlider(); 
+    //rangedSlider(); 
     facilityGenerator();
     parkGenerator();
-    checkboxGenerator();
-    periodsGenerator();
+   
     */
+    //periodsGenerator();
+     checkboxGenerator();
+    
 });
 
 
 function checkboxGenerator() {
                     var parentElement = document.getElementById("weeksCheckbox");
                     var fullHTML1 = "";
-                    var originalhtml = parentElement.innerHTML;
+                    //var originalhtml = parentElement.innerHTML;
                     for(var i=1; i <= numberOfWeeks; i++)
                     {
                         var newCheckBox = "<input ";
@@ -34,7 +35,7 @@ function checkboxGenerator() {
                         //alert("4");
                     }
                     fullHTML1 += "<br>";
-                    document.getElementById("weeksCheckbox").innerHTML = originalhtml + fullHTML1;
+                    $("#weeksCheckbox").html(fullHTML1);
                     //alert("5");
             }
 
