@@ -117,6 +117,10 @@ if(!isLoggedIn()){
 										</select>
 									</div>
 								</div>
+								<p>
+									<label for="amount">start period, end period:</label>
+									<output type="text" id="amount" style="border:0; font-weight:bold;">
+								</p>
 								<div id="slider-range">
 									<!-- Slider generated here -->
 								</div>
