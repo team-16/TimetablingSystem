@@ -3,61 +3,38 @@ var liveSettingsRadio = [];
 function settingsRadioToggle(btn, position){
 
 	if(liveSettingsRadio[position] == btn){
-		
-		//btn.parentNode.parentNode.style.borderBottom = "1px solid black";
-		
+				
 		btn.checked = false;
 		liveSettingsRadio[position] = null;
 		
 	}
-	else {
-		
-		btn.parentNode.parentNode.style.borderBottom = "none";
-		
-		//if (liveSettingsRadio[position] != null) liveSettingsRadio[position].parentNode.parentNode.style.borderBottom = "1px solid black";
-		
-		liveSettingsRadio[position] = btn;
-		
-	}
+	else liveSettingsRadio[position] = btn;
+	
 	
 }
 
-var liveSettingsContent = [];
-
-function showSettingsContent(btn, contentID, position) {
+function changePassword() {
 	
-	if(btn.checked) {
-		
-		if(liveSettingsContent[position] != contentID){
-			
-			if(liveSettingsContent[position] != null) {
-				
-				document.getElementById(liveSettingsContent[position]).style.maxHeight = "0px";
-				document.getElementById(liveSettingsContent[position]).style.borderLeft = "none";
-				document.getElementById(liveSettingsContent[position]).style.borderRight = "none";
-				document.getElementById(liveSettingsContent[position]).style.borderBottom = "none";
-			
-			}
-			
-			document.getElementById(contentID).style.maxHeight = "300px";
-			document.getElementById(contentID).style.borderLeft = "1px solid black";
-			document.getElementById(contentID).style.borderRight = "1px solid black";
-			document.getElementById(contentID).style.borderBottom = "1px solid black";
-						
-			liveSettingsContent[position] = contentID;
-			
-		}
-		
-	}
+	var oldpassword = $("#oldpassword").val();
+	var newpassword = $("#newpassword").val();
+	var confirmnewpassword = $("#confirmnewpassword").val();
+	
+	if (newpassword != confirmnewpassword) alert("Error: New Password not the same");
 	else {
 		
-		document.getElementById(contentID).style.maxHeight = "0px";
-		document.getElementById(contentID).style.borderLeft = "none";
-		document.getElementById(contentID).style.borderRight = "none";
-		document.getElementById(contentID).style.borderBottom = "none";
-		
-		liveSettingsContent[position] = null;
+		$.ajax({
+			url: "changingpassword.php?" +currentSessionID,
+			type: "POST",
+			data: { username:department, password:oldpassword, newPassword:newpassword },
+			success: function(results) {
+				alert(results);
+			}
+		});
 		
 	}
-
+	
+	$("#oldpassword").val("");
+	$("#newpassword").val("");
+	$("#confirmnewpassword").val("");
+	
 }

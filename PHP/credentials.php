@@ -47,12 +47,10 @@ function changePassword($deptCode, $newPassword){
 	$hash = generatePwdHash($newPassword, $salt);
 	
 	if($DB->query("UPDATE department SET hash = :hash, salt = :salt WHERE code = :department", array(':salt' => $salt,':hash' => $hash,':department' => $deptCode))){
-		echo("woop");
 		return true;
 	}
 	
 	else{
-		echo("NOPE");
 		return false;
 	}
 }

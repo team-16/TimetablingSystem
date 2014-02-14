@@ -49,7 +49,6 @@ function loadSession() {
 		datatype: "json",
 		data: {},
 		success: function(results) {
-			alert(JSON.stringify(results));
 			sessionDataSetup(results);
 		}
 	});

@@ -3,3 +3,30 @@
 #mainSettingsDiv {
 	margin:5px;
 }
+
+.settingsCard {
+	padding-top:5px;
+	padding-left:5px;
+	
+	cursor: pointer;
+	cursor: hand;
+	
+	background:darkgrey;
+}
+
+.settingsContent {
+	margin-left:-5px;
+	
+	cursor: default;
+	
+	background:white;
+}
+
+.ChangePasswordTable {
+	margin-left:20px;
+	border-spacing:5px 10px;
+}
+
+.PasswordTitle {
+	width:200px;
+}
