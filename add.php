@@ -165,12 +165,13 @@ if(!isLoggedIn()){
 							</div>			
 						</fieldset>	
 					</div>	<!-- End of room details box -->
-					<div id="roomFacilities" class="facilitiesDiv">
+					
 						<fieldset>	<!-- Features box -->
 							<legend>Features</legend>
+								<div id="roomFacilities" class="facilitiesDiv">
 							<!-- content -->
+								</div>
 						</fieldset>	<!-- End of features box -->
-					</div>
 				</div> <!-- End of container -->
 
 			</form>
