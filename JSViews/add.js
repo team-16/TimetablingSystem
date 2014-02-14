@@ -55,7 +55,7 @@ function select12(){
     }
 }
 function selectOdd(){
-    for (var i = 1; i <= numberOfWeeks; i+=2) {
+    for (var i = 1; i <= regularWeeks; i+=2) {
         var checkbox = document.getElementById("week " + i);
         if (true) checkbox.checked = true;
     }
@@ -69,7 +69,7 @@ function selectEven(){
 
 function selectDeselectAll(checkAll) {
 
-    for (var i = 1; i <= regularWeeks; i++) {
+    for (var i = 1; i <= numberOfWeeks; i++) {
     	
     	var checkbox = document.getElementById("week " + i);
     	

@@ -209,7 +209,9 @@ if(!isLoggedIn()){
 
 					-->
 <p></p>
-					<input type="submit" value="Submit Request" onclick="<!--Send all the variables to addingrequest.php-->">  <!--Required for "enter to submit" to work-->
+					
+				<input type="submit" value="Submit Request" onclick="<!--Send all the variables to addingrequest.php-->">  <!--Required for "enter to submit" to work-->
+				<input type="button" value="Cancel" onclick="<!--reset the form data and possibly link them to the home page maybe? -->">
 		</div>	
 		</div> <!-- end of wrapper -->
 
