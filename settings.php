@@ -10,35 +10,40 @@ if(!isLoggedIn()){
 ?>
 
 <html>
-	
-	<div class='accordion'>
+
+<link rel="stylesheet" type="text/css" href="CSS/settingsStyle.css">
+
+	<div id='mainSettingsDiv'>
 		
-		<label class='accordionSection'>
-			<input type='radio' name='settingsAccordion'>
-				Change Password
-			</input>
+		<div class='accordion'>
 			
-			<div class='accordionContent'>
-				<div style='height:200px; width:100%;'>
-					Change Password Content
+			<label class='accordionSection'>
+				<input type='radio' name='settingsAccordion' onclick='graphicalRadioToggle(this, 0);'>
+					Change Password
+				</input>
+				
+				<div class='accordionContent'>
+					<div style='height:200px; width:100%;'>
+						Change Password Content
+					</div>
 				</div>
-			</div>
+				
+			</label>
 			
-		</label>
-		
-		<label class='accordionSection'>
-			<input type='radio' name='settingsAccordion'>
-				Modules
-			</input>
-			
-			<div class='accordionContent'>
-				<div style='height:200px; width:100%;'>
-					Module Content
+			<label class='accordionSection'>
+				<input type='radio' name='settingsAccordion'>
+					Modules
+				</input>
+				
+				<div class='accordionContent'>
+					<div style='height:200px; width:100%;'>
+						Module Content
+					</div>
 				</div>
-			</div>
+				
+			</label>
 			
-		</label>
-		
+		</div>
 		
 	</div>
 	
