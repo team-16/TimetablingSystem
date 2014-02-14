@@ -5,7 +5,8 @@
 	$currentDept =  loggedDept();
 	$liveSemester = getLiveSemesterData();
 	$adHocSemester = getAdHocSemesterData();
-	$liveRounds = getCurrentRoundsData();
+	$liveRound = getLiveRoundData();
+	$adHocRound = getAdHocRoundData();
 	
 	$allFacilities = getFacilities();
 	
@@ -15,7 +16,8 @@
 		"Department" => $currentDept,
 		"LiveSemester" => $liveSemester,
 		"AdHocSemester" => $adHocSemester,
-		"LiveRounds" => $liveRounds,
+		"LiveRound" => $liveRound,
+		"AdHocRound" => $adHocRound,
 		"AllFacilities" => $allFacilities
 				
 	);

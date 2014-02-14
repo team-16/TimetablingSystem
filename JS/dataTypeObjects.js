@@ -1,4 +1,4 @@
-//Request Object
+//Request Object Class
 function Request () {
 	
 	//Main fields (data required for all instances)
@@ -33,7 +33,7 @@ function Request () {
 	
 }
 
-
+//Facility Object Class
 function Facility () {
 	
 	this.id = "";
@@ -41,6 +41,7 @@ function Facility () {
 	
 }
 
+//Module Object Class
 function Module () {
 	
 	this.code = "";
@@ -49,6 +50,7 @@ function Module () {
 	
 }
 
+//Building Object Class
 function Building () {
 	
 	this.code = "";
@@ -58,6 +60,7 @@ function Building () {
 	
 }
 
+//Room Object Class
 function Room () {
 	
 	this.code = "";
@@ -65,6 +68,9 @@ function Room () {
 	this.capacity = null;
 	
 }
+
+
+
 
 function getFacilityTitles(facilityCodesArray){
 	

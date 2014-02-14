@@ -56,7 +56,7 @@ function testReqClass(){
 }
 
 function gen(){
-	
+	setupSessionData();
 	var listHTML = listViewGenerator(requestArray, true, true, true, true, true, true, true, true, true);
 	
 	document.getElementById('listContent').innerHTML = listHTML;	

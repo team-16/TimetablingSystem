@@ -28,31 +28,10 @@ $(document).ready(function() {
 	/* Initial Load - load homepage by simulation of clicking on home*/ /* Need to validate for redirection to login page*/
 	$('#home').click();
 	
-	//Need to move with files after User Authentication
-	//setupSessionData();
-	loadSess();
+	//Load session data on System start after authentication of user
+	loadSession();
 	
 });
-
-function loadSess() {
-	alert("sommin");
-	
-	var currentSessionID = document.location.href.match(/PHPSESSID=[^;]+/);
-	
-	$.ajax({
-		url: "PHP/loadSessionData.php?" +currentSessionID,
-		type: "GET",
-		datatype: "json",
-		data: {},
-		success: function(results) {
-			alert(JSON.stringify(results));
-			sessionDataSetup(results);
-		}
-	});
-		
-	//alert("sommin2");
-	
-};
 
 $(function() {
 			var d = new Date();

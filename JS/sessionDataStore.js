@@ -1,3 +1,6 @@
+var currentSessionID = "";
+
+
 var department = "";
 
 
@@ -36,47 +39,119 @@ var adHocNumberOfWeeks = 1;
 var facilitiesArray = [];
 
 
+function loadSession() {
+	
+	currentSessionID = document.location.href.match(/PHPSESSID=[^;]+/);
+	
+	$.ajax({
+		url: "PHP/loadSessionData.php?" +currentSessionID,
+		type: "GET",
+		datatype: "json",
+		data: {},
+		success: function(results) {
+			alert(JSON.stringify(results));
+			sessionDataSetup(results);
+		}
+	});
+	
+};
+
+function sessionDataSetup(sessData) {
+	
+	sessionData = JSON.parse(sessData);
+	
+	department = sessionData.Department;
+	
+	if(sessionData.LiveSemester.length != 0) {
+		
+		liveSemesterID = sessionData.LiveSemester[0].id;
+		
+		liveSemester = sessionData.LiveSemester[0].semesterNumber;
+		
+		liveYear = sessionData.LiveSemester[0].year;
+		
+		numberOfWeeks = sessionData.LiveSemester[0].numberOfWeeks;
+		
+		
+		roundID = sessionData.LiveRound[0].id;
+		
+		roundNumber = sessionData.LiveRound[0].roundNo;
+		
+		roundStart = datetimeStringConverter(sessionData.LiveRound[0].start);
+		
+		roundEnd = datetimeStringConverter(sessionData.LiveRound[0].end);
+		
+	}
+	
+	
+	if(sessionData.AdHocSemester.length != 0) {
+				
+		adHocSemesterID = sessionData.AdHocSemester[0].id;
+		
+		adHocSemester = sessionData.AdHocSemester[0].semesterNumber;
+		
+		adHocYear = sessionData.AdHocSemester[0].year;
+		
+		adHocNumberOfWeeks = sessionData.AdHocSemester[0].numberOfWeeks;
+		
+		
+		adHocRoundID = sessionData.AdHocRound[0].id;
+				
+		adHocStart = datetimeStringConverter(sessionData.AdHocRound[0].start);
+		
+		adHocEnd = datetimeStringConverter(sessionData.AdHocRound[0].end);
+		
+	}
+	
+	
+	loadFacilities(sessionData.AllFacilities);
+	/*
+	alert(department);
+	
+	alert("Live Semester");
+	alert( liveSemesterID);
+	
+	alert(liveSemester);
+	
+	alert(liveYear);
+	
+	alert(numberOfWeeks);
+	
+	alert("Live Round");
+	alert(roundID);
+		
+	alert(roundNumber);
+		
+	alert(roundStart);
+		
+	alert(roundEnd);
+	
+	
+	alert("Ad Hoc Semester");
+	alert(adHocSemesterID);
+	
+	alert(adHocSemester);
+	
+	alert(adHocYear);
+	
+	alert(adHocNumberOfWeeks);
+	
+	alert("Ad Hoc Round");
+	alert(adHocRoundID);
+			
+	alert(adHocStart);
+		
+	alert(adHocEnd);
+	*/
+
+}
 
 
 
 var requestArray = [];
 
- 
+
 function setupSessionData(){
-
-	department = "CO";
-
-
-	roundID = "12345";
-
-	roundNumber = 1;
-
-	roundStart = new Date();
-
-	roundEnd = new Date();
-
-	roundSemesterID = "789";
-
-	roundSemester = 2;
-
-	roundYear = 2014;
-
-	numberOfWeeks = 15;
-
-
-	adHocRoundID = "12344";
-
-	adHocStart = new Date();
-
-	adHocEnd = new Date();
-
-	adHocSemesterID = "788";
-
-	adHocSemester = 1;
-
-	adHocYear = 2014;
-
-	adHocNumberOfWeeks = 15;
 	
 	testFacilities();
 	testRequestList();
@@ -85,18 +160,21 @@ function setupSessionData(){
 
 function testFacilities() {
 	
-	facilitiesArray[0] = new Facility();
-	facilitiesArray[0].id = "10100";
-	facilitiesArray[0].name = "Whiteboard";
+	var facility1 = new Facility();
+	facility1.id = "10100";
+	facility1.name = "Whiteboard";
 	
-	facilitiesArray[1] = new Facility();
-	facilitiesArray[1].id = "10101";
-	facilitiesArray[1].name = "Data Projector";
+	var facility2 = new Facility();
+	facility2.id = "10101";
+	facility2.name = "Data Projector";
 	
-	facilitiesArray[2] = new Facility();
-	facilitiesArray[2].id = "10102";
-	facilitiesArray[2].name = "OHP";
+	var facility3 = new Facility();
+	facility3.id = "10102";
+	facility3.name = "OHP";
 	
+	facilitiesArray.push(facility1);
+	facilitiesArray.push(facility2);
+	facilitiesArray.push(facility3);
 	
 }
  
