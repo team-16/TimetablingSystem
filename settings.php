@@ -10,49 +10,36 @@ if(!isLoggedIn()){
 ?>
 
 <html>
-
-Change Password:
-
-	<div id='changePassDiv'>
-	<br>
+	
+	<div class='accordion'>
 		
-		<form id="loginForm" action="changingpassword.php" method="post">
-			<div id='inputDiv'>
-				<div class='inputTitle' style='top:10px; left:20px;'>Username:</div>
-				<div class='inputField' style='top:13px; left:140px;'>
-					<input class='textField' type="text" name="username">
-				</div>
-				<div class='inputTitle' style='top:60px; left:20px;'>Current Password:</div>
-				<div class='inputField' style='top:63px; left:140px;'>
-					<input class='textField' type="password" name="password">
-				</div>
-				<div class='inputTitle' style='top:60px; left:20px;'>New Password:</div>
-				<div class='inputField' style='top:63px; left:140px;'>
-					<input class='textField' type="password" name="newPassword">
+		<label class='accordionSection'>
+			<input type='radio' name='settingsAccordion'>
+				Change Password
+			</input>
+			
+			<div class='accordionContent'>
+				<div style='height:200px; width:100%;'>
+					Change Password Content
 				</div>
 			</div>
-
-			<input type="submit" value="Change Password">  <!--Required for "enter to submit" to work-->
-		</div>
-
-		<div id='errorDiv'>
-		<?php
-		if($_POST['errorCode'] == "invalid"){
+			
+		</label>
 		
-			echo("Invalid Login. Password was not changed. Please try again.<br>");
+		<label class='accordionSection'>
+			<input type='radio' name='settingsAccordion'>
+				Modules
+			</input>
+			
+			<div class='accordionContent'>
+				<div style='height:200px; width:100%;'>
+					Module Content
+				</div>
+			</div>
+			
+		</label>
 		
-		}
-		
-		if($_POST['errorCode'] == "success"){
-		
-			echo("Password successfully changed. Please remember to use the new credentials when next logging into the system.<br>");
-		
-		}
-		?>
-		</div>		
-		
-		</form>
 		
 	</div>
-
+	
 </html>

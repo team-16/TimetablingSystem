@@ -103,8 +103,8 @@ function sessionDataSetup(sessData) {
 		
 	}
 	
-	
 	loadFacilities(sessionData.AllFacilities);
+	
 	/*
 	alert(department);
 	

@@ -119,9 +119,9 @@ function gen(){
 	
 	
 	
-	<div class='accordian'>
+	<div class='accordion'>
 
-		<label class='accordianSection'>
+		<label class='accordionSection'>
 		
 			<input type='checkbox'>
 			
@@ -206,7 +206,7 @@ function gen(){
 					
 				</div>	
 				
-			<div class='accordianContent requestCardContent'>
+			<div class='accordionContent requestCardContent'>
 			
 				<table class='requestContentsTable'>
 					
@@ -307,7 +307,7 @@ function gen(){
 			
 		</label>
 	
-		<label class='accordianSection requestCard'>
+		<label class='accordionSection requestCard'>
 			<input type='checkbox'>
 				<div class='requestHeaderDiv'>
 				
@@ -390,7 +390,7 @@ function gen(){
 					
 				</div>	
 				
-			<div class='accordianContent requestCardContent'>
+			<div class='accordionContent requestCardContent'>
 				Content
 			</div>
 		</label>

@@ -2,13 +2,13 @@ function listViewGenerator(requestArray, depShow, weekShow, sessTypeShow, facSho
 		
 	var requestResults = requestArray;
 	
-	var listHTML = "<div class='accordian'>";
+	var listHTML = "<div class='accordion'>";
 		
 	for(var counter = 0; counter < requestResults.length; counter++){
 		
 		var currentRequest = requestResults[counter];
 		
-		listHTML += "<label class='accordianSection requestCard'>";
+		listHTML += "<label class='accordionSection requestCard'>";
 		
 		listHTML += "<input type='checkbox'>";
 		
@@ -71,7 +71,7 @@ function listViewGenerator(requestArray, depShow, weekShow, sessTypeShow, facSho
 		listHTML += "</div>";
 		
 		
-		listHTML += "<div class='accordianContent requestCardContent'>";
+		listHTML += "<div class='accordionContent requestCardContent'>";
 		
 				
 		listHTML += "<table class='requestContentsTable'><tr>\
