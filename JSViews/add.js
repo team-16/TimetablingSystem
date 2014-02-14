@@ -55,12 +55,14 @@ function select12(){
     }
 }
 function selectOdd(){
+    selectDeselectAll(false);
     for (var i = 1; i <= regularWeeks; i+=2) {
         var checkbox = document.getElementById("week " + i);
         if (true) checkbox.checked = true;
     }
 }
 function selectEven(){
+    selectDeselectAll(false);
     for (var i = 2; i <= regularWeeks; i+=2) {
         var checkbox = document.getElementById("week " + i);
         if (true) checkbox.checked = true;
