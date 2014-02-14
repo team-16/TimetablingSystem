@@ -1,8 +1,17 @@
-function init() {
-    checkboxGenerator();
+$(document).ready(function() {
+	alert("loaded");
+    /*
     sliderGenerator();
     facilityGenerator();
-}
+    checkboxGenerator();
+    rangedSlider(); 
+    facilityGenerator();
+    parkGenerator();
+    checkboxGenerator();
+    periodsGenerator();
+    */
+});
+
 
 function checkboxGenerator() {
                     var parentElement = document.getElementById("weeksCheckbox");
@@ -113,14 +122,15 @@ function lengthGenerator() {
     fullHTML += "<br>";
     document.getElementById("time").innerHTML = oldhtml + fullHTML;
 }
- function isNumberKey(evt)
-      {
+
+function isNumberKey(evt)  {
          var charCode = (evt.which) ? evt.which : event.keyCode
          if (charCode > 31 && (charCode < 48 || charCode > 57))
             return false;
 
          return true;
-      }
+}
+
 function parkGenerator(){
 var parentElement = document.getElementById("parkSelect");
 var fullHTML ="";
@@ -164,4 +174,4 @@ function rangedSlider() {
         });
         $( "#amount" ).val( + $( "#slider-range" ).slider( "values", 0 ) +
         " - " + $( "#slider-range" ).slider( "values", 1 ) );
-};
+}
