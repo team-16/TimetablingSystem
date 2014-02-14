@@ -4,18 +4,36 @@ function sessionDataSetup(sessData) {
 	
 	department = sessionData.Department;
 	
-	liveSemesterID = sessionData.LiveSemester[0].id;
+	if(sessionData.LiveSemester.length != 0) {
+		
+		liveSemesterID = sessionData.LiveSemester[0].id;
+		
+		liveSemester = sessionData.LiveSemester[0].semesterNumber;
+		
+		liveYear = sessionData.LiveSemester[0].year;
+		
+		numberOfWeeks = sessionData.LiveSemester[0].numberOfWeeks;
+		
+	}
 	
-	liveSemester = sessionData.LiveSemester[0].semesterNumber;
+	alert(sessionData.AdHocSemester[0]);
 	
-	liveYear = sessionData.LiveSemester[0].year;
-	
-	numberOfWeeks = sessionData.LiveSemester[0].numberOfWeeks;
+	/*
+	if(sessionData.AdHocSemester.length != 0) {
+		
+		adHocSemesterID = sessionData.LiveSemester[0].id;
+		
+		adHocSemester = sessionData.LiveSemester[0].semesterNumber;
+		
+		adHocYear = sessionData.LiveSemester[0].year;
+		
+		adHocNumberOfWeeks = sessionData.LiveSemester[0].numberOfWeeks;
+		
+	}
+	*/
 	
 	/*
 	
-	department = "";
-
 
 	roundID = "";
 	
@@ -25,13 +43,6 @@ function sessionDataSetup(sessData) {
 	
 	roundEnd = new Date();
 	
-	liveSemesterID = "";
-	
-	liveSemester = 1;
-	
-	liveYear = 0;
-	
-	numberOfWeeks = 15;
 	
 	
 	adHocRoundID = "";
@@ -40,16 +51,11 @@ function sessionDataSetup(sessData) {
 	
 	adHocEnd = new Date();
 	
-	adHocSemesterID = "";
 	
-	adHocSemester = 1;
-	
-	adHocYear = 0;
-	
-	adHocNumberOfWeeks = 1;
 	*/
 	
 	alert(department);
+	
 	
 	alert(liveSemesterID);
 	
@@ -58,6 +64,15 @@ function sessionDataSetup(sessData) {
 	alert(liveYear);
 	
 	alert(numberOfWeeks);
+	
+	
+	alert(adHocSemesterID);
+	
+	alert(adHocSemester);
+	
+	alert(adHocYear);
+	
+	alert(adHocNumberOfWeeks);
 
 }
 

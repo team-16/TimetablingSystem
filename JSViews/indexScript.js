@@ -50,7 +50,7 @@ function loadSess() {
 		}
 	});
 		
-	alert("sommin2");
+	//alert("sommin2");
 	
 };
 
