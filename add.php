@@ -32,7 +32,7 @@ if(!isLoggedIn()){
 					<div id="moduleDetails" class="moduleDetailsDiv">
 						<fieldset>
 							<legend>Module</legend>
-							<select id="moduleCodeSelect" class="left1" onclick='document.getElementById("moduleTitleOutput").innerHTML = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"]'> <!-- module code -->
+							<select name="moduleCodeSelect" class="left1" onclick='document.getElementById("moduleTitleOutput").innerHTML = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"]'> <!-- module code -->
 								<script type="text/javascript">
 									for(var i = 0; i < moduleArray.length; i++){
 										var opt = document.createElement('option');
@@ -54,7 +54,7 @@ if(!isLoggedIn()){
 								<h4>Day:</h4>
 							</div>
 							<div class="right1">
-								<select id="daySelect">
+								<select name="daySelect">
 									<option>Monday</option>
 									<option>Tuesday</option>
 									<option>Wednesday</option>
@@ -85,7 +85,7 @@ if(!isLoggedIn()){
 										<h4>Period:</h4>
 									</div>
 									<div class="right1">
-										<select id="periodSelect">
+										<select name="periodSelect">
 											<option>1</option>
 											<option>2</option>
 											<option>3</option>
@@ -104,7 +104,7 @@ if(!isLoggedIn()){
 										<h4>Length:</h4>
 									</div>
 									<div class="right1">
-										<select id="lengthSelect">
+										<name id="lengthSelect">
 											<option>1</option>
 											<option>2</option>
 											<option>3</option>
@@ -135,7 +135,7 @@ if(!isLoggedIn()){
 									<h4>No. of students:</h4>
 								</div>
 								<div class="right1">
-									 <input id="studentsInput" onkeypress="return isNumberKey(event);" onkeyup ="onKeyUpCheck();">
+									 <input name="studentsInput" onkeypress="return isNumberKey(event);" onkeyup ="onKeyUpCheck();">
 								</div>
 							</div>
 							
@@ -144,7 +144,7 @@ if(!isLoggedIn()){
 									<h4>Session type:</h4>
 								</div>
 								<div class="right1">
-									<select id="traditionalSeminarSelect">
+									<select name="traditionalSeminarSelect">
 										<option>Traditional</option>
 										<option>Seminar</option>
 								  	</select>
@@ -156,7 +156,7 @@ if(!isLoggedIn()){
 									<h4>Park preference:</h4>
 								</div>
 								<div class="right1">
-									<select id="parkSelect"></select>
+									<select name="parkSelect"></select>
 								</div>
 							</div>			
 						</fieldset>	
