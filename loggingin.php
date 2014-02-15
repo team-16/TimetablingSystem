@@ -1,8 +1,8 @@
 <?php
 
 include('PHP/init.php');
-if(authenticate($_POST["password"], $_POST["username"])){
-	login($_POST["username"], $_POST["password"]);
+if(authenticate($_POST["password"], strtoupper($_POST["username"]))){
+	login(strtoupper($_POST["username"]), $_POST["password"]);
 	
 	redirect("index.php");
 }
