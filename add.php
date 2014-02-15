@@ -145,7 +145,16 @@ if(!isLoggedIn()){
 								</div>
 								<div class="right1" id ="parkPreference">
 								</div>
-							</div>			
+							</div>
+							<div class="formItem">
+								<div class="leftRoom">
+									<h4>Building Preference:</h4>
+								</div>
+								<div class ="right1" id="buildingPreference">
+
+								</div>
+							</div>
+
 						</fieldset>	
 					</div>	<!-- End of room details box -->
 					

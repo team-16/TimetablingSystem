@@ -6,9 +6,26 @@ $(document).ready(function() {
     facilityGenerator();
     parkGenerator();
     weeksGenerator();
-    getAllRoomsAndBuildings();
+    roomsGenerator();
     
 });
+    
+
+function roomsGenerator(){
+    var buildingsData = getAllRoomsAndBuildings();
+    var fullHTML = "<select>";
+    var buildings = "";
+    for (var i = 0; i < buildingsData.length; i++) {
+        buildings += "<option id='" + buildingsData[i].name + "'>";
+        buildings += buildingsData[i].name + "</option>";
+       
+    };
+        fullHTML += buildings;
+        fullHTML += "</select>";
+        $( "#buildingPreference" ).html(fullHTML);
+
+}
+
 function moduleTitleGenerator(){
     $("#moduleTitleOutput").html(moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"]);
 }
