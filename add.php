@@ -110,7 +110,7 @@ if(!isLoggedIn()){
 									<h4>No. of students:</h4>
 								</div>
 								<div class="right1">
-									 <input name="studentsInput" onkeypress="return isNumberKey(event);" onkeyup ="onKeyUpCheck();">
+									 <input id= "studentsInput" name="studentsInput" onkeypress="return isNumberKey(event);" onkeyup ="onKeyUpCheck();">
 								</div>
 							</div>
 							
