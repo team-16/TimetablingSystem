@@ -29,11 +29,11 @@
 		
 		}
 		
-		if($_POST['errorCode'] == "invalid"){
+		//if($_POST['errorCode'] == "invalid"){
 		
-			echo("Successfully logged out.<br>");
+		//	echo("Successfully logged out.<br>");
 		
-		}
+		//}
 		?>
 		</div>
 		<br/>
