@@ -1,20 +1,17 @@
 $(document).ready(function() {
 	alert("loaded");
-    /*
-    sliderGenerator();
+    
+    rangedSlider();
     facilityGenerator();
-    //rangedSlider(); 
+    rangedSlider(); 
     facilityGenerator();
     parkGenerator();
-   
-    */
-    //periodsGenerator();
-     checkboxGenerator();
+    weeksGenerator();
     
 });
 
 
-function checkboxGenerator() {
+function weeksGenerator() {
                     var parentElement = document.getElementById("weeksCheckbox");
                     var fullHTML1 = "";
                     //var originalhtml = parentElement.innerHTML;
@@ -43,7 +40,7 @@ function facilityGenerator() {
     testFacilities();
     var parentElement = document.getElementById("roomFacilities");
     var fullHTML ="";
-    var oldhtml= parentElement.innerHTML;
+    //var oldhtml= parentElement.innerHTML;
     for (var i = 0; i < facilitiesArray.length; i++) {
         var newfacility = "<input ";
             newfacility += "type='checkbox'";
@@ -51,7 +48,7 @@ function facilityGenerator() {
             newfacility += "/> " + facilitiesArray[i].name;
             fullHTML += newfacility;
     }
-     document.getElementById("roomFacilities").innerHTML = oldhtml + fullHTML;
+    $("#roomFacilities").html(fullHTML);
 }
 
 function select12(){
@@ -94,7 +91,7 @@ function selectDeselectAll(checkAll) {
 function periodsGenerator() {
     var parentElement = document.getElementById("time");
     var fullHTML = "";
-    var oldhtml = parentElement.innerHTML;
+    //var oldhtml = parentElement.innerHTML;
     var newPeriodsList = "<select> ";
     for (var i = 0; i < startPeriodsArray.length; i++) {
         newPeriodsList += "<option ";
@@ -104,13 +101,13 @@ function periodsGenerator() {
     }
     fullHTML += newPeriodsList;
     fullHTML += "</select>";
-    document.getElementById("time").innerHTML = oldhtml + fullHTML;
+    $("#time").html(fullHTML);
 }
 
 function lengthGenerator() {
     var parentElement = document.getElementById("time");
     var fullHTML = "";
-    var oldhtml = parentElement.innerHTML;
+    //var oldhtml = parentElement.innerHTML;
     var newLengthList = "<select>";
     for (var i = 0; i < endPeriodsArray.length; i++) {
         newLengthList += "<option ";
@@ -121,7 +118,7 @@ function lengthGenerator() {
     fullHTML += newLengthList;
     fullHTML += "</select>";
     fullHTML += "<br>";
-    document.getElementById("time").innerHTML = oldhtml + fullHTML;
+    $("#")
 }
 
 function isNumberKey(evt)  {
@@ -146,8 +143,7 @@ var newParkPreference = "";
     }
 
     fullHTML += newParkPreference;
-    fullHTML += "";
-    document.getElementById("parkSelect").innerHTML = oldhtml + fullHTML;
+    $("#parkSelect").html("fullHTML");
 }
 function plsNoZero() {
 	var input = document.getElementById("studentsInput").value.charAt(0);
