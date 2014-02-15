@@ -10,7 +10,7 @@ $(document).ready(function() {
     
 });
 function moduleTitleGenerator(){
-    document.getElementById("moduleTitleOutput").innerHTML = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"];
+    $("#moduleTitleOutput").html(moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"]);
 }
 
 function weeksGenerator() {
