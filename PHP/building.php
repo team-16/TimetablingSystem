@@ -1,6 +1,6 @@
 <?php
 
-function getBuilding(){
+function getBuildings(){
 	global $DB;
 	
 	if($DB->query("SELECT * FROM building ORDER BY name")){
