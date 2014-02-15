@@ -18,3 +18,24 @@ function getModules(results) {
 	
 	
 }
+
+
+function getAllRoomsWithBuildings() {
+	
+	var buildingRoomsArray = [];
+	
+	var jsonResults = null;
+	
+	$.ajax({
+		url: "loadBuildingsRooms.php?" +currentSessionID,
+		type: "POST",
+		data: {},
+		async: false,
+		success: function(results) {
+			jsonResults = results;
+		}
+	});
+	
+	alert(JSON.stringify(jsonResults));
+	
+}
