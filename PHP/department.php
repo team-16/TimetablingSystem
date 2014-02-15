@@ -13,6 +13,19 @@ function getDepartments(){
 	}
 }
 
+function getDepartment($code){
+
+	global $DB;
+	
+	if($DB->query("SELECT code FROM department WHERE code = :code", array(':code' => $code))){
+		return true;
+	}
+	
+	else{
+		return false;
+	}
+}
+
 function insertDepartment($code, $name){
 
 	global $DB;

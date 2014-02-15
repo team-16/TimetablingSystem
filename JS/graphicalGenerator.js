@@ -1,41 +1,41 @@
-var liveRadio = [];
+var liveGraphicalRadio = [];
 
-function radioToggle(btn, position){
+function graphicalRadioToggle(btn, position){
 
-	if(liveRadio[position] == btn){
+	if(liveGraphicalRadio[position] == btn){
 		
 		btn.parentNode.parentNode.style.borderBottom = "1px solid black";
 		
 		btn.checked = false;
-		liveRadio[position] = null;
+		liveGraphicalRadio[position] = null;
 		
 	}
 	else {
 		
 		btn.parentNode.parentNode.style.borderBottom = "none";
 		
-		if (liveRadio[position] != null) liveRadio[position].parentNode.parentNode.style.borderBottom = "1px solid black";
+		if (liveGraphicalRadio[position] != null) liveGraphicalRadio[position].parentNode.parentNode.style.borderBottom = "1px solid black";
 		
-		liveRadio[position] = btn;
+		liveGraphicalRadio[position] = btn;
 		
 	}
 	
 }
 
-var liveContent = [];
+var liveGraphicalContent = [];
 
-function showContent(btn, contentID, position) {
+function showGraphicalContent(btn, contentID, position) {
 	
 	if(btn.checked) {
 		
-		if(liveContent[position] != contentID){
+		if(liveGraphicalContent[position] != contentID){
 			
-			if(liveContent[position] != null) {
+			if(liveGraphicalContent[position] != null) {
 				
-				document.getElementById(liveContent[position]).style.maxHeight = "0px";
-				document.getElementById(liveContent[position]).style.borderLeft = "none";
-				document.getElementById(liveContent[position]).style.borderRight = "none";
-				document.getElementById(liveContent[position]).style.borderBottom = "none";
+				document.getElementById(liveGraphicalContent[position]).style.maxHeight = "0px";
+				document.getElementById(liveGraphicalContent[position]).style.borderLeft = "none";
+				document.getElementById(liveGraphicalContent[position]).style.borderRight = "none";
+				document.getElementById(liveGraphicalContent[position]).style.borderBottom = "none";
 			
 			}
 			
@@ -44,7 +44,7 @@ function showContent(btn, contentID, position) {
 			document.getElementById(contentID).style.borderRight = "1px solid black";
 			document.getElementById(contentID).style.borderBottom = "1px solid black";
 						
-			liveContent[position] = contentID;
+			liveGraphicalContent[position] = contentID;
 			
 		}
 		
@@ -56,7 +56,7 @@ function showContent(btn, contentID, position) {
 		document.getElementById(contentID).style.borderRight = "none";
 		document.getElementById(contentID).style.borderBottom = "none";
 		
-		liveContent[position] = null;
+		liveGraphicalContent[position] = null;
 		
 	}
 
@@ -105,7 +105,7 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 					graphicalHTML += "<td colspan='" + requestLength + "'><label class='radioLabel'>\
 									<input type='radio' name='";
 					graphicalHTML += daysArray[dayCounter].toLowerCase() + "Radio";
-					graphicalHTML += "' onclick='radioToggle(this, " + dayCounter + ");showContent(this, \"";
+					graphicalHTML += "' onclick='graphicalRadioToggle(this, " + dayCounter + ");showGraphicalContent(this, \"";
 					graphicalHTML +=  daysArray[dayCounter].toLowerCase() + "Content" + (contentIDCounter++); 
 					graphicalHTML +=  "\", " + dayCounter + ");'></input>";
 					graphicalHTML += currentRequest.moduleCode + "</label></td>";

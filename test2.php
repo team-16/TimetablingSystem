@@ -31,7 +31,7 @@ function readReq(){
 }
 
 function genGr() {
-	
+	setupSessionData();
 	var graphicalHTML = graphicalViewGenerator(requestArray, true, true, true, true, true, true, true, true);
 	
 	document.getElementById('graphicalContentTest').innerHTML = graphicalHTML;	
@@ -151,14 +151,14 @@ function genGr() {
 				
 					<td>
 						<label class='radioLabel'>
-							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent1", 0);'></input>
+							<input type='radio' name='mondayRadio' onclick='graphicalRadioToggle(this, 0);showGraphicalContent(this, "mondayContent1", 0);'></input>
 							COB123
 						</label>
 					</td>
 				
 					<td colspan='2'>
 						<label  class='radioLabel'>
-							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent2", 0);'></input>
+							<input type='radio' name='mondayRadio' onclick='graphicalRadioToggle(this, 0);showGraphicalContent(this, "mondayContent2", 0);'></input>
 						</label>
 					</td>
 				
@@ -427,7 +427,7 @@ function genGr() {
 				
 					<td>
 						<label class='radioLabel'>
-							<input type='radio' name='mondayRadio' onclick='radioToggle(this, 0);showContent(this, "mondayContent3", 0);'></input>
+							<input type='radio' name='mondayRadio' onclick='graphicalRadioToggle(this, 0);showGraphicalContent(this, "mondayContent3", 0);'></input>
 							COB123
 						</label>
 					</td>

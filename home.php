@@ -4,7 +4,7 @@ include('PHP/init.php');
 
 if(!isLoggedIn()){
 	session_destroy();
-	redirect('login.php');
+	redirectLogin();
 }
 
 ?>
@@ -12,7 +12,7 @@ if(!isLoggedIn()){
 <html>
 
 <div>
-	Home Page - currently logged in as: <?php echo(loggedDept()); ?>
+	Home Page - currently logged in as: <?php echo(loggedDept() . " | " . loggedDeptName()); ?>
 </div>
 
 

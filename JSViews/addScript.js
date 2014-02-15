@@ -1,13 +1,22 @@
-function init() {
-    checkboxGenerator();
-    sliderGenerator();
+$(document).ready(function() {
+    moduleTitleGenerator();
+    rangedSlider();
     facilityGenerator();
+    rangedSlider(); 
+    facilityGenerator();
+    parkGenerator();
+    weeksGenerator();
+    getAllRoomsAndBuildings();
+    
+});
+function moduleTitleGenerator(){
+    $("#moduleTitleOutput").html(moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"]);
 }
 
-function checkboxGenerator() {
-                    var parentElement = document.getElementById("weeksDiv");
+function weeksGenerator() {
+                    var parentElement = document.getElementById("weeksCheckbox");
                     var fullHTML1 = "";
-                    var originalhtml = parentElement.innerHTML;
+                    //var originalhtml = parentElement.innerHTML;
                     for(var i=1; i <= numberOfWeeks; i++)
                     {
                         var newCheckBox = "<input ";
@@ -25,15 +34,14 @@ function checkboxGenerator() {
                         //alert("4");
                     }
                     fullHTML1 += "<br>";
-                    document.getElementById("weeksDiv").innerHTML = originalhtml + fullHTML1;
+                    $("#weeksCheckbox").html(fullHTML1);
                     //alert("5");
             }
 
 function facilityGenerator() {
-    testFacilities();
     var parentElement = document.getElementById("roomFacilities");
     var fullHTML ="";
-    var oldhtml= parentElement.innerHTML;
+    //var oldhtml= parentElement.innerHTML;
     for (var i = 0; i < facilitiesArray.length; i++) {
         var newfacility = "<input ";
             newfacility += "type='checkbox'";
@@ -41,7 +49,7 @@ function facilityGenerator() {
             newfacility += "/> " + facilitiesArray[i].name;
             fullHTML += newfacility;
     }
-     document.getElementById("roomFacilities").innerHTML = oldhtml + fullHTML;
+    $("#roomFacilities").html(fullHTML);
 }
 
 function select12(){
@@ -52,6 +60,20 @@ function select12(){
     for(var i = 13; i <=15; i++){
         var checkbox = document.getElementById("week " + i);
         if (true) checkbox.checked = false;
+    }
+}
+function selectOdd(){
+    selectDeselectAll(false);
+    for (var i = 1; i <= regularWeeks; i+=2) {
+        var checkbox = document.getElementById("week " + i);
+        if (true) checkbox.checked = true;
+    }
+}
+function selectEven(){
+    selectDeselectAll(false);
+    for (var i = 2; i <= regularWeeks; i+=2) {
+        var checkbox = document.getElementById("week " + i);
+        if (true) checkbox.checked = true;
     }
 }
 
@@ -67,10 +89,10 @@ function selectDeselectAll(checkAll) {
     }   
 }
 
-function periodsGenerator() {
+/*function periodsGenerator() {
     var parentElement = document.getElementById("time");
     var fullHTML = "";
-    var oldhtml = parentElement.innerHTML;
+    //var oldhtml = parentElement.innerHTML;
     var newPeriodsList = "<select> ";
     for (var i = 0; i < startPeriodsArray.length; i++) {
         newPeriodsList += "<option ";
@@ -80,13 +102,13 @@ function periodsGenerator() {
     }
     fullHTML += newPeriodsList;
     fullHTML += "</select>";
-    document.getElementById("time").innerHTML = oldhtml + fullHTML;
-}
+    $("#time").html(fullHTML);
+}*/
 
-function lengthGenerator() {
+/*function lengthGenerator() {
     var parentElement = document.getElementById("time");
     var fullHTML = "";
-    var oldhtml = parentElement.innerHTML;
+    //var oldhtml = parentElement.innerHTML;
     var newLengthList = "<select>";
     for (var i = 0; i < endPeriodsArray.length; i++) {
         newLengthList += "<option ";
@@ -97,21 +119,20 @@ function lengthGenerator() {
     fullHTML += newLengthList;
     fullHTML += "</select>";
     fullHTML += "<br>";
-    document.getElementById("time").innerHTML = oldhtml + fullHTML;
-}
- function isNumberKey(evt)
-      {
+    $("#")
+}*/
+
+function isNumberKey(evt)  {
          var charCode = (evt.which) ? evt.which : event.keyCode
          if (charCode > 31 && (charCode < 48 || charCode > 57))
             return false;
 
          return true;
-      }
+}
+
 function parkGenerator(){
-var parentElement = document.getElementById("parkSelect");
 var fullHTML ="";
-var oldhtml = parentElement.innerHTML;
-var newParkPreference = "";
+var newParkPreference = "<select id='parkSelect' name ='parkSelect'>";
 
     for (var i = 0; i < parksArray.length; i++) {
         newParkPreference += "<option ";
@@ -119,10 +140,9 @@ var newParkPreference = "";
         newParkPreference += parksArray[i];
         newParkPreference += "</option>"; 
     }
-
+    newParkPreference += "</select>";
     fullHTML += newParkPreference;
-    fullHTML += "";
-    document.getElementById("parkSelect").innerHTML = oldhtml + fullHTML;
+    $("#parkPreference").html(fullHTML);
 }
 function plsNoZero() {
 	var input = document.getElementById("studentsInput").value.charAt(0);
@@ -135,4 +155,21 @@ function maxValue(){
 function onKeyUpCheck(){
     plsNoZero();    
     maxValue();
+}
+function rangedSlider() {
+    var periodSelect = document.getElementById('periodSelect');
+    var lengthSelect = document.getElementById('lengthSelect');
+    $( "#slider-range" ).slider({
+        range: true,
+        min: 1,
+        max: 10,
+        values: [ 1, 2 ],
+        slide: function( event, ui ) {
+            if(ui.values[1] == ui.values[0]) return false;
+            $( "#amount" ).val(  + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+        }
+
+        });
+        $( "#amount" ).val( + $( "#slider-range" ).slider( "values", 0 ) +
+        " - " + $( "#slider-range" ).slider( "values", 1 ) );
 }

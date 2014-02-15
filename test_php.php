@@ -11,7 +11,7 @@ include('PHP/init.php');
 <script type='text/javascript' src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'></script>
 <script type="text/javascript">
 function testfunc(){
-	var test1 = JSON.stringify(<?php echo(getModules("CO")); ?>);
+	var test1 = JSON.stringify(<?php echo(json_encode(getModules("CO"))); ?>);
 	alert(test1);
 	//document.getElementById('myResults').innerHTML = test1;
 }

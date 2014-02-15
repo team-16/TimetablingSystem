@@ -19,5 +19,7 @@ require_once 'facility.php';
 require_once 'module.php';
 require_once 'park.php';
 require_once 'room.php';
+require_once 'semester.php';
+require_once 'round.php';
 
 ?>

@@ -9,7 +9,7 @@
 	
 		<div id='loginTitle'>TimeTabling System Login</div>
 		
-		<form action="loggingin.php" method="post">
+		<form id="loginForm" action="loggingin.php" method="post">
 			<div id='inputDiv'>
 				<div class='inputTitle' style='top:10px; left:20px;'>Username:</div>
 				<div class='inputField' style='top:13px; left:140px;'>
@@ -20,22 +20,29 @@
 					<input class='textField' type="password" name="password">
 				</div>
 			</div>
-			
-			<input type="submit">Login</input>
 		
 		
 		<div id='errorDiv'>
-			Invalid Login. Please try again.
-			<br><br>
-			If you have forgotten your username and/or password, please contact system administrator.
-		</div>
+		<?php if($_POST['errorCode'] == "invalid"){
 		
-		<!--
-		<div id='loginBtn'>
+			echo("Invalid Login. Please try again.<br><br>If you have forgotten your username and/or password, please contact the system administrator.<br>");
+		
+		}
+		
+		//if($_POST['errorCode'] == "invalid"){
+		
+		//	echo("Successfully logged out.<br>");
+		
+		//}
+		?>
+		</div>
+		<br/>
+		
+		
+		<div id='loginBtn' onclick="document.forms['loginForm'].submit();">
 			Login
-		</div>
-		-->
-		
+			<input type="submit" style="visibility:hidden">  <!--Required for "enter to submit" to work-->
+		</div>		
 		
 		</form>
 		

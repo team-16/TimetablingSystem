@@ -54,16 +54,13 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
  $roomCode, $otherRequirements, $roundID, $status){
 	global $DB;
 	
-	$id = $DB->lastInsertID();
-	
-	if($DB->query("INSERT INTO request (id, moduleCode, priority, day,
+	if($DB->query("INSERT INTO request (moduleCode, priority, day,
 	startPeriod, endPeriod, weeks, noOfStudents, parkPreference, traditional,
 	sessionType, noOfRooms, roomCode, otherRequirements, roundID, status)
 	VALUES (:id, :moduleCode, :priority, :day, :startPeriod, :endPeriod, :weeks,
 	:noOfStudents, :parkPreference, :traditional, :sessionType, :noOfRooms,
 	:roomCode, :otherRequirements, :roundID, :status)",
-				   array(':id' => $id,
-						 ':moduleCode' => $moduleCode,
+				   array(':moduleCode' => $moduleCode,
 				         ':priority' => $priority,
 				         ':day' => $day,
 						 ':startPeriod' => $startPeriod,

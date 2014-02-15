@@ -8,6 +8,14 @@
 	margin-bottom:10px;
 }
 
+#slider-range {
+
+	margin-left:auto;
+	margin-right:auto;
+	width:70%;
+
+}
+
 fieldset {
 	padding:0.5em;
 	margin:1em;
@@ -40,8 +48,8 @@ form {
 
 .facilitiesDiv {
 	display:inline;
-	width:50%;
-	float:right;
+	width:100%;
+	float:left;
 }
 
 .moduleDetailsDiv {
@@ -71,6 +79,14 @@ form {
 	display:inline-block;
 	/*float:left;*/
 }
+
+.leftModule {
+	/*margin:0 1em 0 1em;*/
+	width:10em;
+	display:inline-block;
+	/*float:left;*/
+}
+
 .leftTime {
 	width:5em;
 	display:inline-block;

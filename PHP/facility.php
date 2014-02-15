@@ -14,10 +14,10 @@ function insertFacility($name){
 	}
 }
 
-function updateFacility($facilityID, $name){
+function updateFacility($id, $name){
 	global $DB;
 	
-	if($DB->query("UPDATE Facility SET Name = :name WHERE FacilityID = :facilityID", array(':name' => $name, ':facilityID' => $facilityID))){
+	if($DB->query("UPDATE facility SET name = :name WHERE id = :id", array(':name' => $name, ':id' => $id))){
 		return true;
 	}
 	
@@ -26,10 +26,10 @@ function updateFacility($facilityID, $name){
 	}
 }
 
-function deleteFacility($facilityID){
+function deleteFacility($id){ //NEEDS FIXING
 	global $DB;
 	
-	if($DB->query("DELETE FROM Facility WHERE FacilityID = :facilityID", array(':facilityID' => $facilityID))){
+	if($DB->query("DELETE FROM Facility WHERE id = :id", array(':id' => $id))){
 		
 		if($DB->query("DELETE FROM RoomFacility WHERE FacilityID = :facilityID", array(':facilityID' => $facilityID))){
 			return true;
@@ -48,7 +48,19 @@ function deleteFacility($facilityID){
 function getFacilities(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM Facility ORDER BY Name")){
+	if($DB->query("SELECT * FROM facility ORDER BY name")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
+function getFacilityId(){
+	global $DB;
+	
+	if($DB->query("SELECT id FROM facility WHERE name = :name", array(':name' => $name))){
 		return $DB->results();
 	}
 	

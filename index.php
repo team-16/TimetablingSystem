@@ -12,6 +12,7 @@ if(!isLoggedIn()){
 <html>
 
 	<head>
+		<link rel="stylesheet" type="text/css" href="jQuery&UI/jquery-ui-1.10.3/themes/base/jquery.ui.all.css">
 		<link href='http://fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="CSS/indexStyle.css">
 		<link rel="stylesheet" type="text/css" href="CSS/accordion.css">
@@ -26,6 +27,7 @@ if(!isLoggedIn()){
 			<header>
 				<h1 class="left">Loughborough University Timetabling</h1>
 				<a href="http://www.lboro.ac.uk/"><img class="logo" src="Images/lulogo.png"></a>
+				</br></br><div style="font-size:45%;padding:0 0 0 3em;text-shadow:0px 4px 2px rgba(28, 0, 33, 1);">Currently logged in as: <?php echo(loggedDept() . " | " . loggedDeptName()); ?></div>
 			</header>
 			
 			<nav id="menuLinks">
@@ -39,7 +41,7 @@ if(!isLoggedIn()){
 					
 					<a href="add.php">
 						<li>
-							Add ...
+							Add...
 						</li>
 					</a>
 					
@@ -75,25 +77,37 @@ if(!isLoggedIn()){
 					
 					<a href="test.php">
 						<li>
-							Test Page
+							Test
 						</li>
 					</a>
 					
 					<a href="test2.php">
 						<li>
-							Test Page 2
+							Test 2
 						</li>
 					</a>
 					
 					<a href="test3.php">
 						<li>
-							Test Page 3
+							Test 3
+						</li>
+					</a>
+					
+					<a href="test4.php">
+						<li>
+							Test 4
+						</li>
+					</a>
+					
+					<a href="loggingout.php">
+						<li>
+							Log Out
 						</li>
 					</a>
 					
 				</ul>
 			</nav>
-			
+			<div id= "progressbar"> </div>
 			<div id='ContentDiv'>
 				<!-- Javascript injects content here -->
 			</div>
@@ -101,12 +115,12 @@ if(!isLoggedIn()){
 		</div> <!-- wrapper close -->  
 
 		<footer>
-			<h6>footer content</h6>
+			<h6>Copyright lboro.ac.uk</h6>
 		</footer>
 		
 	<!-- These probably can't stay here, but for now they work -->
 	<script type='text/javascript' src='JS/constants.js'></script>
-	<script type='text/javascript' src='JS/sessionData.js'></script>
+	<script type='text/javascript' src='JS/sessionDataStore.js'></script>
 	<script type='text/javascript' src='JS/dataTypeObjects.js'></script>
 	<script type='text/javascript' src='JS/globalFunctions.js'></script>
 	<script type='text/javascript' src='JS/dataManager.js'></script>
