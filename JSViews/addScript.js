@@ -164,8 +164,8 @@ function rangedSlider() {
         max: 10,
         values: [ 1, 2 ],
         slide: function( event, ui ) {
-            $( "#amount" ).val(  + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
             if(ui.values[1] == ui.values[0]) return false;
+            $( "#amount" ).val(  + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
         }
 
         });
