@@ -48,10 +48,12 @@ function getRejectedRequests(){
 	}
 }
 
+/////////////////////////////////
+
 function getCurrentRequests(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0)))")){
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -59,6 +61,122 @@ function getCurrentRequests(){
 		return false;
 	}
 }
+
+// LIVE = 1 , ADHOC = 0
+
+function getCurrentRequestsNull(){
+	global $DB;
+	
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) && status IS NULL ORDER BY moduleCode")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
+function getCurrentRequestsNotNull(){
+	global $DB;
+	
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) && status IS NOT NULL ORDER BY moduleCode")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
+function getCurrentRequestsAllocated(){
+	global $DB;
+	
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) && status = 1 ORDER BY moduleCode")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
+// LIVE = 1 , ADHOC = 1
+
+function getCurrentRequestsNullAdHoc(){
+	global $DB;
+	
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) && status IS NULL ORDER BY moduleCode")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
+function getCurrentRequestsNotNullAdHoc(){
+	global $DB;
+	
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) && status IS NOT NULL ORDER BY moduleCode")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
+function getCurrentRequestsAllocatedAdHoc(){
+	global $DB;
+	
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) && status = 1 ORDER BY moduleCode")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
+// LIVE = 0 , ADHOC = 0
+
+function getHistoryRequestsNull(){
+	global $DB;
+	
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 0 AND adHoc = 0))) && status IS NULL ORDER BY moduleCode")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
+function getHistoryRequestsNotNull(){
+	global $DB;
+	
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 0 AND adHoc = 0))) && status IS NOT NULL ORDER BY moduleCode")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
+function getHistoryRequestsAllocated(){
+	global $DB;
+	
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 0 AND adHoc = 0))) && status = 1 ORDER BY moduleCode")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
+/////////////////////////////////
 
 function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
  $weeks, $noOfStudents, $parkPreference, $traditional, $sessionType, $noOfRooms,
