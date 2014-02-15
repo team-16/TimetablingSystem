@@ -41,10 +41,8 @@ function getAllRoomsAndBuildings() {
 	jsonResults = JSON.parse(jsonResults);
 	
 	var jsonBuildingsArray = jsonResults.Buildings;
-	alert(jsonBuildingsArray);
 	
 	var jsonRoomsArray = jsonResults.Rooms;
-	alert(jsonRoomsArray);
 	
 	for(var buildingCounter = 0; buildingCounter < jsonBuildingsArray.length; buildingCounter++) {
 		
@@ -53,8 +51,6 @@ function getAllRoomsAndBuildings() {
 		currentBuilding.code = jsonBuildingsArray[buildingCounter].code;
 		currentBuilding.name = jsonBuildingsArray[buildingCounter].name;
 		currentBuilding.park = Number(jsonBuildingsArray[buildingCounter].park);
-		
-		alert(currentBuilding.name + " : " + parksArray[currentBuilding.park]);
 		
 		currentBuilding.rooms = getAllRoomsInBuilding(currentBuilding.code, jsonRoomsArray);
 		
@@ -79,8 +75,6 @@ function getAllRoomsInBuilding(buildingCode, jsonRooms) {
 			currentRoom.code = jsonRooms[roomCounter].code;
 			currentRoom.type = Number(jsonRooms[roomCounter].type);
 			currentRoom.capacity = Number(jsonRooms[roomCounter].capacity);
-			
-			alert(currentRoom.code + " : " + currentRoom.type + " : " + currentRoom.capacity);
 			
 			roomsInBuilding.push(currentRoom);
 			

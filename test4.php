@@ -18,5 +18,6 @@
 
 
 
+<script type='text/javascript' src='JSViews/test4.js'></script>
 
 </html>

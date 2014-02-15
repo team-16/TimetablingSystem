@@ -15,8 +15,15 @@
 
 </script>
 
+<input type='button' onclick=''>List View</input>
+<input type='button' onclick=''>Timetable View</input>
+
+<div id='viewContainer'>
+	
+</div>
 
 
 
+<script type='text/javascript' src='JSViews/test3.js'></script>
 
 </html>

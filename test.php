@@ -49,14 +49,14 @@ function weeksTest(){
 
 function testReqClass(){
 	
-	setupSessionData();
+	//setupSessionData();
 	testFacilites();
 	testRequestList();
 		
 }
 
 function gen(){
-	setupSessionData();
+	//setupSessionData();
 	var listHTML = listViewGenerator(requestArray, true, true, true, true, true, true, true, true, true);
 	
 	document.getElementById('listContent').innerHTML = listHTML;	
