@@ -6,7 +6,7 @@ $(document).ready(function() {
     facilityGenerator();
     parkGenerator();
     weeksGenerator();
-    getAllRoomsWithBuildings();
+    getAllRoomsAndBuildings();
     
 });
 function moduleTitleGenerator(){

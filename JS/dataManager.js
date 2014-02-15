@@ -55,6 +55,7 @@ function getAllRoomsAndBuildings() {
 		alert(jsonBuildingsArray[buildingCounter].name);
 		currentBuilding.park = Number(jsonBuildingsArray[buildingCounter].park);
 		alert(parksArray[currentBuilding.park]);
+		currentBuilding.rooms = getAllRoomsInBuilding(currentBuilding.code, jsonRoomsArray);
 		
 		buildingRoomsArray.push(currentBuilding);
 		
@@ -64,4 +65,12 @@ function getAllRoomsAndBuildings() {
 
 function getAllRoomsInBuilding() {
 	
+	
+	
+	
+	
+	
+	
 }
+
+
