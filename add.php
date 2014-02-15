@@ -43,6 +43,14 @@ if(!isLoggedIn()){
 							<output id="moduleTitleOutput" class="right1">
 								<!-- module title -->
 							</output>
+							<div class="formItem">
+								<div class="leftModule">
+									<h4>Priority:</h4>
+								</div>
+								<div class="right1">
+									<input type="checkbox" id="priority">
+								</div>
+							</div>
 						</fieldset>
 					</div>
 

@@ -79,6 +79,14 @@ form {
 	display:inline-block;
 	/*float:left;*/
 }
+
+.leftModule {
+	/*margin:0 1em 0 1em;*/
+	width:10em;
+	display:inline-block;
+	/*float:left;*/
+}
+
 .leftTime {
 	width:5em;
 	display:inline-block;
