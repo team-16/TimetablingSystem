@@ -92,6 +92,12 @@ if(!isLoggedIn()){
 						</li>
 					</a>
 					
+					<a href="loggingout.php">
+						<li>
+							Log Out
+						</li>
+					</a>
+					
 				</ul>
 			</nav>
 			<div id= "progressbar"> </div>
