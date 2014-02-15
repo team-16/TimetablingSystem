@@ -36,9 +36,10 @@ $(document).ready(function() {
 $(function() {
 			var d = new Date();
 			$( "#progressbar" ).progressbar({
-				//value: 70
 				
-				value: d.getTime() - roundStart.getTime() / roundEnd.getTime() - roundStart.getTime()
+				max: 100,
+				
+				value: getCurrentRoundPercentage()
 
 			});
 			$('#progressbar').height(15);

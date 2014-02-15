@@ -153,6 +153,8 @@ function getCurrentRoundPercentage(){
 	
 	var percentage = (currentDate.getTime() - roundStart.getTime()) / (roundEnd.getTime() - roundStart.getTime());
 	
+	percentage *= 100;
+	
 	alert(percentage);
 }
 
