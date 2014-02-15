@@ -27,6 +27,7 @@ if(!isLoggedIn()){
 			<header>
 				<h1 class="left">Loughborough University Timetabling</h1>
 				<a href="http://www.lboro.ac.uk/"><img class="logo" src="Images/lulogo.png"></a>
+				</br></br><div style="font-size:45%;padding:0 0 0 3em;text-shadow:0px 4px 2px rgba(28, 0, 33, 1);">Currently logged in as: <?php echo(loggedDept() . " | " . loggedDeptName()); ?></div>
 			</header>
 			
 			<nav id="menuLinks">
