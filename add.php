@@ -219,7 +219,7 @@ if(!isLoggedIn()){
 		</div>	
 		</div> <!-- end of wrapper -->
 
-			<script src='JSViews/add.js'></script>
+			<script src='JSViews/addScript.js'></script>
 			<link href='jQuery&UI/jquery-ui-1.10.3/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
   			<script src='jQuery&UI/jquery-ui-1.10.3/jquery-1.9.1.js'></script>
   			<script src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'</script>
