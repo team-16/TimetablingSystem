@@ -120,7 +120,7 @@ if(!isLoggedIn()){
 									<label for="amount">start period, end period:</label>
 									<output type="text" id="amount" style="border:0; font-weight:bold;">
 								</p>
-								<div id="slider-range" style='margin-left:auto;margin-right:auto;width:90%;'>
+								<div id="slider-range">
 									<!-- Slider generated here -->
 								</div>
 							
