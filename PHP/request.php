@@ -48,6 +48,17 @@ function getRejectedRequests(){
 	}
 }
 
+function getCurrentRequests(){
+	global $DB;
+	
+	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0)))")){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
 
 function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
  $weeks, $noOfStudents, $parkPreference, $traditional, $sessionType, $noOfRooms,
