@@ -20,7 +20,7 @@ function buildingsGenerator(){
     var fullHTML = "<select id ='buildings'>";
     var buildings = "";
     for (var i = 0; i < buildingsData.length; i++) {
-        buildings += "<option id='" + buildingsData[i].name + "'>";
+        buildings += "<option id='" + buildingsData[i].name + "' onclick='roomsGenerator();'>";
         buildings += buildingsData[i].code + ", " + buildingsData[i].name + "</option>";
        
     };
@@ -30,17 +30,23 @@ function buildingsGenerator(){
 }
 
 function roomsGenerator(){
+    
     var chosenBuilding = document.getElementById("buildings").selectedIndex;
     alert(chosenBuilding);
-    var fullHTML ="<select size = '5'>"
+    
+    var fullHTML ="<select size = '5'>";
     var rooms = "";
-    for (var i = 0; i < buildingsData.length; i++) {
-        rooms += "<option id ='" + buildingsData[chosenBuilding].rooms[i] + "'>";
-        rooms += buildingsData[chosenBuilding].rooms[i] + "</option>";
+    
+    var roomsArray = buildingsData[chosenBuilding].rooms;
+    
+    for (var i = 0; i < roomsArray.length; i++) {
+        rooms += "<option id ='" + roomsArray[i].code + "'>";
+        rooms += roomsArray[i].code  + "</option>";
     };
     fullHTML += rooms;
     fullHTML += "</select>";
     $( "#roomPreference" ).html(fullHTML);
+    
 }
 
 function moduleTitleGenerator(){
