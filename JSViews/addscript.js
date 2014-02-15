@@ -39,7 +39,6 @@ function weeksGenerator() {
             }
 
 function facilityGenerator() {
-    testFacilities();
     var parentElement = document.getElementById("roomFacilities");
     var fullHTML ="";
     //var oldhtml= parentElement.innerHTML;
@@ -90,7 +89,7 @@ function selectDeselectAll(checkAll) {
     }   
 }
 
-function periodsGenerator() {
+/*function periodsGenerator() {
     var parentElement = document.getElementById("time");
     var fullHTML = "";
     //var oldhtml = parentElement.innerHTML;
@@ -104,9 +103,9 @@ function periodsGenerator() {
     fullHTML += newPeriodsList;
     fullHTML += "</select>";
     $("#time").html(fullHTML);
-}
+}*/
 
-function lengthGenerator() {
+/*function lengthGenerator() {
     var parentElement = document.getElementById("time");
     var fullHTML = "";
     //var oldhtml = parentElement.innerHTML;
@@ -121,7 +120,7 @@ function lengthGenerator() {
     fullHTML += "</select>";
     fullHTML += "<br>";
     $("#")
-}
+}*/
 
 function isNumberKey(evt)  {
          var charCode = (evt.which) ? evt.which : event.keyCode
@@ -132,10 +131,8 @@ function isNumberKey(evt)  {
 }
 
 function parkGenerator(){
-var parentElement = document.getElementById("parkSelect");
 var fullHTML ="";
-var oldhtml = parentElement.innerHTML;
-var newParkPreference = "";
+var newParkPreference = "<select id='parkSelect' name ='parkSelect'>";
 
     for (var i = 0; i < parksArray.length; i++) {
         newParkPreference += "<option ";
@@ -143,9 +140,9 @@ var newParkPreference = "";
         newParkPreference += parksArray[i];
         newParkPreference += "</option>"; 
     }
-
+    newParkPreference += "</select>";
     fullHTML += newParkPreference;
-    $("#parkSelect").html("fullHTML");
+    $("#parkPreference").html(fullHTML);
 }
 function plsNoZero() {
 	var input = document.getElementById("studentsInput").value.charAt(0);
@@ -166,10 +163,12 @@ function rangedSlider() {
         range: true,
         min: 1,
         max: 10,
-        values: [ periodSelect.value, lengthSelect.value ],
+        values: [ 1, 2 ],
         slide: function( event, ui ) {
             $( "#amount" ).val(  + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+            if(ui.values[1] == ui.values[0]) return false;
         }
+
         });
         $( "#amount" ).val( + $( "#slider-range" ).slider( "values", 0 ) +
         " - " + $( "#slider-range" ).slider( "values", 1 ) );

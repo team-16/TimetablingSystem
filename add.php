@@ -88,42 +88,6 @@ if(!isLoggedIn()){
 
 							<div id="periodAndLengthWrapper">
 								<div class="formDiv">
-									<div class="leftTime">
-										<h4>Period:</h4>
-									</div>
-									<div class="right1">
-										<select id="periodSelect" name="periodSelect">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-											<option>6</option>
-											<option>7</option>
-											<option>8</option>
-											<option>9</option>
-											<option>404</option>
-										</select>
-									</div>
-								</div>
-								<div class="formDiv">
-									<div class="leftTime">
-										<h4>Length:</h4>
-									</div>
-									<div class="right1">
-										<select id = "lengthSelect" name="lengthSelect">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-											<option>6</option>
-											<option>7</option>
-											<option>8</option>
-											<option>9</option>
-										</select>
-									</div>
-								</div>
 								<p>
 									<label for="amount">start period, end period:</label>
 									<output type="text" id="amount" style="border:0; font-weight:bold;">
@@ -179,8 +143,7 @@ if(!isLoggedIn()){
 								<div class="leftRoom">
 									<h4>Park preference:</h4>
 								</div>
-								<div class="right1">
-									<select name="parkSelect" id="parkSelect"></select>
+								<div class="right1" id ="parkPreference">
 								</div>
 							</div>			
 						</fieldset>	
