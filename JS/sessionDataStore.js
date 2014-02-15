@@ -104,6 +104,8 @@ function sessionDataSetup(sessData) {
 	
 	loadFacilities(sessionData.AllFacilities);
 	
+	getCurrentRoundPercentage();
+	
 	/*
 	alert(department);
 	
@@ -145,6 +147,14 @@ function sessionDataSetup(sessData) {
 
 }
 
+function getCurrentRoundPercentage(){
+	
+	var currentDate = new Date();
+	
+	var percentage = (currentDate.getTime() - roundStart.getTime()) / (roundEnd.getTime() - roundStart.getTime());
+	
+	alert(percentage);
+}
 
 
 var requestArray = [];
