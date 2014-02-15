@@ -23,9 +23,43 @@ if(!isLoggedIn()){
 				</input>
 				
 				<div class='accordionContent settingsContent'>
-					<div style='height:200px; width:100%;'>
-						Module Content
-					</div>
+					<table class='insertModuleTable'>
+						
+						<tr>
+							<td>
+								Module Code:
+							</td>
+							<td>
+								<input type='text' id='modulecode'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Department Code:
+							</td>
+							<td>
+								<input type='text' id='deptcode'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Module Title:
+							</td>
+							<td>
+								<input type='text' id='moduletitle'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td style='text-align:right;'>
+								<input type='button' value='Insert New Module' onclick='insertModule();'></input>
+							</td>
+						</tr>
+						
+					</table>
 				</div>
 				
 			</label>
@@ -84,6 +118,6 @@ if(!isLoggedIn()){
 	</div>
 
 
-<script type='text/javascript' src='JSViews/settings.js'></script>
+<script type='text/javascript' src='JSViews/settingsScript.js'></script>
 
 </html>

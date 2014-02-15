@@ -38,3 +38,26 @@ function changePassword() {
 	$("#confirmnewpassword").val("");
 	
 }
+
+function insertModule() {
+	
+	var modulecode = $("#modulecode").val();
+	var deptcode = $("#deptcode").val();
+	var moduletitle = $("#moduletitle").val();
+	
+		$.ajax({
+			url: "insertmodule.php?" +currentSessionID,
+			type: "POST",
+			data: { modulecode:modulecode, deptcode:deptcode, moduletitle:moduletitle },
+			success: function(results) {
+				alert(results);
+			}
+		});
+		
+	}
+	
+	$("#oldpassword").val("");
+	$("#newpassword").val("");
+	$("#confirmnewpassword").val("");
+	
+}
