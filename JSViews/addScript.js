@@ -1,3 +1,5 @@
+var buildingsData = [];
+
 $(document).ready(function() {
     moduleTitleGenerator();
     rangedSlider();
@@ -7,12 +9,12 @@ $(document).ready(function() {
     parkGenerator();
     weeksGenerator();
     roomsGenerator();
-    
+    buildingsData = getAllRoomsAndBuildings();
 });
     
 
 function roomsGenerator(){
-    var buildingsData = getAllRoomsAndBuildings();
+
     var fullHTML = "<select>";
     var buildings = "";
     for (var i = 0; i < buildingsData.length; i++) {
@@ -23,6 +25,7 @@ function roomsGenerator(){
         fullHTML += buildings;
         fullHTML += "</select>";
         $( "#buildingPreference" ).html(fullHTML);
+        
 
 }
 
