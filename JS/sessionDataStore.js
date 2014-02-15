@@ -8,9 +8,9 @@ var roundID = "";
 
 var roundNumber = 1;
 
-var roundStart = new Date();
+var roundStart = null;
 
-var roundEnd = new Date();
+var roundEnd = null;
 
 var liveSemesterID = "";
 
@@ -47,6 +47,7 @@ function loadSession() {
 		url: "PHP/loadSessionData.php?" +currentSessionID,
 		type: "GET",
 		datatype: "json",
+		async: false,
 		data: {},
 		success: function(results) {
 			sessionDataSetup(results);
@@ -103,9 +104,7 @@ function sessionDataSetup(sessData) {
 	}
 	
 	loadFacilities(sessionData.AllFacilities);
-	
-	getCurrentRoundPercentage();
-	
+			
 	/*
 	alert(department);
 	
@@ -155,7 +154,8 @@ function getCurrentRoundPercentage(){
 	
 	percentage *= 100;
 	
-	alert(percentage);
+	return percentage;
+	
 }
 
 
