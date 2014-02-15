@@ -23,9 +23,9 @@ var numberOfWeeks = 15;
 
 var adHocRoundID = "";
 
-var adHocStart = new Date();
+var adHocStart = null;
 
-var adHocEnd = new Date();
+var adHocEnd = null;
 
 var adHocSemesterID = "";
 
@@ -104,45 +104,6 @@ function sessionDataSetup(sessData) {
 	}
 	
 	loadFacilities(sessionData.AllFacilities);
-			
-	/*
-	alert(department);
-	
-	alert("Live Semester");
-	alert( liveSemesterID);
-	
-	alert(liveSemester);
-	
-	alert(liveYear);
-	
-	alert(numberOfWeeks);
-	
-	alert("Live Round");
-	alert(roundID);
-		
-	alert(roundNumber);
-		
-	alert(roundStart);
-		
-	alert(roundEnd);
-	
-	
-	alert("Ad Hoc Semester");
-	alert(adHocSemesterID);
-	
-	alert(adHocSemester);
-	
-	alert(adHocYear);
-	
-	alert(adHocNumberOfWeeks);
-	
-	alert("Ad Hoc Round");
-	alert(adHocRoundID);
-			
-	alert(adHocStart);
-		
-	alert(adHocEnd);
-	*/
 
 }
 
