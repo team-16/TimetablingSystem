@@ -30,11 +30,13 @@ function buildingsGenerator(){
 }
 
 function roomsGenerator(){
+    var chosenBuilding = document.getElementById("buildings").selectedIndex;
+    alert(chosenBuilding);
     var fullHTML ="<select size = '5'>"
     var rooms = "";
     for (var i = 0; i < buildingsData.length; i++) {
-        rooms += "<option id ='" + buildingsData[$( '#buildings' ).val()].rooms[i] + "'>";
-        rooms += buildingsData[$( '#buildings' )].rooms[i] + "</option>";
+        rooms += "<option id ='" + buildingsData[chosenBuilding].rooms[i] + "'>";
+        rooms += buildingsData[chosenBuilding].rooms[i] + "</option>";
     };
     fullHTML += rooms;
     fullHTML += "</select>";
