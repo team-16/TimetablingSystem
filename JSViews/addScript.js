@@ -31,9 +31,7 @@ function buildingsGenerator(){
 
 function roomsGenerator(){
     
-    var chosenBuilding = document.getElementById("buildings").selectedIndex;
-    alert(chosenBuilding);
-    
+    var chosenBuilding = document.getElementById("buildings").selectedIndex;  
     var fullHTML ="<select size = '5'>";
     var rooms = "";
     
