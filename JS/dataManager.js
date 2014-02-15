@@ -20,7 +20,7 @@ function getModules(results) {
 }
 
 
-function getAllRoomsWithBuildings() {
+function getAllRoomsAndBuildings() {
 	
 	var buildingRoomsArray = [];
 	
@@ -37,5 +37,31 @@ function getAllRoomsWithBuildings() {
 	});
 	
 	alert(JSON.stringify(jsonResults));
+	
+	jsonResults = JSON.parse(jsonResults);
+	
+	var jsonBuildingsArray = jsonResults.Buildings;
+	alert(jsonBuildingsArray);
+	
+	var jsonRoomsArray = jsonResults.Rooms;
+	alert(jsonRoomsArray);
+	
+	for(var buildingCounter = 0; buildingCounter < jsonBuildingsArray.length; buildingCounter++) {
+		
+		var currentBuilding = new Building();
+		
+		currentBuilding.code = jsonBuildingsArray[buildingCounter].code;
+		currentBuilding.name = jsonBuildingsArray[buildingCounter].name;
+		alert(jsonBuildingsArray[buildingCounter].name);
+		currentBuilding.park = Number(jsonBuildingsArray[buildingCounter].park);
+		alert(parksArray[currentBuilding.park]);
+		
+		buildingRoomsArray.push(currentBuilding);
+		
+	}
+	
+}
+
+function getAllRoomsInBuilding() {
 	
 }
