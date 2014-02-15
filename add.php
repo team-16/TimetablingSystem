@@ -191,6 +191,13 @@ if(!isLoggedIn()){
 								<div id="roomFacilities" class="facilitiesDiv">
 							<!-- content -->
 								</div>
+								</br>
+								<div class="leftFeatures">
+									<h4>Other Requirements:</h4>
+								</div>
+								<div id="otherRequirements">
+									<textarea id="otherRequirementsTextArea" style="resize: none;" maxlength="255" rows="4" cols="50"></textarea>
+								</div>
 						</fieldset>	<!-- End of features box -->
 				</div> <!-- End of container -->
 
