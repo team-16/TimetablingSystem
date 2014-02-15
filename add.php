@@ -154,6 +154,12 @@ if(!isLoggedIn()){
 
 								</div>
 							</div>
+							<div class="formItem">
+								<div class ="leftRoom">
+									<h4>Room Preference</h4>
+								</div>
+								<div class="right1" id="roomPreference"></div>
+							</div>
 
 						</fieldset>	
 					</div>	<!-- End of room details box -->

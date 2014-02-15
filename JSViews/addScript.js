@@ -1,6 +1,7 @@
 var buildingsData = [];
 
 $(document).ready(function() {
+    buildingsData = getAllRoomsAndBuildings();
     moduleTitleGenerator();
     rangedSlider();
     facilityGenerator();
@@ -8,25 +9,36 @@ $(document).ready(function() {
     facilityGenerator();
     parkGenerator();
     weeksGenerator();
+    buildingsGenerator();
     roomsGenerator();
-    buildingsData = getAllRoomsAndBuildings();
+    
 });
     
 
-function roomsGenerator(){
+function buildingsGenerator(){
 
-    var fullHTML = "<select>";
+    var fullHTML = "<select id ='buildings'>";
     var buildings = "";
     for (var i = 0; i < buildingsData.length; i++) {
         buildings += "<option id='" + buildingsData[i].name + "'>";
-        buildings += buildingsData[i].name + "</option>";
+        buildings += buildingsData[i].code + ", " + buildingsData[i].name + "</option>";
        
     };
         fullHTML += buildings;
         fullHTML += "</select>";
         $( "#buildingPreference" ).html(fullHTML);
-        
+}
 
+function roomsGenerator(){
+    var fullHTML ="<select size = '5'>"
+    var rooms = "";
+    for (var i = 0; i < buildingsData.length; i++) {
+        rooms += "<option id ='" + buildingsData[$( '#buildings' ).val()].rooms[i] + "'>";
+        rooms += buildingsData[$( '#buildings' )].rooms[i] + "</option>";
+    };
+    fullHTML += rooms;
+    fullHTML += "</select>";
+    $( "#roomPreference" ).html(fullHTML);
 }
 
 function moduleTitleGenerator(){
