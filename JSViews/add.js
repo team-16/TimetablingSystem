@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	alert("loaded");
-    
+	//alert("loaded");
+    moduleTitleGenerator();
     rangedSlider();
     facilityGenerator();
     rangedSlider(); 
@@ -9,7 +9,9 @@ $(document).ready(function() {
     weeksGenerator();
     
 });
-
+function moduleTitleGenerator(){
+    document.getElementById("moduleTitleOutput").innerHTML = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"];
+}
 
 function weeksGenerator() {
                     var parentElement = document.getElementById("weeksCheckbox");
