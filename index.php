@@ -93,6 +93,12 @@ if(!isLoggedIn()){
 						</li>
 					</a>
 					
+					<a href="test4.php">
+						<li>
+							Test 4
+						</li>
+					</a>
+					
 					<a href="loggingout.php">
 						<li>
 							Log Out
