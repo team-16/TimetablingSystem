@@ -144,12 +144,25 @@ if(!isLoggedIn()){
 							
 							<div class="formItem">
 								<div class="leftRoom">
-									<h4>Session type:</h4>
+									<h4>Traditional/Seminar:</h4>
 								</div>
 								<div class="right1">
 									<select name="traditionalSeminarSelect">
 										<option>Traditional</option>
 										<option>Seminar</option>
+								  	</select>
+								</div>
+							</div>
+							
+							<div class="formItem">
+								<div class="leftRoom">
+									<h4>Session Type:</h4>
+								</div>
+								<div class="right1">
+									<select name="sessionTypeSelect">
+										<option>Lecture</option>
+										<option>Tutorial</option>
+										<option>Lab</option>
 								  	</select>
 								</div>
 							</div>
