@@ -52,24 +52,43 @@ function getAllRoomsAndBuildings() {
 		
 		currentBuilding.code = jsonBuildingsArray[buildingCounter].code;
 		currentBuilding.name = jsonBuildingsArray[buildingCounter].name;
-		alert(jsonBuildingsArray[buildingCounter].name);
 		currentBuilding.park = Number(jsonBuildingsArray[buildingCounter].park);
-		alert(parksArray[currentBuilding.park]);
+		
+		alert(currentBuilding.name + " : " + parksArray[currentBuilding.park]);
+		
 		currentBuilding.rooms = getAllRoomsInBuilding(currentBuilding.code, jsonRoomsArray);
 		
 		buildingRoomsArray.push(currentBuilding);
 		
 	}
 	
+	return buildingRoomsArray;
+	
 }
 
-function getAllRoomsInBuilding() {
+function getAllRoomsInBuilding(buildingCode, jsonRooms) {
 	
+	var roomsInBuilding = [];
 	
+	for(var roomCounter = 0; roomCounter < jsonRooms.length; roomCounter++) {
+		
+		if(buildingCode == jsonRooms[roomCounter].buildingcode) {
+			
+			var currentRoom = new Room();
+			
+			currentRoom.code = jsonRooms[roomCounter].code;
+			currentRoom.type = Number(jsonRooms[roomCounter].type);
+			currentRoom.capacity = Number(jsonRooms[roomCounter].capacity);
+			
+			alert(currentRoom.code + " : " + currentRoom.type + " : " + currentRoom.capacity);
+			
+			roomsInBuilding.push(currentRoom);
+			
+		}
+		
+	}
 	
-	
-	
-	
+	return roomsInBuilding;
 	
 }
 

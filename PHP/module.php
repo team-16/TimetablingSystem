@@ -30,7 +30,7 @@ function getModules($deptCode){
 function getModule($moduleCode){
 	global $DB;
 	
-	if($DB->query("SELECT code FROM module WHERE code = :moduleCode", array(:moduleCode => $moduleCode)){
+	if($DB->query("SELECT code FROM module WHERE code = :moduleCode", array(":moduleCode" => $moduleCode))){
 	
 		return true;
 	
