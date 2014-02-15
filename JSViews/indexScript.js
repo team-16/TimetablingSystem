@@ -36,11 +36,12 @@ $(document).ready(function() {
 $(function() {
 			var d = new Date();
 			$( "#progressbar" ).progressbar({
-				value: 70
+				//value: 70
 				
-				//value: d.getTime() - roundStart.getTime() / roundEnd.getTime() - roundStart.getTime()
+				value: d.getTime() - roundStart.getTime() / roundEnd.getTime() - roundStart.getTime()
 
 			});
+			$('#progressbar').height(15);
 			if($( "#progressbar" ).progressbar("value") < 60) $("#progressbar").addClass('beginning');
 			else if ($( "#progressbar" ).progressbar("value") < 90) $("#progressbar").addClass('middle');
             else $("#progressbar").addClass('end');
