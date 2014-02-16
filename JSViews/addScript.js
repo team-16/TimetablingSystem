@@ -353,9 +353,9 @@ function insertRequest(){
 			data: { },
 			success: function(results) {
 				alert(results);
-				$('#requests').click();
 			}
 	});
+	$('#requests').click();
 	
 	/*alert(moduleCodeVal);
 	alert(priorityVal);
