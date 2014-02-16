@@ -64,6 +64,12 @@ if(!isLoggedIn()){
 						</li>
 					</a>
 					
+					<a href="history.php">
+						<li>
+							History
+						</li>
+					</a>
+					
 					<a href="allbookings.php">
 						<li>
 							All Bookings
