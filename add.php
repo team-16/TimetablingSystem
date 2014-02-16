@@ -172,7 +172,7 @@ if(!isLoggedIn()){
 									</select>
 								</div>
 								<div class="right1">
-									<input type="button" value="Add" onclick="addRoomToPref(document.getElementById('rooms').options[document.getElementById('rooms').options.selectedIndex].value,document.getElementById('rooms').options[document.getElementById('rooms').options.selectedIndex].text);">
+									<input type="button" value="Add"  onclick="addRoomToPref(document.getElementById('rooms').options[document.getElementById('rooms').options.selectedIndex].value,document.getElementById('rooms').options[document.getElementById('rooms').options.selectedIndex].text);">
 									<input type="button" value="Remove" onclick="removeRoomFromPref();">
 								</div>
 							</div>

@@ -273,7 +273,7 @@ function removeRoomFromPref(){
 
 function insertRequest(){
 
-	form id="autoForm" method="post" action="addingrequest.php">
+	<form id="autoForm" method="post" action="addingrequest.php">
     <input type="hidden" name="moduleCode" value=document.getElementById("moduleCodeSelect").value>
 	<input type="hidden" name="priority" value=document.getElementById("priority").value>
 	//<input type="hidden" name="startPeriod" value="success">
@@ -294,5 +294,3 @@ function insertRequest(){
 	</script>
 
 }
-
-;
