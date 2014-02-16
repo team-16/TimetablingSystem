@@ -297,11 +297,14 @@ function removeRoomFromPref(){
 
 function getRequestValues(){
     var weeksValues = [];
-    for (var i = 0; i < numberOfWeeks; i++) {
-    var week = document.getElementById("week " + i);
-        if(week.checked = true){
-            weeksValues.push(true);
-        }else weeksValues.push(false);
+    for (var i = 1; i < numberOfWeeks; i++) {
+		
+		var weekState = document.getElementById("week " + i).checked;
+		
+		if(weekState) weeksValues.push(true);
+		else weeksValues.push(false);
        
-    }alert(weeksValues);
+    }
+    
+    alert(weeksValues);
 } 
