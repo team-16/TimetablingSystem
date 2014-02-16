@@ -275,7 +275,7 @@ function insertRequest(){
 	
 	var moduleCodeVal = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["code"];
 	var priorityVal = document.getElementById("priority").checked;
-	var dayVal = document.getElementById("daySelect").value;
+	var dayVal = document.getElementById("daySelect").selectedIndex;
 	/*
 	var startPeriodVal = document.getElementById("startPeriod").value;
 	var endPeriodVal = document.getElementById("endPeriod").value;
