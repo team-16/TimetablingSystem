@@ -271,7 +271,7 @@ function removeRoomFromPref(){
 	return true;
 }
 
-function insertRequest(){
+/*function insertRequest(){
 
 	<form id="autoForm" method="post" action="addingrequest.php">
     <input type="hidden" name="moduleCode" value=document.getElementById("moduleCodeSelect").value>
@@ -293,4 +293,4 @@ function insertRequest(){
     document.getElementById("autoForm").submit();
 	</script>
 
-}
+}*/
