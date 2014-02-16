@@ -180,16 +180,16 @@ function getHistoryRequestsAllocated(){
 
 function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
  $weeks, $noOfStudents, $parkPreference, $traditional, $sessionType, $noOfRooms,
- $roomCode, $otherRequirements, $roundID, $status){
+ $roomCode, $otherRequirements, $roundID){
 	global $DB;
 	$nextReqId = getNextRequestID();	
 	
 	if($DB->query("INSERT INTO request (id, moduleCode, priority, day,
 	startPeriod, endPeriod, weeks, noOfStudents, parkPreference, traditional,
-	sessionType, noOfRooms, roomCode, otherRequirements, roundID, status)
+	sessionType, noOfRooms, roomCode, otherRequirements, roundID)
 	VALUES (:id, :moduleCode, :priority, :day, :startPeriod, :endPeriod, :weeks,
 	:noOfStudents, :parkPreference, :traditional, :sessionType, :noOfRooms,
-	:roomCode, :otherRequirements, :roundID, :status)",
+	:roomCode, :otherRequirements, :roundID)",
 				   array(
 						':id' => $nextReqId[0]["counter"],
 						':moduleCode' => $moduleCode,
@@ -205,8 +205,7 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
 						 ':noOfRooms' => $noOfRooms,
 						 ':roomCode' => $roomCode,
 						 ':otherRequirements' => $otherRequirements,
-						 ':roundID' => $roundID,
-						 ':status' => $status))) {
+						 ':roundID' => $roundID))) {
 						 
 						 return true;
 		

@@ -312,10 +312,9 @@ function insertRequest(){
 	var roomCodeVal = "JJ.0.04" ;
 	var otherRequirementsVal = document.getElementById("otherRequirementsTextArea").value ;
 	var roundIDVal = roundID ;
-	var statusVal = "" ;
 	
 	
-	alert(moduleCodeVal);
+	/*alert(moduleCodeVal);
 	alert(priorityVal);
 	alert(dayVal);
 	
@@ -329,23 +328,23 @@ function insertRequest(){
 	alert(noOfRoomsVal);
 	alert(roomCodeVal);
 	alert(otherRequirementsVal);
-	alert(roundIDVal);
-	alert(statusVal);
+	alert(roundIDVal);*/
 
-	/*
 	$.ajax({
 		url: "addingrequest.php?" +currentSessionID,
 		type: "POST",
-		asnyc: false,
+		async: false,
 		data: { moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
 				endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
 				traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal, 
-				otherRequirements:otherRequirementsVal, roundID:roundIDVal, status:statusVal},
+				otherRequirements:otherRequirementsVal, roundID:roundIDVal },
 		success: function(results) {
 			alert(results);
 		}
 	});
-	*/
+	
+	
+	
 	/*
 	var fullHTML = '<form id="autoForm" method="post" action="addingrequest.php">';
 		fullHTML +='<input type="hidden" name="moduleCode" value=document.getElementById("moduleCodeSelect").value>';
