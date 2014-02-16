@@ -46,7 +46,7 @@ if(!isLoggedIn()){
 						</li>
 					</a>
 					
-					<a href="requests.php" id='requests'>
+					<a href="requests.php" id='requestsNow'>
 						<li>
 							Requests
 						</li>

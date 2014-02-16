@@ -355,7 +355,7 @@ function insertRequest(){
 				alert(results);
 			}
 	});
-	//$('#home').click();
+	loadRequestsPage();
 	
 	/*alert(moduleCodeVal);
 	alert(priorityVal);

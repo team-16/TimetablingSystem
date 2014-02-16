@@ -1,3 +1,14 @@
+<?php
+
+include('PHP/init.php');
+
+if(!isLoggedIn()){
+	session_destroy();
+	redirectLogin();
+}
+
+?>
+
 <html>
 
 
@@ -65,7 +76,7 @@ function gen(){
 }
 
 </script>
-<button type='button' onclick='$("#requests").click();'>Redirect</button>
+<button type='button' onclick='$("#requestsNow").click();'>Redirect</button>
 <button type='button' onclick='weeksTest();'>Weeks Test</button>
 <button type='button' onclick='testReqClass();'>Test</button>
 <button type='button' onclick='weekReadableString([true, false, true, true, true, true, false, true, true, true, false, true, false, false, false, false]);'>Test string</button>

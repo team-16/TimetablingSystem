@@ -22,6 +22,8 @@ if(!isLoggedIn()){
 	<script type="text/javascript">
 		var moduleArray = <?php echo(json_encode(getModules(loggedDept()))); ?>;
 	</script>
+	
+	<button type='button' onclick='$("#requestsNow").click();'>Redirect</button>
 		
 		<div id="wrapperAdd">
 
@@ -255,6 +257,7 @@ if(!isLoggedIn()){
   			<script src='jQuery&UI/jquery-ui-1.10.3/jquery-1.9.1.js'></script>
   			<script src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'</script>
   			<!--<script src='//code.jquery.com/ui/1.10.4/jquery-ui.js'></script>-->
+  	</div>
 
 	</body>
 
