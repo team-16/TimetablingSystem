@@ -1,13 +1,16 @@
 <?php
 
 include('PHP/init.php');
+include('requestHandler.php');
 
 
 //function getLiveRequests() {
 	
 	$notSubmittedRequests = getCurrentRequestsNull();
 	
-	echo print_r($notSubmittedRequests);
+	echo print("<pre>".print_r($notSubmittedRequests,true)."</pre>");
+	
+	requestsCompressor($notSubmittedRequests);
 	
 	/*
 	echo('<script type="text/javascript">
