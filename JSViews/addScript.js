@@ -353,6 +353,7 @@ function insertRequest(){
 			data: { },
 			success: function(results) {
 				alert(results);
+				$('#requests').click();
 			}
 	});
 	
