@@ -67,7 +67,7 @@ function getCurrentRequests(){
 function getCurrentRequestsNull(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status IS NULL ORDER BY moduleCode")){
+	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status IS NULL ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -79,7 +79,7 @@ function getCurrentRequestsNull(){
 function getCurrentRequestsNotNull(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status IS NOT NULL ORDER BY moduleCode")){
+	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status IS NOT NULL ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -91,7 +91,7 @@ function getCurrentRequestsNotNull(){
 function getCurrentRequestsAllocated(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status = 1 ORDER BY moduleCode")){
+	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status = 1 ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -105,7 +105,7 @@ function getCurrentRequestsAllocated(){
 function getCurrentRequestsNullAdHoc(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status IS NULL ORDER BY moduleCode")){
+	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status IS NULL ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -117,7 +117,7 @@ function getCurrentRequestsNullAdHoc(){
 function getCurrentRequestsNotNullAdHoc(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status IS NOT NULL ORDER BY moduleCode")){
+	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status IS NOT NULL ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -129,7 +129,7 @@ function getCurrentRequestsNotNullAdHoc(){
 function getCurrentRequestsAllocatedAdHoc(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status = 1 ORDER BY moduleCode")){
+	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status = 1 ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -143,7 +143,7 @@ function getCurrentRequestsAllocatedAdHoc(){
 function getHistoryRequestsNull(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 0))) AND status IS NULL ORDER BY moduleCode")){
+	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 0))) AND status IS NULL ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -155,7 +155,7 @@ function getHistoryRequestsNull(){
 function getHistoryRequestsNotNull(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 0))) AND status IS NOT NULL ORDER BY moduleCode")){
+	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 0))) AND status IS NOT NULL ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -167,7 +167,7 @@ function getHistoryRequestsNotNull(){
 function getHistoryRequestsAllocated(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID = (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 0))) AND status = 1 ORDER BY moduleCode")){
+	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 0))) AND status = 1 ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
