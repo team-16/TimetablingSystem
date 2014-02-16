@@ -15,6 +15,9 @@
 
 </script>
 
+<input type='button' onclick=''>Current</input>
+<input type='button' onclick=''>AdHoc View</input>
+
 <input type='button' onclick=''>List View</input>
 <input type='button' onclick=''>Timetable View</input>
 
