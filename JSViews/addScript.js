@@ -3,15 +3,13 @@ var buildingsData = [];
 $(document).ready(function() {
     buildingsData = getAllRoomsAndBuildings();
     moduleTitleGenerator();
-    rangedSlider();
     facilityGenerator();
-    rangedSlider(); 
     facilityGenerator();
     parkGenerator();
     weeksGenerator();
     buildingsGenerator();
     roomsGenerator();
-    
+    rangedSlider();
 });
     
 
@@ -205,8 +203,6 @@ function onKeyUpCheckNumRooms(){
     maxValueNumRooms();
 }
 function rangedSlider() {
-    var periodSelect = document.getElementById('periodSelect');
-    var lengthSelect = document.getElementById('lengthSelect');
     $( "#slider-range" ).slider({
         range: true,
         min: 1,
@@ -215,15 +211,15 @@ function rangedSlider() {
         slide: function( event, ui ) {
             if(ui.values[1] == ui.values[0]) return false;
             $( "#amount" ).val(  + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-			$( "#startPeriod" ).attr('id', ui.values[0]);
-			$( "#endPeriod" ).attr('id', ui.values[1]);
+            $( "#startPeriod" ).val( + ui.values[ 0 ] );
+            $( "#endPeriod" ).val( + ui.values[ 1 ] );
         }
 
         });
         $( "#amount" ).val( + $( "#slider-range" ).slider( "values", 0 ) +
         " - " + $( "#slider-range" ).slider( "values", 1 ) );
-		$( "#startPeriod" ).attr('id', ui.values[0]);
-		$( "#endPeriod" ).attr('id', ui.values[1]);
+		$( "#startPeriod" ).val(+ $("#slider-range").slider("values", 0) );
+		$( "#endPeriod" ).val(+ $("#slider-range").slider("values", 1) );
 }
 //function chosenRoomsListGenerator() {
 //    var chosenRoom = document.getElementById("rooms");
@@ -302,11 +298,11 @@ function removeRoomFromPref(){
 
 }*/
 
-function boink(){
+/*function boink(){
 
 	alert($( "#slider-range" ).val( values[ 0 ]));
 
-}
+}*/
 
 function getRequestValues(){
     var weeksValues = [];
