@@ -69,4 +69,8 @@ function populateRequestFacilities($requestsArray) {
 		
 }
 
+function populateAllocatedRooms($requestsArray) {
+	
+}
+
 ?>
