@@ -217,6 +217,7 @@ function chosenRoomsListGenerator() {
     if(true) {
         chosenRoomField += "<option> " + chosenRoom.value + "</option>";
     }
+}
 	
 function addRoomToPref(optionValue,optionDisplayText){
 	var newOption = document.createElement("option");
@@ -229,5 +230,4 @@ function addRoomToPref(optionValue,optionDisplayText){
 function removeRoomFromPref(selectedIndex){
 	chosenRooms.remove(chosenRooms.options.selectedIndex);
 	return true;
-}
 };
