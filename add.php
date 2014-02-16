@@ -61,14 +61,14 @@ if(!isLoggedIn()){
 							<div class="leftTime">
 								<h4>Day:</h4>
 							</div>
-							<div class="right1">
-								<select id="daySelect" name="daySelect">
+							<div class="right1" id="day">
+								<!--<select id="daySelect" name="daySelect">
 									<option>Monday</option>
 									<option>Tuesday</option>
 									<option>Wednesday</option>
 									<option>Thursday</option>
 									<option>Friday</option>
-								</select>
+								</select>-->
 							</div>
 							<div class="formDiv">
 								<div class="leftTime">
@@ -117,7 +117,7 @@ if(!isLoggedIn()){
 									<h4>No. of students:</h4>
 								</div>
 								<div class="right1">
-									 <input id= "studentsInput" name="studentsInput" onkeypress="return isNumberKey(event);" onkeyup ="onKeyUpCheck();">
+									 <input id= "studentsInput" name="studentsInput"  value = "1" onkeypress="return isNumberKey(event);" onkeyup ="onKeyUpCheck();">
 								</div>
 							</div>
 							
@@ -166,7 +166,7 @@ if(!isLoggedIn()){
 									<h4>No. of rooms:</h4>
 								</div>
 								<div class="right1">
-									 <input id= "roomsInput" name="roomsInput" onkeypress="return isNumberKey(event);" onkeyup ="onKeyUpCheckNumRooms();">
+									 <input id= "roomsInput" name="roomsInput" onkeypress="return isNumberKey(event);" onkeyup ="onKeyUpCheckNumRooms();" value="1">
 								</div>
 							</div>
 							<div class="formItem">

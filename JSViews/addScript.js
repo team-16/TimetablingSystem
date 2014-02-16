@@ -10,6 +10,7 @@ $(document).ready(function() {
     buildingsGenerator();
     roomsGenerator();
     rangedSlider();
+    daysGenerator();
 });
     
 
@@ -51,7 +52,7 @@ function moduleTitleGenerator(){
 }
 
 function weeksGenerator() {
-                    var parentElement = document.getElementById("weeksCheckbox");
+                    //var parentElement = document.getElementById("weeksCheckbox");
                     var fullHTML1 = "";
                     //var originalhtml = parentElement.innerHTML;
                     for(var i=1; i <= numberOfWeeks; i++)
@@ -228,6 +229,16 @@ function rangedSlider() {
 //        chosenRoomField += "<option> " + chosenRoom.value + "</option>";
 //    }
 //}
+function daysGenerator(){
+    var daysList="<select id='daySelect'>";
+    for (var i = 0; i < daysArray.length; i++) {
+        daysList += "<option id='" + daysArray[i] + "'>";
+        daysList += daysArray[i];
+        daysList += "</option>";
+    }
+    daysList += "</select>";
+    $( "#day" ).html(daysList);
+}
 	
 function addRoomToPref(optionValue,optionDisplayText){
 	var newOption = document.createElement("option");
@@ -270,31 +281,36 @@ function removeRoomFromPref(){
 	cRoomsList.remove(cRoomsList.options.selectedIndex);
 	return true;
 }
-
+function traditionalSeminarTruthValue(){
+   var traditionalValue = document.getElementById("traditionalSeminarSelect").value;
+   if(traditionalValue == "Traditional"){
+    return true
+   }else return false;
+}
 function insertRequest(){
 	
 	var moduleCodeVal = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["code"];
 	var priorityVal = document.getElementById("priority").checked;
 	var dayVal = document.getElementById("daySelect").selectedIndex;
-	/*
-	var startPeriodVal = document.getElementById("startPeriod").value;
-	var endPeriodVal = document.getElementById("endPeriod").value;
-	var weeksVal = getRequestValues();
+	
+	var startPeriodVal = (document.getElementById("startPeriod").value) - 1;
+	var endPeriodVal = (document.getElementById("endPeriod").value) - 1;
+	var weeksVal = weeksEncoder(getRequestValues());
 	var noOfStudentsVal = document.getElementById("studentsInput").value;
-	var parkPreferenceVal = document.getElementById("parkSelect").value;
-	var traditionalVal = document.getElementById("traditionalSeminarSelect").value;
-	var sessionTypeVal = document.getElementById("sessionTypeSelect").value;
-	var noOfRoomsVal = document.getElementById("noOfRooms").value;
+	var parkPreferenceVal = document.getElementById("parkSelect").selectedIndex;
+	var traditionalVal = traditionalSeminarTruthValue();
+	var sessionTypeVal = document.getElementById("sessionTypeSelect").selectedIndex;
+	var noOfRoomsVal = document.getElementById("roomsInput").value;
 	var roomCodeVal = "JJ.0.04" ;
 	var otherRequirementsVal = document.getElementById("otherRequirementsTextArea").value ;
 	var roundIDVal = roundID ;
 	var statusVal = "" ;
-	*/
+	
 	
 	alert(moduleCodeVal);
 	alert(priorityVal);
 	alert(dayVal);
-	/*
+	
 	alert(startPeriodVal);
 	alert(endPeriodVal);
 	alert(weeksVal);
@@ -307,7 +323,7 @@ function insertRequest(){
 	alert(otherRequirementsVal);
 	alert(roundIDVal);
 	alert(statusVal);
-	*/
+
 	/*
 	$.ajax({
 		url: "addingrequest.php?" +currentSessionID,
@@ -371,4 +387,4 @@ function getRequestValues(){
     }
     
    return weeksValues;
-};
+}
