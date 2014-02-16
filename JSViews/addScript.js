@@ -243,7 +243,7 @@ function addRoomToPref(optionValue,optionDisplayText){
 	}
 	
 	if(check == 0){ /*&& document.getElementById("cRoomsList").length < document.getElementById("roomsInput").value*/
-		cRoomsList.add(newOption, null);
+		cRoomsList.add(newOption, newOption);
 		return true;
 	}
 	
@@ -278,14 +278,14 @@ function insertRequest(){
 		<input type="hidden" name="priority" value=document.getElementById("priority").value>
 		//<input type="hidden" name="startPeriod" value="success">
 		//<input type="hidden" name="endPeriod" value="success">
-		//<input type="hidden" name="weeks" value="success">
+		<input type="hidden" name="weeks" value=getRequestValues()>
 		<input type="hidden" name="noOfStudents" value=document.getElementById("studentsInput").value>
 		<input type="hidden" name="traditional" value=document.getElementById("traditionalSeminarSelect").value>
 		<input type="hidden" name="sessionType" value=document.getElementById("sessionTypeSelect").value>
 		<input type="hidden" name="noOfRooms" value=document.getElementById("noOfRooms").value>
-		//<input type="hidden" name="roomCode" value="success">
+		<input type="hidden" name="roomCode" value="JJ.0.04">
 		<input type="hidden" name="otherRequirements" value=document.getElementById("otherRequirementsTextArea").value>
-		//<input type="hidden" name="roundID" value="success">
+		<input type="hidden" name="roundID" value=roundID>
 		<input type="hidden" name="status" value="">
 		
 		<input type="submit">
@@ -308,5 +308,5 @@ function getRequestValues(){
        
     }
     
-    alert(weeksValues);
+   return weeksValues;
 } 
