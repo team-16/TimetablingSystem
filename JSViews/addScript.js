@@ -297,7 +297,7 @@ function removeRoomFromPref(){
 
 function getRequestValues(){
     var weeksValues = [];
-    for (var i = 1; i < numberOfWeeks; i++) {
+    for (var i = 1; i <= numberOfWeeks; i++) {
 		
 		var weekState = document.getElementById("week " + i).checked;
 		
