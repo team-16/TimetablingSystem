@@ -4,7 +4,6 @@ $(document).ready(function() {
     buildingsData = getAllRoomsAndBuildings();
     moduleTitleGenerator();
     facilityGenerator();
-    facilityGenerator();
     parkGenerator();
     weeksGenerator();
     buildingsGenerator();
@@ -288,10 +287,10 @@ function traditionalSeminarTruthValue(){
    }else return false;
 }
 function roomCodeGather(){
-    var roomsChosen = document.getElementById('chosenRooms');
+    var roomsChosen = document.getElementById('cRoomsList');
     var roomsChosenArray = [];
-    for (var i = 0; i < roomsChosen.options.length; i++) {
-        roomsChosenArray.push(roomsChosen[i].value);
+    for (var i = 0; i < roomsChosen.length; i++) {
+        roomsChosenArray.push(roomsChosen[i].text);
     }
     return roomsChosenArray;
 }
@@ -309,10 +308,38 @@ function insertRequest(){
 	var traditionalVal = traditionalSeminarTruthValue();
 	var sessionTypeVal = document.getElementById("sessionTypeSelect").selectedIndex;
 	var noOfRoomsVal = document.getElementById("roomsInput").value;
-	var roomCodeVal = "JJ.0.04" ;
+	//var roomCodeVal = "JJ.0.04";
+	var roomCodeVal = roomCodeGather();
 	var otherRequirementsVal = document.getElementById("otherRequirementsTextArea").value ;
 	var roundIDVal = roundID ;
 	
+	//alert(roomCodeGather());
+	
+	
+	for(var i = 0; i < roomCodeVal.length; i++){
+			$.ajax({
+				url: "addingrequest.php?" +currentSessionID,
+				type: "POST",
+				async: false,
+				data: { moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
+					endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
+					traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal[i], 
+					otherRequirements:otherRequirementsVal, roundID:roundIDVal },
+				success: function(results) {
+					alert(results);
+				}
+			});
+	}
+	
+	$.ajax({
+			url: "addingrequest2.php?" +currentSessionID,
+			type: "POST",
+			async: false,
+			data: { },
+			success: function(results) {
+				alert(results);
+			}
+	});
 	
 	/*alert(moduleCodeVal);
 	alert(priorityVal);
@@ -330,7 +357,7 @@ function insertRequest(){
 	alert(otherRequirementsVal);
 	alert(roundIDVal);*/
 
-	$.ajax({
+	/*$.ajax({
 		url: "addingrequest.php?" +currentSessionID,
 		type: "POST",
 		async: false,
@@ -341,7 +368,7 @@ function insertRequest(){
 		success: function(results) {
 			alert(results);
 		}
-	});
+	});*/
 	
 	
 	
