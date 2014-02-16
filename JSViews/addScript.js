@@ -40,6 +40,7 @@ function roomsGenerator(){
     for (var i = 0; i < roomsArray.length; i++) {
         rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray.code + "' >";
         rooms += roomsArray[i].code  + "</option>";
+		
     };
     fullHTML += rooms;
     fullHTML += "</select>";
@@ -211,23 +212,38 @@ function rangedSlider() {
         $( "#amount" ).val( + $( "#slider-range" ).slider( "values", 0 ) +
         " - " + $( "#slider-range" ).slider( "values", 1 ) );
 }
-function chosenRoomsListGenerator() {
-    var chosenRoom = document.getElementById("rooms");
-    var chosenRoomField = document.getElementById("chosenRooms");
-    if(true) {
-        chosenRoomField += "<option> " + chosenRoom.value + "</option>";
-    }
-}
+//function chosenRoomsListGenerator() {
+//    var chosenRoom = document.getElementById("rooms");
+//    var chosenRoomField = document.getElementById("chosenRooms");
+//    if(true) {
+//        chosenRoomField += "<option> " + chosenRoom.value + "</option>";
+//    }
+//}
 	
 function addRoomToPref(optionValue,optionDisplayText){
 	var newOption = document.createElement("option");
 	newOption.value = optionValue;
 	newOption.text = optionDisplayText;
-	chosenRooms.add(newOption, null);
-	return true;
+	
+	var check = 0;
+	for(i = 0; i < document.getElementById("cRoomsList").length; i++){
+		var sel = document.getElementById('cRoomsList');
+		if (sel.options[i].text == document.getElementById('rooms').options[document.getElementById('rooms').options.selectedIndex].text) {
+			check = 1;
+		}
+	}
+	
+	if(check == 0){
+		cRoomsList.add(newOption, null);
+		return true;
+	}
+	
+	else{
+		return false;
+	}
 }
 
-function removeRoomFromPref(selectedIndex){
-	chosenRooms.remove(chosenRooms.options.selectedIndex);
+function removeRoomFromPref(){
+	cRoomsList.remove(cRoomsList.options.selectedIndex);
 	return true;
 };

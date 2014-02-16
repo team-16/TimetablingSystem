@@ -158,13 +158,14 @@ if(!isLoggedIn()){
 								<div class ="leftRoom">
 									<h4>Room Preference</h4>
 								</div>
-								<div class="right1" id="roomPreference"></div>
-								<div class="right1" id="chosenRooms">
-									<select size ="5">
+								<div class="right1" name="roomPreference" id="roomPreference"></div>
+								<div class="right1" name="chosenRooms" id="chosenRooms">
+									<select size ="5" id="cRoomsList">
 									</select>
 								</div>
 								<div class="right1">
-									<input type="button" onclick="addRoomToPref(roomPreference.options[roomPreference.options.selectedIndex].value,roomPreference.options[roomPreference.options.selectedIndex].text);">
+									<input type="button" value="Add" onclick="addRoomToPref(document.getElementById('rooms').options[document.getElementById('rooms').options.selectedIndex].value,document.getElementById('rooms').options[document.getElementById('rooms').options.selectedIndex].text);">
+									<input type="button" value="Remove" onclick="removeRoomFromPref();">
 								</div>
 							</div>
 
