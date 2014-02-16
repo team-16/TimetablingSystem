@@ -91,20 +91,20 @@ if(!isLoggedIn()){
 
 							<div id="periodAndLengthWrapper">
 								<div class="formDiv">
-								<p>
-									<label for="amount">start period, end period:</label>
-									<output type="text" id="amount" style="border:0; font-weight:bold;">
-								</p>
-								<div id="slider-range">
-									<!-- Slider generated here -->
+									<p>
+										<label for="amount">start period, end period:</label>
+										<output type="text" id="amount" style="border:0; font-weight:bold;">
+									</p>
+									<div id="slider-range">
+										<!-- Slider generated here -->
+									</div>
+									<div name="startPeriod">
+										<output type="number" id="startPeriod">
+									</div>
+									<div name="endPeriod">
+										<output type="number" id="endPeriod">
+									</div>
 								</div>
-								<div name="startPeriod">
-									<output type="number" id="startPeriod">
-								</div>
-								<div name="endPeriod">
-									<output type="number" id="endPeriod">
-								</div>
-							
 							</div>
 						</fieldset> <!-- End of time slot box -->
 					</div>
