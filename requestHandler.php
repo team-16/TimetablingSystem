@@ -1,22 +1,41 @@
 <?php
 
+function compressWithFacilities($requestsArray) {
+	
+	return populateRequestFacilities(requestsCompressor($requestsArray));
+	
+	//populateRequestFacilities($compressedArray);
+	//populateAllocatedRooms($compressedArray);
+	
+}
+
+function compressWithFacilitiesAndBookings($requestsArray) {
+	
+	return populateRequestFacilities(requestsCompressor($requestsArray));
+	
+	//populateRequestFacilities($compressedArray);
+	//populateAllocatedRooms($compressedArray);
+	
+}
+
+
 function requestsCompressor($requestsArray) {
 	
 	$compressedArray = array();
 	
 	for ($rCounter = 0; $rCounter < count($requestsArray); $rCounter++) {
 		
-		$flag = false;
+		$noDuplicate = true;
 		
 		for ($counter = 0; $counter < count($compressedArray); $counter++) {
 			
-			if ($compressedArray[$counter].id == $requestsArray[$rCounter].id) {
-				$flag = true;
+			if ($compressedArray[$counter]["id"] == $requestsArray[$rCounter]["id"]) {
+				$noDuplicate = false;
 			}
 			
 		}
 		
-		if (!$flag) array_push($compressedArray, $requestsArray[$rCounter]);
+		if ($noDuplicate) array_push($compressedArray, $requestsArray[$rCounter]);
 		
 	}
 	
@@ -27,7 +46,7 @@ function requestsCompressor($requestsArray) {
 		
 		for ($rCounter = 0; $rCounter < count($requestsArray); $rCounter++) {
 			
-			if ($compressedArray[$counter].id == $requestsArray[$rCounter].id) {
+			if ($compressedArray[$counter]["id"] == $requestsArray[$rCounter]["id"]) {
 								
 				array_push($roomsArray, $requestsArray[$rCounter]["roomCode"]);
 				
@@ -41,9 +60,8 @@ function requestsCompressor($requestsArray) {
 	
 	echo print("<pre>".print_r($compressedArray, true)."</pre>");
 	
-	populateRequestFacilities($compressedArray);
-	populateAllocatedRooms($compressedArray);
-		
+	return $compressedArray;
+	
 } 
 
 function populateRequestFacilities($requestsArray) {
@@ -65,6 +83,8 @@ function populateRequestFacilities($requestsArray) {
 	}
 	
 	echo print("<pre>".print_r($requestsArray, true)."</pre>");
+	
+	return $requestsArray;
 		
 }
 
