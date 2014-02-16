@@ -69,4 +69,16 @@ function getRoom($Code){
 	}
 }
 
+function getAllocatedRooms($requestID){
+	global $DB;
+	
+	if($DB->query("SELECT allocatedRoom FROM booking WHERE requestID = :requestID", array(":requestID" => $requestID))){
+		return $DB->results();
+	}
+	
+	else{
+		return false;
+	}
+}
+
 ?>
