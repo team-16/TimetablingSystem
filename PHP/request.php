@@ -182,10 +182,7 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
  $weeks, $noOfStudents, $parkPreference, $traditional, $sessionType, $noOfRooms,
  $roomCode, $otherRequirements, $roundID, $status){
 	global $DB;
-	$nextReqId = getNextRequestID();
-	
-	echo print("<pre>".print_r($nextReqId, true)."</pre>");
-	
+	$nextReqId = getNextRequestID();	
 	
 	if($DB->query("INSERT INTO request (id, moduleCode, priority, day,
 	startPeriod, endPeriod, weeks, noOfStudents, parkPreference, traditional,
@@ -210,7 +207,7 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
 						 ':otherRequirements' => $otherRequirements,
 						 ':roundID' => $roundID,
 						 ':status' => $status))) {
-						 echo($nextReqId[0]["counter"]);
+						 
 						 return true;
 		
 	}
