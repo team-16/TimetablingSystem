@@ -93,19 +93,18 @@ function populateAllocatedRooms($requestsArray) {
 		$results = getAllocatedRooms($requestsArray[$rCounter]["id"]);
 		
 		echo print("<pre>".print_r($results, true)."</pre>");
-		/*
+		
 		for ($arCounter = 0; $arCounter < count($results); $arCounter++) {
 			
-			array_push($allocatedRoomsArray, $results[$fCounter]["facilityID"]);
+			array_push($allocatedRoomsArray, $results[$arCounter]["allocatedRoom"]);
 			
 		}
 		
 		$requestsArray[$rCounter]["allocatedRooms"] = $allocatedRoomsArray;
-		*/
+		
 	}
 	
-	//echo print("<pre>".print_r($requestsArray, true)."</pre>");
-	
+	echo print("<pre>".print_r($requestsArray, true)."</pre>");
 	
 }
 
