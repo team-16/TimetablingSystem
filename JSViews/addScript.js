@@ -215,11 +215,15 @@ function rangedSlider() {
         slide: function( event, ui ) {
             if(ui.values[1] == ui.values[0]) return false;
             $( "#amount" ).val(  + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+			$( "#startPeriod" ).attr('id', ui.values[0]);
+			$( "#endPeriod" ).attr('id', ui.values[1]);
         }
 
         });
         $( "#amount" ).val( + $( "#slider-range" ).slider( "values", 0 ) +
         " - " + $( "#slider-range" ).slider( "values", 1 ) );
+		$( "#startPeriod" ).attr('id', ui.values[0]);
+		$( "#endPeriod" ).attr('id', ui.values[1]);
 }
 //function chosenRoomsListGenerator() {
 //    var chosenRoom = document.getElementById("rooms");
@@ -271,18 +275,19 @@ function removeRoomFromPref(){
 	return true;
 }
 
-function insertRequest(){
+/*function insertRequest(){
 
 	<form id="autoForm" method="post" action="addingrequest.php">
 		<input type="hidden" name="moduleCode" value=document.getElementById("moduleCodeSelect").value>
 		<input type="hidden" name="priority" value=document.getElementById("priority").value>
-		//<input type="hidden" name="startPeriod" value="success">
-		//<input type="hidden" name="endPeriod" value="success">
+		<input type="hidden" name="startPeriod" value=$( "#slider-range" ).slider("values" , 0)>
+		<input type="hidden" name="endPeriod" value=$( "#slider-range" ).slider("values", 1)>
 		<input type="hidden" name="weeks" value=getRequestValues()>
 		<input type="hidden" name="noOfStudents" value=document.getElementById("studentsInput").value>
 		<input type="hidden" name="traditional" value=document.getElementById("traditionalSeminarSelect").value>
 		<input type="hidden" name="sessionType" value=document.getElementById("sessionTypeSelect").value>
 		<input type="hidden" name="noOfRooms" value=document.getElementById("noOfRooms").value>
+		//Needs changing to be dynamic
 		<input type="hidden" name="roomCode" value="JJ.0.04">
 		<input type="hidden" name="otherRequirements" value=document.getElementById("otherRequirementsTextArea").value>
 		<input type="hidden" name="roundID" value=roundID>
@@ -294,6 +299,12 @@ function insertRequest(){
 	<script type="text/javascript">
 		document.getElementById("autoForm").submit();
 	</script>
+
+}*/
+
+function boink(){
+
+	alert($( "#slider-range" ).val( values[ 0 ]));
 
 }
 
@@ -309,4 +320,4 @@ function getRequestValues(){
     }
     
    return weeksValues;
-} 
+};

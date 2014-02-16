@@ -96,6 +96,8 @@ if(!isLoggedIn()){
 								<div id="slider-range">
 									<!-- Slider generated here -->
 								</div>
+								<div id="startPeriod"></div>
+								<div id="endPeriod"></div>
 							
 							</div>
 						</fieldset> <!-- End of time slot box -->
@@ -237,7 +239,7 @@ if(!isLoggedIn()){
 					-->
 		<p></p>
 					
-				<input type="submit" value="Submit Request" onclick="insertRequest();">
+				<input type="submit" value="Submit Request" onclick="boink();">
 				<input type="button" value="Cancel" onclick="location.reload();">
 		</div>	
 		</div> <!-- end of wrapper -->
