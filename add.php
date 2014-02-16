@@ -243,10 +243,11 @@ if(!isLoggedIn()){
 					-->
 		<p></p>
 					
-				<input type="submit" value="Submit Request" onclick="boink();">
+				<input type="submit" value="Submit Request" onclick="insertRequest();">
 				<input type="button" value="Cancel" onclick="location.reload();">
 		</div>	
 		</div> <!-- end of wrapper -->
+		<div id="submitForm" style="visibility:hidden;"></div>
 
 			<script src='JSViews/addScript.js'></script>
 			<link href='jQuery&UI/jquery-ui-1.10.3/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>

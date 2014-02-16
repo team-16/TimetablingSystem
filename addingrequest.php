@@ -3,31 +3,33 @@
 // NEEDS UPDATING - DOES NOT WORK YET
 
 include('PHP/init.php');
-if(insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
- $weeks, $noOfStudents, $parkPreference, $traditional, $sessionType, $noOfRooms,
- $roomCode, $otherRequirements, $roundID, $status));
+if(insertRequest($_POST['moduleCode'], $_POST['priority'], $_POST['day'], $_POST['startPeriod'], $_POST['endPeriod'],
+ "0111110111010100", $_POST['noOfStudents'], $_POST['parkPreference'], $_POST['traditional'], $_POST['sessionType'], $_POST['noOfRooms'],
+ $_POST['roomCode'], $_POST['otherRequirements'], $_POST['roundID'], $_POST['status'])){
 	
-	echo('<form id="autoForm" method="post" action="requests.php">
+	/*echo('<form id="autoForm" method="post" action="requests.php">
     <input type="hidden" name="errorCode" value="success">
     <input type="submit">
 	</form>
 	<script type="text/javascript">
     document.getElementById("autoForm").submit();
 	</script>
-	');
-	
+	');*/
+	echo("yay");	
 }
 
 else{
 	
-	echo('<form id="autoForm" method="post" action="add.php">
+	/*echo('<form id="autoForm" method="post" action="add.php">
     <input type="hidden" name="errorCode" value="invalid">
     <input type="submit">
 	</form>
 	<script type="text/javascript">
     document.getElementById("autoForm").submit();
 	</script>
-	');
+	');*/
+	
+	echo("noes");
 	
 }
 

@@ -271,36 +271,40 @@ function removeRoomFromPref(){
 	return true;
 }
 
-/*function insertRequest(){
+function insertRequest(){
 
-	<form id="autoForm" method="post" action="addingrequest.php">
-		<input type="hidden" name="moduleCode" value=document.getElementById("moduleCodeSelect").value>
-		<input type="hidden" name="priority" value=document.getElementById("priority").value>
-		<input type="hidden" name="startPeriod" value=$( "#slider-range" ).slider("values" , 0)>
-		<input type="hidden" name="endPeriod" value=$( "#slider-range" ).slider("values", 1)>
-		<input type="hidden" name="weeks" value=getRequestValues()>
-		<input type="hidden" name="noOfStudents" value=document.getElementById("studentsInput").value>
-		<input type="hidden" name="traditional" value=document.getElementById("traditionalSeminarSelect").value>
-		<input type="hidden" name="sessionType" value=document.getElementById("sessionTypeSelect").value>
-		<input type="hidden" name="noOfRooms" value=document.getElementById("noOfRooms").value>
-		//Needs changing to be dynamic
-		<input type="hidden" name="roomCode" value="JJ.0.04">
-		<input type="hidden" name="otherRequirements" value=document.getElementById("otherRequirementsTextArea").value>
-		<input type="hidden" name="roundID" value=roundID>
-		<input type="hidden" name="status" value="">
+	var fullHTML = '<form id="autoForm" method="post" action="addingrequest.php">';
+		fullHTML +='<input type="hidden" name="moduleCode" value=document.getElementById("moduleCodeSelect").value>';
+		fullHTML += '<input type="hidden" name="priority" value=document.getElementById("priority").value>';
+		fullHTML += '<input type="hidden" name="day" value=document.getElementById("daySelect").value>';
+		fullHTML += '<input type="hidden" name="startPeriod" value=document.getElementById("startPeriod").value>';
+		fullHTML += '<input type="hidden" name="endPeriod" value=document.getElementById("endPeriod").value>';
+		fullHTML += '<input type="hidden" name="weeks" value=getRequestValues()>';
+		fullHTML += '<input type="hidden" name="noOfStudents" value=document.getElementById("studentsInput").value>';
+		fullHTML += '<input type="hidden" name="parkPreference" value=document.getElementById("parkSelect").value>';
+		fullHTML += '<input type="hidden" name="traditional" value=document.getElementById("traditionalSeminarSelect").value>';
+		fullHTML += '<input type="hidden" name="sessionType" value=document.getElementById("sessionTypeSelect").value>';
+		fullHTML += '<input type="hidden" name="noOfRooms" value=document.getElementById("noOfRooms").value>';
+		//Needs changing to be dynamic;
+		fullHTML += '<input type="hidden" name="roomCode" value="JJ.0.04">';
+		fullHTML += '<input type="hidden" name="otherRequirements" value=document.getElementById("otherRequirementsTextArea").value>';
+		fullHTML += '<input type="hidden" name="roundID" value=roundID>';
+		fullHTML += '<input type="hidden" name="status" value="">';
 		
-		<input type="submit">
-	</form>
+		fullHTML += '<input type="submit">';
+	fullHTML += '</form>';
 	
-	<script type="text/javascript">
-		document.getElementById("autoForm").submit();
-	</script>
+	fullHTML += '<script type="text/javascript">';
+		fullHTML += 'document.getElementById("autoForm").submit();';
+	fullHTML += '</script>';
+	
+	$( "#submitForm" ).html(fullHTML);
 
-}*/
+}
 
 /*function boink(){
 
-	alert($( "#slider-range" ).val( values[ 0 ]));
+	alert(document.getElementById("startPeriod").value);
 
 }*/
 
