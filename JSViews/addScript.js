@@ -272,7 +272,57 @@ function removeRoomFromPref(){
 }
 
 function insertRequest(){
-
+	
+	var moduleCodeVal = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["code"];
+	var priorityVal = document.getElementById("priority").checked;
+	var dayVal = document.getElementById("daySelect").value;
+	/*
+	var startPeriodVal = document.getElementById("startPeriod").value;
+	var endPeriodVal = document.getElementById("endPeriod").value;
+	var weeksVal = getRequestValues();
+	var noOfStudentsVal = document.getElementById("studentsInput").value;
+	var parkPreferenceVal = document.getElementById("parkSelect").value;
+	var traditionalVal = document.getElementById("traditionalSeminarSelect").value;
+	var sessionTypeVal = document.getElementById("sessionTypeSelect").value;
+	var noOfRoomsVal = document.getElementById("noOfRooms").value;
+	var roomCodeVal = "JJ.0.04" ;
+	var otherRequirementsVal = document.getElementById("otherRequirementsTextArea").value ;
+	var roundIDVal = roundID ;
+	var statusVal = "" ;
+	*/
+	
+	alert(moduleCodeVal);
+	alert(priorityVal);
+	alert(dayVal);
+	/*
+	alert(startPeriodVal);
+	alert(endPeriodVal);
+	alert(weeksVal);
+	alert(noOfStudentsVal);
+	alert(parkPreferenceVal);
+	alert(traditionalVal);
+	alert(sessionTypeVal);
+	alert(noOfRoomsVal);
+	alert(roomCodeVal);
+	alert(otherRequirementsVal);
+	alert(roundIDVal);
+	alert(statusVal);
+	*/
+	/*
+	$.ajax({
+		url: "addingrequest.php?" +currentSessionID,
+		type: "POST",
+		asnyc: false,
+		data: { moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
+				endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
+				traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal, 
+				otherRequirements:otherRequirementsVal, roundID:roundIDVal, status:statusVal},
+		success: function(results) {
+			alert(results);
+		}
+	});
+	*/
+	/*
 	var fullHTML = '<form id="autoForm" method="post" action="addingrequest.php">';
 		fullHTML +='<input type="hidden" name="moduleCode" value=document.getElementById("moduleCodeSelect").value>';
 		fullHTML += '<input type="hidden" name="priority" value=document.getElementById("priority").value>';
@@ -299,6 +349,7 @@ function insertRequest(){
 	fullHTML += '</script>';
 	
 	$( "#submitForm" ).html(fullHTML);
+	*/
 
 }
 

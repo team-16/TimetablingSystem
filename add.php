@@ -62,7 +62,7 @@ if(!isLoggedIn()){
 								<h4>Day:</h4>
 							</div>
 							<div class="right1">
-								<select name="daySelect">
+								<select id="daySelect" name="daySelect">
 									<option>Monday</option>
 									<option>Tuesday</option>
 									<option>Wednesday</option>
@@ -243,7 +243,8 @@ if(!isLoggedIn()){
 					-->
 		<p></p>
 					
-				<input type="submit" value="Submit Request" onclick="insertRequest();">
+				<!-- <input type="submit" value="Submit Request" onclick="insertRequest();"> -->
+				<input type="button" value="Submit Request" onclick="insertRequest();"> 
 				<input type="button" value="Cancel" onclick="location.reload();">
 		</div>	
 		</div> <!-- end of wrapper -->
