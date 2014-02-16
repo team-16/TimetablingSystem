@@ -119,7 +119,7 @@ if(!isLoggedIn()){
 									<h4>Traditional/Seminar:</h4>
 								</div>
 								<div class="right1">
-									<select name="traditionalSeminarSelect">
+									<select id="traditionalSeminarSelect">
 										<option>Traditional</option>
 										<option>Seminar</option>
 								  	</select>
@@ -131,7 +131,7 @@ if(!isLoggedIn()){
 									<h4>Session Type:</h4>
 								</div>
 								<div class="right1">
-									<select name="sessionTypeSelect">
+									<select id="sessionTypeSelect">
 										<option>Lecture</option>
 										<option>Tutorial</option>
 										<option>Lab</option>
@@ -236,8 +236,8 @@ if(!isLoggedIn()){
 					-->
 		<p></p>
 					
-				<input type="submit" value="Submit Request" onclick="<!--Send all the variables to addingrequest.php-->">  <!--Required for "enter to submit" to work-->
-				<input type="button" value="Cancel" onclick="<!--reset the form data and possibly link them to the home page maybe? -->">
+				<input type="submit" value="Submit Request" onclick="insertRequest();">
+				<input type="button" value="Cancel" onclick="location.reload();">
 		</div>	
 		</div> <!-- end of wrapper -->
 
