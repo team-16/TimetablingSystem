@@ -254,7 +254,7 @@ function addRoomToPref(optionValue,optionDisplayText){
 	}
 	
 	if(check == 0){ /*&& document.getElementById("cRoomsList").length < document.getElementById("roomsInput").value*/
-		cRoomsList.add(newOption, newOption);
+		cRoomsList.add(newOption, null);
 		return true;
 	}
 	
