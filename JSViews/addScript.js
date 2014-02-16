@@ -32,7 +32,7 @@ function buildingsGenerator(){
 function roomsGenerator(){
     
     var chosenBuilding = document.getElementById("buildings").selectedIndex;  
-    var fullHTML ="<select size = '5' id="rooms">";
+    var fullHTML ="<select size = '5' id='rooms'>";
     var rooms = "";
     
     var roomsArray = buildingsData[chosenBuilding].rooms;
