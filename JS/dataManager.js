@@ -36,7 +36,7 @@ function getAllRoomsAndBuildings() {
 		}
 	});
 	
-	alert(JSON.stringify(jsonResults));
+	//alert(JSON.stringify(jsonResults));
 	
 	jsonResults = JSON.parse(jsonResults);
 	
