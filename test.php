@@ -65,7 +65,7 @@ function gen(){
 }
 
 </script>
-
+<button type='button' onclick='$("#requests").click();'>Redirect</button>
 <button type='button' onclick='weeksTest();'>Weeks Test</button>
 <button type='button' onclick='testReqClass();'>Test</button>
 <button type='button' onclick='weekReadableString([true, false, true, true, true, true, false, true, true, true, false, true, false, false, false, false]);'>Test string</button>
