@@ -16,6 +16,17 @@
 
 }
 
+#cRoomsList {
+
+	width: 70px;
+
+}
+
+#rooms {
+	width: 70px;
+
+}
+
 fieldset {
 	padding:0.5em;
 	margin:1em;

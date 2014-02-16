@@ -195,6 +195,15 @@ function onKeyUpCheck(){
     plsNoZero();    
     maxValue();
 }
+
+function maxValueNumRooms(){
+    var value = document.getElementById("roomsInput").value;
+    if(value > 5) {document.getElementById("roomsInput").value ="1"};
+}
+function onKeyUpCheckNumRooms(){
+    plsNoZero();    
+    maxValueNumRooms();
+}
 function rangedSlider() {
     var periodSelect = document.getElementById('periodSelect');
     var lengthSelect = document.getElementById('lengthSelect');

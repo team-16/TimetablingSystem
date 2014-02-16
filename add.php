@@ -155,6 +155,14 @@ if(!isLoggedIn()){
 								</div>
 							</div>
 							<div class="formItem">
+								<div class="leftRoom">
+									<h4>No. of rooms:</h4>
+								</div>
+								<div class="right1">
+									 <input id= "roomsInput" name="roomsInput" onkeypress="return isNumberKey(event);" onkeyup ="onKeyUpCheckNumRooms();">
+								</div>
+							</div>
+							<div class="formItem">
 								<div class ="leftRoom">
 									<h4>Room Preference</h4>
 								</div>
