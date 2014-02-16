@@ -52,7 +52,7 @@ if(!isLoggedIn()){
 								<div class="right1">
 									<input type="checkbox" id="priority">
 								</div>
-								<input type ="button" onclick="getRequestValues();">
+								<input type ="button" onclick="getRequestValues();"></input>
 							</div>
 						</fieldset>
 					</div>
@@ -77,11 +77,11 @@ if(!isLoggedIn()){
 									<h4>Weeks:</h4>
 								</div>
 								<div id="weeksDiv" class="right1">
-									<input type="button" onclick="selectOdd();" value = "Odd weeks">
-									<input type="button" onclick="selectEven();" value="Even weeks">
-									<input type="button" onclick="select12();" value="select 12 weeks">
-									<input type="button" onclick="selectDeselectAll(false);" value="deselect all">
-									<input type="button" onclick="selectDeselectAll(true);" value="select all">
+									<input type="button" onclick="selectOdd();" value = "Odd weeks"></input>
+									<input type="button" onclick="selectEven();" value="Even weeks"></input>
+									<input type="button" onclick="select12();" value="select 12 weeks"></input>
+									<input type="button" onclick="selectDeselectAll(false);" value="deselect all"></input>
+									<input type="button" onclick="selectDeselectAll(true);" value="select all"></input>
 								</div>
 							</div>
 
@@ -93,16 +93,16 @@ if(!isLoggedIn()){
 								<div class="formDiv">
 									<p>
 										<label for="amount">start period, end period:</label>
-										<output type="text" id="amount" style="border:0; font-weight:bold;">
+										<output type="text" id="amount" style="border:0; font-weight:bold;"></output>
 									</p>
 									<div id="slider-range">
 										<!-- Slider generated here -->
 									</div>
 									<div name="startPeriod">
-										<output type="number" id="startPeriod">
+										<output type="number" id="startPeriod"></output>
 									</div>
 									<div name="endPeriod">
-										<output type="number" id="endPeriod">
+										<output type="number" id="endPeriod"></output>
 									</div>
 								</div>
 							</div>
@@ -205,60 +205,20 @@ if(!isLoggedIn()){
 				</div> <!-- End of container -->
 
 			</form>
-
-
-						<!--
-
-						<div id= "module" class="divstyle style1" align="right"> module info <br>
-								<select name ="modulecode">
-									<option>COA123</option>
-								</select><br>
-								Traditional/Seminar<select>
-									<option id="T">T</option>
-									<option id="S">S</option>
-								</select><br>
-
-								Priority Booking:<input type = "radio" name="shortfat" value="true">yes
-												 <input type = "radio" name="shortfat" value="false">no</br>
-								No. of Students: <input type = "text" onkeypress="return isNumberKey(event);" onkeyup= "okKeyUpCheck();" id="students" value ="1"/> <br>
-						</div>
-						
-						<div id="facilities" class="divstyle style2"> facilities <br>
-						</div>
-						<div id="time" class= "divstyle style3"> time <br>
-
-							<select>
-								<option>Monday</option>
-								<option>Tuesday</option>
-								<option>Wednesday</option>
-								<option>Thursday</option>
-								<option>Friday</option>
-							</select><br>
-							<input type="button" onclick="selectDeselectAll(false);" value = "deselect all">  <br>
-							<input type="button" onclick="selectDeselectAll(true);" value = "select all"> <br>
-							<input type="button" onclick="select12();" value = "select 12"> <br>
-						</div>
-
-					<input type="button" onclick="facilityGenerator(); checkboxGenerator(); periodsGenerator();
-						lengthGenerator(); parkPreferenceGenerator();">
-
-					-->
+		</div>
 		<p></p>
 					
 				<!-- <input type="submit" value="Submit Request" onclick="insertRequest();"> -->
-				<input type="button" value="Submit Request" onclick="insertRequest();"> 
-				<input type="button" value="Cancel" onclick="location.reload();">
-		</div>	
-		</div> <!-- end of wrapper -->
+				<input type="button" value="Submit Request" onclick="insertRequest();"></input>
+				<input type="button" value="Cancel" onclick="location.reload();"></input>	
 		<div id="submitForm" style="visibility:hidden;"></div>
 
-			<script src='JSViews/addScript.js'></script>
-			<link href='jQuery&UI/jquery-ui-1.10.3/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
-  			<script src='jQuery&UI/jquery-ui-1.10.3/jquery-1.9.1.js'></script>
-  			<script src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'</script>
-  			<!--<script src='//code.jquery.com/ui/1.10.4/jquery-ui.js'></script>-->
-  	</div>
-
+			
 	</body>
+		<script src='JSViews/addScript.js'></script>
+		<link href='jQuery&UI/jquery-ui-1.10.3/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
+		<script src='jQuery&UI/jquery-ui-1.10.3/jquery-1.9.1.js'></script>
+		<script src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'</script>
+		<!--<script src='//code.jquery.com/ui/1.10.4/jquery-ui.js'></script>-->
 
 </html>
