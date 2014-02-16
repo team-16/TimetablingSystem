@@ -182,8 +182,10 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
  $weeks, $noOfStudents, $parkPreference, $traditional, $sessionType, $noOfRooms,
  $roomCode, $otherRequirements, $roundID, $status){
 	global $DB;
-	$nextReqId = getNextRequestID();
-	
+	//$nextReqId = getNextRequestID();
+	echo "sommin";
+	//echo print("<pre>".print_r($nextReqId, true)."</pre>");
+	/*
 	if($DB->query("INSERT INTO request (id, moduleCode, priority, day,
 	startPeriod, endPeriod, weeks, noOfStudents, parkPreference, traditional,
 	sessionType, noOfRooms, roomCode, otherRequirements, roundID, status)
@@ -215,6 +217,7 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
 	else {
 		return false;
 	}
+	*/
 }
 
 function getNextRequestID(){
