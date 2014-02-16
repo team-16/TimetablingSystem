@@ -242,12 +242,13 @@ function addRoomToPref(optionValue,optionDisplayText){
 		}
 	}
 	
-	if(check == 0){
+	if(check == 0 && document.getElementById("cRoomsList").length < document.getElementById("roomsInput").value){
 		cRoomsList.add(newOption, null);
 		return true;
 	}
 	
 	else{
+		alert("Number of room preferences is limited to the number of rooms you have chosen. Please change the number of rooms or remove an existing room preference.");
 		return false;
 	}
 }
