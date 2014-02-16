@@ -164,7 +164,7 @@ if(!isLoggedIn()){
 									</select>
 								</div>
 								<div class="right1">
-									<input type="button" onclick="chosenRoomsListGenerator();">
+									<input type="button" onclick="addRoomToPref(roomPreference.options[roomPreference.options.selectedIndex].value,roomPreference.options[roomPreference.options.selectedIndex].text);">
 								</div>
 							</div>
 
