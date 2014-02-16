@@ -287,6 +287,14 @@ function traditionalSeminarTruthValue(){
     return true
    }else return false;
 }
+function roomCodeGather(){
+    var roomsChosen = document.getElementById('chosenRooms');
+    var roomsChosenArray = [];
+    for (var i = 0; i < roomsChosen.options.length; i++) {
+        roomsChosenArray.push(roomsChosen[i].value);
+    }
+    return roomsChosenArray;
+}
 function insertRequest(){
 	
 	var moduleCodeVal = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["code"];
