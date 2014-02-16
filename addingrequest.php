@@ -4,7 +4,7 @@
 
 include('PHP/init.php');
 if(insertRequest($_POST['moduleCode'], $_POST['priority'], $_POST['day'], $_POST['startPeriod'], $_POST['endPeriod'],
- "0111110111010100", $_POST['noOfStudents'], $_POST['parkPreference'], $_POST['traditional'], $_POST['sessionType'], $_POST['noOfRooms'],
+ $_POST['weeks'], $_POST['noOfStudents'], $_POST['parkPreference'], $_POST['traditional'], $_POST['sessionType'], $_POST['noOfRooms'],
  $_POST['roomCode'], $_POST['otherRequirements'], $_POST['roundID'], $_POST['status'])){
 	
 	/*echo('<form id="autoForm" method="post" action="requests.php">

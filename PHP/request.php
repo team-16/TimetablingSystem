@@ -183,13 +183,15 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
  $roomCode, $otherRequirements, $roundID, $status){
 	global $DB;
 	
-	if($DB->query("INSERT INTO request (moduleCode, priority, day,
+	if($DB->query("INSERT INTO request (id, moduleCode, priority, day,
 	startPeriod, endPeriod, weeks, noOfStudents, parkPreference, traditional,
 	sessionType, noOfRooms, roomCode, otherRequirements, roundID, status)
 	VALUES (:id, :moduleCode, :priority, :day, :startPeriod, :endPeriod, :weeks,
 	:noOfStudents, :parkPreference, :traditional, :sessionType, :noOfRooms,
 	:roomCode, :otherRequirements, :roundID, :status)",
-				   array(':moduleCode' => $moduleCode,
+				   array(
+						':id' => getNextRequestID(),
+						':moduleCode' => $moduleCode,
 				         ':priority' => $priority,
 				         ':day' => $day,
 						 ':startPeriod' => $startPeriod,
@@ -204,12 +206,41 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
 						 ':otherRequirements' => $otherRequirements,
 						 ':roundID' => $roundID,
 						 ':status' => $status))) {
+						 
+						 incRequestID();
+						 return true;
 		
 	}
 	
 	else {
 		return false;
 	}
+}
+
+function getNextRequestID(){
+	global $DB;
+	
+	if($DB->query("SELECT counter FROM id_counter WHERE idType = 0")){
+		return $DB->resultsZero();
+	}
+	
+	else{
+		return false;
+	}
+
+}
+
+function incRequestID(){
+	global $DB;
+	
+	if($DB->query("UPDATE id_counter SET counter = counter+1 WHERE idType = 0")){
+		return true;
+	}
+	
+	else{
+		return false;
+	}
+
 }
 
 
