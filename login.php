@@ -2,6 +2,8 @@
 
 <html>
 
+<head><title>Timetabling System</title></head>
+
 <link rel="stylesheet" type="text/css" href="CSS/loginStyle.css">
 
 	
