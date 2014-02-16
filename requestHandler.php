@@ -4,17 +4,13 @@ function compressWithFacilities($requestsArray) {
 	
 	return populateRequestFacilities(requestsCompressor($requestsArray));
 	
-	//populateRequestFacilities($compressedArray);
-	//populateAllocatedRooms($compressedArray);
-	
 }
 
 function compressWithFacilitiesAndBookings($requestsArray) {
 	
-	return populateRequestFacilities(requestsCompressor($requestsArray));
+	$facilitatedRequests = populateRequestFacilities(requestsCompressor($requestsArray));
 	
-	//populateRequestFacilities($compressedArray);
-	//populateAllocatedRooms($compressedArray);
+	return populateAllocatedRooms($facilitatedRequests);
 	
 }
 
@@ -94,7 +90,7 @@ function populateAllocatedRooms($requestsArray) {
 		
 		$allocatedRoomsArray = array ();
 		
-		$results = getAllocatedRooms($requestsArray[$rCounter].id);
+		$results = getAllocatedRooms($requestsArray[$rCounter]["id"]);
 		
 		echo print("<pre>".print_r($results, true)."</pre>");
 		/*
