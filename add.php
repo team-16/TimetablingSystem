@@ -159,6 +159,13 @@ if(!isLoggedIn()){
 									<h4>Room Preference</h4>
 								</div>
 								<div class="right1" id="roomPreference"></div>
+								<div class="right1" id="chosenRooms">
+									<select size ="5">
+									</select>
+								</div>
+								<div class="right1">
+									<input type="button" onclick="chosenRoomsListGenerator();">
+								</div>
 							</div>
 
 						</fieldset>	

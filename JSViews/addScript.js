@@ -38,7 +38,7 @@ function roomsGenerator(){
     var roomsArray = buildingsData[chosenBuilding].rooms;
     
     for (var i = 0; i < roomsArray.length; i++) {
-        rooms += "<option id ='" + roomsArray[i].code + "'>";
+        rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray.code + "' >";
         rooms += roomsArray[i].code  + "</option>";
     };
     fullHTML += rooms;
@@ -161,7 +161,7 @@ function selectDeselectAll(checkAll) {
 }*/
 
 function isNumberKey(evt)  {
-         var charCode = (evt.which) ? evt.which : event.keyCode
+         var charCode = (evt.which) ? evt.which : event.keyCode;
          if (charCode > 31 && (charCode < 48 || charCode > 57))
             return false;
 
@@ -211,3 +211,10 @@ function rangedSlider() {
         $( "#amount" ).val( + $( "#slider-range" ).slider( "values", 0 ) +
         " - " + $( "#slider-range" ).slider( "values", 1 ) );
 }
+function chosenRoomsListGenerator() {
+    var chosenRoom = document.getElementById("rooms");
+    var chosenRoomField = document.getElementById("chosenRooms");
+    if(true) {
+        chosenRoomField += "<option> " + chosenRoom.value + "</option>";
+    }
+};
