@@ -191,7 +191,7 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
 	:noOfStudents, :parkPreference, :traditional, :sessionType, :noOfRooms,
 	:roomCode, :otherRequirements, :roundID, :status)",
 				   array(
-						':id' => $nextReqId,
+						':id' => $nextReqId[0]["counter"],
 						':moduleCode' => $moduleCode,
 				         ':priority' => $priority,
 				         ':day' => $day,
@@ -207,7 +207,7 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
 						 ':otherRequirements' => $otherRequirements,
 						 ':roundID' => $roundID,
 						 ':status' => $status))) {
-						 echo($nextReqId);
+						 echo($nextReqId[0]["counter"]);
 						 return true;
 		
 	}
@@ -220,8 +220,8 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
 function getNextRequestID(){
 	global $DB;
 	
-	if($DB->query("SELECT counter FROM id_counter WHERE idType = 0")){
-		return $DB->resultsZero();
+	if($DB->query("SELECT counter FROM id_counter WHERE idType = '0'")){
+		return $DB->results();
 	}
 	
 	else{
