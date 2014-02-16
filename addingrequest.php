@@ -3,6 +3,7 @@
 // NEEDS UPDATING - DOES NOT WORK YET
 
 include('PHP/init.php');
+
 if(insertRequest($_POST['moduleCode'], $_POST['priority'], $_POST['day'], $_POST['startPeriod'], $_POST['endPeriod'],
  $_POST['weeks'], $_POST['noOfStudents'], $_POST['parkPreference'], $_POST['traditional'], $_POST['sessionType'], $_POST['noOfRooms'],
  $_POST['roomCode'], $_POST['otherRequirements'], $_POST['roundID'], $_POST['status'])){
