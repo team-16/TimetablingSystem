@@ -50,6 +50,7 @@ if(!isLoggedIn()){
 								<div class="right1">
 									<input type="checkbox" id="priority">
 								</div>
+								<input type ="button" onclick="getRequestValues();">
 							</div>
 						</fieldset>
 					</div>
