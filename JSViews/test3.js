@@ -9,9 +9,10 @@ var requestsArray = []
 function getCurrentRequests() {
 	
 	$.ajax({
-			url: "requestsData.php?" +currentSessionID,
+			url: "resultsData.php?" +currentSessionID,
 			type: "POST",
 			async: false,
+			data: {current:true},
 			success: function(results) {
 				requestsArray = formatJSONRequests(results, false);
 			}
@@ -21,10 +22,10 @@ function getCurrentRequests() {
 
 function loadListView() {
 	getCurrentRequests();
-	$('#viewContainer').html(listViewGenerator(requestsArray, false, true, true, true, false, false, true, true, true));
+	$('#viewContainer').html(listViewGenerator(requestsArray, false, true, true, true, true, false, true, true, true));
 }
 
 function loadTimetableView() {
 	getCurrentRequests();
-	$('#viewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, false, true, true, true));
+	$('#viewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, true, true, true, true));
 }
