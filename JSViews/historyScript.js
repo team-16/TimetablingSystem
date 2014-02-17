@@ -13,7 +13,6 @@ function getHistoryRequests() {
 			type: "POST",
 			async: false,
 			success: function(results) {
-				alert(results);
 				if(results != null) requestsArray = formatJSONRequests(results, false);
 			}
 	});
