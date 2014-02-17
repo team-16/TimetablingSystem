@@ -90,7 +90,7 @@ function getCurrentRequestsNull($deptCode){
 	}
 }
 
-function getCurrentRequestsNotNull(){
+function getCurrentRequestsNotNull($deptCode){
 	global $DB;
 	
 	if($DB->query("SELECT request.*, title, deptcode
@@ -116,7 +116,7 @@ function getCurrentRequestsNotNull(){
 	}
 }
 
-function getCurrentRequestsAllocated(){
+function getCurrentRequestsAllocated($deptCode){
 	global $DB;
 	
 	if($DB->query("SELECT request.*, title, deptcode

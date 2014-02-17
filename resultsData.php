@@ -7,44 +7,17 @@ $currentFlag = $_POST["current"];
 
 if($currentFlag) {
 	
-	$currentRequests = getCurrentRequestsNull();
+	$currentResults = getCurrentRequestsNotNull(loggedDept());
+	
+	echo json_encode(compressWithFacilities($currentResults));
 	
 } else {
 	
+	$currentAdHocResults = getCurrentRequestsNotNullAdHoc(loggedDept());
+	
+	echo json_encode(compressWithFacilities($currentAdHocResults));
 	
 }
-
-//function getLiveRequests() {
-	/*
-	$notSubmittedRequests = getCurrentRequestsNull();
-	
-	echo print("<pre>".print_r($notSubmittedRequests,true)."</pre>");
-	
-	compressWithFacilities($notSubmittedRequests);
-	*/
-	
-	$allocatedRequests = getCurrentRequestsAllocated();
-	
-	echo print("<pre>".print_r($allocatedRequests,true)."</pre>");
-	
-	compressWithFacilitiesAndBookings($allocatedRequests);
-	
-	
-	/*
-	echo('<script type="text/javascript">
-		alert("Hello");
-		alert(JSON.stringify(' . json_encode($notSubmittedRequests) . '));
-		alert("Hello");
-		</script>');
-	*/
-	
-	
-	
-	
-//}
-
-
-
 
 
 ?>
