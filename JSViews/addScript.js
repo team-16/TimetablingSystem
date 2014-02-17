@@ -30,10 +30,10 @@ function adhocMode(){
 }
 function buildingsGenerator(){
 
-    var fullHTML = "<select id ='buildings'>";
+    var fullHTML = "<select id ='buildings' onchange='roomsGenerator();'>";
     var buildings = "";
     for (var i = 0; i < buildingsData.length; i++) {
-        buildings += "<option id='" + buildingsData[i].name + "' onclick='roomsGenerator();'>";
+        buildings += "<option id='" + buildingsData[i].name + "'>";
         buildings += buildingsData[i].code + ", " + buildingsData[i].name + "</option>";
        
     };
@@ -51,7 +51,7 @@ function roomsGenerator(){
     var roomsArray = buildingsData[chosenBuilding].rooms;
     
     for (var i = 0; i < roomsArray.length; i++) {
-        rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray.code + "' >";
+        rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray[i].code + "' >";
         rooms += roomsArray[i].code  + "</option>";
 		
     };
