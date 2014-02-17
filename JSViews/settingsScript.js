@@ -3,10 +3,10 @@ var buildingsData = [];
 
 $(document).ready(function loadPage() {
     buildingsData = getAllRoomsAndBuildings();
-    roomsGenerator();
+    //roomsGenerator();
 });
 
-function roomsGenerator(){
+/*function roomsGenerator(){
     
     var chosenBuilding = document.getElementById("buildings").selectedIndex;  
     var fullHTML ="<select size = '5' id='rooms'>";
@@ -23,7 +23,7 @@ function roomsGenerator(){
     fullHTML += "</select>";
     $( "#roomPreference" ).html(fullHTML);
     
-}
+}*/
 
 
 
