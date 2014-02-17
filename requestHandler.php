@@ -105,6 +105,7 @@ function populateAllocatedRooms($requestsArray) {
 	}
 	
 	//echo print("<pre>".print_r($requestsArray, true)."</pre>");
+	return $requestsArray;
 	
 }
 

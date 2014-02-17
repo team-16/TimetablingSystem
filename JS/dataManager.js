@@ -70,9 +70,9 @@ function formatJSONRequests(jsonReqArray, allocatedFlag) {
 			
 			var allocatedRoomArray = jsonReqArray[reqCounter]["allocatedRooms"];
 			
-			for (var aCounter = 0; aCounter < requestFacilityArray.length; aCounter++) {
+			for (var aCounter = 0; aCounter < allocatedRoomArray.length; aCounter++) {
 				
-				currentRequest.allocatedRooms.push(requestFacilityArray[aCounter]);
+				currentRequest.allocatedRooms.push(allocatedRoomArray[aCounter]);
 				
 			}
 			

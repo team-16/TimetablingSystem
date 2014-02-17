@@ -3,9 +3,9 @@
 include('PHP/init.php');
 include('requestHandler.php');
 
-$currentFlag = $_POST["current"];
+$currentFlag = $_POST["currentFlag"];
 
-if($currentFlag) {
+if($currentFlag == "true") {
 	
 	$currentResults = getCurrentRequestsNotNull(loggedDept());
 	

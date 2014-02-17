@@ -3,38 +3,20 @@
 include('PHP/init.php');
 include('requestHandler.php');
 
+$currentFlag = $_POST["currentFlag"];
 
-//function getLiveRequests() {
-	/*
-	$notSubmittedRequests = getCurrentRequestsNull();
+if($currentFlag == "true") {
 	
-	echo print("<pre>".print_r($notSubmittedRequests,true)."</pre>");
+	$currentMyBookings = getAllCurrentRequestsAllocated();
 	
-	compressWithFacilities($notSubmittedRequests);
-	*/
+	echo json_encode(compressWithFacilitiesAndBookings($currentMyBookings));
 	
-	$allocatedRequests = getCurrentRequestsAllocated();
+} else {
 	
-	echo print("<pre>".print_r($allocatedRequests,true)."</pre>");
+	$currentAdHocMyBookings = getAllCurrentRequestsAllocatedAdHoc();
 	
-	compressWithFacilitiesAndBookings($allocatedRequests);
+	echo json_encode(compressWithFacilitiesAndBookings($currentAdHocMyBookings));
 	
-	
-	/*
-	echo('<script type="text/javascript">
-		alert("Hello");
-		alert(JSON.stringify(' . json_encode($notSubmittedRequests) . '));
-		alert("Hello");
-		</script>');
-	*/
-	
-	
-	
-	
-//}
-
-
-
-
+}
 
 ?>

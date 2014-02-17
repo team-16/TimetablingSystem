@@ -3,19 +3,20 @@
 include('PHP/init.php');
 include('requestHandler.php');
 
+$currentFlag = $_POST["currentFlag"];
 
-//function getLiveRequests() {
+if($currentFlag == "true") {
 	
-	$allocatedRequests = getCurrentRequestsNull(loggedDept());
+	$currentMyBookings = getCurrentRequestsAllocated(loggedDept());
 	
-	echo print("<pre>".print_r($allocatedRequests,true)."</pre>");
+	echo json_encode(compressWithFacilitiesAndBookings($currentMyBookings));
 	
-	echo print("<pre>".print_r(compressWithFacilities($allocatedRequests) ,true)."</pre>");
+} else {
 	
-//}
-
-
-
-
+	$currentAdHocMyBookings = getCurrentRequestsAllocatedAdHoc(loggedDept());
+	
+	echo json_encode(compressWithFacilitiesAndBookings($currentAdHocMyBookings));
+	
+}
 
 ?>

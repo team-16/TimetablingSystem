@@ -21,10 +21,10 @@ function getCurrentRequests() {
 
 function loadListView() {
 	getCurrentRequests();
-	$('#resultsViewContainer').html(listViewGenerator(requestsArray, false, true, true, true, false, false, true, true, true));
+	$('#requestsViewContainer').html(listViewGenerator(requestsArray, false, true, true, true, false, false, true, true, true));
 }
 
 function loadTimetableView() {
 	getCurrentRequests();
-	$('#resultsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, false, true, true, true));
+	$('#requestsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, false, false, true, true, true));
 }
