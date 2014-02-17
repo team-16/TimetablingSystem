@@ -13,6 +13,28 @@ function loadFacilities(jsonFacilitiesArray) {
 	
 }
 
+function formatJSONRequests(jsonReqArray, allocatedFlag) {
+	
+	jsonReqArray = JSON.parse(jsonReqArray);
+	
+	var requestsArray = [];
+	
+	for(var reqCounter = 0; reqCounter < jsonReqArray.length; reqCounter++) {
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+}
+
+
+
+
+
 function getModules(results) {
 	
 	
@@ -85,5 +107,4 @@ function getAllRoomsInBuilding(buildingCode, jsonRooms) {
 	return roomsInBuilding;
 	
 }
-
 

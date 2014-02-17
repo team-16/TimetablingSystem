@@ -120,9 +120,6 @@ function getCurrentRoundPercentage(){
 }
 
 
-var requestArray = [];
-
-
 function setupSessionData(){
 	
 	testFacilities();

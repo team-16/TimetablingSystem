@@ -54,7 +54,7 @@ function requestsCompressor($requestsArray) {
 		
 	}
 	
-	echo print("<pre>".print_r($compressedArray, true)."</pre>");
+	//echo print("<pre>".print_r($compressedArray, true)."</pre>");
 	
 	return $compressedArray;
 	
@@ -66,7 +66,7 @@ function populateRequestFacilities($requestsArray) {
 		
 		$facilitiesArray = array ();
 		
-		$results = getRequestFacilities($requestsArray[$rCounter].id);
+		$results = getRequestFacilities($requestsArray[$rCounter]["id"]);
 				
 		for ($fCounter = 0; $fCounter < count($results); $fCounter++) {
 			
@@ -78,7 +78,7 @@ function populateRequestFacilities($requestsArray) {
 		
 	}
 	
-	echo print("<pre>".print_r($requestsArray, true)."</pre>");
+	//echo print("<pre>".print_r($requestsArray, true)."</pre>");
 	
 	return $requestsArray;
 		
@@ -92,7 +92,7 @@ function populateAllocatedRooms($requestsArray) {
 		
 		$results = getAllocatedRooms($requestsArray[$rCounter]["id"]);
 		
-		echo print("<pre>".print_r($results, true)."</pre>");
+		//echo print("<pre>".print_r($results, true)."</pre>");
 		
 		for ($arCounter = 0; $arCounter < count($results); $arCounter++) {
 			
@@ -104,7 +104,7 @@ function populateAllocatedRooms($requestsArray) {
 		
 	}
 	
-	echo print("<pre>".print_r($requestsArray, true)."</pre>");
+	//echo print("<pre>".print_r($requestsArray, true)."</pre>");
 	
 }
 
