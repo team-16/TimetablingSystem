@@ -12,6 +12,7 @@ if(!isLoggedIn()){
 <html>
 
 	<head>
+		<title>Timetabling System</title>
 		<link rel="stylesheet" type="text/css" href="jQuery&UI/jquery-ui-1.10.3/themes/base/jquery.ui.all.css">
 		<link href='http://fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="CSS/indexStyle.css">
@@ -45,7 +46,7 @@ if(!isLoggedIn()){
 						</li>
 					</a>
 					
-					<a href="requests.php">
+					<a href="requests.php" id='requestsNow'>
 						<li>
 							Requests
 						</li>
@@ -60,6 +61,12 @@ if(!isLoggedIn()){
 					<a href="mybookings.php">
 						<li>
 							My Bookings
+						</li>
+					</a>
+					
+					<a href="history.php">
+						<li>
+							History
 						</li>
 					</a>
 					

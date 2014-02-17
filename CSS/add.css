@@ -4,7 +4,6 @@
 	font-size:150%;
 	position:relative;
 	width:100%;
-	border: 1px solid black;
 	margin-bottom:10px;
 }
 
@@ -16,9 +15,68 @@
 
 }
 
+#cRoomsList {
+
+	width: 70px;
+
+}
+
+#rooms {
+	width: 70px;
+
+}
+
+#moduleTitleOutput {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#priorityDiv {
+	float:left;
+}
+
+#periodT {
+	font-size: 15px;
+}
+
+#periodAndLengthWrapper {
+	text-align: center;
+	vertical-align: middle;
+}
+
 fieldset {
 	padding:0.5em;
 	margin:1em;
+	background-color:#F4F4F4;
+	border: 1px solid #E5E5E5;
+}
+
+a.button {
+	background-color: #DDD;
+}
+
+a.button:hover, a.button:focus {
+	background-color: #BBB;
+}
+
+table {
+    border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+fieldset legend {
+    font-size: 20px;
+	font-weight: bold;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: normal;
 }
 
 form {
@@ -31,6 +89,16 @@ form {
 	/*margin:1em;*/
 	display:block;
 	width:100%;
+	font-size: 14px;
+	font-weight: normal;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+.periodNo {
+	font-size: 20px;
+	font-weight: bold;
+
 }
 
 .containerDiv {
@@ -38,6 +106,12 @@ form {
 	clear:left;
 	clear:right;
 	display:block;
+}
+
+.submitDiv {
+	height:auto;
+	width:auto;
+	text-align:center;
 }
 
 .roomDiv {
@@ -50,6 +124,8 @@ form {
 	display:inline;
 	width:100%;
 	float:left;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .moduleDetailsDiv {
@@ -59,6 +135,12 @@ form {
 }
 
 .timeDetailsDiv {
+	display:inline;
+	width:50%;
+	float:right;
+}
+
+.featuresDetailDiv {
 	display:inline;
 	width:50%;
 	float:right;
@@ -79,6 +161,18 @@ form {
 	display:inline-block;
 	/*float:left;*/
 }
+
+.roomBtn {
+	margin-left: 20px;
+	margin-left-value: 20px;
+	margin-left-ltr-source: physical;
+	margin-left-rtl-source: physical;
+}
+
+roomBtnDiv {
+	display:block;
+}
+
 
 .leftModule {
 	/*margin:0 1em 0 1em;*/
@@ -109,33 +203,3 @@ form {
 .formRight {
 
 }
-
-/*
-.divstyle {
-	width: 200px;
-	height: 200px;
-	margin: 10px ;
-	padding: 20px;
-	
-	text-align: center;
-	border: 5px solid #009;
-	
-}
-
-.style1 {
-	position:absolute;
-	top:10px;
-	left:10px;
-	
-}
-
-.style2 {
-	position:absolute;
-	top:10px;
-	left:400px;
-}
-.style3 {
-	position: absolute;
-	top: 10px;
-	left: 800px;
-}*/

@@ -1,3 +1,14 @@
+<?php
+
+include('PHP/init.php');
+
+if(!isLoggedIn()){
+	session_destroy();
+	redirectLogin();
+}
+
+?>
+
 <html>
 
 
@@ -49,14 +60,14 @@ function weeksTest(){
 
 function testReqClass(){
 	
-	setupSessionData();
+	//setupSessionData();
 	testFacilites();
 	testRequestList();
 		
 }
 
 function gen(){
-	setupSessionData();
+	//setupSessionData();
 	var listHTML = listViewGenerator(requestArray, true, true, true, true, true, true, true, true, true);
 	
 	document.getElementById('listContent').innerHTML = listHTML;	
@@ -65,7 +76,7 @@ function gen(){
 }
 
 </script>
-
+<button type='button' onclick='$("#requestsNow").click();'>Redirect</button>
 <button type='button' onclick='weeksTest();'>Weeks Test</button>
 <button type='button' onclick='testReqClass();'>Test</button>
 <button type='button' onclick='weekReadableString([true, false, true, true, true, true, false, true, true, true, false, true, false, false, false, false]);'>Test string</button>

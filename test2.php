@@ -31,7 +31,7 @@ function readReq(){
 }
 
 function genGr() {
-	setupSessionData();
+	//setupSessionData();
 	var graphicalHTML = graphicalViewGenerator(requestArray, true, true, true, true, true, true, true, true);
 	
 	document.getElementById('graphicalContentTest').innerHTML = graphicalHTML;	

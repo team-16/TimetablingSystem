@@ -18,7 +18,7 @@ var liveSemester = 1;
 
 var liveYear = 0;
 
-var numberOfWeeks = 15;
+var numberOfWeeks = null;
 
 
 var adHocRoundID = "";
@@ -118,9 +118,6 @@ function getCurrentRoundPercentage(){
 	return percentage;
 	
 }
-
-
-var requestArray = [];
 
 
 function setupSessionData(){
