@@ -1,4 +1,31 @@
 var liveSettingsRadio = [];
+var buildingsData = [];
+
+/*$(document).ready(function loadPage() {
+    buildingsData = getAllRoomsAndBuildings();
+    roomsGenerator();
+});
+
+function roomsGenerator(){
+    
+    var chosenBuilding = document.getElementById("buildings").selectedIndex;  
+    var fullHTML ="<select size = '5' id='rooms'>";
+    var rooms = "";
+    
+    var roomsArray = buildingsData[chosenBuilding].rooms;
+    
+    for (var i = 0; i < roomsArray.length; i++) {
+        rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray.code + "' >";
+        rooms += roomsArray[i].code  + "</option>";
+		
+    };
+    fullHTML += rooms;
+    fullHTML += "</select>";
+    $( "#roomPreference" ).html(fullHTML);
+    
+}*/
+
+
 
 function settingsRadioToggle(btn, position){
 

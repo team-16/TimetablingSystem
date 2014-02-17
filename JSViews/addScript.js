@@ -368,7 +368,7 @@ function insertRequest(){
 					data: { moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
 						endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
 						traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal[i], 
-						otherRequirements:otherRequirementsVal, roundID:roundIDVal },
+						otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:facilityIDVal },
 					success: function(results) {
 						alert(results);
 					}
