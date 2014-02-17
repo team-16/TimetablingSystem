@@ -22,9 +22,7 @@ if(!isLoggedIn()){
 	<script type="text/javascript">
 		var moduleArray = <?php echo(json_encode(getModules(loggedDept()))); ?>;
 	</script>
-	
-	<button type='button' onclick='$("#requestsNow").click();'>Redirect</button>
-	
+		
 	<input type='radio' name="mode" onclick="adhocMode();">ad-hoc mode</input>
 	<input type='radio' name="mode" onclick="normalMode();" checked>normal mode</input>
 		
@@ -273,10 +271,9 @@ if(!isLoggedIn()){
 		</div>
 			
 	</body>
-		<script src='JSViews/addScript.js'></script>
+	
+		<script type='text/javascript' src='JSViews/addScript.js'></script>
 		<link href='jQuery&UI/jquery-ui-1.10.3/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
-		<script src='jQuery&UI/jquery-ui-1.10.3/jquery-1.9.1.js'></script>
-		<script src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'</script>
-		<!--<script src='//code.jquery.com/ui/1.10.4/jquery-ui.js'></script>-->
+		
 
 </html>

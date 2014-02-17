@@ -51,9 +51,3 @@ function loadProgressBar() {
             else $("#progressbar").addClass('end');
 
 };
-
-function loadRequestsPage() {
-	alert("called");
-	//document.getElementById('requestsNow').onClick();
-	alert("called2");
-}

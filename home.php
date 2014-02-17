@@ -10,7 +10,7 @@ if(!isLoggedIn()){
 ?>
 
 <html>
-
+<button type='button' onclick='$("#requestsNow").click();'>Redirect</button>
 <div>
 	Home Page - currently logged in as: <?php echo(loggedDept() . " | " . loggedDeptName()); ?>
 </div>

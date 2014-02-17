@@ -141,38 +141,6 @@ function selectDeselectAll(checkAll) {
     }   
 }
 
-/*function periodsGenerator() {
-    var parentElement = document.getElementById("time");
-    var fullHTML = "";
-    //var oldhtml = parentElement.innerHTML;
-    var newPeriodsList = "<select> ";
-    for (var i = 0; i < startPeriodsArray.length; i++) {
-        newPeriodsList += "<option ";
-        newPeriodsList += "id ='period '" + i +  ">";
-        newPeriodsList += startPeriodsArray[i] + ", " + startPeriodTimesArray[i];
-        newPeriodsList += "</option>";
-    }
-    fullHTML += newPeriodsList;
-    fullHTML += "</select>";
-    $("#time").html(fullHTML);
-}*/
-
-/*function lengthGenerator() {
-    var parentElement = document.getElementById("time");
-    var fullHTML = "";
-    //var oldhtml = parentElement.innerHTML;
-    var newLengthList = "<select>";
-    for (var i = 0; i < endPeriodsArray.length; i++) {
-        newLengthList += "<option ";
-        newLengthList += "id='length " + i + "'>";
-        newLengthList += endPeriodsArray[i];
-        newLengthList += "</option>";
-    }
-    fullHTML += newLengthList;
-    fullHTML += "</select>";
-    fullHTML += "<br>";
-    $("#")
-}*/
 
 function isNumberKey(evt)  {
          var charCode = (evt.which) ? evt.which : event.keyCode;
@@ -404,7 +372,7 @@ function insertRequest(){
 				alert(results);
 			}
 	});
-	loadRequestsPage();
+	$("#requestsNow").click();
 
 }
 
