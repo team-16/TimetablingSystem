@@ -23,7 +23,7 @@ if(!isLoggedIn()){
 		var moduleArray = <?php echo(json_encode(getModules(loggedDept()))); ?>;
 	</script>
 	
-	<button type='button' onclick='$("#requestsNow").click();'>Redirect</button>
+	<button type='button' onclick="adhocMode();">ad-hoc mode</button>
 		
 		<div id="wrapperAdd">
 
