@@ -8,7 +8,7 @@ function settingsRadioToggle(btn, position){
 		liveSettingsRadio[position] = null;
 		
 	}
-	else liveSettingsRadio[position] = btn;
+	else{ liveSettingsRadio[position] = btn;}
 	
 	
 }
@@ -19,7 +19,7 @@ function changePassword() {
 	var newpassword = $("#newpassword").val();
 	var confirmnewpassword = $("#confirmnewpassword").val();
 	
-	if (newpassword != confirmnewpassword) alert("Error: New Password not the same");
+	if (newpassword != confirmnewpassword){ alert("Error: New Password not the same");}
 	else {
 		
 		$.ajax({
@@ -53,8 +53,6 @@ function insertModule() {
 				alert(results);
 			}
 		});
-		
-	}
 	
 	$("#oldpassword").val("");
 	$("#newpassword").val("");
