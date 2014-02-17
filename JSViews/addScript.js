@@ -361,6 +361,8 @@ function insertRequest(){
 	}
 	else{ //if multiple room preferences
 		for(var i = 0; i < roomCodeVal.length; i++){
+			
+			if(i == 0){
 				$.ajax({
 					url: "addingrequest.php?" +currentSessionID,
 					type: "POST",
@@ -373,6 +375,23 @@ function insertRequest(){
 						alert(results);
 					}
 				});
+			}
+			
+			else{
+				$.ajax({
+					url: "addingrequest.php?" +currentSessionID,
+					type: "POST",
+					async: false,
+					data: { moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
+						endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
+						traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal[i], 
+						otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:"" },
+					success: function(results) {
+						alert(results);
+					}
+				});				
+			
+			}
 		}
 	}
 	
