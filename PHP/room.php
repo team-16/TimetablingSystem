@@ -1,9 +1,11 @@
 <?php
 
 function insertRoom($Code, $BuildingCode, $Type, $Capacity){
+// Add new room and it's data to database.
 	global $DB;
 	
-	if($DB->query("INSERT INTO room (code, buildingcode, type, capacity) VALUES (:buildingcode, :name, :type, :capacity)",
+	if($DB->query("INSERT INTO room (code, buildingcode, type, capacity
+	) VALUES (:buildingcode, :name, :type, :capacity)",
 	array(':code' => $Code, ':buildingcode' => $BuildingCode, ':type' => $Type, ':capacity' => $Capacity))) {
 		return true;
 	} 
@@ -14,9 +16,11 @@ function insertRoom($Code, $BuildingCode, $Type, $Capacity){
 }
 
 function updateRoom($Code, $BuildingCode, $Type, $Capacity){
+// Edit existing room's data in database.
 	global $DB;
 	
-	if($DB->query("UPDATE room SET buildingcode = :buildingcode, type = :type, capacity = :capacity WHERE code = :code",
+	if($DB->query("UPDATE room SET buildingcode = :buildingcode, type = :type, 
+	capacity = :capacity WHERE code = :code",
 	array(':code' => $Code, ':buildingcode' => $BuildingCode, ':type' => $Type, ':capacity' => $Capacity))) {
 		return true;
 	}
@@ -27,10 +31,13 @@ function updateRoom($Code, $BuildingCode, $Type, $Capacity){
 }
 
 function deleteRoom($RoomID){
+// Remove room and it's data from database.
 	global $DB;
-	if($DB->query("DELETE FROM room WHERE code = :code", array(':code' => $Code))){
+	if($DB->query("DELETE FROM room WHERE code = :code", array(
+	':code' => $Code))){
 
-		if($DB->query("DELETE FROM room_facility WHERE roomCode = :code", array(':code' => $Code))){
+		if($DB->query("DELETE FROM room_facility WHERE roomCode = :code", array(
+		':code' => $Code))){
 			return true;
 		}
 		
@@ -44,7 +51,7 @@ function deleteRoom($RoomID){
 	}
 }
 
-function getRooms(){
+function getRooms(){ // Return every room's data from database.
 	global $DB;
 	
 	if($DB->query("SELECT * FROM room ORDER BY code")){
@@ -56,7 +63,7 @@ function getRooms(){
 	}
 }
 
-function getRoom($Code){
+function getRoom($Code){ // Return a room's data from database.
 	global $DB;
 	
 	if($DB->query("SELECT * FROM room WHERE code = :code ORDER BY code",
@@ -69,7 +76,8 @@ function getRoom($Code){
 	}
 }
 
-function getAllocatedRooms($requestID){
+function getAllocatedRooms($requestID){ 
+// Return a request's allocated room(s) from database.
 	global $DB;
 	
 	if($DB->query("SELECT allocatedRoom FROM booking WHERE requestID = :requestID", array(":requestID" => $requestID))){

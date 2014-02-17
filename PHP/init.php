@@ -1,15 +1,16 @@
 <?php
 
-
+// Setup session variables to not use cookies, then begin session.
 ini_set("session.use_cookies",0);
 ini_set("session.use_only_cookies",0);
 ini_set("session.use_trans_sid",1);
 session_start();
 
-
+// Init database object.
 require_once 'Database.class.php';
 $DB = new Database();
 
+// Init other PHP scripts for use.
 require_once 'credentials.php';
 require_once 'globalf.php';
 

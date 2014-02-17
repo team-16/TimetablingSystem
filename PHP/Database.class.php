@@ -5,25 +5,28 @@ class Database {
 	private $DBH; //variable for PHP Data Object to get results
 	private $results; //Holds results
 	
-	public function __construct(){
+	public function __construct(){ // Setup database for system use.
 		try {
-			$dbSettings = array(
+			$dbSettings = array( // Stores database info.
 				'host'		=> 'localhost',
 				'username'	=> 'team16',
 				'password'	=> 'mpy34awd',
 				'dbname'	=> 'team16'
 			);
 			
-			$this->DBH = new PDO('mysql:host=' . $dbSettings["host"] . ';dbname=' . $dbSettings["dbname"], $dbSettings["username"], $dbSettings["password"]);
-			$this->DBH->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+			$this->DBH = new PDO('mysql:host=' . $dbSettings["host"] . 
+			';dbname=' . $dbSettings["dbname"], $dbSettings["username"], 
+			$dbSettings["password"]);
+		$this->DBH->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 		}
 		
-		catch(PDOException $e){
+		catch(PDOException $e){ // Catch errors
 			die($e->getMessage());
 		}
 	}
 	
 	public function query($SQL, $parameters = array()){
+	// Send query to database and store result(s).
 		$statementHandler = $this->DBH->prepare($SQL);
 		
 		if($statementHandler){
@@ -38,29 +41,18 @@ class Database {
 		return false;
 	}
 	
-	public function results(){
+	public function results(){ // Return results of query to database.
 		return $this->results;
 	}
 	
-	public function resultsZero(){
+	public function resultsZero(){ // Return 1st result of query to database.
 		return $this->results[0];
 	}
 	
-	public function lastInsertId(){
+	public function lastInsertId(){ // Return last insert id of database.
 		return $this->DBH->lastInsertId();
 	}
 	
-	//public function resultsZeroN(){
-	//	return $this->results[0];
-	//}
-	
-	//public function resultsOne(){
-	//	return $this->results[1];
-	//}
-	
-	//public function resultsTwo(){
-	//	return $this->results[2];
-	//}
 }
 
 ?>

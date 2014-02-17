@@ -1,7 +1,7 @@
 var liveSettingsRadio = [];
 var buildingsData = [];
 
-/*$(document).ready(function loadPage() {
+$(document).ready(function loadPage() {
     buildingsData = getAllRoomsAndBuildings();
     roomsGenerator();
 });
@@ -23,7 +23,7 @@ function roomsGenerator(){
     fullHTML += "</select>";
     $( "#roomPreference" ).html(fullHTML);
     
-}*/
+}
 
 
 

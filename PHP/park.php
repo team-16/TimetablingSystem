@@ -1,6 +1,6 @@
 <?php
 
-function getParks(){
+function getParks(){ // Return every park's data from database.
 	global $DB;
 	
 	if($DB->query("SELECT * FROM Park")){
