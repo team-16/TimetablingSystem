@@ -97,7 +97,7 @@ function facilityGenerator() {
     for (var i = 0; i < facilitiesArray.length; i++) {
         var newfacility = "<input ";
             newfacility += "type='checkbox'";
-            newfacility += "id = '" + facilitiesArray[i].id + " ' ";
+            newfacility += "id = '" + facilitiesArray[i].id + "' ";
             newfacility += "/> " + facilitiesArray[i].name;
             fullHTML += newfacility;
     }
