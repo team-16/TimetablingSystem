@@ -132,7 +132,7 @@ function gen(){
 	
 	<div class='accordion'>
 
-		<label class='accordionSection'>
+		<label class='accordionSection requestCardRejected'>
 		
 			<input type='checkbox'>
 			

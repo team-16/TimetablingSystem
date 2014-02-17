@@ -8,7 +8,10 @@ function listViewGenerator(requestArray, depShow, weekShow, sessTypeShow, facSho
 		
 		var currentRequest = requestResults[counter];
 		
-		listHTML += "<label class='accordionSection requestCard'>";
+		if(currentRequest.status == 1) listHTML += "<label class='accordionSection requestCardAllocated'>";
+		else if(currentRequest.status == 0) listHTML += "<label class='accordionSection requestCardPending'>";
+		else if(currentRequest.status == 2) listHTML += "<label class='accordionSection requestCardRejected'>";
+		else listHTML += "<label class='accordionSection requestCardDefault'>";
 		
 		listHTML += "<input type='checkbox'>";
 		

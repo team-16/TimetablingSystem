@@ -81,7 +81,7 @@ if(!isLoggedIn()){
 							Settings
 						</li>
 					</a>
-					<!--
+					
 					<a href="test.php">
 						<li>
 							Test
@@ -93,7 +93,7 @@ if(!isLoggedIn()){
 							Test 2
 						</li>
 					</a>
-					
+					<!--
 					<a href="test3.php">
 						<li>
 							Test 3

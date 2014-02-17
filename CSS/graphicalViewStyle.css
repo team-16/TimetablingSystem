@@ -89,6 +89,7 @@
 	border-left: 1px solid transparent;
 }
 
+
 .radioLabel {
 	display: inline-block;
 	height:100%;
@@ -96,20 +97,86 @@
 	text-align:center;
 	vertical-align:middle;
 	
+	line-height:60px;
+	text-align:center;
+	
 	cursor: pointer;
 	cursor: hand;
 }
 
+.requestSectionDefault {
+	
+	background: -moz-radial-gradient(center, ellipse cover, #f4f8fc 50%, #e1e7ef 100%); /* FF3.6+ */
+	
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(50%,#f4f8fc), color-stop(100%,#e1e7ef)); /* Chrome,Safari4+ */
+	
+	background: -webkit-radial-gradient(center, ellipse cover, #f4f8fc 50%,#e1e7ef 100%); /* Chrome10+,Safari5.1+ */
+	
+	background: -o-radial-gradient(center, ellipse cover, #f4f8fc 50%,#e1e7ef 100%); /* Opera 12+ */
+	
+	background: -ms-radial-gradient(center, ellipse cover, #f4f8fc 50%,#e1e7ef 100%); /* IE10+ */
+	
+	background: radial-gradient(ellipse at center, #f4f8fc 50%,#e1e7ef 100%); /* W3C */
+	
+}
+
+.requestSectionAllocated{
+	
+	background: -moz-radial-gradient(center, ellipse cover, #e5ffe3 50%, #aeefaa 100%); /* FF3.6+ */
+	
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(50%,#e5ffe3), color-stop(100%,#aeefaa)); /* Chrome,Safari4+ */
+	
+	background: -webkit-radial-gradient(center, ellipse cover, #e5ffe3 50%,#aeefaa 100%); /* Chrome10+,Safari5.1+ */
+	
+	background: -o-radial-gradient(center, ellipse cover, #e5ffe3 50%,#aeefaa 100%); /* Opera 12+ */
+	
+	background: -ms-radial-gradient(center, ellipse cover, #e5ffe3 50%,#aeefaa 100%); /* IE10+ */
+	
+	background: radial-gradient(ellipse at center, #e5ffe3 50%,#aeefaa 100%); /* W3C */
+	
+}
+
+.requestSectionPending {
+	
+	background: -moz-radial-gradient(center, ellipse cover, #fcf8db 50%, #efe8ac 100%); /* FF3.6+ */
+	
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(50%,#fcf8db), color-stop(100%,#efe8ac)); /* Chrome,Safari4+ */
+	
+	background: -webkit-radial-gradient(center, ellipse cover, #fcf8db 50%,#efe8ac 100%); /* Chrome10+,Safari5.1+ */
+	
+	background: -o-radial-gradient(center, ellipse cover, #fcf8db 50%,#efe8ac 100%); /* Opera 12+ */
+	
+	background: -ms-radial-gradient(center, ellipse cover, #fcf8db 50%,#efe8ac 100%); /* IE10+ */
+	
+	background: radial-gradient(ellipse at center, #fcf8db 50%,#efe8ac 100%); /* W3C */
+	
+}
+
+.requestSectionRejected {
+	
+	background: -moz-radial-gradient(center, ellipse cover, #ffd8cc 50%, #efa892 100%); /* FF3.6+ */
+	
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(50%,#ffd8cc), color-stop(100%,#efa892)); /* Chrome,Safari4+ */
+	
+	background: -webkit-radial-gradient(center, ellipse cover, #ffd8cc 50%,#efa892 100%); /* Chrome10+,Safari5.1+ */
+	
+	background: -o-radial-gradient(center, ellipse cover, #ffd8cc 50%,#efa892 100%); /* Opera 12+ */
+	
+	background: -ms-radial-gradient(center, ellipse cover, #ffd8cc 50%,#efa892 100%); /* IE10+ */
+	
+	background: radial-gradient(ellipse at center, #ffd8cc 50%,#efa892 100%); /* W3C */
+	
+}
+
+
 .contentSection {
 	display:block;
 	max-height:0px;
-	width: calc(100% - 24px);
+	width: calc(100% - 22px);
 	
 	padding-left:5px;
 	padding-right:5px;
-	margin-left:6px;
-	
-	background: lightblue;
+	margin-left:5px;
 		
 	overflow:hidden;
 	
@@ -117,6 +184,94 @@
     transition-duration: 1s;
 	transition-timing-function: ease;
 }
+
+.requestContentSectionDefault {
+	
+	/* IE10 Consumer Preview */
+	background-image: -ms-linear-gradient(top, #FFFFFF -30%, #E1E7EF 100%);
+ 
+	/* Mozilla Firefox */
+	background-image: -moz-linear-gradient(top, #FFFFFF -30%, #E1E7EF 100%);
+ 
+	/* Opera */
+	background-image: -o-linear-gradient(top, #FFFFFF -30%, #E1E7EF 100%);
+ 
+	/* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(-0.3, #FFFFFF), color-stop(1, #E1E7EF));
+ 
+	/* Webkit (Chrome 11+) */
+	background-image: -webkit-linear-gradient(top, #FFFFFF -30%, #E1E7EF 100%);
+ 
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(to bottom, #FFFFFF -30%, #E1E7EF 100%);
+	
+}
+
+.requestContentSectionAllocated {
+	
+	background-image: -ms-linear-gradient(top, #FFFFFF -30%, #AEEFAA 100%);
+ 
+	/* Mozilla Firefox */
+	background-image: -moz-linear-gradient(top, #FFFFFF -30%, #AEEFAA 100%);
+ 
+	/* Opera */
+	background-image: -o-linear-gradient(top, #FFFFFF -30%, #AEEFAA 100%);
+ 
+	/* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(-0.3, #FFFFFF), color-stop(1, #AEEFAA));
+ 
+	/* Webkit (Chrome 11+) */
+	background-image: -webkit-linear-gradient(top, #FFFFFF -30%, #AEEFAA 100%);
+ 
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(to bottom, #FFFFFF -30%, #AEEFAA 100%);
+	
+}
+
+.requestContentSectionPending {
+	
+	/* IE10 Consumer Preview */
+	background-image: -ms-linear-gradient(top, #FFFFFF -30%, #EFE8AC 100%);
+ 
+	/* Mozilla Firefox */
+	background-image: -moz-linear-gradient(top, #FFFFFF -30%, #EFE8AC 100%);
+ 
+	/* Opera */
+	background-image: -o-linear-gradient(top, #FFFFFF -30%, #EFE8AC 100%);
+ 
+	/* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(-0.3, #FFFFFF), color-stop(1, #EFE8AC));
+ 
+	/* Webkit (Chrome 11+) */
+	background-image: -webkit-linear-gradient(top, #FFFFFF -30%, #EFE8AC 100%);
+ 
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(to bottom, #FFFFFF -30%, #EFE8AC 100%);
+	
+}
+
+.requestContentSectionRejected {
+	
+	/* IE10 Consumer Preview */
+	background-image: -ms-linear-gradient(top, #FFFFFF -30%, #EFA892 100%);
+ 
+	/* Mozilla Firefox */
+	background-image: -moz-linear-gradient(top, #FFFFFF -30%, #EFA892 100%);
+ 
+	/* Opera */
+	background-image: -o-linear-gradient(top, #FFFFFF -30%, #EFA892 100%);
+ 
+	/* Webkit (Safari/Chrome 10) */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(-0.3, #FFFFFF), color-stop(1, #EFA892));
+ 
+	/* Webkit (Chrome 11+) */
+	background-image: -webkit-linear-gradient(top, #FFFFFF -30%, #EFA892 100%);
+ 
+	/* W3C Markup, IE10 Release Preview */
+	background-image: linear-gradient(to bottom, #FFFFFF -30%, #EFA892 100%);
+	
+}
+
 
 .topContentSection{
 	overflow:hidden;

@@ -150,7 +150,7 @@ function genGr() {
 				
 				
 					<td>
-						<label class='radioLabel'>
+						<label class='radioLabel requestSectionDefault'>
 							<input type='radio' name='mondayRadio' onclick='graphicalRadioToggle(this, 0);showGraphicalContent(this, "mondayContent1", 0);'></input>
 							COB123
 						</label>
@@ -190,7 +190,7 @@ function genGr() {
 				
 			</table>
 			
-			<div class='contentSection' id='mondayContent1'>
+			<div class='contentSection requestContentSectionDefault' id='mondayContent1'>
 			
 				<div class='topContentSection'>
 				
