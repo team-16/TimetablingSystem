@@ -59,7 +59,8 @@ function getCurrentRequests(){
 	
 	if($DB->query("SELECT * FROM request WHERE roundID IN (
 	SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = 
-	(SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) ORDER BY moduleCode")){
+	(SELECT semesterid FROM round WHERE live = 
+	1 AND adHoc = 0))) ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
