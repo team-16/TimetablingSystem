@@ -209,8 +209,10 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 								<tr><td id='faciSection'>Facilites</td>\
 								<td>Other Requirements</td>";
 				
+				var facilityTitles = getFacilityTitles(currentContentRequest.facilities);
+				
 				graphicalHTML += "</tr><tr>\
-								<td>" + htmlStringFormater(currentContentRequest.facilities, true) + "</td>\
+								<td>" + htmlStringFormater(facilityTitles, true) + "</td>\
 								<td>" + currentContentRequest.otherReqs + "</td>";
 				
 				graphicalHTML += "</tr></table>";
