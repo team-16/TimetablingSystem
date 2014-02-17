@@ -127,7 +127,7 @@ if(!isLoggedIn()){
 								Room Code:
 							</td>
 							<td>
-								<input type='text' id='room_insert_roomcode'></input>
+								<input type='text' id='room_insert_roomcode' onkeyup="autopopulateRoomDetails();"></input>
 							</td>
 						</tr>
 						
