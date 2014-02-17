@@ -343,7 +343,7 @@ function insertRequest(){
 	var roundIDVal = userRoundID ;
 	var facilityIDVal = JSON.stringify(facilityIDGather());
 	
-	//alert(roomCodeGather());
+	alert(facilityIDVal);
 	
 	if(roomCodeVal.length == 0){ //if no room preferences
 			$.ajax({
