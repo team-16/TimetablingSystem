@@ -3,7 +3,7 @@
 // park.php
 
 // CREATED BY:
-// Niall Rose
+// Shirley Kutadzaushe
 
 // FUNCTIONALITY:
 // Holds functions related to parks, including obtaining information about

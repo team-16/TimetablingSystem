@@ -1,5 +1,15 @@
 <?php
 
+// module.php
+
+// CREATED BY:
+// Niall Rose, Benjy Evans, Shirley Kutadzaushe, Mofe Fafowora
+
+// FUNCTIONALITY:
+// Holds functions related to module, including obtaining information about
+// all or specific module, editing data of modules and deleting data of
+// modules.
+
 function getModules($deptCode){ // Return every module's data from database.
 	global $DB;
 	

@@ -3,7 +3,7 @@
 // building.php
 
 // CREATED BY:
-// Niall Rose
+// Niall Rose, Benjy Evans, Johnbastian Emilianus, Mofe Fafowora
 
 // FUNCTIONALITY:
 // Holds functions related to buildings, including obtaining information about

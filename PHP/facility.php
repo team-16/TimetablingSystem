@@ -3,7 +3,7 @@
 // facility.php
 
 // CREATED BY:
-// Niall Rose
+// Niall Rose, Johnbastion Emilianus, Benjy Evans
 
 // FUNCTIONALITY:
 // Holds functions related to facilities, including obtaining information about

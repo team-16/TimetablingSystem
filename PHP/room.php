@@ -3,7 +3,7 @@
 // room.php
 
 // CREATED BY:
-// Niall Rose
+// Niall Rose, Benjy Evans
 
 // FUNCTIONALITY:
 // Holds functions related to rooms, including obtaining information about

@@ -3,7 +3,8 @@
 // request.php
 
 // CREATED BY:
-// Niall Rose
+// Niall Rose, Benjy Evans, Shirley Kutadzaushe, Mofe Fafowora,
+// Johnbastian Emilianus
 
 // FUNCTIONALITY:
 // Holds functions related to requests, including obtaining information about

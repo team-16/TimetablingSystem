@@ -3,7 +3,7 @@
 // roomFacility.php
 
 // CREATED BY:
-// Niall Rose
+// Benjy Evans
 
 // FUNCTIONALITY:
 // Holds functions related to facilities mapped to rooms, including obtaining the

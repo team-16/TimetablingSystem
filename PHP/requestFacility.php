@@ -3,7 +3,7 @@
 // requestFacility.php
 
 // CREATED BY:
-// Niall Rose
+// Johnbastian Emilianus
 
 // FUNCTIONALITY:
 // Holds functions related to facilities mapped to requests,

@@ -3,7 +3,7 @@
 // department.php
 
 // CREATED BY:
-// Niall Rose
+// Niall Rose, Benjy Evans, Mofe Fafowora, Johnbastian Emilianus
 
 // FUNCTIONALITY:
 // Holds functions related to departments, including obtaining information about
