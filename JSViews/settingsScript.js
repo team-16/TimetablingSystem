@@ -60,20 +60,26 @@ function insertModule() {
 	
 }
 function autopopulateRoomDetails() {
-	var chosenRoom = $( "#room_insert_roomcode" ).val();
+	
+	var buildingsData = getAllRoomsAndBuildings();
+	
+	var chosenRoom = $( "#room_insert_roomcode2" ).val();
+	//alert(chosenRoom);
 	var buildingCode = "";
-	var roomType = Room.code(chosenRoom).type;
-	var roomCapacity = Room.code(chosenRoom).capacity;
+	var roomType = null;
+	var roomCapacity = null;
 	
 	for (var i = 0; i < buildingsData.length; i++) {
-		for(var j = 0; j < buildingsData.length; j++)
-		if(buildingsData[i].rooms[j] == chosenRoom){
+		for(var j = 0; j < buildingsData[i].rooms.length; j++)
+		if(buildingsData[i].rooms[j].code == chosenRoom){
 			buildingCode = buildingsData[i].code;
+			roomType = buildingsData[i].rooms[j].type;
+			roomCapacity = buildingsData[i].rooms[j].capacity;
 		}
 	}
 	
-	$( "#room_insert_buildingcode" ).html(buildingCode);
-	$( "#room_insert_roomtype" ).html(roomType);
-	$( "#room_insert_roomcapacity" ).html(roomCapacity);
+	$( "#room_insert_buildingcode2" ).val(buildingCode);
+	$( "#room_insert_roomtype2" ).val(roomType);
+	$( "#room_insert_roomcapacity2" ).val(roomCapacity);
 
 }

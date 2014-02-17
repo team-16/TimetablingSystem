@@ -80,7 +80,7 @@ if(!isLoggedIn()){
 								Room Code:
 							</td>
 							<td>
-								<input type='text' id='room_insert_roomcode'></input>
+								<input type='text' id='roomInsertRoomcode'></input>
 							</td>
 						</tr>
 						
@@ -127,7 +127,7 @@ if(!isLoggedIn()){
 								Room Code:
 							</td>
 							<td>
-								<input type='text' id='room_insert_roomcode' onkeyup="autopopulateRoomDetails();"></input>
+								<input type='text' id='room_insert_roomcode2' onkeyup="autopopulateRoomDetails();"></input>
 							</td>
 						</tr>
 						
@@ -136,7 +136,7 @@ if(!isLoggedIn()){
 								Building Code:
 							</td>
 							<td>
-								<input type='text' id='room_insert_buildingcode'></input>
+								<input type='text' id='room_insert_buildingcode2'></input>
 							</td>
 						</tr>
 						
@@ -145,7 +145,7 @@ if(!isLoggedIn()){
 								Type:
 							</td>
 							<td>
-								<input type='text' id='room_insert_roomtype'></input>
+								<input type='text' id='room_insert_roomtype2'></input>
 							</td>
 						</tr>
 						
@@ -154,7 +154,7 @@ if(!isLoggedIn()){
 								Capacity:
 							</td>
 							<td>
-								<input type='text' id='room_insert_roomcapacity'></input>
+								<input type='text' id='room_insert_roomcapacity2'></input>
 							</td>
 						</tr>
 						
