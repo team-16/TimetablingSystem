@@ -1,5 +1,14 @@
 <?php
 
+// requestHandler.php
+
+// CREATED BY:
+// Niall Rose
+
+// FUNCTIONALITY:
+// Holds functions related to maintaining and sanitising request data, primarily
+// for JSON handling and manipulation.
+
 function compressWithFacilities($requestsArray) {
 	
 	return populateRequestFacilities(requestsCompressor($requestsArray));
