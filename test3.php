@@ -4,6 +4,17 @@
 <style type='text/css'>
 @charset "UTF-8";
 
+#viewContainer {
+	position:relative;
+	top:40px;
+	left:10px;
+	height:auto;
+	width:940px;
+	
+	margin-top:10px;
+	
+	border:1px solid #bbb;
+}
 
 
 </style>
