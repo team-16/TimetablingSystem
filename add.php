@@ -23,7 +23,8 @@ if(!isLoggedIn()){
 		var moduleArray = <?php echo(json_encode(getModules(loggedDept()))); ?>;
 	</script>
 	
-	<button type='button' onclick="adhocMode();">ad-hoc mode</button>
+	<input type='radio' name="mode" onclick="adhocMode();">ad-hoc mode</input>
+	<input type='radio' name="mode" onclick="normalMode();" checked>normal mode</input>
 		
 		<div id="wrapperAdd">
 
