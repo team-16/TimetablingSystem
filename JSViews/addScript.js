@@ -341,7 +341,7 @@ function insertRequest(){
 	var roomCodeVal = roomCodeGather();
 	var otherRequirementsVal = document.getElementById("otherRequirementsTextArea").value ;
 	var roundIDVal = userRoundID ;
-	var facilityIDVal = facilityIDGather();
+	var facilityIDVal = JSON.stringify(facilityIDGather());
 	
 	//alert(roomCodeGather());
 	
