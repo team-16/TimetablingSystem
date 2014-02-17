@@ -22,7 +22,7 @@ if(!isLoggedIn()){
 					Modules
 				</input>
 				
-				<div class='accordionContent settingsContent'>
+				<div class='accordionContent settingsContent' onclick='return false;'>
 					<table class='insertModuleTable'>
 						
 						<tr>
@@ -60,6 +60,206 @@ if(!isLoggedIn()){
 						</tr>
 						
 					</table>
+				</div>
+				
+			</label>
+			
+			<label class='accordionSection settingsCard'>
+				<input type='radio' name='settingsAccordion' onclick='settingsRadioToggle(this, 0);'>
+					Rooms
+				</input>
+				
+				<div class='accordionContent settingsContent' onclick='return false;'>
+				<table class='roomsTable'>
+				<tr>
+				<td>
+					<table class='insertRoomTable'>
+						
+						<tr>
+							<td>
+								Room Code:
+							</td>
+							<td>
+								<input type='text' id='roomInsertRoomcode'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Building Code:
+							</td>
+							<td>
+								<input type='text' id='room_insert_buildingcode'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Type:
+							</td>
+							<td>
+								<input type='text' id='room_insert_roomtype'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Capacity:
+							</td>
+							<td>
+								<input type='text' id='room_insert_roomcapacity'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td style='text-align:right;'>
+								<input type='button' value='Insert New Room' onclick='insertRoom();'></input>
+							</td>
+						</tr>		
+					</table>
+				</td>
+				<td>
+					<table class='editRoomTable'>
+						
+						<tr>
+							<td>
+								Room Code:
+							</td>
+							<td>
+								<input type='text' id='room_insert_roomcode2' onkeyup="autopopulateRoomDetails();"></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Building Code:
+							</td>
+							<td>
+								<input type='text' id='room_insert_buildingcode2'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Type:
+							</td>
+							<td>
+								<input type='text' id='room_insert_roomtype2'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Capacity:
+							</td>
+							<td>
+								<input type='text' id='room_insert_roomcapacity2'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td style='text-align:right;'>
+								<input type='button' value='Edit Room' onclick='editRoom();'></input>
+							</td>
+						</tr>		
+					</table>
+				</td>
+				</tr>
+				</table>
+				</div>
+				
+			</label>
+			
+			<label class='accordionSection settingsCard'>
+				<input type='radio' name='settingsAccordion' onclick='settingsRadioToggle(this, 0);'>
+					Buildings
+				</input>
+				
+				<div class='accordionContent settingsContent' onclick='return false;'>
+				<table class='roomsTable'>
+				<tr>
+				<td>
+					<table class='insertBuildingTable'>
+						
+						<tr>
+							<td>
+								Building Code:
+							</td>
+							<td>
+								<input type='text' id='building_insert_buildingcode'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Building Name:
+							</td>
+							<td>
+								<input type='text' id='building_insert_buildingname'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Park:
+							</td>
+							<td>
+								<input type='text' id='building_insert_park'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td style='text-align:right;'>
+								<input type='button' value='Insert New Building' onclick='insertBuilding();'></input>
+							</td>
+						</tr>
+						
+					</table>
+				</td>
+				<td>
+					<table class='editBuildingTable'>
+						
+						<tr>
+							<td>
+								Building Code:
+							</td>
+							<td>
+								<input type='text' id='building_insert_buildingcode'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Building Name:
+							</td>
+							<td>
+								<input type='text' id='building_insert_buildingname'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Park:
+							</td>
+							<td>
+								<input type='text' id='building_insert_park'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td style='text-align:right;'>
+								<input type='button' value='Edit Building' onclick='editBuilding();'></input>
+							</td>
+						</tr>
+						
+					</table>					
+				</td>
+				</tr>
+				</table>
 				</div>
 				
 			</label>
@@ -116,8 +316,6 @@ if(!isLoggedIn()){
 		</div>
 		
 	</div>
-
-
 <script type='text/javascript' src='JSViews/settingsScript.js'></script>
 
 </html>

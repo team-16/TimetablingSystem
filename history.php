@@ -13,8 +13,20 @@ if(!isLoggedIn()){
 
 <head>
 
-<style type="text/css">
+<style type='text/css'>
+@charset "UTF-8";
 
+#historyViewContainer {
+	position:relative;
+	top:40px;
+	left:calc(50% - 480px);
+	height:auto;
+	width:940px;
+	
+	margin-top:10px;
+	
+	border:1px solid #bbb;
+}
 
 
 </style>
@@ -22,6 +34,10 @@ if(!isLoggedIn()){
 
 </head>
 	
-	History
+<div id='historyViewContainer'>
+	No History
+</div>
+
+<script type='text/javascript' src='JSViews/historyScript.js'></script>
 
 </html>

@@ -7,7 +7,7 @@
 #viewContainer {
 	position:relative;
 	top:40px;
-	left:10px;
+	left:calc(50% - 480px);
 	height:auto;
 	width:940px;
 	
@@ -26,11 +26,11 @@
 
 </script>
 
-<input type='button' onclick=''>Current</input>
-<input type='button' onclick=''>AdHoc View</input>
+<input type='radio' name='resultsRadio' onclick='adHocState(this);' checked>Current</input>
+<input type='radio' name='resultsRadio' onclick='adHocState(this);' id='adHocRad'>AdHoc View</input>
 
-<input type='button' onclick=''>List View</input>
-<input type='button' onclick=''>Timetable View</input>
+<input type='button' onclick='loadListView();'>List View</input>
+<input type='button' onclick='loadTimetableView();'>Timetable View</input>
 
 <div id='viewContainer'>
 	

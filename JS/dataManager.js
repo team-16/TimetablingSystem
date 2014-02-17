@@ -39,8 +39,6 @@ function formatJSONRequests(jsonReqArray, allocatedFlag) {
 		currentRequest.endPeriod = Number(jsonReqArray[reqCounter]["endPeriod"]);
 		currentRequest.weeks = weeksDecoder(jsonReqArray[reqCounter]["weeks"]);
 		
-		alert(currentRequest.weeks);
-		
 		currentRequest.students = Number(jsonReqArray[reqCounter]["noOfStudents"]);
 		currentRequest.park = Number(jsonReqArray[reqCounter]["parkPreference"]);
 		currentRequest.traditional = Number(jsonReqArray[reqCounter]["traditional"]);
@@ -72,9 +70,9 @@ function formatJSONRequests(jsonReqArray, allocatedFlag) {
 			
 			var allocatedRoomArray = jsonReqArray[reqCounter]["allocatedRooms"];
 			
-			for (var aCounter = 0; aCounter < requestFacilityArray.length; aCounter++) {
+			for (var aCounter = 0; aCounter < allocatedRoomArray.length; aCounter++) {
 				
-				currentRequest.allocatedRooms.push(requestFacilityArray[aCounter]);
+				currentRequest.allocatedRooms.push(allocatedRoomArray[aCounter]);
 				
 			}
 			

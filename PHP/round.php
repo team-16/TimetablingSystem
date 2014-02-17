@@ -1,6 +1,6 @@
 <?php
 
-function getLiveRoundData(){
+function getLiveRoundData(){ // Get current live round's data from database.
 	global $DB;
 	
 	if($DB->query("SELECT * FROM round WHERE live = '1' AND adHoc = '0'")){
@@ -12,7 +12,7 @@ function getLiveRoundData(){
 	}
 }
 
-function getAdHocRoundData(){
+function getAdHocRoundData(){ // Get current ad hoc round's data from database.
 	global $DB;
 	
 	if($DB->query("SELECT * FROM round WHERE live = '1' AND adHoc = '1'")){
@@ -25,7 +25,7 @@ function getAdHocRoundData(){
 }
 
 
-function getroundsData(){
+function getroundsData(){ // Get every non-live round's data from database.
 	global $DB;
 	
 	if($DB->query("SELECT * FROM round WHERE live = '0'")){

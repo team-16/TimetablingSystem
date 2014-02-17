@@ -11,10 +11,34 @@ if(!isLoggedIn()){
 
 <html>
 
-<button type='button' onclick='testA();'>Test</button>
+<style type='text/css'>
+@charset "UTF-8";
+
+#resultsViewContainer {
+	position:relative;
+	top:40px;
+	left:calc(50% - 480px);
+	height:auto;
+	width:940px;
+	
+	margin-top:10px;
+	
+	border:1px solid #bbb;
+}
 
 
+</style>
 
+
+<input type='radio' name='resultsRadio' onclick='adHocState(this);' checked>Current</input>
+<input type='radio' name='resultsRadio' onclick='adHocState(this);' id='adHocRad'>AdHoc View</input>
+
+<input type='button' onclick='loadListView();'>List View</input>
+<input type='button' onclick='loadTimetableView();'>Timetable View</input>
+
+<div id='resultsViewContainer'>
+	
+</div>
 
 <script type='text/javascript' src='JSViews/resultsScript.js'></script>
 

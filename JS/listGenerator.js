@@ -59,13 +59,21 @@ function listViewGenerator(requestArray, depShow, weekShow, sessTypeShow, facSho
 						
 		listHTML += "</table>";
 		
-		listHTML += "<table class='listBtnsTable'><tr>";
 		
-		if (editBtnShow) listHTML += "<td><button type='button' onclick='return false;'>Edit</button></td>";
+		if (dupBtnShow || editBtnShow || delBtnShow) {
+			listHTML += "<table class='listBtnsTable'><tr>";
+		
+			if (editBtnShow) listHTML += "<td><button type='button' onclick='return false;'>Edit</button></td>";
 						
-		listHTML += "<td><button type='button' onclick='return false;'>Delete</button></td></tr>";
+			if (delBtnShow)	listHTML += "<td><button type='button' onclick='return false;'>Delete</button></td>";
+			
+			listHTML += "</tr>";
 						
-		listHTML += "<tr><td colspan='2'><button type='button' onclick='return false;'>Duplicate</button></td></tr></table>";
+			if (dupBtnShow) listHTML += "<tr><td colspan='2'><button type='button' onclick='return false;'>Duplicate</button></td></tr>";
+			
+			listHTML += "</table>";
+		
+		}
 		
 		
 		listHTML += "</div>";

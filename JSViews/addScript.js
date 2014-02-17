@@ -97,7 +97,7 @@ function facilityGenerator() {
     for (var i = 0; i < facilitiesArray.length; i++) {
         var newfacility = "<input ";
             newfacility += "type='checkbox'";
-            newfacility += "id = '" + facilitiesArray[i].id + " ' ";
+            newfacility += "id = '" + facilitiesArray[i].id + "' ";
             newfacility += "/> " + facilitiesArray[i].name;
             fullHTML += newfacility;
     }
@@ -309,6 +309,20 @@ function roomCodeGather(){
     }
     return roomsChosenArray;
 }
+function facilityIDGather(){
+
+	var facilityID = [];
+
+	$("#roomFacilities :checked").each(function() {
+
+		facilityID.push(Number(this.id));
+
+	});
+	
+	return facilityID;
+
+
+}
 function insertRequest(){
 	
 	var moduleCodeVal = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["code"];
@@ -327,8 +341,9 @@ function insertRequest(){
 	var roomCodeVal = roomCodeGather();
 	var otherRequirementsVal = document.getElementById("otherRequirementsTextArea").value ;
 	var roundIDVal = userRoundID ;
+	var facilityIDVal = JSON.stringify(facilityIDGather());
 	
-	//alert(roomCodeGather());
+	alert(facilityIDVal);
 	
 	if(roomCodeVal.length == 0){ //if no room preferences
 			$.ajax({
@@ -338,7 +353,7 @@ function insertRequest(){
 				data: { moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
 					endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
 					traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:"", 
-					otherRequirements:otherRequirementsVal, roundID:roundIDVal },
+					otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:facilityIDVal },
 				success: function(results) {
 					alert(results);
 				}
@@ -346,6 +361,8 @@ function insertRequest(){
 	}
 	else{ //if multiple room preferences
 		for(var i = 0; i < roomCodeVal.length; i++){
+			
+			if(i == 0){
 				$.ajax({
 					url: "addingrequest.php?" +currentSessionID,
 					type: "POST",
@@ -353,11 +370,28 @@ function insertRequest(){
 					data: { moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
 						endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
 						traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal[i], 
-						otherRequirements:otherRequirementsVal, roundID:roundIDVal },
+						otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:facilityIDVal },
 					success: function(results) {
 						alert(results);
 					}
 				});
+			}
+			
+			else{
+				$.ajax({
+					url: "addingrequest.php?" +currentSessionID,
+					type: "POST",
+					async: false,
+					data: { moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
+						endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
+						traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal[i], 
+						otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:"" },
+					success: function(results) {
+						alert(results);
+					}
+				});				
+			
+			}
 		}
 	}
 	
@@ -371,66 +405,6 @@ function insertRequest(){
 			}
 	});
 	loadRequestsPage();
-	
-	/*alert(moduleCodeVal);
-	alert(priorityVal);
-	alert(dayVal);
-	
-	alert(startPeriodVal);
-	alert(endPeriodVal);
-	alert(weeksVal);
-	alert(noOfStudentsVal);
-	alert(parkPreferenceVal);
-	alert(traditionalVal);
-	alert(sessionTypeVal);
-	alert(noOfRoomsVal);
-	alert(roomCodeVal);
-	alert(otherRequirementsVal);
-	alert(roundIDVal);*/
-
-	/*$.ajax({
-		url: "addingrequest.php?" +currentSessionID,
-		type: "POST",
-		async: false,
-		data: { moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
-				endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
-				traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal, 
-				otherRequirements:otherRequirementsVal, roundID:roundIDVal },
-		success: function(results) {
-			alert(results);
-		}
-	});*/
-	
-	
-	
-	/*
-	var fullHTML = '<form id="autoForm" method="post" action="addingrequest.php">';
-		fullHTML +='<input type="hidden" name="moduleCode" value=document.getElementById("moduleCodeSelect").value>';
-		fullHTML += '<input type="hidden" name="priority" value=document.getElementById("priority").value>';
-		fullHTML += '<input type="hidden" name="day" value=document.getElementById("daySelect").value>';
-		fullHTML += '<input type="hidden" name="startPeriod" value=document.getElementById("startPeriod").value>';
-		fullHTML += '<input type="hidden" name="endPeriod" value=document.getElementById("endPeriod").value>';
-		fullHTML += '<input type="hidden" name="weeks" value=getRequestValues()>';
-		fullHTML += '<input type="hidden" name="noOfStudents" value=document.getElementById("studentsInput").value>';
-		fullHTML += '<input type="hidden" name="parkPreference" value=document.getElementById("parkSelect").value>';
-		fullHTML += '<input type="hidden" name="traditional" value=document.getElementById("traditionalSeminarSelect").value>';
-		fullHTML += '<input type="hidden" name="sessionType" value=document.getElementById("sessionTypeSelect").value>';
-		fullHTML += '<input type="hidden" name="noOfRooms" value=document.getElementById("noOfRooms").value>';
-		//Needs changing to be dynamic;
-		fullHTML += '<input type="hidden" name="roomCode" value="JJ.0.04">';
-		fullHTML += '<input type="hidden" name="otherRequirements" value=document.getElementById("otherRequirementsTextArea").value>';
-		fullHTML += '<input type="hidden" name="roundID" value=roundID>';
-		fullHTML += '<input type="hidden" name="status" value="">';
-		
-		fullHTML += '<input type="submit">';
-	fullHTML += '</form>';
-	
-	fullHTML += '<script type="text/javascript">';
-		fullHTML += 'document.getElementById("autoForm").submit();';
-	fullHTML += '</script>';
-	
-	$( "#submitForm" ).html(fullHTML);
-	*/
 
 }
 

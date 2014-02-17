@@ -1,11 +1,10 @@
 <?php
 
-// a bit more complicated, come back to it.
-
-function insertFacility($name){
+function insertFacility($name){ // Add new room facility to database.
 	global $DB;
 	
-	if($DB->query("INSERT INTO facility (name) VALUES (:name)", array(':name' => $name))){
+	if($DB->query("INSERT INTO facility (name) VALUES (:name)", array(
+	':name' => $name))){
 		return true;
 	}
 	
@@ -14,10 +13,11 @@ function insertFacility($name){
 	}
 }
 
-function updateFacility($id, $name){
+function updateFacility($id, $name){ // Edit existing facility in database.
 	global $DB;
 	
-	if($DB->query("UPDATE facility SET name = :name WHERE id = :id", array(':name' => $name, ':id' => $id))){
+	if($DB->query("UPDATE facility SET name = :name WHERE id = :id", array(
+	':name' => $name, ':id' => $id))){
 		return true;
 	}
 	
@@ -26,12 +26,13 @@ function updateFacility($id, $name){
 	}
 }
 
-function deleteFacility($id){ //NEEDS FIXING
+function deleteFacility($id){ // Delete a room facility from database.
 	global $DB;
 	
 	if($DB->query("DELETE FROM Facility WHERE id = :id", array(':id' => $id))){
 		
-		if($DB->query("DELETE FROM RoomFacility WHERE FacilityID = :facilityID", array(':facilityID' => $facilityID))){
+		if($DB->query("DELETE FROM RoomFacility WHERE FacilityID = :facilityID", 
+		array(':facilityID' => $facilityID))){
 			return true;
 		}
 		
@@ -45,7 +46,7 @@ function deleteFacility($id){ //NEEDS FIXING
 	}
 }
 
-function getFacilities(){
+function getFacilities(){ // Return every facilitie's data from database.
 	global $DB;
 	
 	if($DB->query("SELECT * FROM facility ORDER BY name")){
@@ -57,10 +58,11 @@ function getFacilities(){
 	}
 }
 
-function getFacilityId(){
+function getFacilityId(){ // Return room facilitie's id from database.
 	global $DB;
 	
-	if($DB->query("SELECT id FROM facility WHERE name = :name", array(':name' => $name))){
+	if($DB->query("SELECT id FROM facility WHERE name = :name", array(
+	':name' => $name))){
 		return $DB->results();
 	}
 	
