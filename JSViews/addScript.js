@@ -315,7 +315,7 @@ function facilityIDGather(){
 
 	$("#roomFacilities :checked").each(function() {
 
-		facilityID.push(this.id);
+		facilityID.push(Number(this.id));
 
 	});
 	

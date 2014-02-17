@@ -159,7 +159,21 @@ function getCurrentRequestsNullAdHoc(){
 function getCurrentRequestsNotNullAdHoc(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status IS NOT NULL ORDER BY moduleCode")){
+	if($DB->query("SELECT request.*, title, deptcode
+					FROM request, module
+					WHERE request.roundID IN 
+						(SELECT id 
+						FROM round
+       					WHERE semesterID = 
+        					(SELECT id 
+                				FROM semester 
+                				WHERE id = 
+                					(SELECT semesterid 
+                    				FROM round 
+                        			WHERE live = '1' AND adHoc = '1'))) 
+				AND status IS NOT NULL AND code = moduleCode 
+				AND module.deptcode = :deptcode 
+				ORDER BY moduleCode", array(':deptcode' => $deptCode))){
 		return $DB->results();
 	}
 	
@@ -249,13 +263,13 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
 						 ':otherRequirements' => $otherRequirements,
 						 ':roundID' => $roundID))) {
 						 
-						 for($i = 0; i < count($facilities); $i=$i+1){
+						 foreach($facilities as $key => $val){
 						 
 							$DB->query("INSERT INTO request_facility (requestID, 
 							facilityID) VALUES (:requestID, :facilityID)",
 							array(
 									':requestID' => $nextReqId[0]["counter"],
-									':facilityID' => $facilities[i]));						 
+									':facilityID' => $val));						 
 						 
 						 }
 
