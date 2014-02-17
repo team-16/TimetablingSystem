@@ -13,7 +13,7 @@ if(!isLoggedIn()){
 
 	<head>
 
-		<link href='CSS/add.css' rel='stylesheet' type='text/css'>
+		<link href='CSS/addStyle.css' rel='stylesheet' type='text/css'>
 
 	</head>
 

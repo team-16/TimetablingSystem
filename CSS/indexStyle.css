@@ -2,7 +2,7 @@
 
 html, body {
 	height:80%;
-	min-height:75%;
+	min-height:90%;
 	max-height:98.5%;
 	/*height:93%;*/	/* Prevents scrolling while allowing small margin */
 }
@@ -123,7 +123,7 @@ nav ul {
 nav li {
 	display:inline-block;
 	height:auto;
-	padding:0.5em 2em 0.5em 2em;
+	padding:0.5em 1.3em 0.5em 1.3em;
 }
 
 nav li:hover {
