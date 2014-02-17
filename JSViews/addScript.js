@@ -1,6 +1,7 @@
 var buildingsData = [];
-
-$(document).ready(function() {
+var amountOfWeeks = numberOfWeeks;
+var userRoundID = roundID;
+$(document).ready(function loadPage() {
     buildingsData = getAllRoomsAndBuildings();
     moduleTitleGenerator();
     facilityGenerator();
@@ -11,8 +12,22 @@ $(document).ready(function() {
     rangedSlider();
     daysGenerator();
 });
+function normalMode(){
+    if(true) {
+        amountOfWeeks = numberOfWeeks;
+        userRoundID = roundID;
+    }
+    weeksGenerator();
+}
     
+function adhocMode(){
+    if(true) {
+        amountOfWeeks = adHocNumberOfWeeks;
+        userRoundID = adHocRoundID;
+    }
+    weeksGenerator();
 
+}
 function buildingsGenerator(){
 
     var fullHTML = "<select id ='buildings'>";
@@ -54,7 +69,7 @@ function weeksGenerator() {
                     //var parentElement = document.getElementById("weeksCheckbox");
                     var fullHTML1 = "";
                     //var originalhtml = parentElement.innerHTML;
-                    for(var i=1; i <= numberOfWeeks; i++)
+                    for(var i=1; i <= amountOfWeeks; i++)
                     {
                         var newCheckBox = "<input ";
                         newCheckBox += "type='checkbox' ";
@@ -116,7 +131,7 @@ function selectEven(){
 
 function selectDeselectAll(checkAll) {
 
-    for (var i = 1; i <= numberOfWeeks; i++) {
+    for (var i = 1; i <= amountOfWeeks; i++) {
     	
     	var checkbox = document.getElementById("week " + i);
     	
@@ -311,7 +326,7 @@ function insertRequest(){
 	//var roomCodeVal = "JJ.0.04";
 	var roomCodeVal = roomCodeGather();
 	var otherRequirementsVal = document.getElementById("otherRequirementsTextArea").value ;
-	var roundIDVal = roundID ;
+	var roundIDVal = userRoundID ;
 	
 	//alert(roomCodeGather());
 	
