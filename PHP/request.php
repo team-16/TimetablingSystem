@@ -249,7 +249,7 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
 						 ':otherRequirements' => $otherRequirements,
 						 ':roundID' => $roundID))) {
 						 
-						 for($i = 0; i < count($facilities); $i++){
+						 for($i = 0; i < count($facilities); $i=$i+1){
 						 
 							$DB->query("INSERT INTO request_facility (requestID, 
 							facilityID) VALUES (:requestID, :facilityID)",
