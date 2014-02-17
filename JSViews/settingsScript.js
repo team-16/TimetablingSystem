@@ -15,7 +15,7 @@ function roomsGenerator(){
     var roomsArray = buildingsData[chosenBuilding].rooms;
     
     for (var i = 0; i < roomsArray.length; i++) {
-        rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray.code + "' >";
+        rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray[i].code + "' >";
         rooms += roomsArray[i].code  + "</option>";
 		
     };
