@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	
-	getCurrentRequests();
+	loadListView();
 	
 });
 
-
+var requestsArray = []
 
 function getCurrentRequests() {
 	
@@ -13,19 +13,18 @@ function getCurrentRequests() {
 			type: "POST",
 			async: false,
 			success: function(results) {
-				//alert(results);
-				alert(JSON.stringify(results));
-				var requestArray = formatJSONRequests(results, false);
-				loadListView(requestArray);
+				requestsArray = formatJSONRequests(results, false);
 			}
 	});
 	
 }
 
-function loadListView(requestArray) {
-	$('#viewContainer').html(listViewGenerator(requestArray, false, true, true, true, false, false, true, true, true));
+function loadListView() {
+	getCurrentRequests();
+	$('#viewContainer').html(listViewGenerator(requestsArray, false, true, true, true, false, false, true, true, true));
 }
 
 function loadTimetableView() {
-	
+	getCurrentRequests();
+	$('#viewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, false, true, true, true));
 }

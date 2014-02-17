@@ -93,7 +93,21 @@ function getCurrentRequestsNull($deptCode){
 function getCurrentRequestsNotNull(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status IS NOT NULL ORDER BY moduleCode")){
+	if($DB->query("SELECT request.*, title, deptcode
+					FROM request, module
+					WHERE request.roundID IN 
+						(SELECT id 
+						FROM round
+       					WHERE semesterID = 
+        					(SELECT id 
+                				FROM semester 
+                				WHERE id = 
+                					(SELECT semesterid 
+                    				FROM round 
+                        			WHERE live = '1' AND adHoc = '0'))) 
+				AND status IS NOT NULL AND code = moduleCode 
+				AND module.deptcode = :deptcode 
+				ORDER BY moduleCode", array(':deptcode' => $deptCode))){
 		return $DB->results();
 	}
 	
@@ -105,7 +119,21 @@ function getCurrentRequestsNotNull(){
 function getCurrentRequestsAllocated(){
 	global $DB;
 	
-	if($DB->query("SELECT * FROM request WHERE roundID IN (SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = (SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) AND status = 1 ORDER BY moduleCode")){
+	if($DB->query("SELECT request.*, title, deptcode
+					FROM request, module
+					WHERE request.roundID IN 
+						(SELECT id 
+						FROM round
+       					WHERE semesterID = 
+        					(SELECT id 
+                				FROM semester 
+                				WHERE id = 
+                					(SELECT semesterid 
+                    				FROM round 
+                        			WHERE live = '1' AND adHoc = '0'))) 
+				AND code = moduleCode AND status = 1 
+				AND module.deptcode = :deptcode 
+				ORDER BY moduleCode", array(':deptcode' => $deptCode))){
 		return $DB->results();
 	}
 	

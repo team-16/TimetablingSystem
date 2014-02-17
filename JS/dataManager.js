@@ -39,8 +39,6 @@ function formatJSONRequests(jsonReqArray, allocatedFlag) {
 		currentRequest.endPeriod = Number(jsonReqArray[reqCounter]["endPeriod"]);
 		currentRequest.weeks = weeksDecoder(jsonReqArray[reqCounter]["weeks"]);
 		
-		alert(currentRequest.weeks);
-		
 		currentRequest.students = Number(jsonReqArray[reqCounter]["noOfStudents"]);
 		currentRequest.park = Number(jsonReqArray[reqCounter]["parkPreference"]);
 		currentRequest.traditional = Number(jsonReqArray[reqCounter]["traditional"]);
