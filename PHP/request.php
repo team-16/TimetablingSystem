@@ -194,7 +194,7 @@ function getHistoryRequestsAllocated(){
 
 function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
  $weeks, $noOfStudents, $parkPreference, $traditional, $sessionType, $noOfRooms,
- $roomCode, $otherRequirements, $roundID){
+ $roomCode, $otherRequirements, $roundID, $facilities){
 	global $DB;
 	$nextReqId = getNextRequestID();	
 	
@@ -220,6 +220,17 @@ function insertRequest($moduleCode, $priority, $day, $startPeriod, $endPeriod,
 						 ':roomCode' => $roomCode,
 						 ':otherRequirements' => $otherRequirements,
 						 ':roundID' => $roundID))) {
+						 
+						 for($i = 0; i < count($facilities); $i++){
+						 
+							$DB->query("INSERT INTO request_facility (requestID, 
+							facilityID) VALUES (:requestID, :facilityID)",
+							array(
+									':requestID' => $nextReqId[0]["counter"],
+									':facilityID' => $facilities[i]));						 
+						 
+						 }
+
 						 
 						 return true;
 		

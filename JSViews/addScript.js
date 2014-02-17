@@ -309,6 +309,20 @@ function roomCodeGather(){
     }
     return roomsChosenArray;
 }
+function facilityIDGather(){
+
+	var facilityID = [];
+
+	$("#roomFacilities :checked").each(function() {
+
+		facilityID.push(this.id);
+
+	});
+	
+	return facilityID;
+
+
+}
 function insertRequest(){
 	
 	var moduleCodeVal = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["code"];
@@ -327,6 +341,7 @@ function insertRequest(){
 	var roomCodeVal = roomCodeGather();
 	var otherRequirementsVal = document.getElementById("otherRequirementsTextArea").value ;
 	var roundIDVal = userRoundID ;
+	var facilityIDVal = facilityIDGather();
 	
 	//alert(roomCodeGather());
 	
@@ -338,7 +353,7 @@ function insertRequest(){
 				data: { moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
 					endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
 					traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:"", 
-					otherRequirements:otherRequirementsVal, roundID:roundIDVal },
+					otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:facilityIDVal },
 				success: function(results) {
 					alert(results);
 				}
