@@ -1,5 +1,15 @@
 <?php
 
+// facility.php
+
+// CREATED BY:
+// Niall Rose
+
+// FUNCTIONALITY:
+// Holds functions related to facilities, including obtaining information about
+// all or specific facilities, editing data of facilities and deleting data of
+// facilities.
+
 function insertFacility($name){ // Add new room facility to database.
 	global $DB;
 	

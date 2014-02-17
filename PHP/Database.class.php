@@ -1,5 +1,15 @@
 <?php
 
+// Database.class.php
+
+// CREATED BY:
+// Niall Rose
+
+// FUNCTIONALITY:
+// Stores information related to connecting to the database. Also creates a PDO
+// (PHP Data Object) to act as the middle man between the database and the user.
+// There is also a query function, which is used heavily throughout the system.
+
 class Database {
 	
 	private $DBH; //variable for PHP Data Object to get results

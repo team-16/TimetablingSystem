@@ -1,5 +1,15 @@
 <?php
 
+// room.php
+
+// CREATED BY:
+// Niall Rose
+
+// FUNCTIONALITY:
+// Holds functions related to rooms, including obtaining information about
+// all or specific rooms, editing data of rooms and deleting data of
+// rooms.
+
 function insertRoom($Code, $BuildingCode, $Type, $Capacity){
 // Add new room and it's data to database.
 	global $DB;

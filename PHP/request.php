@@ -1,5 +1,16 @@
 <?php
 
+// request.php
+
+// CREATED BY:
+// Niall Rose
+
+// FUNCTIONALITY:
+// Holds functions related to requests, including obtaining information about
+// all or specific requests, editing requests and deleting request data. There
+// is also functionality for returning specific types of requests eg. pending,
+// allocated, rejected.
+
 function getAllRequests(){ // Return every request's data from database.
 	global $DB;
 	

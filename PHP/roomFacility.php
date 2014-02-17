@@ -1,5 +1,14 @@
 <?php
 
+// roomFacility.php
+
+// CREATED BY:
+// Niall Rose
+
+// FUNCTIONALITY:
+// Holds functions related to facilities mapped to rooms, including obtaining the
+// ID's of mapped facilities.
+
 function getRoomFacilities($roomCodeD){
 // Return a room's facilities from database.
 	global $DB;

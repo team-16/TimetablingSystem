@@ -1,5 +1,13 @@
 <?php
 
+// credentials.php
+
+// CREATED BY:
+// Niall Rose
+
+// FUNCTIONALITY:
+// Holds functions related to logging in, managing sessions and logging out.
+
 function login($deptCode, $password){
 // Check details against database, then if correct, create session/login.
 
