@@ -22,7 +22,7 @@ if(!isLoggedIn()){
 					Modules
 				</input>
 				
-				<div class='accordionContent settingsContent'>
+				<div class='accordionContent settingsContent' onclick='return false;'>
 					<table class='insertModuleTable'>
 						
 						<tr>
@@ -69,7 +69,7 @@ if(!isLoggedIn()){
 					Rooms
 				</input>
 				
-				<div class='accordionContent settingsContent'>
+				<div class='accordionContent settingsContent' onclick='return false;'>
 				<table class='roomsTable'>
 				<tr>
 				<td>
@@ -177,7 +177,7 @@ if(!isLoggedIn()){
 					Buildings
 				</input>
 				
-				<div class='accordionContent settingsContent'>
+				<div class='accordionContent settingsContent' onclick='return false;'>
 				<table class='roomsTable'>
 				<tr>
 				<td>

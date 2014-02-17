@@ -64,12 +64,14 @@ function autopopulateRoomDetails() {
 	var buildingCode = "";
 	var roomType = Room.code(chosenRoom).type;
 	var roomCapacity = Room.code(chosenRoom).capacity;
+	
 	for (var i = 0; i < buildingsData.length; i++) {
-		for(var j = 0; j<buildingsData.length; i++)
+		for(var j = 0; j < buildingsData.length; j++)
 		if(buildingsData[i].rooms[j] == chosenRoom){
 			buildingCode = buildingsData[i].code;
 		}
-	};
+	}
+	
 	$( "#room_insert_buildingcode" ).html(buildingCode);
 	$( "#room_insert_roomtype" ).html(roomType);
 	$( "#room_insert_roomcapacity" ).html(roomCapacity);
