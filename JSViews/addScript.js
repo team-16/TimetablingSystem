@@ -395,3 +395,6 @@ function getRequestValues(){
     
    return weeksValues;
 }
+function prefillPage(Request){
+    $( "#studentsInput" ).val() = Request.students;
+}
