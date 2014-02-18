@@ -10,7 +10,8 @@ html, body {
 body {
 	font-family:'Alef', sans-serif;
 	background-color: #363638;
-	overflow:auto;
+	overflow-x:auto;
+	overflow-y: scroll;
 }
 
 #wrapper {
