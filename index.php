@@ -9,8 +9,13 @@ if(!isLoggedIn()){
 
 ?>
 
-<html>
+<!DOCTYPE html>
 
+<html>
+	
+
+	<meta http-equiv='X-UA-Compatible' content='IE=Edge'></meta>
+	
 	<head>
 		<title>Timetabling System</title>
 		<link rel="stylesheet" type="text/css" href="jQuery&UI/jquery-ui-1.10.3/themes/base/jquery.ui.all.css">
