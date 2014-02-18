@@ -13,6 +13,7 @@ function loadFacilities(jsonFacilitiesArray) {
 	
 }
 
+
 function formatJSONRequests(jsonReqArray, allocatedFlag) {
 	
 	jsonReqArray = JSON.parse(jsonReqArray);
@@ -87,16 +88,6 @@ function formatJSONRequests(jsonReqArray, allocatedFlag) {
 }
 
 
-
-
-
-function getModules(results) {
-	
-	
-	
-}
-
-
 function getAllRoomsAndBuildings() {
 	
 	var buildingRoomsArray = [];
@@ -139,6 +130,7 @@ function getAllRoomsAndBuildings() {
 	
 }
 
+
 function getAllRoomsInBuilding(buildingCode, jsonRooms) {
 	
 	var roomsInBuilding = [];
@@ -163,3 +155,18 @@ function getAllRoomsInBuilding(buildingCode, jsonRooms) {
 	
 }
 
+function deleteRequest(requestID) {
+	
+	requestID = Number(requestID);
+	
+	$.ajax({
+		url: "requestDeletionManager.php" + currentSessionID,
+		type: "POST",
+		data: {requestID:requestID},
+		success: function(results) {
+			jsonResults = results;
+		}
+	});
+	
+	
+}
