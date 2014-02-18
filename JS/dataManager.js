@@ -160,11 +160,11 @@ function deleteRequest(requestID) {
 	requestID = Number(requestID);
 	
 	$.ajax({
-		url: "requestDeletionManager.php" + currentSessionID,
+		url: "requestDeletionManager.php?" + currentSessionID,
 		type: "POST",
 		data: {requestID:requestID},
 		success: function(results) {
-			jsonResults = results;
+			alert(results);
 		}
 	});
 	

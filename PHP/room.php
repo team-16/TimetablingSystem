@@ -99,4 +99,24 @@ function getAllocatedRooms($requestID){
 	}
 }
 
+function deleteBookingsRecords($requestID){ 
+// Return a request's allocated room(s) from database.
+	global $DB;
+	
+	if($DB->query("SELECT * FROM booking WHERE requestID = :requestID", 
+				array(":requestID" => $requestID))) {
+				
+		$DB->query("DELETE FROM booking WHERE requestID = :requestID", 
+			array(':requestID' => $requestID));
+		
+		return true;
+			
+	}
+	
+	else{
+		return false;
+	}
+}
+
+
 ?>

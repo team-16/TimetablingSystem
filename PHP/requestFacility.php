@@ -24,4 +24,24 @@ function getRequestFacilities($requestID){
 	}
 }
 
+function deleteRequestFacilitiesRecords($requestID){ 
+// Return IDs of facilities selected in request by user.
+	global $DB;
+	
+	if($DB->query(
+	"SELECT * FROM request_facility WHERE requestID = :requestID", 
+					array(':requestID' => $requestID))) {
+					
+		$DB->query("DELETE FROM request_facility WHERE requestID = :requestID", 
+			array(':requestID' => $requestID));
+		
+		return true;
+		
+	}
+	
+	else{
+		return false;
+	}
+}
+
 ?>

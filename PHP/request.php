@@ -438,8 +438,15 @@ function incRequestID(){ // Increment next request ID by 1 in database.
 function deleteRequest($id){ // Remove a request and it's data from database.
 	global $DB;
 	
-	if($DB->query("SELECT request WHERE id = :id", array(':id' => $id))){
+	if($DB->query("SELECT * FROM request WHERE id = :id", array(':id' => $id))){
+		
+		deleteRequestFacilitiesRecords($id);
+		deleteBookingsRecords($id);
+		
 		$DB->query("DELETE FROM request WHERE id = :id", array(':id' => $id));
+		
+		return true;
+		
 	}
 	
 	else{
