@@ -3,25 +3,39 @@ var buildingsData = [];
 
 $(document).ready(function loadPage() {
     buildingsData = getAllRoomsAndBuildings();
-    //roomsGenerator();
+    roomsGenerator();
 });
 
 function roomsGenerator(){
     
-    var chosenBuilding = document.getElementById("buildings").selectedIndex;  // Needs updating, JBizzle
-    var fullHTML ="<select id='room_insert_roomcode2' onchange='autopopulateRoomDetails();'>";
+   // var chosenBuilding = document.getElementById("buildings").selectedIndex;  // Needs updating, JBizzle
+    var fullHTML = "<select id='room_insert_roomcode2' onchange='autopopulateRoomDetails();'>";
     var rooms = "";
     
-    var roomsArray = buildingsData[chosenBuilding].rooms; // This needs updating too, JBizzle2DaNizzleFoShizzleWivABitOfDrizzle
+    var roomsArray = []; //buildingsData[chosenBuilding].rooms; // This needs updating too, JBizzle2DaNizzleFoShizzleWivABitOfDrizzle
+    
+    for (var bCounter = 0; bCounter < buildingsData.length; bCounter++) {
+    	
+    	var currentRoomsArray = buildingsData[bCounter].rooms;
+    	
+    	for (var rCounter = 0; rCounter < currentRoomsArray.length; rCounter++) {
+    		
+    		roomsArray.push(currentRoomsArray[rCounter]);
+    		
+   		}
+   		
+    }
     
     for (var i = 0; i < roomsArray.length; i++) {
+    	
         rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray[i].code + "' >";
         rooms += roomsArray[i].code  + "</option>";
 		
-    };
+    }
+    
     fullHTML += rooms;
     fullHTML += "</select>";
-    $( "#roomDropDownTd" ).html(fullHTML);
+    $( "#roomDropdownTd" ).html(fullHTML);
     
 }
 
