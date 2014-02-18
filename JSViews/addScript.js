@@ -396,5 +396,11 @@ function getRequestValues(){
    return weeksValues;
 }
 function prefillPage(Request){
+
     $( "#studentsInput" ).val() = Request.students;
+    for (var i = 0; i < moduleArray.length; i++) {
+        if(Request.moduleCode == $( "#moduleCodeSelect" ).options[i]){
+            return $( "#moduleCodeSelect" ).options[i];
+        }else return false;
+    }
 }
