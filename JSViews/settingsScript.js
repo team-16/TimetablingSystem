@@ -6,13 +6,13 @@ $(document).ready(function loadPage() {
     //roomsGenerator();
 });
 
-/*function roomsGenerator(){
+function roomsGenerator(){
     
-    var chosenBuilding = document.getElementById("buildings").selectedIndex;  
-    var fullHTML ="<select size = '5' id='rooms'>";
+    var chosenBuilding = document.getElementById("buildings").selectedIndex;  // Needs updating, JBizzle
+    var fullHTML ="<select id='room_insert_roomcode2' onchange='autopopulateRoomDetails();'>";
     var rooms = "";
     
-    var roomsArray = buildingsData[chosenBuilding].rooms;
+    var roomsArray = buildingsData[chosenBuilding].rooms; // This needs updating too, JBizzle2DaNizzleFoShizzleWivABitOfDrizzle
     
     for (var i = 0; i < roomsArray.length; i++) {
         rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray[i].code + "' >";
@@ -21,9 +21,9 @@ $(document).ready(function loadPage() {
     };
     fullHTML += rooms;
     fullHTML += "</select>";
-    $( "#roomPreference" ).html(fullHTML);
+    $( "#roomDropDownTd" ).html(fullHTML);
     
-}*/
+}
 
 
 
@@ -66,6 +66,24 @@ function changePassword() {
 	
 }
 
+function editRoom() {
+
+	var Code = $("#room_insert_roomcode2").val();
+	var BuildingCode = $("#room_insert_buildingcode2").val();
+	var Type = $("#room_insert_roomtype2").val();
+	var Capacity = $("#room_insert_roomcapacity2").val();
+	
+		$.ajax({
+			url: "editroom.php?" +currentSessionID,
+			type: "POST",
+			data: { Code:Code, BuildingCode:BuildingCode, Type:Type, Capacity:Capacity },
+			success: function(results) {
+				alert(results);
+			}
+		});
+
+}
+
 function insertModule() {
 	
 	var modulecode = $("#modulecode").val();
@@ -90,7 +108,7 @@ function autopopulateRoomDetails() {
 	
 	var buildingsData = getAllRoomsAndBuildings();
 	
-	var chosenRoom = $( "#room_insert_roomcode2" ).val();
+	var chosenRoom = document.getElementById("room_insert_roomcode2").options[document.getElementById("room_insert_roomcode2").selectedIndex].value;
 	//alert(chosenRoom);
 	var buildingCode = "";
 	var roomType = null;

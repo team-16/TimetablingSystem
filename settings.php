@@ -126,8 +126,8 @@ if(!isLoggedIn()){
 							<td>
 								Room Code:
 							</td>
-							<td>
-								<input type='text' id='room_insert_roomcode2' onkeyup="autopopulateRoomDetails();"></input>
+							<td id="roomDropdownTd">
+								<!--<input type='text' id='room_insert_roomcode2' onkeyup="autopopulateRoomDetails();"></input>-->
 							</td>
 						</tr>
 						
