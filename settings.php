@@ -302,53 +302,6 @@ if(!isLoggedIn()){
 						</tr>		
 					</table>
 				</td>
-				<td>
-					<table class='editFacilityTable'>
-						
-						<tr>
-							<td>
-								Room Code:
-							</td>
-							<td id="roomDropdownTd">
-								<!--<input type='text' id='room_insert_roomcode2' onkeyup="autopopulateRoomDetails();"></input>-->
-							</td>
-						</tr>
-						
-						<tr>
-							<td>
-								Building Code:
-							</td>
-							<td>
-								<input type='text' id='room_insert_buildingcode2'></input>
-							</td>
-						</tr>
-						
-						<tr>
-							<td>
-								Type:
-							</td>
-							<td>
-								<input type='text' id='room_insert_roomtype2'></input>
-							</td>
-						</tr>
-						
-						<tr>
-							<td>
-								Capacity:
-							</td>
-							<td>
-								<input type='text' id='room_insert_roomcapacity2'></input>
-							</td>
-						</tr>
-						
-						<tr>
-							<td></td>
-							<td style='text-align:right;'>
-								<input type='button' value='Edit Room' onclick='editRoom();'></input>
-							</td>
-						</tr>		
-					</table>
-				</td>
 				</tr>
 				</table>
 				</div>
