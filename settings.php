@@ -167,6 +167,13 @@ if(!isLoggedIn()){
 								<input type='text' id='room_insert_roomcapacity2'></input>
 							</td>
 						</tr>
+						<tr>
+						<td>
+							<div id="roomFacilities" class="facilitiesDiv">
+							<!-- content -->
+							</div>
+						</td>
+						</tr>
 						
 						<tr>
 							<td></td>
