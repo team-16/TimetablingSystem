@@ -125,7 +125,6 @@ function weeksGenerator() {
 }*/
 function facilityGenerator() {
    
-    var parentElement = document.getElementById("roomFacilities");
     var fullHTML ="<table> <tr>";
 	var count = 0;
     
@@ -136,12 +135,13 @@ function facilityGenerator() {
 		}
          fullHTML += "<td><input ";
             fullHTML += "type='checkbox'";
-            fullHTML += "id = '" + facilitiesArray[i].id + "' ";
+            fullHTML += " id = '" + facilitiesArray[i].id + "' ";
             fullHTML += "/> " + facilitiesArray[i].name + "</td>";
 			count++;
     }
 	
 	fullHTML += "</tr></table>";
+	alert(fullHTML);
     
     $("#roomFacilities").html(fullHTML);
     
