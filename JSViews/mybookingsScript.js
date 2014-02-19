@@ -26,14 +26,14 @@ function getCurrentRequests() {
 function loadListView() {
 	
 	listViewDisplayed = true;
-	$('#myBookingsViewContainer').html(listViewGenerator(requestsArray, false, true, true, true, true, true, true, true, true));
+	$('#myBookingsViewContainer').html(listViewGenerator(requestsArray, false, true, true, true, true, true, true, false, true));
 	
 }
 
 function loadTimetableView() {
 	
 	listViewDisplayed = false;
-	$('#myBookingsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, true, true, true, true));
+	$('#myBookingsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, true, true, false, true));
 	
 }
 

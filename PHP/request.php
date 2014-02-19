@@ -299,7 +299,7 @@ function getHistoryRequestsNull(){
 	}
 }
 
-function getHistoryRequestsNotNull(){
+function getHistoryRequestsNotNull($deptCode){
 	global $DB;
 	
 	if($DB->query("SELECT request.*, title, deptcode
@@ -308,12 +308,9 @@ function getHistoryRequestsNotNull(){
 						(SELECT id 
 						FROM round 
 						WHERE semesterID NOT IN 
-							(SELECT id 
-							FROM semester 
-							WHERE id IN 
-								(SELECT semesterid 
-								FROM round 
-								WHERE live = 1))) 
+							(SELECT semesterID 
+							FROM round 
+							WHERE live = 1))
 					AND code = moduleCode AND status IS NOT NULL 
 					AND module.deptcode = :deptcode 
 					ORDER BY moduleCode", array(':deptcode' => $deptCode) )){

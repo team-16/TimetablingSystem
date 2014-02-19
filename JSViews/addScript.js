@@ -359,7 +359,7 @@ function insertRequest(){
 	var priorityVal = document.getElementById("priority").checked;
 	var dayVal = document.getElementById("daySelect").selectedIndex;
 	var startPeriodVal = (document.getElementById("startPeriod").value) - 1;
-	var endPeriodVal = (document.getElementById("endPeriod").value) - 1;
+	var endPeriodVal = (document.getElementById("endPeriod").value) - 2;
 	var weeksVal = weeksEncoder(getRequestValues());
 	var noOfStudentsVal = document.getElementById("studentsInput").value;
 	var parkPreferenceVal = document.getElementById("parkSelect").selectedIndex;
