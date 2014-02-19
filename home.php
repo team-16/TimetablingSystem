@@ -20,15 +20,19 @@ if(!isLoggedIn()){
 </div>
 
 <div id = "request_results">
+	<table>
+	<tr>
+	<td>
 	<table class="table" id="tallyTable">
 		<tr>
-			<th>accepted</th><th>rejected</th><th>pending</th>
+			<th>Accepted</th><th>Rejected</th><th>Pending</th>
 		</tr>
 		<tr>
 			<td id="accepted">0</td><td id="rejected">0</td><td id="pending">0</td>
 		</tr>
 	</table>
-	</br>
+	</td>
+	<td>
 	<table class='ToggleTable'>
 		<tr>
 			<td>
@@ -47,7 +51,10 @@ if(!isLoggedIn()){
 			</td>
 		</tr>
 	</table>
+	</td>
+	</tr>
 </div>
+</br>
 
 
 
