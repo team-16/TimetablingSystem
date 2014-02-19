@@ -1,8 +1,13 @@
 var buildingsData = [];
 var amountOfWeeks = numberOfWeeks;
 var userRoundID = roundID;
+
+var editOrDuplicateRequest = null;
+
 $(document).ready(function loadPage() {
+	
     buildingsData = getAllRoomsAndBuildings();
+    
     moduleTitleGenerator();
     facilityGenerator();
     parkGenerator();
@@ -11,7 +16,9 @@ $(document).ready(function loadPage() {
     roomsGenerator();
     rangedSlider();
     daysGenerator();
+    
 });
+
 function normalMode(){
     if(true) {
         amountOfWeeks = numberOfWeeks;
@@ -151,8 +158,9 @@ function isNumberKey(evt)  {
 }
 
 function parkGenerator(){
-var fullHTML ="";
-var newParkPreference = "<select id='parkSelect' name ='parkSelect'>";
+
+	var fullHTML ="";
+	var newParkPreference = "<select id='parkSelect' name ='parkSelect'>";
 
     for (var i = 0; i < parksArray.length; i++) {
         newParkPreference += "<option ";
@@ -160,33 +168,50 @@ var newParkPreference = "<select id='parkSelect' name ='parkSelect'>";
         newParkPreference += parksArray[i];
         newParkPreference += "</option>"; 
     }
+    
     newParkPreference += "</select>";
     fullHTML += newParkPreference;
     $("#parkPreference").html(fullHTML);
+    
 }
+
 function plsNoZero() {
+	
 	var input = document.getElementById("studentsInput").value.charAt(0);
 	if (input == "0") document.getElementById("studentsInput").value = "1";
+	
 }
+
 function maxValue(){
     var value = document.getElementById("studentsInput").value;
     if(value > 500) {document.getElementById("studentsInput").value ="1"};
 }
+
 function onKeyUpCheck(){
-    plsNoZero();    
+	
+	plsNoZero();    
     maxValue();
+    
 }
 
 function maxValueNumRooms(){
+	
     var value = document.getElementById("roomsInput").value;
     if(value > 5) {document.getElementById("roomsInput").value ="1"};
+    
 }
+
 function onKeyUpCheckNumRooms(){
+
     plsNoZero();    
     maxValueNumRooms();
+    
 }
+
 function rangedSlider() {
-    $( "#slider-range" ).slider({
+	
+	$( "#slider-range" ).slider({
+		
         range: true,
         min: 1,
         max: 10,
@@ -198,12 +223,15 @@ function rangedSlider() {
             $( "#endPeriod" ).val( + ui.values[ 1 ] );
         }
 
-        });
-        $( "#amount" ).val( + $( "#slider-range" ).slider( "values", 0 ) +
-        " - " + $( "#slider-range" ).slider( "values", 1 ) );
-		$( "#startPeriod" ).val(+ $("#slider-range").slider("values", 0) );
-		$( "#endPeriod" ).val(+ $("#slider-range").slider("values", 1) );
+    });
+	
+	$( "#amount" ).val( + $( "#slider-range" ).slider( "values", 0 ) +
+	" - " + $( "#slider-range" ).slider( "values", 1 ) );
+	$( "#startPeriod" ).val(+ $("#slider-range").slider("values", 0) );
+	$( "#endPeriod" ).val(+ $("#slider-range").slider("values", 1) );
+	
 }
+
 //function chosenRoomsListGenerator() {
 //    var chosenRoom = document.getElementById("rooms");
 //    var chosenRoomField = document.getElementById("chosenRooms");
@@ -211,6 +239,7 @@ function rangedSlider() {
 //        chosenRoomField += "<option> " + chosenRoom.value + "</option>";
 //    }
 //}
+
 function daysGenerator(){
     var daysList="<select id='daySelect'>";
     for (var i = 0; i < daysArray.length; i++) {
@@ -246,18 +275,6 @@ function addRoomToPref(optionValue,optionDisplayText){
 	}
 }
 
-//function noRoomsVsRoomPref(){
-
-//	if(document.getElementById("cRoomsList").length <= document.getElementById("roomsInput").value){
-//		return true;
-//	}
-	
-//	else{
-//		alert("Number of room preferences is limited to the number of rooms you have chosen. Please change the number of rooms or remove an existing room preference.");
-//		return false;
-//	}
-
-//}
 
 function removeRoomFromPref(){
 	cRoomsList.remove(cRoomsList.options.selectedIndex);
@@ -296,7 +313,6 @@ function insertRequest(){
 	var moduleCodeVal = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["code"];
 	var priorityVal = document.getElementById("priority").checked;
 	var dayVal = document.getElementById("daySelect").selectedIndex;
-	
 	var startPeriodVal = (document.getElementById("startPeriod").value) - 1;
 	var endPeriodVal = (document.getElementById("endPeriod").value) - 1;
 	var weeksVal = weeksEncoder(getRequestValues());
@@ -305,7 +321,6 @@ function insertRequest(){
 	var traditionalVal = traditionalSeminarTruthValue();
 	var sessionTypeVal = document.getElementById("sessionTypeSelect").selectedIndex;
 	var noOfRoomsVal = document.getElementById("roomsInput").value;
-	//var roomCodeVal = "JJ.0.04";
 	var roomCodeVal = roomCodeGather();
 	var otherRequirementsVal = document.getElementById("otherRequirementsTextArea").value ;
 	var roundIDVal = userRoundID ;
@@ -376,12 +391,6 @@ function insertRequest(){
 
 }
 
-/*function boink(){
-
-	alert(document.getElementById("startPeriod").value);
-
-}*/
-
 function getRequestValues(){
     var weeksValues = [];
     for (var i = 1; i <= numberOfWeeks; i++) {
@@ -395,11 +404,11 @@ function getRequestValues(){
     
    return weeksValues;
 }
-function prefillPage(Request){
+function prefillPage(request){
 
-    $( "#studentsInput" ).val() = Request.students;
+    $( "#studentsInput" ).val() = request.students;
     for (var i = 0; i < moduleArray.length; i++) {
-        if(Request.moduleCode == $( "#moduleCodeSelect" ).options[i]){
+        if(request.moduleCode == $( "#moduleCodeSelect" ).options[i]){
             return $( "#moduleCodeSelect" ).options[i];
         }else return false;
     }

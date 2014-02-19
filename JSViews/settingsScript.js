@@ -4,6 +4,7 @@ var buildingsData = [];
 $(document).ready(function loadPage() {
     buildingsData = getAllRoomsAndBuildings();
     roomsGenerator();
+	facilityGenerator();
 });
 
 function roomsGenerator(){
@@ -37,6 +38,20 @@ function roomsGenerator(){
     fullHTML += "</select>";
     $( "#roomDropdownTd" ).html(fullHTML);
     
+}
+
+function facilityGenerator() {
+    var parentElement = document.getElementById("roomFacilities");
+    var fullHTML ="";
+    //var oldhtml= parentElement.innerHTML;
+    for (var i = 0; i < facilitiesArray.length; i++) {
+        var newfacility = "<input ";
+            newfacility += "type='checkbox'";
+            newfacility += "id = '" + facilitiesArray[i].id + "' ";
+            newfacility += "/> " + facilitiesArray[i].name;
+            fullHTML += newfacility;
+    }
+    $("#roomFacilities").html(fullHTML);
 }
 
 

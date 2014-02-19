@@ -1,5 +1,8 @@
 <?php
 
+// Niall: edit insertRoom to encorporate inserting new facilities correctly.
+// Add editBuildings - copypasta editRoom basically with minor changes.
+
 include('PHP/init.php');
 
 if(!isLoggedIn()){
@@ -109,6 +112,13 @@ if(!isLoggedIn()){
 							<td>
 								<input type='text' id='room_insert_roomcapacity'></input>
 							</td>
+						</tr>
+						<tr>
+						<td>
+							<div id="roomFacilities" class="facilitiesDiv">
+							<!-- content -->
+							</div>
+						</td>
 						</tr>
 						
 						<tr>

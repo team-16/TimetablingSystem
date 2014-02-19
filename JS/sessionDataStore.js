@@ -39,6 +39,18 @@ var adHocNumberOfWeeks = 1;
 var facilitiesArray = [];
 
 
+//********Temporary Stores for Edit and Duplicate Functionality*****************
+
+var duplicateRequest = false;
+
+var editRequest = false;
+
+var temporaryRequestStore = null;
+
+
+// *****************************************************************************
+
+
 function loadSession() {
 	
 	currentSessionID = document.location.href.match(/PHPSESSID=[^;]+/);

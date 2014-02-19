@@ -170,3 +170,11 @@ function deleteRequest(requestID) {
 	
 	
 }
+
+function setupDuplicateRequest(request) {
+	
+}
+
+function setupEditRequest(request) {
+	
+}
