@@ -23,7 +23,7 @@ if(!isLoggedIn()){
 				<input type='radio' name='viewRadio' onclick='loadListView();' checked>List View</input>
 			</td>
 			<td>
-				<input type='radio' name='timeRadio' onclick='loadListView();' checked>List View</input>
+				<input type='radio' name='timeRadio' onclick='displayTime(true);' checked>Periods</input>
 			</td>
 		</tr>
 		<tr>
@@ -34,16 +34,16 @@ if(!isLoggedIn()){
 				<input type='radio' name='viewRadio' onclick='loadTimetableView();'>Timetable View</input>
 			</td>
 			<td>
-				<input type='radio' name='timeRadio' onclick='loadTimetableView();'>Timetable View</input>
+				<input type='radio' name='timeRadio' onclick='displayTime(false);'>Times</input>
 			</td>
 		</tr>
 		
 	</table>
 </div>
 
-<div class='timetableHeadings' id='Header1'>
+<div class='graphicalHeadings' id='gHeadings'>
 	
-	<table class='timeHeaderTable'>
+	<table class='periodHeaderTable' id='periodHeadings'>
 			
 			<tr>
 				
@@ -86,11 +86,8 @@ if(!isLoggedIn()){
 			</tr>
 			
 		</table>
-</div>
-
-<div class='timetableHeadings' id='Header2'>
 	
-	<table class='timeHeaderTable'>
+	<table class='timeHeaderTable' id='timeHeadings'>
 			
 			<tr>
 				
@@ -142,6 +139,59 @@ if(!isLoggedIn()){
 			</tr>
 			
 		</table>
+		
+</div>
+
+<div class='timetHeadings' id='lHeadings'>
+	
+	<table class='listHeaderTable' id='listHeadings'>
+	
+		<tr>
+		
+			<td id='depField'>
+				Dep
+			</td>
+		
+			<td id='codeField'>
+				Module Code
+			</td>
+		
+			<td id='pField'>
+				P
+			</td>
+		
+			<td id='dayField'>
+				Day
+			</td>
+		
+			<td id='periodField'>
+				Period
+			</td>
+		
+			<td id='lengthField'>
+				Length
+			</td>
+		
+			<td id='weeksField'>
+				Weeks
+			</td>
+		
+			<td id='stuField'>
+				# of Students
+			</td>
+		
+			<td id='tradField'>
+				T/S
+			</td>
+		
+		</tr>
+	
+	</table>
+	
+</div>
+
+<div class='listHeadings' id='listTitles'>
+	
 </div>
 
 <div id='resultsViewContainer'>

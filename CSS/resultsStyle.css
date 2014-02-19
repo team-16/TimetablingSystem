@@ -19,6 +19,15 @@
 	width:400px;
 	
 	margin-bottom:10px;
+}
+
+.periodHeaderTable {
 	
+	display: inline-block;
+	text-align:center;
+	vertical-align:middle;
+	
+	line-height:50px;
 	
 }
+

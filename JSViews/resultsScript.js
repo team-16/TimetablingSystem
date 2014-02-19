@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var requestsArray = [];
 	getCurrentRequests();
 	loadListView();
+	displayTime(true);
 	
 });
 
@@ -48,6 +49,22 @@ function adHocState(btn){
 	if(listViewDisplayed) loadListView();
 	else loadTimetableView();
 		
+}
+
+function displayTime(period) {
+	
+	if(period) {
+		
+		$("#HeaderPeriods").css({"display":"inline"});
+		$("#HeaderTime").css({"display":"none"});
+		
+	} else {
+		
+		$("#HeaderPeriods").css({"display":"none"});
+		$("#HeaderTime").css({"display":"inline"});
+		
+	}
+	
 }
 
 function duplicateRequest(indexVal){

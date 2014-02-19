@@ -6,11 +6,14 @@
 
 
 /*			Period/Time Header				*/
-.timetableHeadings {
+
+.graphicalHeadings {
+	
 	position:relative;
 	left: calc(50% - 336px);
 	height:30px;
 	width:900px;
+	
 }
 
 .timeHeaderTable {
