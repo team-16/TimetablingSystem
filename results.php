@@ -186,7 +186,7 @@ if(!isLoggedIn()){
 	
 </div>
 
-
+ 
 <div id='resultsViewContainer'>
 	
 </div>
