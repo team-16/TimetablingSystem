@@ -107,7 +107,7 @@ function weeksGenerator() {
 		
 }
 
-function facilityGenerator() {
+/*function facilityGenerator() {
    
     var parentElement = document.getElementById("roomFacilities");
     var fullHTML ="";
@@ -122,8 +122,31 @@ function facilityGenerator() {
     
     $("#roomFacilities").html(fullHTML);
     
+}*/
+function facilityGenerator() {
+   
+    var parentElement = document.getElementById("roomFacilities");
+    var fullHTML ="<table> <tr>";
+	var count = 0;
+    
+    for (var i = 0; i < facilitiesArray.length; i++) {
+		if(count == 5){
+			fullHTML += "</tr><tr>";
+			count = 0;
+		}
+         fullHTML = "<td><input ";
+            fullHTML += "type='checkbox'";
+            fullHTML += "id = '" + facilitiesArray[i].id + "' ";
+            fullHTML += "/> " + facilitiesArray[i].name </td>;
+            fullHTML += newfacility;
+			count++;
+    }
+	
+	fullHTML += "</tr></table>";
+    
+    $("#roomFacilities").html(fullHTML);
+    
 }
-
 function select12(){
     
     for (var i = 1; i <= regularWeeks; i++) {
