@@ -28,7 +28,7 @@ if(!isLoggedIn()){
 			<th>Accepted</th><th>Rejected</th><th>Pending</th>
 		</tr>
 		<tr>
-			<td id="accepted">0</td><td id="rejected">0</td><td id="pending">0</td>
+			<td id="accepted">1</td><td id="rejected">1</td><td id="pending">0</td>
 		</tr>
 	</table>
 	</td>

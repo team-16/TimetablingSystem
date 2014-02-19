@@ -87,30 +87,6 @@ if(!isLoggedIn()){
 						</li>
 					</a>
 					
-					<a href="test.php">
-						<li>
-							Test
-						</li>
-					</a>
-					
-					<a href="test2.php">
-						<li>
-							Test 2
-						</li>
-					</a>
-					<!--
-					<a href="test3.php">
-						<li>
-							Test 3
-						</li>
-					</a>
-					
-					<a href="test4.php">
-						<li>
-							Test 4
-						</li>
-					</a>
-					-->
 					<a href="loggingout.php">
 						<li>
 							Log Out

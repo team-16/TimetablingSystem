@@ -4,6 +4,7 @@ $(document).ready(function() {
 	getCurrentRequests();
 	loadListView();
 	
+	
 });
 
 var listViewDisplayed = true;
@@ -55,19 +56,45 @@ function adHocState(btn){
 		
 }
 
-
-function myRequestsValues (requests) {
+function displayTime(period) {
 	
+	if(period) {
+		
+		$("#periodHeadings").css({"display":"inline"});
+		$("#timeHeadings").css({"display":"none"});
+		
+	} else {
+		
+		$("#periodHeadings").css({"display":"none"});
+		$("#timeHeadings").css({"display":"inline"});
+		
+	}
+	
+}
+
+/*
+function myRequestsValues () {
+		
 	var acceptedValue= 0;
 	var rejectedValue= 0;
 	var pendingValue = 0;
 	
-	for (var i = 0; i < requests.length; i++) {
-		if(requests[i].status == 0){
+	for (var i = 0; i < requestsArray.length; i++) {
+	
+		if(requestsArray[i].status == 0){
+			
 			acceptedValue++;
-		} else if (requests[i].status == 1){
+			
+		} else if (requestsArray[i].status == 1){
+			
 			rejectedValue++;
-		} else pendingValue++;
+			
+		} else {
+			
+			pendingValue++;
+			
+		}
+		
 	}
 	
 	$("#accepted").html(acceptedValue);
@@ -75,3 +102,4 @@ function myRequestsValues (requests) {
 	$("#pending").html(pendingValue);
 	
 }
+*/

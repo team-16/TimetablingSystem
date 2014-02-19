@@ -26,10 +26,6 @@ if(!isLoggedIn()){
 	
 		<tr>
 		
-			<td id='depField'>
-				Dep
-			</td>
-		
 			<td id='codeField'>
 				Module Code
 			</td>

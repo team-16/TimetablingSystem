@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var requestsArray = [];
 	getCurrentRequests();
 	loadListView();
+	displayTime(true);
 	
 });
 
@@ -26,12 +27,18 @@ function getCurrentRequests() {
 
 function loadListView() {
 	
+	$("#lHeadings").css({"display":"inline"});
+	$("#gHeadings").css({"display":"none"});
+	
 	listViewDisplayed = true;
 	$('#allBookingsViewContainer').html(listViewGenerator(requestsArray, true, true, true, true, true, true, false, false, false));
 	
 }
 
 function loadTimetableView() {
+	
+	$("#lHeadings").css({"display":"none"});
+	$("#gHeadings").css({"display":"inline"});
 	
 	listViewDisplayed = false;
 	$('#allBookingsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, true, false, false, false));
@@ -48,4 +55,20 @@ function adHocState(btn){
 	if(listViewDisplayed) loadListView();
 	else loadTimetableView();
 		
+}
+
+function displayTime(period) {
+	
+	if(period) {
+		
+		$("#periodHeadings").css({"display":"inline"});
+		$("#timeHeadings").css({"display":"none"});
+		
+	} else {
+		
+		$("#periodHeadings").css({"display":"none"});
+		$("#timeHeadings").css({"display":"inline"});
+		
+	}
+	
 }
