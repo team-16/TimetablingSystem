@@ -21,7 +21,7 @@ if(!isLoggedIn()){
 	top:40px;
 	left:calc(50% - 480px);
 	height:auto;
-	width:940px;
+	width:950px;
 	
 	margin-top:10px;
 	

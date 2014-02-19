@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+#resultsViewContainer {
+	position:relative;
+	top:40px;
+	left:calc(50% - 475px);
+	height:auto;
+	width:950px;
+	
+	margin-top:15px;
+	
+}
+
+.ToggleTable {
+	position: relative;
+	left: calc(50% - 200px);
+	
+	height:50px;
+	width:400px;
+	
+	margin-bottom:10px;
+	
+	
+}

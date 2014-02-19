@@ -8,21 +8,25 @@
 /*			Period/Time Header				*/
 .timetableHeadings {
 	position:relative;
-	left: 100px;
+	left: calc(50% - 336px);
 	height:30px;
 	width:900px;
 }
 
 .timeHeaderTable {
-	height:20px;
-	width:10px;
-	border-spacing:76px 0px;
-	border: 1px solid black;
+	border-spacing:5px 0px;
 }
 
 .timeHeaderTable td {
-	height:20px;
-	width:10px;
+	height:60px;
+	width:80px;
+	
+	display: inline-block;
+	text-align:center;
+	vertical-align:middle;
+	
+	line-height:10px;
+	
 	border: 1px solid black;
 }
 
@@ -48,8 +52,6 @@
 	margin-bottom:5px;
 	margin-right:5px;
 	padding-bottom:2px;
-	
-	border: 1px solid grey;
 }
 
 .dayTitle {
@@ -78,7 +80,7 @@
 .dayTable td {
 	height:60px;
 	width:80px;
-	border: 1px solid black;
+	border: 1px solid grey;
 }
 
 #hiddenTD {

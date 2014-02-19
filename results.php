@@ -11,30 +11,80 @@ if(!isLoggedIn()){
 
 <html>
 
-<style type='text/css'>
-@charset "UTF-8";
+<link href='CSS/resultsStyle.css' rel='stylesheet' type='text/css'>
 
-#resultsViewContainer {
-	position:relative;
-	top:40px;
-	left:calc(50% - 480px);
-	height:auto;
-	width:940px;
+<div>
+	<table class='ToggleTable'>
+		<tr>
+			<td>
+				<input type='radio' name='resultsRadio' onclick='adHocState(this);' checked>Current</input>
+			</td>
+			<td>
+				<input type='radio' name='viewRadio' onclick='loadListView();' checked>List View</input>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type='radio' name='resultsRadio' onclick='adHocState(this);' id='adHocRad'>AdHoc View</input>
+			</td>
+			<td>
+				<input type='radio' name='viewRadio' onclick='loadTimetableView();'>Timetable View</input>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class='timetableHeadings'>
 	
-	margin-top:10px;
-	
-	border:1px solid #bbb;
-}
-
-
-</style>
-
-
-<input type='radio' name='resultsRadio' onclick='adHocState(this);' checked>Current</input>
-<input type='radio' name='resultsRadio' onclick='adHocState(this);' id='adHocRad'>AdHoc View</input>
-
-<input type='button' onclick='loadListView();'>List View</input>
-<input type='button' onclick='loadTimetableView();'>Timetable View</input>
+	<table class='timeHeaderTable'>
+			
+			<tr>
+				
+				<td>
+					1
+					</br>
+					13:00
+					</br>
+					-
+					</br> 
+					14:00
+				</td>
+				
+				<td>
+					2
+				</td>
+				
+				<td>
+					3
+				</td>
+				
+				<td>
+					4
+				</td>
+				
+				<td>
+					5
+				</td>
+				
+				<td>
+					6
+				</td>
+				
+				<td>
+					7
+				</td>
+				
+				<td>
+					8
+				</td>
+				
+				<td>
+					9
+				</td>
+				
+			</tr>
+			
+		</table>
+</div>
 
 <div id='resultsViewContainer'>
 	

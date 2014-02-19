@@ -275,21 +275,22 @@ function daysGenerator(){
 }
 	
 function addRoomToPref(optionValue,optionDisplayText){
-	
+	/*
 	var newOption = document.createElement("option");
 	newOption.value = optionValue;
 	newOption.text = optionDisplayText;
-	
-	var check = 0;
+	*/
+	var check = true;
 	for(i = 0; i < document.getElementById("cRoomsList").length; i++){
 		var sel = document.getElementById('cRoomsList');
 		if (sel.options[i].text == document.getElementById('rooms').options[document.getElementById('rooms').options.selectedIndex].text) {
-			check = 1;
+			check = false;
 		}
 	}
 	
-	if(check == 0){ /*&& document.getElementById("cRoomsList").length < document.getElementById("roomsInput").value*/
-		cRoomsList.add(newOption, null);
+	if(check){ /*&& document.getElementById("cRoomsList").length < document.getElementById("roomsInput").value*/
+		//cRoomsList.add(newOption, null);
+		$("#cRoomsList").append("<option value='" + optionValue + "'>" + optionDisplayText + "</options>");
 		return true;
 	}
 	
@@ -303,7 +304,7 @@ function addRoomToPref(optionValue,optionDisplayText){
 
 function removeRoomFromPref(){
 	
-	cRoomsList.remove(cRoomsList.options.selectedIndex);
+	document.getElementById("cRoomsList").remove(document.getElementById("cRoomsList").selectedIndex);
 	
 	return true;
 	
