@@ -20,10 +20,10 @@ if(!isLoggedIn()){
 </div>
 
 <div id = "request_results">
-	<table>
+	<table id="tallyTable">
 	<tr>
 	<td>
-	<table class="table" id="tallyTable">
+	<table class="table" id="tallyTable2">
 		<tr>
 			<th>Accepted</th><th>Rejected</th><th>Pending</th>
 		</tr>
@@ -53,10 +53,8 @@ if(!isLoggedIn()){
 	</table>
 	</td>
 	</tr>
+	</table>
 </div>
-</br>
-
-
 
 <div id='homeViewContainer'>
 
