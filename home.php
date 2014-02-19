@@ -20,7 +20,7 @@ if(!isLoggedIn()){
 </div>
 
 <div id = "request_results">
-	<table class="table">
+	<table class="table" id="tallyTable">
 		<tr>
 			<th>accepted</th><th>rejected</th><th>pending</th>
 		</tr>
