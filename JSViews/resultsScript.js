@@ -27,7 +27,6 @@ function getCurrentRequests() {
 function loadListView() {
 	
 	listViewDisplayed = true;
-	getCurrentRequests();
 	$('#resultsViewContainer').html(listViewGenerator(requestsArray, false, true, true, true, true, false, true, true, true));
 	
 }
@@ -35,7 +34,6 @@ function loadListView() {
 function loadTimetableView() {
 	
 	listViewDisplayed = false;
-	getCurrentRequests();
 	$('#resultsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, false, true, true, true));
 	
 }

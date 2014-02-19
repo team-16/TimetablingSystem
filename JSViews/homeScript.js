@@ -6,13 +6,16 @@ $(document).ready(function() {
 	
 });
 
+var listViewDisplayed = true;
+var adHocMode = false;
+
 function getCurrentRequests() {
 	
 	$.ajax({
 			url: "resultsData.php?" +currentSessionID,
 			type: "POST",
 			async: false,
-			data: {currentFlag:true},
+			data: {currentFlag:(!adHocMode)},
 			success: function(results) {
 				requestsArray = formatJSONRequests(results, false);
 			}
@@ -23,19 +26,34 @@ function getCurrentRequests() {
 function loadListView() {
 	
 	listViewDisplayed = true;
-	getCurrentRequests();
-	$('#resultsViewContainer').html(listViewGenerator(requestsArray, false, true, true, true, true, false, true, true, true));
+	
+	var limitedArray = requestsArray.slice(0, 4);
+	
+	$('#homeViewContainer').html(listViewGenerator(limitedArray, false, true, true, true, true, false, true, true, true));
 	
 }
 
 function loadTimetableView() {
 	
 	listViewDisplayed = false;
-	getCurrentRequests();
-	$('#resultsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, false, true, true, true));
+	
+	var limitedArray = requestsArray.slice(0, 4);
+	
+	$('#homeViewContainer').html(graphicalViewGenerator(limitedArray, true, true, true, true, false, true, true, true));
 	
 }
 
+function adHocState(btn){
+		
+	if(btn.id == "adHocRad") adHocMode = true;
+	else adHocMode = false;
+	
+	getCurrentRequests();
+	
+	if(listViewDisplayed) loadListView();
+	else loadTimetableView();
+		
+}
 
 
 function myRequestsValues (requests) {
