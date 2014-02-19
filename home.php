@@ -19,7 +19,7 @@ if(!isLoggedIn()){
 	<h2>Welcome: <?php echo(loggedDept() . " | " . loggedDeptName()); ?> </h2> 	
 </div>
 
-<div id = "request_results" style = "width:30%;">
+<div id = "request_results">
 	<table class="table">
 		<tr>
 			<th>accepted</th><th>rejected</th><th>pending</th>
@@ -28,9 +28,6 @@ if(!isLoggedIn()){
 			<td id="accepted">0</td><td id="rejected">0</td><td id="pending">0</td>
 		</tr>
 	</table>
-</div>
-
-<div>
 	<table class='ToggleTable'>
 		<tr>
 			<td>
@@ -50,6 +47,8 @@ if(!isLoggedIn()){
 		</tr>
 	</table>
 </div>
+
+
 
 <div id='homeViewContainer'>
 
