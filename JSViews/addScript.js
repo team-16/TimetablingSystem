@@ -2,7 +2,8 @@ var buildingsData = [];
 var amountOfWeeks = numberOfWeeks;
 var userRoundID = roundID;
 
-var editOrDuplicateRequest = null;
+var preFillRequest = null;
+var editCurrentRequest = false;
 
 $(document).ready(function loadPage() {
 	
@@ -16,6 +17,8 @@ $(document).ready(function loadPage() {
     roomsGenerator();
     rangedSlider();
     daysGenerator();
+        
+    if(duplicateRequestFlag || editRequestFlag) prefillPage();
     
 });
 
@@ -81,7 +84,7 @@ function moduleTitleGenerator(){
 function weeksGenerator() {
 		
 		var fullHTML1 = "";
-		/
+		
 		for(var i=1; i <= amountOfWeeks; i++)
 		{
 			var newCheckBox = "<input ";
@@ -310,7 +313,7 @@ function traditionalSeminarTruthValue(){
    
    var traditionalValue = document.getElementById("traditionalSeminarSelect").value;
    
-   if(traditionalValue == "Traditional") return true
+   if(traditionalValue == "Traditional") return true;
    else return false;
    
 }
@@ -343,6 +346,13 @@ function facilityIDGather(){
 
 }
 
+function submitRequest(){
+	
+	if(editCurrentRequest) updateRequest();
+	else insertRequest();
+		
+}
+
 function insertRequest(){
 	
 	var moduleCodeVal = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["code"];
@@ -362,8 +372,8 @@ function insertRequest(){
 	var facilityIDVal = JSON.stringify(facilityIDGather());
 	
 	alert(facilityIDVal);
-	
-	if(roomCodeVal.length == 0){ //if no room preferences
+	//if no room preferences
+	if(roomCodeVal.length == 0){ 
 			$.ajax({
 				url: "addingrequest.php?" +currentSessionID,
 				type: "POST",
@@ -377,7 +387,8 @@ function insertRequest(){
 				}
 			});	
 	}
-	else{ //if multiple room preferences
+	else {
+		//if multiple room preferences
 		for(var i = 0; i < roomCodeVal.length; i++){
 			
 			if(i == 0){
@@ -422,8 +433,67 @@ function insertRequest(){
 				alert(results);
 			}
 	});
-	$("#requestsNow").click();
+	
+	$("#viewRequests").click();
 
+}
+
+function updateRequest(){
+	
+	var moduleCodeVal = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["code"];
+	var priorityVal = document.getElementById("priority").checked;
+	var dayVal = document.getElementById("daySelect").selectedIndex;
+	var startPeriodVal = (document.getElementById("startPeriod").value) - 1;
+	var endPeriodVal = (document.getElementById("endPeriod").value) - 1;
+	var weeksVal = weeksEncoder(getRequestValues());
+	var noOfStudentsVal = document.getElementById("studentsInput").value;
+	var parkPreferenceVal = document.getElementById("parkSelect").selectedIndex;
+	var traditionalVal = traditionalSeminarTruthValue();
+	var sessionTypeVal = document.getElementById("sessionTypeSelect").selectedIndex;
+	var noOfRoomsVal = document.getElementById("roomsInput").value;
+	var roomCodeVal = roomCodeGather();
+	var otherRequirementsVal = document.getElementById("otherRequirementsTextArea").value ;
+	var roundIDVal = userRoundID ;
+	var facilityIDVal = JSON.stringify(facilityIDGather());
+	
+	alert(facilityIDVal);
+	//if no room preferences
+	if(roomCodeVal.length == 0){ 
+			$.ajax({
+				url: "editingrequest.php?" + currentSessionID,
+				type: "POST",
+				async: false,
+				data: { id:preFillRequest.id, moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
+					endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
+					traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:"", 
+					otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:facilityIDVal },
+				success: function(results) {
+					alert(results);
+				}
+			});	
+	}
+	else {
+		//if multiple room preferences
+		for(var i = 0; i < roomCodeVal.length; i++){
+			
+			$.ajax({
+				url: "editingrequest.php?" + currentSessionID,
+				type: "POST",
+				async: false,
+				data: { id:preFillRequest.id, moduleCode:moduleCodeVal, priority:priorityVal, day:dayVal, startPeriod:startPeriodVal, 
+					endPeriod:endPeriodVal, weeks:weeksVal, noOfStudents:noOfStudentsVal, parkPreference:parkPreferenceVal,
+					traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal[i], 
+					otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:facilityIDVal },
+				success: function(results) {
+					alert(results);
+				}
+			});
+			
+		}
+	}
+	
+	$("#viewRequests").click();
+	
 }
 
 function getRequestValues(){
@@ -443,17 +513,78 @@ function getRequestValues(){
    
 }
 
-function prefillPage(request){
-
-    $( "#studentsInput" ).val() = request.students;
+function prefillPage(){
+			
+	preFillRequest = temporaryRequestStore;
+	
+	if(editRequestFlag) editCurrentRequest = true;
+	
+	duplicateRequestFlag = false;
+	editRequestFlag = false;
+	
+	temporaryRequestStore = null;
+	
+    var index = null;
     
-    for (var i = 0; i < moduleArray.length; i++) {
+    for(var counter = 0; counter < moduleArray.length; counter++) {
+    	
+    	if(moduleArray[counter]["code"] == preFillRequest.moduleCode) index = counter;
+    	
+    }
         
-        if(request.moduleCode == $( "#moduleCodeSelect" ).options[i]){
-            return $( "#moduleCodeSelect" ).options[i];
-        }
-        else return false;
-        
+    document.getElementById("moduleCodeSelect").selectedIndex = index;
+    moduleTitleGenerator();
+    
+    document.getElementById("priority").checked = preFillRequest.priority;
+    
+    document.getElementById("daySelect").selectedIndex = preFillRequest.day;
+    
+	for(var i = 1; i <= amountOfWeeks; i++){
+		
+		var checkbox = document.getElementById("week " + i);
+		
+		if (preFillRequest.weeks[i-1] != null) checkbox.checked = preFillRequest.weeks[i-1];
+		
+    }
+    
+    $("#slider-range").slider("values", 0, startPeriodsArray[preFillRequest.startPeriod]);
+    $("#startPeriod").val(startPeriodsArray[preFillRequest.startPeriod]);
+    $("#slider-range").slider("values", 1, endPeriodsArray[preFillRequest.endPeriod]);
+	$("#endPeriod").val(endPeriodsArray[preFillRequest.startPeriod]);
+    
+    $("#studentsInput").val(preFillRequest.students);
+    
+    if(editCurrentRequest) {
+    	
+    	document.getElementById("traditionalSeminarSelect").selectedIndex = + !preFillRequest.traditional;
+	
+		document.getElementById("sessionTypeSelect").selectedIndex = preFillRequest.sessionType;
+	
+		document.getElementById("parkSelect").selectedIndex = preFillRequest.park;
+		
+		var preFillRooms = preFillRequest.rooms;
+	
+		for(var i = 0; i < preFillRooms.length; i++){
+		
+			$("#cRoomsList").append("<option value='" + preFillRooms[i] + "'>" + preFillRooms[i] + "</options>");
+				
+		}
+	
+		$("#roomsInput").val(preFillRequest.noOfRooms);
+	
+	
+		var preFillFacilities = preFillRequest.facilities;
+	
+		for(var i = 0; i < preFillFacilities.length; i++){
+		
+			 document.getElementById(preFillFacilities[i]).checked = true;
+				
+		}
+	
+		$("#otherRequirementsTextArea").val(preFillRequest.otherReqs);
+    	
+    	$("#submitBtn").val("Save Request Changes");
     }
     
 }
+

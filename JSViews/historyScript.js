@@ -1,10 +1,12 @@
 $(document).ready(function() {
 	
+	var requestsArray = [];
+	getHistoryRequests();
 	loadListView();
 	
 });
 
-var requestsArray = []
+
 
 function getHistoryRequests() {
 	
@@ -20,6 +22,7 @@ function getHistoryRequests() {
 }
 
 function loadListView() {
-	getHistoryRequests();
+	
 	$('#requestsViewContainer').html(listViewGenerator(requestsArray, false, true, true, true, false, false, false, false, false));
+	
 }

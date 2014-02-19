@@ -61,7 +61,7 @@ function formatJSONRequests(jsonReqArray, allocatedFlag) {
 		
 		for (var fCounter = 0; fCounter < requestFacilityArray.length; fCounter++) {
 			
-			currentRequest.facilities.push(requestFacilityArray[fCounter]);
+			currentRequest.facilities.push(Number(requestFacilityArray[fCounter]));
 			
 		}
 		
@@ -173,8 +173,20 @@ function deleteRequest(requestID) {
 
 function setupDuplicateRequest(request) {
 	
+	duplicateRequestFlag = true;
+	
+	temporaryRequestStore = request;
+	
+	$("#addRequest").click();
+	
 }
 
 function setupEditRequest(request) {
+	
+	editRequestFlag = true;
+	
+	temporaryRequestStore = request;
+	
+	$("#addRequest").click();
 	
 }

@@ -1,15 +1,16 @@
 $(document).ready(function() {
 	
+	var requestsArray = [];
+	getCurrentRequests();
 	loadListView();
 	
 });
 
-var requestsArray = []
 var listViewDisplayed = true;
 var adHocMode = false;
 
 function getCurrentRequests() {
-	
+	 
 	$.ajax({
 			url: "myBookingsData.php?" +currentSessionID,
 			type: "POST",
@@ -19,13 +20,12 @@ function getCurrentRequests() {
 				if(results != null) requestsArray = formatJSONRequests(results, true);
 			}
 	});
-	
+		
 }
 
 function loadListView() {
 	
 	listViewDisplayed = true;
-	getCurrentRequests();
 	$('#myBookingsViewContainer').html(listViewGenerator(requestsArray, false, true, true, true, true, true, true, true, true));
 	
 }
@@ -33,7 +33,6 @@ function loadListView() {
 function loadTimetableView() {
 	
 	listViewDisplayed = false;
-	getCurrentRequests();
 	$('#myBookingsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, true, true, true, true));
 	
 }
@@ -43,7 +42,21 @@ function adHocState(btn){
 	if(btn.id == "adHocRad") adHocMode = true;
 	else adHocMode = false;
 	
+	getCurrentRequests();
+	
 	if(listViewDisplayed) loadListView();
 	else loadTimetableView();
 		
+}
+
+function duplicateRequest(indexVal){
+		
+	setupDuplicateRequest(requestsArray[Number(indexVal)]);
+	
+}
+
+function editRequest(indexVal){
+		
+	setupEditRequest(requestsArray[Number(indexVal)]);
+	
 }

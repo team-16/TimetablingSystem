@@ -48,11 +48,17 @@ if(!isLoggedIn()){
 							<td>
 							<select id="moduleCodeSelect" class="left1" onclick="moduleTitleGenerator();"> <!-- module code -->
 								<script type="text/javascript">
+									
+									var optionsHTML = "";
+									
 									for(var i = 0; i < moduleArray.length; i++){
-										var opt = document.createElement('option');
-										opt.innerHTML = moduleArray[i]['code'];
-										moduleCodeSelect.appendChild(opt);
+										optionsHTML += "<option>"
+										optionsHTML +=  moduleArray[i]['code'];
+										optionsHTML += "</option>"
 									}
+									
+									$("#moduleCodeSelect").html(optionsHTML);
+									
 								</script>
 							</select>
 							<output id="moduleTitleOutput" class="right1">
@@ -262,7 +268,7 @@ if(!isLoggedIn()){
 						</div>
 						<div class="submitDiv">
 							<!-- <input type="submit" value="Submit Request" onclick="insertRequest();"> -->
-							<input type="button" value="Submit Request" onclick="insertRequest();"></input>
+							<input type="button" value="Submit Request" id="submitBtn" onclick="submitRequest();"></input>
 							<input type="button" value="Cancel" onclick="location.reload();"></input>	
 							<div id="submitForm" style="visibility:hidden;"></div>
 						</div>

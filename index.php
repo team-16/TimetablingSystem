@@ -45,13 +45,13 @@ if(!isLoggedIn()){
 						</li>
 					</a>
 					
-					<a href="add.php">
+					<a href="add.php" id='addRequest'>
 						<li>
 							Add...
 						</li>
 					</a>
 					
-					<a href="requests.php" id='requestsNow'>
+					<a href="requests.php" id='viewRequests'>
 						<li>
 							Requests
 						</li>

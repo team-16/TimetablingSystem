@@ -41,12 +41,47 @@ var facilitiesArray = [];
 
 //********Temporary Stores for Edit and Duplicate Functionality*****************
 
-var duplicateRequest = false;
+var duplicateRequestFlag = false;
 
-var editRequest = false;
+var editRequestFlag = false;
 
 var temporaryRequestStore = null;
 
+function dupAndEditTest() {
+	
+	var dEReq = new Request();
+	
+	dEReq.department = "CO";
+
+	dEReq.round = roundID;
+
+	dEReq.id = 50;
+	dEReq.moduleCode = "COA123";
+	dEReq.moduleTitle = "Server Side Programming";
+
+	dEReq.d = true;
+
+	dEReq.day = 2;
+	dEReq.startPeriod = 2;
+	dEReq.endPeriod = 2;
+	dEReq.weeks = [true, true, false, true, true, false, true, true, false, false, true, true, false, false, false, false];
+
+	dEReq.students = 124;
+	dEReq.park = 2;
+	dEReq.traditional = false;
+	dEReq.sessionType = 1;
+	dEReq.noOfRooms = 4;
+	dEReq.rooms = ["J.0.01", "J.0.02"];
+
+	dEReq.status = 0;
+
+	dEReq.facilities = [16, 19];
+	dEReq.otherReqs = "Some other requirement for this module";
+
+	dEReq.allocatedRooms = ["J.0.02"];
+	
+	temporaryRequestStore = dEReq;
+}
 
 // *****************************************************************************
 

@@ -1,10 +1,12 @@
 $(document).ready(function() {
 	
+	var requestsArray = [];
+	getCurrentRequests();
 	loadListView();
 	
 });
 
-var requestsArray = []
+
 var listViewDisplayed = true;
 var adHocMode = false;
 
@@ -43,7 +45,21 @@ function adHocState(btn){
 	if(btn.id == "adHocRad") adHocMode = true;
 	else adHocMode = false;
 	
+	getCurrentRequests();
+	
 	if(listViewDisplayed) loadListView();
 	else loadTimetableView();
 		
+}
+
+function duplicateRequest(indexVal){
+		
+	setupDuplicateRequest(requestsArray[Number(indexVal)]);
+	
+}
+
+function editRequest(indexVal){
+		
+	setupEditRequest(requestsArray[Number(indexVal)]);
+	
 }

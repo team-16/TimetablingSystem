@@ -162,20 +162,27 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 				
 				graphicalHTML += "</tr></table>";
 				
+				var indexValue = null;
+				
+				for(var indexCounter = 0; indexCounter < requestsArray.length; indexCounter++) {
+					if(requestsArray[indexCounter] == currentRequest) indexValue = indexCounter;
+				}
+				
+				
 				if (dupBtnShow || editBtnShow || delBtnShow) {
 					
 					graphicalHTML += "<table class='graphicalBtnsTable'>";
 					
 					graphicalHTML += "<tr>";
 					
-					if (editBtnShow) graphicalHTML += "<td><button type='button' onclick='return false;'>Edit</button></td>";
+					if (editBtnShow) graphicalHTML += "<td><button type='button' onclick='editRequest(" + indexValue  + "); return false;'>Edit</button></td>";
 					
-					if (delBtnShow)	 graphicalHTML += "<td><button type='button' onclick='return false;'>Delete</button></td>";
+					if (delBtnShow)	 graphicalHTML += "<td><button type='button' onclick='deleteRequest(" + currentRequest.id  + "); return false;'>Delete</button></td>";
 					
 					graphicalHTML += "</tr>";
 					
 					if (dupBtnShow) graphicalHTML += "<tr><td colspan='2'>\
-													<button type='button' onclick='return false;'>Duplicate</button>\
+													<button type='button' onclick='duplicateRequest(" + indexValue  + ");  return false;'>Duplicate</button>\
 													</td></tr>";
 					
 					graphicalHTML += "</table>";

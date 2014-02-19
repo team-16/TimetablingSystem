@@ -64,15 +64,15 @@ function listViewGenerator(requestArray, depShow, weekShow, sessTypeShow, facSho
 		
 		
 		if (dupBtnShow || editBtnShow || delBtnShow) {
-			listHTML += "<table class='listBtnsTable'><tr>";
+			listHTML += "<table class='listBtnsTable' onclick='return false;'><tr>";
 		
-			if (editBtnShow) listHTML += "<td><button type='button' onclick='return false;'>Edit</button></td>";
+			if (editBtnShow) listHTML += "<td><button type='button' onclick='editRequest(" + counter  + "); return false;'>Edit</button></td>";
 						
-			if (delBtnShow)	listHTML += "<td><button type='button' onclick='return false;'>Delete</button></td>";
+			if (delBtnShow)	listHTML += "<td><button type='button' onclick='deleteRequest(" + currentRequest.id  + "); return false;'>Delete</button></td>";
 			
 			listHTML += "</tr>";
 						
-			if (dupBtnShow) listHTML += "<tr><td colspan='2'><button type='button' onclick='return false;'>Duplicate</button></td></tr>";
+			if (dupBtnShow) listHTML += "<tr><td colspan='2'><button type='button' onclick='duplicateRequest(" +counter  + "); return false;'>Duplicate</button></td></tr>";
 			
 			listHTML += "</table>";
 		

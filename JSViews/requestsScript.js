@@ -1,10 +1,12 @@
 $(document).ready(function() {
 	
+	var requestsArray = [];
+	getCurrentRequests();
 	loadListView();
 	
 });
 
-var requestsArray = []
+
 
 function getCurrentRequests() {
 	
@@ -27,4 +29,16 @@ function loadListView() {
 function loadTimetableView() {
 	getCurrentRequests();
 	$('#requestsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, false, false, true, true, true));
+}
+
+function duplicateRequest(indexVal){
+	
+	setupDuplicateRequest(requestsArray[Number(indexVal)]);
+	
+}
+
+function editRequest(indexVal){
+	
+	setupEditRequest(requestsArray[Number(indexVal)]);
+	
 }

@@ -431,9 +431,7 @@ function updateRequest($id, $moduleCode, $priority, $day, $startPeriod, $endPeri
 	if($DB->query("UPDATE request SET id=:id, moduleCode=:moduleCode, priority=:priority, day=:day,
 	startPeriod=:startPeriod, endPeriod=:endPeriod, weeks=:weeks, noOfStudents=:noOfStudents, parkPreference=:parkPreference, traditional=:traditional,
 	sessionType=:sessionType, noOfRooms=:noOfRooms, roomCode=:roomCode, otherRequirements=:otherRequirements, roundID=:roundID 
-	VALUES (:id, :moduleCode, :priority, :day, :startPeriod, :endPeriod, :weeks,
-	:noOfStudents, :parkPreference, :traditional, :sessionType, :noOfRooms,
-	:roomCode, :otherRequirements, :roundID) WHERE id=:id;",
+	WHERE id=:id;",
 				   array(
 						':id' => $id, // get id for currently edited request
 						':moduleCode' => $moduleCode, // get all these values from fields in add.php after "editing request"
@@ -452,14 +450,14 @@ function updateRequest($id, $moduleCode, $priority, $day, $startPeriod, $endPeri
 						 ':roundID' => $roundID))) {
 						 
 						 
-						 $DB->query("DELETE FROM request_facility WHERE id=:id", array(':id' => $id)); // Get rid of old facilities from requests
+						 $DB->query("DELETE FROM request_facility WHERE requestID = :id", array(':id' => $id)); // Get rid of old facilities from requests
 						 
 						 foreach($facilities as $key => $val){ // add new facilities to the request
 						 
 							$DB->query("INSERT INTO request_facility (requestID, 
 							facilityID) VALUES (:requestID, :facilityID)",
 							array(
-									':requestID' => $nextReqId[0]["counter"],
+									':requestID' => $id,
 									':facilityID' => $val));						 
 						 
 						 }
