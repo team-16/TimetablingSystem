@@ -260,15 +260,16 @@ if(!isLoggedIn()){
 								</div>
 						</fieldset>	<!-- End of features box -->
 						</div>
+						<div class="submitDiv">
+							<!-- <input type="submit" value="Submit Request" onclick="insertRequest();"> -->
+							<input type="button" value="Submit Request" onclick="insertRequest();"></input>
+							<input type="button" value="Cancel" onclick="location.reload();"></input>	
+							<div id="submitForm" style="visibility:hidden;"></div>
+						</div>
 				</div> <!-- End of container -->
 			</form>
 		</div>
-		<div class="submitDiv">
-			<!-- <input type="submit" value="Submit Request" onclick="insertRequest();"> -->
-			<input type="button" value="Submit Request" onclick="insertRequest();"></input>
-			<input type="button" value="Cancel" onclick="location.reload();"></input>	
-			<div id="submitForm" style="visibility:hidden;"></div>
-		</div>
+		
 			
 	</body>
 	
