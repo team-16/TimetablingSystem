@@ -92,3 +92,27 @@
 .CSSTableGenerator tr:first-child td:last-child{
 	border-width:0px 0px 1px 1px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+#homeViewController {
+	position:relative;
+	top:40px;
+	left:calc(50% - 480px);
+	height:auto;
+	width:950px;
+	
+	margin-top:10px;
+	
+	border:1px solid #bbb;
+}

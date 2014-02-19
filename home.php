@@ -11,28 +11,14 @@ if(!isLoggedIn()){
 
 <html>
 <head>
-	<script type="text/javascript">
-		function myRequestsValues (requests) {
-		var acceptedValue= 0;
-		var rejectedValue= 0;
-		var pendingValue = 0;
-			for (var i = 0; i < requests.length; i++) {
-				if(requests[i].status == 0){
-					acceptedValue++;
-				} else if (requests[i].status == 1){
-					rejectedValue++;
-				} else pendingValue++;
-			}
-			$("#accepted").html(acceptedValue);
-			$("#rejected").hmtl(rejectedValue);
-			$("#pending").html(pendingValue);
-		}
-	</script>
+	<link rel="stylesheet" type="text/css" href="CSS/homeStyle.css">
+	
 </head>
-<button type='button' onclick='$("#requestsNow").click();'>Redirect</button>
+
 <div>
 	<h2>Welcome: <?php echo(loggedDept() . " | " . loggedDeptName()); ?> </h2> 	
 </div>
+
 <div id = "request_results" style = "width:30%;">
 	<table class="CSSTableGenerator">
 		<tr>
@@ -44,4 +30,9 @@ if(!isLoggedIn()){
 	</table>
 </div>
 
+<div id='homeViewController'>
+
+</div>
+
+<script type='text/javascript' src='JSViews/homeScript.js'></script>
 </html>
