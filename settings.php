@@ -274,6 +274,121 @@ if(!isLoggedIn()){
 				
 			</label>
 			
+<label class='accordionSection settingsCard'>
+				<input type='radio' name='settingsAccordion' onclick='settingsRadioToggle(this, 0);'>
+					Facilities
+				</input>
+				
+				<div class='accordionContent settingsContent' onclick='return false;'>
+				<table class='facilitiesTable'>
+				<tr>
+				<td>
+					<table class='insertFacilityTable'>
+						
+						<tr>
+							<td>
+								Room Code:
+							</td>
+							<td>
+								<input type='text' id='roomInsertRoomcode'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Building Code:
+							</td>
+							<td>
+								<input type='text' id='room_insert_buildingcode'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Type:
+							</td>
+							<td>
+								<input type='text' id='room_insert_roomtype'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Capacity:
+							</td>
+							<td>
+								<input type='text' id='room_insert_roomcapacity'></input>
+							</td>
+						</tr>
+						<tr>
+						<td>
+							<div id="roomFacilities" class="facilitiesDiv">
+							<!-- content -->
+							</div>
+						</td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td style='text-align:right;'>
+								<input type='button' value='Insert New Room' onclick='insertRoom();'></input>
+							</td>
+						</tr>		
+					</table>
+				</td>
+				<td>
+					<table class='editFacilityTable'>
+						
+						<tr>
+							<td>
+								Room Code:
+							</td>
+							<td id="roomDropdownTd">
+								<!--<input type='text' id='room_insert_roomcode2' onkeyup="autopopulateRoomDetails();"></input>-->
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Building Code:
+							</td>
+							<td>
+								<input type='text' id='room_insert_buildingcode2'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Type:
+							</td>
+							<td>
+								<input type='text' id='room_insert_roomtype2'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								Capacity:
+							</td>
+							<td>
+								<input type='text' id='room_insert_roomcapacity2'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td style='text-align:right;'>
+								<input type='button' value='Edit Room' onclick='editRoom();'></input>
+							</td>
+						</tr>		
+					</table>
+				</td>
+				</tr>
+				</table>
+				</div>
+				
+			</label>
+			
 			<label class='accordionSection settingsCard'>
 				<input type='radio' name='settingsAccordion' onclick='settingsRadioToggle(this, 0);'>
 					Change Password
