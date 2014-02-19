@@ -141,8 +141,7 @@ function facilityGenerator() {
     }
 	
 	fullHTML += "</tr></table>";
-	alert(fullHTML);
-    
+	
     $("#roomFacilities").html(fullHTML);
     
 }
