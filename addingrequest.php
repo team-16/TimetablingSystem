@@ -14,7 +14,7 @@ if(insertRequest($_POST['moduleCode'], $_POST['priority'], $_POST['day'], $_POST
     document.getElementById("autoForm").submit();
 	</script>
 	');*/
-	echo("Great success!");
+	//echo("Great success!");
 }
 
 else{
@@ -28,7 +28,7 @@ else{
 	</script>
 	');	
 }*/
-	echo("Failed.");
+	//echo("Failed.");
 }
 
 ?>

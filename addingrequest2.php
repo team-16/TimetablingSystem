@@ -4,7 +4,7 @@ include('PHP/init.php');
 
 	incRequestID();
 	
-	echo("DING! incRequestID has been dinged!");
+	echo("Success! The request has been added.");
 	
 	//redirect to requests.php in child window
 
