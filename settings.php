@@ -310,6 +310,37 @@ if(!isLoggedIn()){
 					</table>
 				</td>
 				</tr>
+				<tr>
+				<td>
+					<table class='insertFacilityTable'>
+						
+						<tr>
+							<td>
+								Current Facility Name:
+							</td>
+							<td>
+								<input type='text' id='facilityInsertCurrentFacilityName'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								New Facility Name:
+							</td>
+							<td>
+								<input type='text' id='facilityInsertNewFacilityName'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td style='text-align:right;'>
+								<input type='button' value='Edit Facility' onclick='editFacility();'></input>
+							</td>
+						</tr>		
+					</table>
+				</td>
+				</tr>
 				</table>
 				</div>
 				
