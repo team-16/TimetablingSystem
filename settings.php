@@ -309,10 +309,8 @@ if(!isLoggedIn()){
 						</tr>		
 					</table>
 				</td>
-				</tr>
-				<tr>
 				<td>
-					<table class='insertFacilityTable'>
+					<table class='editFacilityTable'>
 						
 						<tr>
 							<td>
