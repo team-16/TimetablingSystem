@@ -137,8 +137,7 @@ function facilityGenerator() {
          fullHTML = "<td><input ";
             fullHTML += "type='checkbox'";
             fullHTML += "id = '" + facilitiesArray[i].id + "' ";
-            fullHTML += "/> " + facilitiesArray[i].name </td>;
-            fullHTML += newfacility;
+            fullHTML += "/> " + facilitiesArray[i].name + "</td>";
 			count++;
     }
 	
