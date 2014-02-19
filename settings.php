@@ -287,51 +287,17 @@ if(!isLoggedIn()){
 						
 						<tr>
 							<td>
-								Room Code:
+								Facility Name:
 							</td>
 							<td>
-								<input type='text' id='roomInsertRoomcode'></input>
+								<input type='text' id='facilityInsertFacilityName'></input>
 							</td>
-						</tr>
-						
-						<tr>
-							<td>
-								Building Code:
-							</td>
-							<td>
-								<input type='text' id='room_insert_buildingcode'></input>
-							</td>
-						</tr>
-						
-						<tr>
-							<td>
-								Type:
-							</td>
-							<td>
-								<input type='text' id='room_insert_roomtype'></input>
-							</td>
-						</tr>
-						
-						<tr>
-							<td>
-								Capacity:
-							</td>
-							<td>
-								<input type='text' id='room_insert_roomcapacity'></input>
-							</td>
-						</tr>
-						<tr>
-						<td>
-							<div id="roomFacilities" class="facilitiesDiv">
-							<!-- content -->
-							</div>
-						</td>
 						</tr>
 						
 						<tr>
 							<td></td>
 							<td style='text-align:right;'>
-								<input type='button' value='Insert New Room' onclick='insertRoom();'></input>
+								<input type='button' value='Insert New Facility' onclick='insertFacility();'></input>
 							</td>
 						</tr>		
 					</table>
