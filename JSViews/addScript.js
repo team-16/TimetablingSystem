@@ -372,7 +372,7 @@ function insertRequest(){
 	var roundIDVal = userRoundID ;
 	var facilityIDVal = JSON.stringify(facilityIDGather());
 	
-	alert(facilityIDVal);
+	//alert(facilityIDVal);
 	//if no room preferences
 	if(roomCodeVal.length == 0){ 
 			$.ajax({
@@ -384,7 +384,7 @@ function insertRequest(){
 					traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:"", 
 					otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:facilityIDVal },
 				success: function(results) {
-					alert(results);
+					//alert(results);
 				}
 			});	
 	}
@@ -402,7 +402,7 @@ function insertRequest(){
 						traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal[i], 
 						otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:facilityIDVal },
 					success: function(results) {
-						alert(results);
+						//alert(results);
 					}
 				});
 			}
@@ -417,7 +417,7 @@ function insertRequest(){
 						traditional:traditionalVal, sessionType:sessionTypeVal, noOfRooms:noOfRoomsVal, roomCode:roomCodeVal[i], 
 						otherRequirements:otherRequirementsVal, roundID:roundIDVal, facilityID:"" },
 					success: function(results) {
-						alert(results);
+						//alert(results);
 					}
 				});				
 			
