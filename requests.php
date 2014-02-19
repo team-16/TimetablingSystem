@@ -13,29 +13,39 @@ if(!isLoggedIn()){
 
 <head>
 
-<style type='text/css'>
-@charset "UTF-8";
+<link href='CSS/viewStyle.css' rel='stylesheet' type='text/css'>
 
-#requestsViewContainer {
-	position:relative;
-	top:40px;
-	left:calc(50% - 480px);
-	height:auto;
-	width:950px;
-	
-	margin-top:10px;
-	
-	border:1px solid #bbb;
-}
-
-
-</style>
 
 
 </head>
 
-<input type='button' onclick='loadListView();'>List View</input>
-<input type='button' onclick='loadTimetableView();'>Timetable View</input>
+<div>
+	<table class='ToggleTable'>
+		<tr>
+			<td>
+				<input type='radio' name='resultsRadio' onclick='adHocState(this);' checked>Current</input>
+			</td>
+			<td>
+				<input type='radio' name='viewRadio' onclick='loadListView();' checked>List View</input>
+			</td>
+			<td>
+				<input type='radio' name='timeRadio' onclick='displayTime(true);' checked>Periods</input>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type='radio' name='resultsRadio' onclick='adHocState(this);' id='adHocRad'>AdHoc View</input>
+			</td>
+			<td>
+				<input type='radio' name='viewRadio' onclick='loadTimetableView();'>Timetable View</input>
+			</td>
+			<td>
+				<input type='radio' name='timeRadio' onclick='displayTime(false);'>Times</input>
+			</td>
+		</tr>
+		
+	</table>
+</div>
 	
 <div id='requestsViewContainer'>
 	

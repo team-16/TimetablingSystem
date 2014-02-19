@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-#resultsViewContainer {
+#resultsViewContainer, #myBookingsViewContainer, #allBookingsViewContainer, #historyViewContainer, #requestsViewContainer {
 	position:relative;
-	top:40px;
 	left:calc(50% - 475px);
 	height:auto;
 	width:950px;

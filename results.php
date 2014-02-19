@@ -11,7 +11,7 @@ if(!isLoggedIn()){
 
 <html>
 
-<link href='CSS/resultsStyle.css' rel='stylesheet' type='text/css'>
+<link href='CSS/viewStyle.css' rel='stylesheet' type='text/css'>
 
 <div>
 	<table class='ToggleTable'>
@@ -93,47 +93,47 @@ if(!isLoggedIn()){
 				
 				<td>
 					09:00
-					Start
+					<p>Start</p>
 				</td>
 				
 				<td>
 					10:00
-					Start
+					<p>Start</p>
 				</td>
 				
 				<td>
 					11:00
-					Start
+					<p>Start</p>
 				</td>
 				
 				<td>
 					12:00
-					Start
+					<p>Start</p>
 				</td>
 				
 				<td>
 					13:00
-					Start
+					<p>Start</p>
 				</td>
 				
 				<td>
 					14:00
-					Start
+					<p>Start</p>
 				</td>
 				
 				<td>
 					15:00
-					Start
+					<p>Start</p>
 				</td>
 				
 				<td>
 					16:00
-					Start
+					<p>Start</p>
 				</td>
 				
 				<td>
 					17:00
-					Start
+					<p>Start</p>
 				</td>
 				
 			</tr>
@@ -142,9 +142,9 @@ if(!isLoggedIn()){
 		
 </div>
 
-<div class='timetHeadings' id='lHeadings'>
+<div class='listHeadings' id='lHeadings'>
 	
-	<table class='listHeaderTable' id='listHeadings'>
+	<table class='listHeaderTable' id='listTitles'>
 	
 		<tr>
 		
@@ -190,9 +190,6 @@ if(!isLoggedIn()){
 	
 </div>
 
-<div class='listHeadings' id='listTitles'>
-	
-</div>
 
 <div id='resultsViewContainer'>
 	

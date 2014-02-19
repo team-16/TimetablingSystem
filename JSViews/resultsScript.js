@@ -27,12 +27,18 @@ function getCurrentRequests() {
 
 function loadListView() {
 	
+	$("#lHeadings").css({"display":"inline"});
+	$("#gHeadings").css({"display":"none"});
+	
 	listViewDisplayed = true;
 	$('#resultsViewContainer').html(listViewGenerator(requestsArray, false, true, true, true, true, false, true, true, true));
 	
 }
 
 function loadTimetableView() {
+	
+	$("#lHeadings").css({"display":"none"});
+	$("#gHeadings").css({"display":"inline"});
 	
 	listViewDisplayed = false;
 	$('#resultsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, false, true, true, true));
@@ -55,13 +61,13 @@ function displayTime(period) {
 	
 	if(period) {
 		
-		$("#HeaderPeriods").css({"display":"inline"});
-		$("#HeaderTime").css({"display":"none"});
+		$("#periodHeadings").css({"display":"inline"});
+		$("#timeHeadings").css({"display":"none"});
 		
 	} else {
 		
-		$("#HeaderPeriods").css({"display":"none"});
-		$("#HeaderTime").css({"display":"inline"});
+		$("#periodHeadings").css({"display":"none"});
+		$("#timeHeadings").css({"display":"inline"});
 		
 	}
 	
