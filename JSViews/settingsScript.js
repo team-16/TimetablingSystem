@@ -133,6 +133,37 @@ function insertModule() {
 	$("#confirmnewpassword").val("");
 	
 }
+
+function alertRoom(){
+
+	alert("Room successfully added!");
+
+}
+
+function alertBuilding(){
+
+	alert("Building successfully added!");
+
+}
+
+function alertBuilding2(){
+
+	alert("Building successfully updated!");
+
+}
+
+function alertFacility(){
+
+	alert("Facility successfully added!");
+
+}
+
+function alertFacility2(){
+
+	alert("Facility successfully updated!");
+
+}
+
 function autopopulateRoomDetails() {
 	
 	var buildingsData = getAllRoomsAndBuildings();

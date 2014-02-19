@@ -115,16 +115,16 @@ if(!isLoggedIn()){
 						</tr>
 						<tr>
 						<td>
-							<div id="roomFacilities" class="facilitiesDiv">
+							<!--<div id="roomFacilities" class="facilitiesDiv">-->
 							<!-- content -->
-							</div>
+							<!--</div>-->
 						</td>
 						</tr>
 						
 						<tr>
 							<td></td>
 							<td style='text-align:right;'>
-								<input type='button' value='Insert New Room' onclick='insertRoom();'></input>
+								<input type='button' value='Insert New Room' onclick='alertRoom();'></input>
 							</td>
 						</tr>		
 					</table>
@@ -169,9 +169,9 @@ if(!isLoggedIn()){
 						</tr>
 						<tr>
 						<td>
-							<div id="roomFacilities" class="facilitiesDiv">
+							<!--<div id="roomFacilities" class="facilitiesDiv">-->
 							<!-- content -->
-							</div>
+							<!--</div>-->
 						</td>
 						</tr>
 						
@@ -230,7 +230,7 @@ if(!isLoggedIn()){
 						<tr>
 							<td></td>
 							<td style='text-align:right;'>
-								<input type='button' value='Insert New Building' onclick='insertBuilding();'></input>
+								<input type='button' value='Insert New Building' onclick='alertBuilding();'></input>
 							</td>
 						</tr>
 						
@@ -269,7 +269,7 @@ if(!isLoggedIn()){
 						<tr>
 							<td></td>
 							<td style='text-align:right;'>
-								<input type='button' value='Edit Building' onclick='editBuilding();'></input>
+								<input type='button' value='Edit Building' onclick='alertBuilding2();'></input>
 							</td>
 						</tr>
 						
@@ -304,7 +304,7 @@ if(!isLoggedIn()){
 						<tr>
 							<td></td>
 							<td style='text-align:right;'>
-								<input type='button' value='Insert New Facility' onclick='insertFacility();'></input>
+								<input type='button' value='Insert New Facility' onclick='alertFacility();'></input>
 							</td>
 						</tr>		
 					</table>
@@ -333,7 +333,7 @@ if(!isLoggedIn()){
 						<tr>
 							<td></td>
 							<td style='text-align:right;'>
-								<input type='button' value='Edit Facility' onclick='editFacility();'></input>
+								<input type='button' value='Edit Facility' onclick='alertFacility2();'></input>
 							</td>
 						</tr>		
 					</table>
