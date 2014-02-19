@@ -20,11 +20,14 @@ $(document).ready(function loadPage() {
 });
 
 function normalMode(){
+    
     if(true) {
         amountOfWeeks = numberOfWeeks;
         userRoundID = roundID;
     }
+    
     weeksGenerator();
+    
 }
     
 function adhocMode(){
@@ -35,6 +38,7 @@ function adhocMode(){
     weeksGenerator();
 
 }
+
 function buildingsGenerator(){
 
     var fullHTML = "<select id ='buildings' onchange='roomsGenerator();'>";
@@ -69,38 +73,42 @@ function roomsGenerator(){
 }
 
 function moduleTitleGenerator(){
+    
     $("#moduleTitleOutput").html(moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["title"]);
+    
 }
 
 function weeksGenerator() {
-                    //var parentElement = document.getElementById("weeksCheckbox");
-                    var fullHTML1 = "";
-                    //var originalhtml = parentElement.innerHTML;
-                    for(var i=1; i <= amountOfWeeks; i++)
-                    {
-                        var newCheckBox = "<input ";
-                        newCheckBox += "type='checkbox' ";
-                        //alert("2");
-                        newCheckBox += "id='week " + i + "' ";
-                        if (i<=12) {
-                          newCheckBox += "checked";  
-                        };
-                        //alert("3");
-                        newCheckBox += "/>" + (i);
+		
+		var fullHTML1 = "";
+		/
+		for(var i=1; i <= amountOfWeeks; i++)
+		{
+			var newCheckBox = "<input ";
+			newCheckBox += "type='checkbox' ";
+			
+			newCheckBox += "id='week " + i + "' ";
+			if (i<=12) {
+			  newCheckBox += "checked";  
+			}
+			
+			newCheckBox += "/>" + (i);
 
-                        fullHTML1 += newCheckBox;
-
-                        //alert("4");
-                    }
-                    fullHTML1 += "<br>";
-                    $("#weeksCheckbox").html(fullHTML1);
-                    //alert("5");
-            }
+			fullHTML1 += newCheckBox;
+			
+		}
+		
+		fullHTML1 += "<br>";
+		
+		$("#weeksCheckbox").html(fullHTML1);
+		
+}
 
 function facilityGenerator() {
+   
     var parentElement = document.getElementById("roomFacilities");
     var fullHTML ="";
-    //var oldhtml= parentElement.innerHTML;
+    
     for (var i = 0; i < facilitiesArray.length; i++) {
         var newfacility = "<input ";
             newfacility += "type='checkbox'";
@@ -108,32 +116,45 @@ function facilityGenerator() {
             newfacility += "/> " + facilitiesArray[i].name;
             fullHTML += newfacility;
     }
+    
     $("#roomFacilities").html(fullHTML);
+    
 }
 
 function select12(){
-    for (var i = 1; i <= 12; i++) {
+    
+    for (var i = 1; i <= regularWeeks; i++) {
         var checkbox = document.getElementById("week " + i);
        if(true) checkbox.checked = true;
     }
-    for(var i = 13; i <=15; i++){
+    
+    for(var i = (regularWeeks + 1); i <= amountOfWeeks; i++){
         var checkbox = document.getElementById("week " + i);
         if (true) checkbox.checked = false;
     }
+    
 }
+
 function selectOdd(){
+    
     selectDeselectAll(false);
+    
     for (var i = 1; i <= regularWeeks; i+=2) {
         var checkbox = document.getElementById("week " + i);
         if (true) checkbox.checked = true;
     }
+    
 }
+
 function selectEven(){
-    selectDeselectAll(false);
+	
+	selectDeselectAll(false);
+    
     for (var i = 2; i <= regularWeeks; i+=2) {
         var checkbox = document.getElementById("week " + i);
         if (true) checkbox.checked = true;
     }
+    
 }
 
 function selectDeselectAll(checkAll) {
@@ -145,16 +166,19 @@ function selectDeselectAll(checkAll) {
         if (checkAll) checkbox.checked = true;
         else checkbox.checked = false;
         
-    }   
+    } 
+      
 }
 
 
 function isNumberKey(evt)  {
-         var charCode = (evt.which) ? evt.which : event.keyCode;
-         if (charCode > 31 && (charCode < 48 || charCode > 57))
-            return false;
+	
+	var charCode = (evt.which) ? evt.which : event.keyCode;
+	
+	if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
 
-         return true;
+	return true;
+	
 }
 
 function parkGenerator(){
@@ -232,26 +256,23 @@ function rangedSlider() {
 	
 }
 
-//function chosenRoomsListGenerator() {
-//    var chosenRoom = document.getElementById("rooms");
-//    var chosenRoomField = document.getElementById("chosenRooms");
-//    if(true) {
-//        chosenRoomField += "<option> " + chosenRoom.value + "</option>";
-//    }
-//}
-
 function daysGenerator(){
+    
     var daysList="<select id='daySelect'>";
+    
     for (var i = 0; i < daysArray.length; i++) {
         daysList += "<option id='" + daysArray[i] + "'>";
         daysList += daysArray[i];
         daysList += "</option>";
     }
+    
     daysList += "</select>";
+    
     $( "#day" ).html(daysList);
 }
 	
 function addRoomToPref(optionValue,optionDisplayText){
+	
 	var newOption = document.createElement("option");
 	newOption.value = optionValue;
 	newOption.text = optionDisplayText;
@@ -273,27 +294,40 @@ function addRoomToPref(optionValue,optionDisplayText){
 	//	alert("Number of room preferences is limited to the number of rooms you have chosen. Please change the number of rooms or remove an existing room preference.");
 		return false;
 	}
+	
 }
 
 
 function removeRoomFromPref(){
+	
 	cRoomsList.remove(cRoomsList.options.selectedIndex);
+	
 	return true;
+	
 }
+
 function traditionalSeminarTruthValue(){
+   
    var traditionalValue = document.getElementById("traditionalSeminarSelect").value;
-   if(traditionalValue == "Traditional"){
-    return true
-   }else return false;
+   
+   if(traditionalValue == "Traditional") return true
+   else return false;
+   
 }
+
 function roomCodeGather(){
+
     var roomsChosen = document.getElementById('cRoomsList');
     var roomsChosenArray = [];
+    
     for (var i = 0; i < roomsChosen.length; i++) {
         roomsChosenArray.push(roomsChosen[i].text);
     }
+    
     return roomsChosenArray;
+    
 }
+
 function facilityIDGather(){
 
 	var facilityID = [];
@@ -308,6 +342,7 @@ function facilityIDGather(){
 
 
 }
+
 function insertRequest(){
 	
 	var moduleCodeVal = moduleArray[document.getElementById("moduleCodeSelect").selectedIndex]["code"];
@@ -392,7 +427,9 @@ function insertRequest(){
 }
 
 function getRequestValues(){
+    
     var weeksValues = [];
+    
     for (var i = 1; i <= numberOfWeeks; i++) {
 		
 		var weekState = document.getElementById("week " + i).checked;
@@ -403,13 +440,20 @@ function getRequestValues(){
     }
     
    return weeksValues;
+   
 }
+
 function prefillPage(request){
 
     $( "#studentsInput" ).val() = request.students;
+    
     for (var i = 0; i < moduleArray.length; i++) {
+        
         if(request.moduleCode == $( "#moduleCodeSelect" ).options[i]){
             return $( "#moduleCodeSelect" ).options[i];
-        }else return false;
+        }
+        else return false;
+        
     }
+    
 }
