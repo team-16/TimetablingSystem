@@ -22,6 +22,9 @@ if(!isLoggedIn()){
 			<td>
 				<input type='radio' name='viewRadio' onclick='loadListView();' checked>List View</input>
 			</td>
+			<td>
+				<input type='radio' name='timeRadio' onclick='loadListView();' checked>List View</input>
+			</td>
 		</tr>
 		<tr>
 			<td>
@@ -30,10 +33,15 @@ if(!isLoggedIn()){
 			<td>
 				<input type='radio' name='viewRadio' onclick='loadTimetableView();'>Timetable View</input>
 			</td>
+			<td>
+				<input type='radio' name='timeRadio' onclick='loadTimetableView();'>Timetable View</input>
+			</td>
 		</tr>
+		
 	</table>
 </div>
-<div class='timetableHeadings'>
+
+<div class='timetableHeadings' id='Header1'>
 	
 	<table class='timeHeaderTable'>
 			
@@ -41,12 +49,6 @@ if(!isLoggedIn()){
 				
 				<td>
 					1
-					</br>
-					13:00
-					</br>
-					-
-					</br> 
-					14:00
 				</td>
 				
 				<td>
@@ -79,6 +81,62 @@ if(!isLoggedIn()){
 				
 				<td>
 					9
+				</td>
+				
+			</tr>
+			
+		</table>
+</div>
+
+<div class='timetableHeadings' id='Header2'>
+	
+	<table class='timeHeaderTable'>
+			
+			<tr>
+				
+				<td>
+					09:00
+					Start
+				</td>
+				
+				<td>
+					10:00
+					Start
+				</td>
+				
+				<td>
+					11:00
+					Start
+				</td>
+				
+				<td>
+					12:00
+					Start
+				</td>
+				
+				<td>
+					13:00
+					Start
+				</td>
+				
+				<td>
+					14:00
+					Start
+				</td>
+				
+				<td>
+					15:00
+					Start
+				</td>
+				
+				<td>
+					16:00
+					Start
+				</td>
+				
+				<td>
+					17:00
+					Start
 				</td>
 				
 			</tr>

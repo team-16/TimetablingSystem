@@ -20,7 +20,7 @@ if(!isLoggedIn()){
 </div>
 
 <div id = "request_results" style = "width:30%;">
-	<table class="CSSTableGenerator">
+	<table class="table">
 		<tr>
 			<td>accepted</td><td>rejected</td><td>pending</td>
 		</tr>
@@ -30,7 +30,28 @@ if(!isLoggedIn()){
 	</table>
 </div>
 
-<div id='homeViewController'>
+<div>
+	<table class='ToggleTable'>
+		<tr>
+			<td>
+				<input type='radio' name='resultsRadio' onclick='adHocState(this);' checked>Current</input>
+			</td>
+			<td>
+				<input type='radio' name='viewRadio' onclick='loadListView();' checked>List View</input>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type='radio' name='resultsRadio' onclick='adHocState(this);' id='adHocRad'>AdHoc View</input>
+			</td>
+			<td>
+				<input type='radio' name='viewRadio' onclick='loadTimetableView();'>Timetable View</input>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div id='homeViewContainer'>
 
 </div>
 
