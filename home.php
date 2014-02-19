@@ -22,7 +22,7 @@ if(!isLoggedIn()){
 <div id = "request_results" style = "width:30%;">
 	<table class="table">
 		<tr>
-			<td>accepted</td><td>rejected</td><td>pending</td>
+			<th>accepted</th><th>rejected</th><th>pending</th>
 		</tr>
 		<tr>
 			<td id="accepted">0</td><td id="rejected">0</td><td id="pending">0</td>
