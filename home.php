@@ -28,6 +28,7 @@ if(!isLoggedIn()){
 			<td id="accepted">0</td><td id="rejected">0</td><td id="pending">0</td>
 		</tr>
 	</table>
+	</br>
 	<table class='ToggleTable'>
 		<tr>
 			<td>
