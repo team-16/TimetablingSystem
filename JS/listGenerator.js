@@ -8,7 +8,10 @@ function listViewGenerator(requestArray, depShow, weekShow, sessTypeShow, facSho
 		
 		var currentRequest = requestResults[counter];
 		
-		listHTML += "<label class='accordionSection requestCard'>";
+		if(currentRequest.status == 1) listHTML += "<label class='accordionSection requestCardAllocated'>";
+		else if(currentRequest.status == 0) listHTML += "<label class='accordionSection requestCardPending'>";
+		else if(currentRequest.status == 2) listHTML += "<label class='accordionSection requestCardRejected'>";
+		else listHTML += "<label class='accordionSection requestCardDefault'>";
 		
 		listHTML += "<input type='checkbox'>";
 		
@@ -61,15 +64,15 @@ function listViewGenerator(requestArray, depShow, weekShow, sessTypeShow, facSho
 		
 		
 		if (dupBtnShow || editBtnShow || delBtnShow) {
-			listHTML += "<table class='listBtnsTable'><tr>";
+			listHTML += "<table class='listBtnsTable' onclick='return false;'><tr>";
 		
-			if (editBtnShow) listHTML += "<td><button type='button' onclick='return false;'>Edit</button></td>";
+			if (editBtnShow) listHTML += "<td><button type='button' onclick='editRequest(" + counter  + "); return false;'>Edit</button></td>";
 						
-			if (delBtnShow)	listHTML += "<td><button type='button' onclick='return false;'>Delete</button></td>";
+			if (delBtnShow)	listHTML += "<td><button type='button' onclick='deleteRequest(" + currentRequest.id  + "); return false;'>Delete</button></td>";
 			
 			listHTML += "</tr>";
 						
-			if (dupBtnShow) listHTML += "<tr><td colspan='2'><button type='button' onclick='return false;'>Duplicate</button></td></tr>";
+			if (dupBtnShow) listHTML += "<tr><td colspan='2'><button type='button' onclick='duplicateRequest(" +counter  + "); return false;'>Duplicate</button></td></tr>";
 			
 			listHTML += "</table>";
 		

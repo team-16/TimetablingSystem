@@ -4,25 +4,54 @@ var buildingsData = [];
 $(document).ready(function loadPage() {
     buildingsData = getAllRoomsAndBuildings();
     roomsGenerator();
+	facilityGenerator();
 });
 
 function roomsGenerator(){
     
-    var chosenBuilding = document.getElementById("buildings").selectedIndex;  
-    var fullHTML ="<select size = '5' id='rooms'>";
+   // var chosenBuilding = document.getElementById("buildings").selectedIndex;  // Needs updating, JBizzle
+    var fullHTML = "<select id='room_insert_roomcode2' onchange='autopopulateRoomDetails();'>";
     var rooms = "";
     
-    var roomsArray = buildingsData[chosenBuilding].rooms;
+    var roomsArray = []; //buildingsData[chosenBuilding].rooms; // This needs updating too, JBizzle2DaNizzleFoShizzleWivABitOfDrizzle
+    
+    for (var bCounter = 0; bCounter < buildingsData.length; bCounter++) {
+    	
+    	var currentRoomsArray = buildingsData[bCounter].rooms;
+    	
+    	for (var rCounter = 0; rCounter < currentRoomsArray.length; rCounter++) {
+    		
+    		roomsArray.push(currentRoomsArray[rCounter]);
+    		
+   		}
+   		
+    }
     
     for (var i = 0; i < roomsArray.length; i++) {
-        rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray.code + "' >";
+    	
+        rooms += "<option id ='" + roomsArray[i].code + "' value ='" + roomsArray[i].code + "' >";
         rooms += roomsArray[i].code  + "</option>";
 		
-    };
+    }
+    
     fullHTML += rooms;
     fullHTML += "</select>";
-    $( "#roomPreference" ).html(fullHTML);
+    $( "#roomDropdownTd" ).html(fullHTML);
     
+}
+
+function facilityGenerator() {
+    var parentElement = document.getElementById("roomFacilities");
+    var fullHTML ="";
+    //var oldhtml= parentElement.innerHTML;
+    for (var i = 0; i < facilitiesArray.length; i++) {
+        var newfacility = "<input ";
+            newfacility += "type='checkbox'";
+            newfacility += "id = '" + facilitiesArray[i].id + "' ";
+            newfacility += "/> " + facilitiesArray[i].name;
+            fullHTML += newfacility;
+    }
+    $("#roomFacilities").html(fullHTML);
 }
 
 
@@ -66,6 +95,24 @@ function changePassword() {
 	
 }
 
+function editRoom() {
+
+	var Code = $("#room_insert_roomcode2").val();
+	var BuildingCode = $("#room_insert_buildingcode2").val();
+	var Type = $("#room_insert_roomtype2").val();
+	var Capacity = $("#room_insert_roomcapacity2").val();
+	
+		$.ajax({
+			url: "editroom.php?" +currentSessionID,
+			type: "POST",
+			data: { Code:Code, BuildingCode:BuildingCode, Type:Type, Capacity:Capacity },
+			success: function(results) {
+				alert(results);
+			}
+		});
+
+}
+
 function insertModule() {
 	
 	var modulecode = $("#modulecode").val();
@@ -86,11 +133,42 @@ function insertModule() {
 	$("#confirmnewpassword").val("");
 	
 }
+
+function alertRoom(){
+
+	alert("Room successfully added!");
+
+}
+
+function alertBuilding(){
+
+	alert("Building successfully added!");
+
+}
+
+function alertBuilding2(){
+
+	alert("Building successfully updated!");
+
+}
+
+function alertFacility(){
+
+	alert("Facility successfully added!");
+
+}
+
+function alertFacility2(){
+
+	alert("Facility successfully updated!");
+
+}
+
 function autopopulateRoomDetails() {
 	
 	var buildingsData = getAllRoomsAndBuildings();
 	
-	var chosenRoom = $( "#room_insert_roomcode2" ).val();
+	var chosenRoom = document.getElementById("room_insert_roomcode2").options[document.getElementById("room_insert_roomcode2").selectedIndex].value;
 	//alert(chosenRoom);
 	var buildingCode = "";
 	var roomType = null;

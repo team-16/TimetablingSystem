@@ -3,10 +3,9 @@ $(document).ready(function() {
 	var requestsArray = [];
 	getCurrentRequests();
 	loadListView();
-	displayTime(true);
+	
 	
 });
-
 
 var listViewDisplayed = true;
 var adHocMode = false;
@@ -27,21 +26,21 @@ function getCurrentRequests() {
 
 function loadListView() {
 	
-	$("#lHeadings").css({"display":"inline"});
-	$("#gHeadings").css({"display":"none"});
-	
 	listViewDisplayed = true;
-	$('#resultsViewContainer').html(listViewGenerator(requestsArray, false, true, true, true, true, false, true, true, true));
+	
+	var limitedArray = requestsArray.slice(0, 4);
+	
+	$('#homeViewContainer').html(listViewGenerator(limitedArray, false, true, true, true, true, false, true, true, true));
 	
 }
 
 function loadTimetableView() {
 	
-	$("#lHeadings").css({"display":"none"});
-	$("#gHeadings").css({"display":"inline"});
-	
 	listViewDisplayed = false;
-	$('#resultsViewContainer').html(graphicalViewGenerator(requestsArray, true, true, true, true, false, true, true, true));
+	
+	var limitedArray = requestsArray.slice(0, 4);
+	
+	$('#homeViewContainer').html(graphicalViewGenerator(limitedArray, true, true, true, true, false, true, true, true));
 	
 }
 
@@ -73,14 +72,34 @@ function displayTime(period) {
 	
 }
 
-function duplicateRequest(indexVal){
+/*
+function myRequestsValues () {
 		
-	setupDuplicateRequest(requestsArray[Number(indexVal)]);
+	var acceptedValue= 0;
+	var rejectedValue= 0;
+	var pendingValue = 0;
+	
+	for (var i = 0; i < requestsArray.length; i++) {
+	
+		if(requestsArray[i].status == 0){
+			
+			acceptedValue++;
+			
+		} else if (requestsArray[i].status == 1){
+			
+			rejectedValue++;
+			
+		} else {
+			
+			pendingValue++;
+			
+		}
+		
+	}
+	
+	$("#accepted").html(acceptedValue);
+	$("#rejected").hmtl(rejectedValue);
+	$("#pending").html(pendingValue);
 	
 }
-
-function editRequest(indexVal){
-		
-	setupEditRequest(requestsArray[Number(indexVal)]);
-	
-}
+*/

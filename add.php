@@ -22,9 +22,7 @@ if(!isLoggedIn()){
 	<script type="text/javascript">
 		var moduleArray = <?php echo(json_encode(getModules(loggedDept()))); ?>;
 	</script>
-	
-	<button type='button' onclick='$("#requestsNow").click();'>Redirect</button>
-	
+		
 	<input type='radio' name="mode" onclick="adhocMode();">ad-hoc mode</input>
 	<input type='radio' name="mode" onclick="normalMode();" checked>normal mode</input>
 		
@@ -50,11 +48,17 @@ if(!isLoggedIn()){
 							<td>
 							<select id="moduleCodeSelect" class="left1" onclick="moduleTitleGenerator();"> <!-- module code -->
 								<script type="text/javascript">
+									
+									var optionsHTML = "";
+									
 									for(var i = 0; i < moduleArray.length; i++){
-										var opt = document.createElement('option');
-										opt.innerHTML = moduleArray[i]['code'];
-										moduleCodeSelect.appendChild(opt);
+										optionsHTML += "<option>"
+										optionsHTML +=  moduleArray[i]['code'];
+										optionsHTML += "</option>"
 									}
+									
+									$("#moduleCodeSelect").html(optionsHTML);
+									
 								</script>
 							</select>
 							<output id="moduleTitleOutput" class="right1">
@@ -262,21 +266,21 @@ if(!isLoggedIn()){
 								</div>
 						</fieldset>	<!-- End of features box -->
 						</div>
+						<div class="submitDiv">
+							<!-- <input type="submit" value="Submit Request" onclick="insertRequest();"> -->
+							<input type="button" value="Submit Request" id="submitBtn" onclick="submitRequest();"></input>
+							<input type="button" value="Cancel" onclick="location.reload();"></input>	
+							<div id="submitForm" style="visibility:hidden;"></div>
+						</div>
 				</div> <!-- End of container -->
 			</form>
 		</div>
-		<div class="submitDiv">
-			<!-- <input type="submit" value="Submit Request" onclick="insertRequest();"> -->
-			<input type="button" value="Submit Request" onclick="insertRequest();"></input>
-			<input type="button" value="Cancel" onclick="location.reload();"></input>	
-			<div id="submitForm" style="visibility:hidden;"></div>
-		</div>
+		
 			
 	</body>
-		<script src='JSViews/addScript.js'></script>
+	
+		<script type='text/javascript' src='JSViews/addScript.js'></script>
 		<link href='jQuery&UI/jquery-ui-1.10.3/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
-		<script src='jQuery&UI/jquery-ui-1.10.3/jquery-1.9.1.js'></script>
-		<script src='jQuery&UI/jquery-ui-1.10.3/ui/jquery-ui.js'</script>
-		<!--<script src='//code.jquery.com/ui/1.10.4/jquery-ui.js'></script>-->
+		
 
 </html>

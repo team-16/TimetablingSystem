@@ -5,6 +5,7 @@
 .accordionSection{
 	display:block;
 	width:100%;
+	margin-top:20px;
 	margin-bottom:5px;
 	padding-bottom:5px;
 	
@@ -28,7 +29,7 @@
 
 .accordion input[type=checkbox],.accordion input[type=radio]{
 	position:absolute;
-	display:none; /*Check in Opera and IE*/
+	display:none;
 }
 
 .accordion input[type=checkbox]:checked~.accordionContent, .accordion input[type=radio]:checked~.accordionContent{

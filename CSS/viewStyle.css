@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#resultsViewContainer, #myBookingsViewContainer, #allBookingsViewContainer, #historyViewContainer, #requestsViewContainer {
+	position:relative;
+	left:calc(50% - 475px);
+	height:auto;
+	width:950px;
+	
+	margin-top:15px;
+	
+}
+
+.ToggleTable {
+	position: relative;
+	left: calc(50% - 200px);
+	
+	height:50px;
+	width:400px;
+	
+	margin-bottom:10px;
+}
+
+.periodHeaderTable {
+	
+	display: inline-block;
+	text-align:center;
+	vertical-align:middle;
+	
+	line-height:50px;
+	
+}
+

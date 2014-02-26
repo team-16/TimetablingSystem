@@ -1,5 +1,15 @@
 <?php
 
+// room.php
+
+// CREATED BY:
+// Niall Rose, Benjy Evans
+
+// FUNCTIONALITY:
+// Holds functions related to rooms, including obtaining information about
+// all or specific rooms, editing data of rooms and deleting data of
+// rooms.
+
 function insertRoom($Code, $BuildingCode, $Type, $Capacity){
 // Add new room and it's data to database.
 	global $DB;
@@ -88,5 +98,25 @@ function getAllocatedRooms($requestID){
 		return false;
 	}
 }
+
+function deleteBookingsRecords($requestID){ 
+// Return a request's allocated room(s) from database.
+	global $DB;
+	
+	if($DB->query("SELECT * FROM booking WHERE requestID = :requestID", 
+				array(":requestID" => $requestID))) {
+				
+		$DB->query("DELETE FROM booking WHERE requestID = :requestID", 
+			array(':requestID' => $requestID));
+		
+		return true;
+			
+	}
+	
+	else{
+		return false;
+	}
+}
+
 
 ?>

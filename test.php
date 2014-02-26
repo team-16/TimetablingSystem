@@ -132,7 +132,7 @@ function gen(){
 	
 	<div class='accordion'>
 
-		<label class='accordionSection'>
+		<label class='accordionSection requestCardRejected'>
 		
 			<input type='checkbox'>
 			
@@ -202,7 +202,7 @@ function gen(){
 							</td>
 						
 							<td>
-								<button type='button' onclick='return false;'>Delete</button>
+								<button type='button' onclick='deleteRequest("75"); return false;'>Delete</button>
 							</td>
 						
 						</tr>

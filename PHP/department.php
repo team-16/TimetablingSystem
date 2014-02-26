@@ -1,5 +1,15 @@
 <?php
 
+// department.php
+
+// CREATED BY:
+// Niall Rose, Benjy Evans, Mofe Fafowora, Johnbastian Emilianus
+
+// FUNCTIONALITY:
+// Holds functions related to departments, including obtaining information about
+// all or specific departments, editing data of departments and deleting data of
+// departments.
+
 function getDepartments(){ // Return department codes and names from database.
 
 	global $DB;

@@ -1,5 +1,14 @@
 <?php
 
+// init.php
+
+// CREATED BY:
+// Niall Rose
+
+// FUNCTIONALITY:
+// Initialises database, sets up session with correct settings and initialises
+// PHP scripts.
+
 // Setup session variables to not use cookies, then begin session.
 ini_set("session.use_cookies",0);
 ini_set("session.use_only_cookies",0);

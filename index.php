@@ -9,8 +9,13 @@ if(!isLoggedIn()){
 
 ?>
 
-<html>
+<!DOCTYPE html>
 
+<html>
+	
+
+	<meta http-equiv='X-UA-Compatible' content='IE=Edge'></meta>
+	
 	<head>
 		<title>Timetabling System</title>
 		<link rel="stylesheet" type="text/css" href="jQuery&UI/jquery-ui-1.10.3/themes/base/jquery.ui.all.css">
@@ -40,13 +45,13 @@ if(!isLoggedIn()){
 						</li>
 					</a>
 					
-					<a href="add.php">
+					<a href="add.php" id='addRequest'>
 						<li>
 							Add...
 						</li>
 					</a>
 					
-					<a href="requests.php" id='requestsNow'>
+					<a href="requests.php" id='viewRequests'>
 						<li>
 							Requests
 						</li>
@@ -81,31 +86,7 @@ if(!isLoggedIn()){
 							Settings
 						</li>
 					</a>
-					<!--
-					<a href="test.php">
-						<li>
-							Test
-						</li>
-					</a>
 					
-					<a href="test2.php">
-						<li>
-							Test 2
-						</li>
-					</a>
-					
-					<a href="test3.php">
-						<li>
-							Test 3
-						</li>
-					</a>
-					
-					<a href="test4.php">
-						<li>
-							Test 4
-						</li>
-					</a>
-					-->
 					<a href="loggingout.php">
 						<li>
 							Log Out

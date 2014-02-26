@@ -1,5 +1,17 @@
 <?php
 
+// request.php
+
+// CREATED BY:
+// Niall Rose, Benjy Evans, Shirley Kutadzaushe, Mofe Fafowora,
+// Johnbastian Emilianus
+
+// FUNCTIONALITY:
+// Holds functions related to requests, including obtaining information about
+// all or specific requests, editing requests and deleting request data. There
+// is also functionality for returning specific types of requests eg. pending,
+// allocated, rejected.
+
 function getAllRequests(){ // Return every request's data from database.
 	global $DB;
 	
@@ -59,7 +71,8 @@ function getCurrentRequests(){
 	
 	if($DB->query("SELECT * FROM request WHERE roundID IN (
 	SELECT id FROM round WHERE semesterID = (SELECT id FROM semester WHERE id = 
-	(SELECT semesterid FROM round WHERE live = 1 AND adHoc = 0))) ORDER BY moduleCode")){
+	(SELECT semesterid FROM round WHERE live = 
+	1 AND adHoc = 0))) ORDER BY moduleCode")){
 		return $DB->results();
 	}
 	
@@ -286,7 +299,7 @@ function getHistoryRequestsNull(){
 	}
 }
 
-function getHistoryRequestsNotNull(){
+function getHistoryRequestsNotNull($deptCode){
 	global $DB;
 	
 	if($DB->query("SELECT request.*, title, deptcode
@@ -295,12 +308,9 @@ function getHistoryRequestsNotNull(){
 						(SELECT id 
 						FROM round 
 						WHERE semesterID NOT IN 
-							(SELECT id 
-							FROM semester 
-							WHERE id IN 
-								(SELECT semesterid 
-								FROM round 
-								WHERE live = 1))) 
+							(SELECT semesterID 
+							FROM round 
+							WHERE live = 1))
 					AND code = moduleCode AND status IS NOT NULL 
 					AND module.deptcode = :deptcode 
 					ORDER BY moduleCode", array(':deptcode' => $deptCode) )){
@@ -407,6 +417,60 @@ function getNextRequestID(){
 
 }
 
+function updateRequest($id, $moduleCode, $priority, $day, $startPeriod, $endPeriod,
+ $weeks, $noOfStudents, $parkPreference, $traditional, $sessionType, $noOfRooms,
+ $roomCode, $otherRequirements, $roundID, $facilities){
+ // Update a request in the database. Includes tying request to selected
+ // facilities via the room_facility table.
+ 
+	global $DB;
+	
+	if($DB->query("UPDATE request SET id=:id, moduleCode=:moduleCode, priority=:priority, day=:day,
+	startPeriod=:startPeriod, endPeriod=:endPeriod, weeks=:weeks, noOfStudents=:noOfStudents, parkPreference=:parkPreference, traditional=:traditional,
+	sessionType=:sessionType, noOfRooms=:noOfRooms, roomCode=:roomCode, otherRequirements=:otherRequirements, roundID=:roundID 
+	WHERE id=:id;",
+				   array(
+						':id' => $id, // get id for currently edited request
+						':moduleCode' => $moduleCode, // get all these values from fields in add.php after "editing request"
+				         ':priority' => $priority,
+				         ':day' => $day,
+						 ':startPeriod' => $startPeriod,
+						 ':endPeriod' => $endPeriod,
+						 ':weeks' => $weeks,
+						 ':noOfStudents' => $noOfStudents,
+						 ':parkPreference' => $parkPreference,
+						 ':traditional' => $traditional,
+						 ':sessionType' => $sessionType,
+						 ':noOfRooms' => $noOfRooms,
+						 ':roomCode' => $roomCode,
+						 ':otherRequirements' => $otherRequirements,
+						 ':roundID' => $roundID))) {
+						 
+						 
+						 $DB->query("DELETE FROM request_facility WHERE requestID = :id", array(':id' => $id)); // Get rid of old facilities from requests
+						 
+						 foreach($facilities as $key => $val){ // add new facilities to the request
+						 
+							$DB->query("INSERT INTO request_facility (requestID, 
+							facilityID) VALUES (:requestID, :facilityID)",
+							array(
+									':requestID' => $id,
+									':facilityID' => $val));						 
+						 
+						 }
+
+						 
+						 return true;
+		
+	}
+	
+	else {
+		return false;
+	}
+	
+}
+
+
 function incRequestID(){ // Increment next request ID by 1 in database.
 	global $DB;
 	
@@ -425,8 +489,15 @@ function incRequestID(){ // Increment next request ID by 1 in database.
 function deleteRequest($id){ // Remove a request and it's data from database.
 	global $DB;
 	
-	if($DB->query("SELECT request WHERE id = :id", array(':id' => $id))){
+	if($DB->query("SELECT * FROM request WHERE id = :id", array(':id' => $id))){
+		
+		deleteRequestFacilitiesRecords($id);
+		deleteBookingsRecords($id);
+		
 		$DB->query("DELETE FROM request WHERE id = :id", array(':id' => $id));
+		
+		return true;
+		
 	}
 	
 	else{
@@ -434,24 +505,5 @@ function deleteRequest($id){ // Remove a request and it's data from database.
 	}
 	
 }
-
-/*function copyRequestToRound($id, $newRound){
-	
-	global $DB;
-	
-	if($DB->query("SELECT request WHERE id = :id", array(':id' => $id))){
-		$DB->query("INSERT INTO room (id, moduleCode, priority, day,
-		startPeriod, endPeriod, weeks, noOfStudents, parkPreference, traditional,
-		sessionType, noOfRooms, roomCode, otherRequirements, roundID, status)
-		SELECT :id, moduleCode, priority, day,
-		startPeriod, endPeriod, weeks, noOfStudents, parkPreference, traditional,
-		sessionType, noOfRooms, roomCode, otherRequirements, :newround, status
-		FROM room WHERE id=:id", array(':id' => $id, ':newround' => $newRound));
-	}
-	
-	else{
-		return false;
-	}
-} */
 
 ?>

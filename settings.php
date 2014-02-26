@@ -1,5 +1,8 @@
 <?php
 
+// Niall: edit insertRoom to encorporate inserting new facilities correctly.
+// Add editBuildings - copypasta editRoom basically with minor changes.
+
 include('PHP/init.php');
 
 if(!isLoggedIn()){
@@ -110,11 +113,18 @@ if(!isLoggedIn()){
 								<input type='text' id='room_insert_roomcapacity'></input>
 							</td>
 						</tr>
+						<tr>
+						<td>
+							<!--<div id="roomFacilities" class="facilitiesDiv">-->
+							<!-- content -->
+							<!--</div>-->
+						</td>
+						</tr>
 						
 						<tr>
 							<td></td>
 							<td style='text-align:right;'>
-								<input type='button' value='Insert New Room' onclick='insertRoom();'></input>
+								<input type='button' value='Insert New Room' onclick='alertRoom();'></input>
 							</td>
 						</tr>		
 					</table>
@@ -126,8 +136,8 @@ if(!isLoggedIn()){
 							<td>
 								Room Code:
 							</td>
-							<td>
-								<input type='text' id='room_insert_roomcode2' onkeyup="autopopulateRoomDetails();"></input>
+							<td id="roomDropdownTd">
+								<!--<input type='text' id='room_insert_roomcode2' onkeyup="autopopulateRoomDetails();"></input>-->
 							</td>
 						</tr>
 						
@@ -156,6 +166,13 @@ if(!isLoggedIn()){
 							<td>
 								<input type='text' id='room_insert_roomcapacity2'></input>
 							</td>
+						</tr>
+						<tr>
+						<td>
+							<!--<div id="roomFacilities" class="facilitiesDiv">-->
+							<!-- content -->
+							<!--</div>-->
+						</td>
 						</tr>
 						
 						<tr>
@@ -213,7 +230,7 @@ if(!isLoggedIn()){
 						<tr>
 							<td></td>
 							<td style='text-align:right;'>
-								<input type='button' value='Insert New Building' onclick='insertBuilding();'></input>
+								<input type='button' value='Insert New Building' onclick='alertBuilding();'></input>
 							</td>
 						</tr>
 						
@@ -252,11 +269,74 @@ if(!isLoggedIn()){
 						<tr>
 							<td></td>
 							<td style='text-align:right;'>
-								<input type='button' value='Edit Building' onclick='editBuilding();'></input>
+								<input type='button' value='Edit Building' onclick='alertBuilding2();'></input>
 							</td>
 						</tr>
 						
 					</table>					
+				</td>
+				</tr>
+				</table>
+				</div>
+				
+			</label>
+			
+<label class='accordionSection settingsCard'>
+				<input type='radio' name='settingsAccordion' onclick='settingsRadioToggle(this, 0);'>
+					Facilities
+				</input>
+				
+				<div class='accordionContent settingsContent' onclick='return false;'>
+				<table class='facilitiesTable'>
+				<tr>
+				<td>
+					<table class='insertFacilityTable'>
+						
+						<tr>
+							<td>
+								Facility Name:
+							</td>
+							<td>
+								<input type='text' id='facilityInsertFacilityName'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td style='text-align:right;'>
+								<input type='button' value='Insert New Facility' onclick='alertFacility();'></input>
+							</td>
+						</tr>		
+					</table>
+				</td>
+				<td>
+					<table class='editFacilityTable'>
+						
+						<tr>
+							<td>
+								Current Facility Name:
+							</td>
+							<td>
+								<input type='text' id='facilityInsertCurrentFacilityName'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								New Facility Name:
+							</td>
+							<td>
+								<input type='text' id='facilityInsertNewFacilityName'></input>
+							</td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td style='text-align:right;'>
+								<input type='button' value='Edit Facility' onclick='alertFacility2();'></input>
+							</td>
+						</tr>		
+					</table>
 				</td>
 				</tr>
 				</table>

@@ -11,31 +11,182 @@ if(!isLoggedIn()){
 
 <html>
 
-<style type='text/css'>
-@charset "UTF-8";
+<link href='CSS/viewStyle.css' rel='stylesheet' type='text/css'>
 
-#resultsViewContainer {
-	position:relative;
-	top:40px;
-	left:calc(50% - 480px);
-	height:auto;
-	width:940px;
+<div>
+	<table class='ToggleTable'>
+		<tr>
+			<td>
+				<input type='radio' name='resultsRadio' onclick='adHocState(this);' checked>Current</input>
+			</td>
+			<td>
+				<input type='radio' name='viewRadio' onclick='loadListView();' checked>List View</input>
+			</td>
+			<td>
+				<input type='radio' name='timeRadio' onclick='displayTime(true);' checked>Periods</input>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type='radio' name='resultsRadio' onclick='adHocState(this);' id='adHocRad'>AdHoc View</input>
+			</td>
+			<td>
+				<input type='radio' name='viewRadio' onclick='loadTimetableView();'>Timetable View</input>
+			</td>
+			<td>
+				<input type='radio' name='timeRadio' onclick='displayTime(false);'>Times</input>
+			</td>
+		</tr>
+		
+	</table>
+</div>
+
+<div class='graphicalHeadings' id='gHeadings'>
 	
-	margin-top:10px;
+	<table class='periodHeaderTable' id='periodHeadings'>
+			
+			<tr>
+				
+				<td>
+					1
+				</td>
+				
+				<td>
+					2
+				</td>
+				
+				<td>
+					3
+				</td>
+				
+				<td>
+					4
+				</td>
+				
+				<td>
+					5
+				</td>
+				
+				<td>
+					6
+				</td>
+				
+				<td>
+					7
+				</td>
+				
+				<td>
+					8
+				</td>
+				
+				<td>
+					9
+				</td>
+				
+			</tr>
+			
+		</table>
 	
-	border:1px solid #bbb;
-}
+	<table class='timeHeaderTable' id='timeHeadings'>
+			
+			<tr>
+				
+				<td>
+					09:00
+					<p>Start</p>
+				</td>
+				
+				<td>
+					10:00
+					<p>Start</p>
+				</td>
+				
+				<td>
+					11:00
+					<p>Start</p>
+				</td>
+				
+				<td>
+					12:00
+					<p>Start</p>
+				</td>
+				
+				<td>
+					13:00
+					<p>Start</p>
+				</td>
+				
+				<td>
+					14:00
+					<p>Start</p>
+				</td>
+				
+				<td>
+					15:00
+					<p>Start</p>
+				</td>
+				
+				<td>
+					16:00
+					<p>Start</p>
+				</td>
+				
+				<td>
+					17:00
+					<p>Start</p>
+				</td>
+				
+			</tr>
+			
+		</table>
+		
+</div>
 
+<div class='listHeadings' id='lHeadings'>
+	
+	<table class='listHeaderTable' id='listTitles'>
+	
+		<tr>
+		
+			<td id='codeField'>
+				Module Code
+			</td>
+		
+			<td id='pField'>
+				P
+			</td>
+		
+			<td id='dayField'>
+				Day
+			</td>
+		
+			<td id='periodField'>
+				Period
+			</td>
+		
+			<td id='lengthField'>
+				Length
+			</td>
+		
+			<td id='weeksField'>
+				Weeks
+			</td>
+		
+			<td id='stuField'>
+				# of Students
+			</td>
+		
+			<td id='tradField'>
+				T/S
+			</td>
+		
+		</tr>
+	
+	</table>
+	
+</div>
 
-</style>
-
-
-<input type='radio' name='resultsRadio' onclick='adHocState(this);' checked>Current</input>
-<input type='radio' name='resultsRadio' onclick='adHocState(this);' id='adHocRad'>AdHoc View</input>
-
-<input type='button' onclick='loadListView();'>List View</input>
-<input type='button' onclick='loadTimetableView();'>Timetable View</input>
-
+ 
 <div id='resultsViewContainer'>
 	
 </div>

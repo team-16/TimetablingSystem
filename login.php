@@ -1,6 +1,10 @@
 <?php include('PHP/init.php'); ?>
 
+<!DOCTYPE html>
+
 <html>
+
+<meta http-equiv='X-UA-Compatible' content='IE=Edge'></meta>
 
 <head><title>Timetabling System</title></head>
 

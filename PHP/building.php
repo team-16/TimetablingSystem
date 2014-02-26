@@ -1,5 +1,15 @@
 <?php
 
+// building.php
+
+// CREATED BY:
+// Niall Rose, Benjy Evans, Johnbastian Emilianus, Mofe Fafowora
+
+// FUNCTIONALITY:
+// Holds functions related to buildings, including obtaining information about
+// all or specific buildings, editing data of buildings and deleting data of
+// buildings.
+
 function getBuildings(){ // Return every building's data ordered by names.
 	global $DB;
 	

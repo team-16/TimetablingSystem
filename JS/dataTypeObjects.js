@@ -66,6 +66,7 @@ function Room () {
 	this.code = "";
 	this.type = null;
 	this.capacity = null;
+	this.facilities = [];
 	
 }
 

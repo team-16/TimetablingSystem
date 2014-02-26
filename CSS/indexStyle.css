@@ -10,7 +10,8 @@ html, body {
 body {
 	font-family:'Alef', sans-serif;
 	background-color: #363638;
-	overflow:auto;
+	overflow-x:auto;
+	overflow-y: scroll;
 }
 
 #wrapper {
@@ -49,6 +50,8 @@ header {
 	font-weight:700;
 	font-size:200%;
 	color:#fff;
+	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#330066',GradientType=0 );!important /* IE6-9 */
 
 	/* IE10 Consumer Preview */ 
 	background-image: -ms-linear-gradient(top, #FFFFFF -100%, #330066 60%);

@@ -102,8 +102,14 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 					
 					var requestLength = endPeriodsArray[currentRequest.endPeriod] - startPeriodsArray[currentRequest.startPeriod];
 					
-					graphicalHTML += "<td colspan='" + requestLength + "'><label class='radioLabel'>\
-									<input type='radio' name='";
+					graphicalHTML += "<td colspan='" + requestLength + "'>";
+					
+					if(currentRequest.status == 1) graphicalHTML += "<label class='radioLabel requestSectionAllocated'>";
+					else if(currentRequest.status == 0) graphicalHTML += "<label class='radioLabel requestSectionPending'>";
+					else if(currentRequest.status == 2) graphicalHTML += "<label class='radioLabel requestSectionRejected'>";
+					else  graphicalHTML += "<label class='radioLabel requestSectionDefault'>";
+					
+					graphicalHTML += "<input type='radio' name='";
 					graphicalHTML += daysArray[dayCounter].toLowerCase() + "Radio";
 					graphicalHTML += "' onclick='graphicalRadioToggle(this, " + dayCounter + ");showGraphicalContent(this, \"";
 					graphicalHTML +=  daysArray[dayCounter].toLowerCase() + "Content" + (contentIDCounter++); 
@@ -129,7 +135,13 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 				
 				var contentIDNumber = contentIDCounter - contentRequestsArray.length + contentCounter;
 				
-				graphicalHTML += "<div class='contentSection' id='" + daysArray[dayCounter].toLowerCase() + "Content" + contentIDNumber + "'>";
+				if(currentRequest.status == 1) graphicalHTML += "<div class='contentSection requestContentSectionAllocated'";
+				else if(currentRequest.status == 0) graphicalHTML += "<div class='contentSection requestContentSectionPending'";
+				else if(currentRequest.status == 2) graphicalHTML += "<div class='contentSection requestContentSectionRejected'";
+				else graphicalHTML += "<div class='contentSection requestContentSectionDefault'";
+			
+				graphicalHTML += " id='" + daysArray[dayCounter].toLowerCase() + "Content" + contentIDNumber + "'>";
+				
 				graphicalHTML += "<div class='topContentSection'>";
 				
 				graphicalHTML += "<table class='sectionContentTopTable'><tr>\
@@ -150,20 +162,27 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 				
 				graphicalHTML += "</tr></table>";
 				
+				var indexValue = null;
+				
+				for(var indexCounter = 0; indexCounter < requestsArray.length; indexCounter++) {
+					if(requestsArray[indexCounter] == currentRequest) indexValue = indexCounter;
+				}
+				
+				
 				if (dupBtnShow || editBtnShow || delBtnShow) {
 					
 					graphicalHTML += "<table class='graphicalBtnsTable'>";
 					
 					graphicalHTML += "<tr>";
 					
-					if (editBtnShow) graphicalHTML += "<td><button type='button' onclick='return false;'>Edit</button></td>";
+					if (editBtnShow) graphicalHTML += "<td><button type='button' onclick='editRequest(" + indexValue  + "); return false;'>Edit</button></td>";
 					
-					if (delBtnShow)	 graphicalHTML += "<td><button type='button' onclick='return false;'>Delete</button></td>";
+					if (delBtnShow)	 graphicalHTML += "<td><button type='button' onclick='deleteRequest(" + currentRequest.id  + "); return false;'>Delete</button></td>";
 					
 					graphicalHTML += "</tr>";
 					
 					if (dupBtnShow) graphicalHTML += "<tr><td colspan='2'>\
-													<button type='button' onclick='return false;'>Duplicate</button>\
+													<button type='button' onclick='duplicateRequest(" + indexValue  + ");  return false;'>Duplicate</button>\
 													</td></tr>";
 					
 					graphicalHTML += "</table>";
@@ -209,8 +228,10 @@ function graphicalViewGenerator(requestsArray, weekShow, sessTypeShow, facShow, 
 								<tr><td id='faciSection'>Facilites</td>\
 								<td>Other Requirements</td>";
 				
+				var facilityTitles = getFacilityTitles(currentContentRequest.facilities);
+				
 				graphicalHTML += "</tr><tr>\
-								<td>" + htmlStringFormater(currentContentRequest.facilities, true) + "</td>\
+								<td>" + htmlStringFormater(facilityTitles, true) + "</td>\
 								<td>" + currentContentRequest.otherReqs + "</td>";
 				
 				graphicalHTML += "</tr></table>";

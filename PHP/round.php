@@ -1,5 +1,15 @@
 <?php
 
+// round.php
+
+// CREATED BY:
+// Niall Rose, Benjy Evans, Johnbastian Emilianus
+
+// FUNCTIONALITY:
+// Holds functions related to round, including obtaining information about
+// all or specific rounds (including current live & adhoc, historical rounds,
+// etc), editing data of rounds and deleting data of rounds.
+
 function getLiveRoundData(){ // Get current live round's data from database.
 	global $DB;
 	

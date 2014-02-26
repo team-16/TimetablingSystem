@@ -1,5 +1,15 @@
 <?php
 
+// semester.php
+
+// CREATED BY:
+// Niall Rose, Benjy Evans, Johnbastian Emilianus
+
+// FUNCTIONALITY:
+// Holds functions related to semester, including obtaining information about
+// all or specific semesters (current and historical), editing data of
+// semesters and deleting data of semesters.
+
 function getLiveSemesterData(){ // Get current semester's data from database.
 	global $DB;
 	

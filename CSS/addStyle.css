@@ -109,6 +109,7 @@ form {
 }
 
 .submitDiv {
+	clear:both;
 	height:auto;
 	width:auto;
 	text-align:center;

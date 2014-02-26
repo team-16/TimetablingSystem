@@ -1,5 +1,14 @@
 <?php
 
+// globalf.php
+
+// CREATED BY:
+// Niall Rose
+
+// FUNCTIONALITY:
+// Holds non-specific utility functions used throughout the system, including
+// redirect functions.
+
 function redirect($page){ // General redirect to inputted page.
 
 	header('Location: ' . 

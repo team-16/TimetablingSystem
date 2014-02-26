@@ -13,6 +13,7 @@ function loadFacilities(jsonFacilitiesArray) {
 	
 }
 
+
 function formatJSONRequests(jsonReqArray, allocatedFlag) {
 	
 	jsonReqArray = JSON.parse(jsonReqArray);
@@ -60,7 +61,7 @@ function formatJSONRequests(jsonReqArray, allocatedFlag) {
 		
 		for (var fCounter = 0; fCounter < requestFacilityArray.length; fCounter++) {
 			
-			currentRequest.facilities.push(requestFacilityArray[fCounter]);
+			currentRequest.facilities.push(Number(requestFacilityArray[fCounter]));
 			
 		}
 		
@@ -83,16 +84,6 @@ function formatJSONRequests(jsonReqArray, allocatedFlag) {
 	}
 	
 	return requestsArray;
-	
-}
-
-
-
-
-
-function getModules(results) {
-	
-	
 	
 }
 
@@ -139,6 +130,7 @@ function getAllRoomsAndBuildings() {
 	
 }
 
+
 function getAllRoomsInBuilding(buildingCode, jsonRooms) {
 	
 	var roomsInBuilding = [];
@@ -163,3 +155,38 @@ function getAllRoomsInBuilding(buildingCode, jsonRooms) {
 	
 }
 
+function deleteRequest(requestID) {
+	
+	requestID = Number(requestID);
+	
+	$.ajax({
+		url: "requestDeletionManager.php?" + currentSessionID,
+		type: "POST",
+		data: {requestID:requestID},
+		success: function(results) {
+			alert(results);
+		}
+	});
+	
+	
+}
+
+function setupDuplicateRequest(request) {
+	
+	duplicateRequestFlag = true;
+	
+	temporaryRequestStore = request;
+	
+	$("#addRequest").click();
+	
+}
+
+function setupEditRequest(request) {
+	
+	editRequestFlag = true;
+	
+	temporaryRequestStore = request;
+	
+	$("#addRequest").click();
+	
+}
